@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     git \
     make
 
-RUN git clone https://github.com/dajobe/redland-bindings.git
+RUN git clone https://github.com/ropensci/redland-bindings.git
 RUN cd redland-bindings && \
     ./autogen.sh && \
     autoconf configure.ac > configure && \
@@ -18,4 +18,4 @@ RUN cd redland-bindings && \
 ## Build & run the container interactively and make should work:
 ##     docker build -t redland-bindings .
 ##     docker run --rm -it redland-bindings /bin/bash
-##     cd python && make
+##     cd redland-bindings/python && make

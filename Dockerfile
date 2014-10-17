@@ -6,12 +6,16 @@ RUN apt-get update && apt-get install -y \
     python-dev \
     librdf0-dev \
     swig \
-    git
+    git \
+    make
 
 RUN git clone https://github.com/dajobe/redland-bindings.git
 RUN cd redland-bindings && \
     ./autogen.sh && \
     autoconf configure.ac > configure && \
     ./configure
-RUN cd python && make
-    
+
+## Build & run the container interactively and make should work:
+##     docker build -t redland-bindings .
+##     docker run --rm -it redland-bindings /bin/bash
+##     cd python && make

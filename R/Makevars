@@ -1,0 +1,1 @@
+PKG_CFLAGS = -I/usr/include/raptor2 -I/usr/include/rasqal

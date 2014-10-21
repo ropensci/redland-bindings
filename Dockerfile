@@ -7,11 +7,12 @@ RUN apt-get update && apt-get install -y \
     librdf0-dev \
     libraptor2-dev \
     librasqal3-dev \
-    swig \
+    swig3.0 \
     git \
     make \
+    vim \
     r-recommended
-
+RUN cd /usr/bin && ln -s swig3.0 swig && cd /
 RUN git clone https://github.com/ropensci/redland-bindings.git
 RUN cd redland-bindings && \
     ./autogen.sh && \

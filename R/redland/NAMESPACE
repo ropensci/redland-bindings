@@ -1,5 +1,7 @@
+useDynLib(librdf)
+useDynLib(libraptor2)
+useDynLib(librasqal)
 useDynLib(Redland)
-
 
 export(
         librdf_new_digest,

@@ -1,2 +1,2 @@
 PKG_CFLAGS = -I/usr/include/raptor2 -I/usr/include/rasqal
-PKG_LIBS = -lraptor2 -lrasqal
+PKG_LIBS = -lraptor2 -lrasqal -lrdf

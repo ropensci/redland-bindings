@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y \
     librdf0-dev \
     librdf0 \
     libraptor2-dev \
-    libraptor2 \
     librasqal3-dev \
     librasqal3 \
     swig3.0 \

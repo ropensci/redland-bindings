@@ -5,7 +5,7 @@
 # the SWIG interface file instead.
 
 ##   Generated via the command line invocation:
-##	 swig -v -r -namespace -outdir redland/R -o redland/src/Redland_wrap.c Redland.i
+##	 swig -v -r -namespace -outdir redland/R -o redland/src/redland.c Redland.i
 
 
 #                         srun.swg                            #

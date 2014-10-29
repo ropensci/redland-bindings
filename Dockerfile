@@ -5,8 +5,11 @@ RUN apt-get update && apt-get install -y \
     libtool \
     python-dev \
     librdf0-dev \
+    librdf0 \
     libraptor2-dev \
+    libraptor2 \
     librasqal3-dev \
+    librasqal3 \
     swig3.0 \
     git \
     make \
@@ -18,6 +21,7 @@ RUN cd redland-bindings && \
     ./autogen.sh && \
     autoconf configure.ac > configure && \
     ./configure
+##RUN cd /redland-bindings/R && swig.sh
 
 ## Build & run the container interactively and make should work:
 ##     docker build -t redland-bindings .

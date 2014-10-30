@@ -12,29 +12,38 @@ Experimental.  At this point all that is working is that we use SWIG to generate
 To build the package:
 
 1. Install docker and load the Dockerfile into a container and run it
-```bash
-docker build -t redland-bindings .
-docker run --rm -it redland-bindings /bin/bash
-```
-2. Run SWIG to generate the shared libraries and compile the R package code, and startup R
-```bash
-cd redland-bindings/R
-./swig.sh
-cd redland
-```
-3. Install devtools in R and load the package
-```r
-> install.packages("devtools")
-> library(devtools)
-> load_all()
-```
-4. Run a redland command
-```r
-> library(redland)
-> world <- librdf_new_world()
-> world
-An object of class "_p_librdf_world_s"
-Slot "ref":
-<pointer: 0x38bd290>
-```
+    ```bash
+    docker build -t redland-bindings .
+    docker run --rm -it redland-bindings /bin/bash
+    ```
 
+2. Run SWIG to generate the shared libraries and compile the R package code, and startup R
+    ```bash
+    cd redland-bindings/R
+    ./swig.sh
+    cd redland
+    ```
+
+3. Install devtools in R and load the package
+    ```r
+    > install.packages("devtools")
+    > library(devtools)
+    > load_all()
+    ```
+
+4. Run a redland command
+    ```r
+    > library(redland)
+    > world <- librdf_new_world()
+    > world
+    An object of class "_p_librdf_world_s"
+    Slot "ref":
+    <pointer: 0x38bd290>
+    ```
+
+5. Run the existing test suite
+    ```r
+    > install.packages("testthat")
+    > library(testthat)
+    > test()
+    ```

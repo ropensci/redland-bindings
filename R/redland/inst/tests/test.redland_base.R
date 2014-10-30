@@ -29,4 +29,30 @@ test_that("librdf basic functions", {
     qstr <- librdf_query_results_to_string(results, NULL, NULL)
     expect_that(qstr, matches("http://www.dajobe.org/"))
     expect_that(qstr, matches("Beckett"))
+    
+#     while (!is.null(results) && librdf_query_results_finished(results) == 0) {
+#         num_nodes <- librdf_query_results_get_bindings_count(results)
+#         print(paste("result ", ": {", sep=""))
+#         
+#         for (i in 1:num_nodes-1) {
+#             print(i)
+#             binding_name <- librdf_query_results_get_binding_name(results, i)
+#             val = librdf_query_results_get_binding_value(results, i)
+#             expect_that(class(val), matches("_p_librdf_node_s"))
+#             if (!is.null(val)) {
+#                 nval <- librdf_node_to_string(val)
+#             } else {
+#                 nval = "(unbound)"
+#             }
+#             
+#             print(paste(binding_name, "=", nval, sep=""))
+#         }
+#         
+#         print("}")
+#         rc <- librdf_query_results_next(results)
+#         print(rc)
+#         rc <- librdf_query_results_finished(results)
+#         print(rc)
+#     }
+
 })

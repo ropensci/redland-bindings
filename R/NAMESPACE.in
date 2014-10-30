@@ -1,0 +1,3 @@
+useDynLib(librdf)
+useDynLib(libraptor2)
+useDynLib(librasqal)

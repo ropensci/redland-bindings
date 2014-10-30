@@ -20,4 +20,13 @@ test_that("librdf basic functions", {
     expect_that(rv, equals(0))
     librdf_free_uri(uri);
     librdf_free_parser(parser);
+    
+    query <- librdf_new_query(world, 'sparql', NULL, "PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c ?d WHERE { ?a dc:title ?c . OPTIONAL { ?a dc:related ?d } }", NULL)
+    results <- librdf_model_query_execute(model, query);
+    expect_that(results, not(is_null()))
+    expect_that(class(results), matches("_p_librdf_query_results"))
+    
+    qstr <- librdf_query_results_to_string(results, NULL, NULL)
+    expect_that(qstr, matches("http://www.dajobe.org/"))
+    expect_that(qstr, matches("Beckett"))
 })

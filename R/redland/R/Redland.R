@@ -5,7 +5,7 @@
 # the SWIG interface file instead.
 
 ##   Generated via the command line invocation:
-##	 swig -v -r -namespace -outdir redland/R -o redland/src/redland.c Redland.i
+##	 swig -v -Wall -r -namespace -outdir redland/R -o redland/src/redland.c Redland.i
 
 
 #                         srun.swg                            #
@@ -172,7 +172,8 @@ setClass('_p_librdf_storage_s', contains = 'ExternalReference')
 setClass('_p_librdf_stream_s', contains = 'ExternalReference')
 setClass('_p_librdf_parser_s', contains = 'ExternalReference')
 setClass('_p_librdf_serializer_s', contains = 'ExternalReference')
-
+setClass('_p_librdf_query', contains = 'ExternalReference')
+setClass('_p_librdf_query_results', contains = 'ExternalReference')
 
 
 setMethod('[', "ExternalReference",

@@ -54,4 +54,42 @@ test_that("librdf basic functions", {
         }
         rc <- librdf_query_results_next(results)
     }
+    
+    # Test adding a new Statement to the model
+    about <- "http://matt.magisa.org/"
+    subject <- librdf_new_node_from_uri_string(world, about)
+    expect_that(subject, not(is_null()))
+    expect_that(class(subject), matches("_p_librdf_node_s"))
+    pred <- librdf_new_node_from_uri_string(world, "http://purl.org/dc/elements/1.1/title")
+    expect_that(pred, not(is_null()))
+    expect_that(class(pred), matches("_p_librdf_node_s"))
+    object <- librdf_new_node_from_uri_string(world, "Matt Jones' Home Page")
+    expect_that(object, not(is_null()))
+    expect_that(class(object), matches("_p_librdf_node_s"))
+    statement <- librdf_new_statement_from_nodes(world, subject, pred, object)
+    expect_that(statement, not(is_null()))
+    expect_that(class(statement), matches("_p_librdf_statement_s"))
+
+    rc <- librdf_model_add_statement(model, statement)
+    expect_that(rc, equals(0))    
+    
+    librdf_free_node(subject)
+    librdf_free_node(pred)
+    librdf_free_node(object)
+    librdf_free_statement(statement)
+    
+    # Test serialization of the model to a text file
+    serializer <- librdf_new_serializer(world, "rdfxml", "", NULL);
+    expect_that(serializer, not(is_null()))
+    expect_that(class(serializer), matches("_p_librdf_serializer"))
+    base = librdf_new_uri(world, "http://example.org/base.rdf");
+    librdf_serializer_serialize_model_to_file(serializer,'./test-out.rdf',base,model);
+    expect_that(file.exists('./test-out.rdf'), is_true())
+    
+    # Free resources
+    librdf_free_serializer(serializer);
+    librdf_free_uri(base);
+    librdf_free_model(model);
+    librdf_free_storage(storage);
+    expect_that("Reached end.", equals("Reached end."))
 })

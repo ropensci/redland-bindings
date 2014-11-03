@@ -31,3 +31,5 @@ stamp*
 **/*.RData
 **/*.Rproj
 **/.Rbuildignore
+**/*.o
+**/*.so

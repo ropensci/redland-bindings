@@ -26,3 +26,8 @@ old
 redland-bindings.spec
 releases
 stamp*
+**/.Rproj.user
+**/.Rhistory
+**/*.RData
+**/*.Rproj
+**/.Rbuildignore

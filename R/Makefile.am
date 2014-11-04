@@ -52,8 +52,11 @@ RUN=@REDLAND_RUN@
 SWIG_OPTS=-I$(srcdir)
 
 $(R_PACKAGE).c: @REDLAND_SWIG@
-	swig -r -v $(SWIG_OPTS) -outdir $(R_PACKAGE)/R -o redland/src/$@ Redland.i
-#swig -r -v $(SWIG_OPTS) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
+	swig -r -namespace -v $(SWIG_OPTS) -outdir $(R_PACKAGE)/R -o redland/src/$@ Redland.i
+	cat NAMESPACE.in redland/R/NAMESPACE > redland/NAMESPACE
+	rm redland/R/NAMESPACE
+
+#swig -r -namespace -v $(SWIG_OPTS) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
 #swig -v -Wall -r -namespace -outdir redland/R -o redland/src/redland.c Redland.i 
 
 $(R_PACKAGE).o: $(R_PACKAGE).c

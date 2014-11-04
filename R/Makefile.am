@@ -55,6 +55,7 @@ $(R_PACKAGE).c: @REDLAND_SWIG@
 	swig -r -namespace -v $(SWIG_OPTS) -outdir $(R_PACKAGE)/R -o redland/src/$@ Redland.i
 	cat NAMESPACE.in redland/R/NAMESPACE > redland/NAMESPACE
 	rm redland/R/NAMESPACE
+	cat Redland.R.in >> redland/R/Redland.R
 
 #swig -r -namespace -v $(SWIG_OPTS) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
 #swig -v -Wall -r -namespace -outdir redland/R -o redland/src/redland.c Redland.i 

@@ -14,16 +14,14 @@ RUN apt-get update && apt-get install -y \
     make \
     vim \
     r-recommended
+RUN R --no-save -e 'options(repos = c(CRAN = "http://cran.rstudio.com")); install.packages(c("devtools", "testthat"))' 
 RUN cd /usr/bin && ln -s swig3.0 swig && cd /
 RUN git clone https://github.com/ropensci/redland-bindings.git
-RUN cd redland-bindings && \
-    ./autogen.sh && \
-    autoconf configure.ac > configure && \
-    ./configure
-##RUN cd /redland-bindings/R && swig.sh
-
-## Build & run the container interactively and make should work:
-##     docker build -t redland-bindings .
-##     docker run --rm -it redland-bindings /bin/bash
-##     cd redland-bindings/python && make
-##     cd redland-bindings/R && swig.sh
+RUN cd /redland-bindings && \
+    ./autogen.sh --with-R && \
+    make
+RUN echo "NEXT STEPS:" && \
+    echo "Build & run the container interactively and make should work:" && \
+    echo "$ docker build -t redland-bindings ." && \
+    echo "$ docker run --rm -it redland-bindings /bin/bash" && \
+    echo "cd /redland-bindings/R && make check-local"

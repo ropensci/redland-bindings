@@ -5,7 +5,7 @@
 # the SWIG interface file instead.
 
 ##   Generated via the command line invocation:
-##	 swig -r -namespace -v -I. -outdir redland/R -o redland/src/redland.c Redland.i
+##	 swig -r -namespace -v -I. -module redland -outdir redland/R -o redland/src/redland.c Redland.i
 
 
 #                         srun.swg                            #
@@ -200,7 +200,7 @@ function(x) {print(as(x, "character"))})
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   name = as(name, "character"); 
-  ;ans = .Call('R_swig_librdf_new_digest', world, name, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_digest', world, name, PACKAGE='redland');
   ans <- new("_p_librdf_digest_s", ref=ans) ;
   
   ans
@@ -216,7 +216,7 @@ class(`librdf_new_digest`) = c("SWIGFunction", class('librdf_new_digest'))
 `librdf_free_digest` = function(digest)
 {
   if (inherits(digest, "ExternalReference")) digest = slot(digest,"ref") 
-  ;.Call('R_swig_librdf_free_digest', digest, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_digest', digest, PACKAGE='redland');
   
 }
 
@@ -229,7 +229,7 @@ class(`librdf_free_digest`) = c("SWIGFunction", class('librdf_free_digest'))
 `librdf_digest_init` = function(digest)
 {
   if (inherits(digest, "ExternalReference")) digest = slot(digest,"ref") 
-  ;.Call('R_swig_librdf_digest_init', digest, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_digest_init', digest, PACKAGE='redland');
   
 }
 
@@ -249,7 +249,7 @@ class(`librdf_digest_init`) = c("SWIGFunction", class('librdf_digest_init'))
     warning("using only the first element of length");
   };
   
-  ;.Call('R_swig_librdf_digest_update', digest, buf, length, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_digest_update', digest, buf, length, PACKAGE='redland');
   
 }
 
@@ -263,7 +263,7 @@ class(`librdf_digest_update`) = c("SWIGFunction", class('librdf_digest_update'))
 {
   if (inherits(digest, "ExternalReference")) digest = slot(digest,"ref") 
   string = as(string, "character"); 
-  ;.Call('R_swig_librdf_digest_update_string', digest, string, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_digest_update_string', digest, string, PACKAGE='redland');
   
 }
 
@@ -276,7 +276,7 @@ class(`librdf_digest_update_string`) = c("SWIGFunction", class('librdf_digest_up
 `librdf_digest_final` = function(digest)
 {
   if (inherits(digest, "ExternalReference")) digest = slot(digest,"ref") 
-  ;.Call('R_swig_librdf_digest_final', digest, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_digest_final', digest, PACKAGE='redland');
   
 }
 
@@ -289,7 +289,7 @@ class(`librdf_digest_final`) = c("SWIGFunction", class('librdf_digest_final'))
 `librdf_digest_to_string` = function(digest)
 {
   if (inherits(digest, "ExternalReference")) digest = slot(digest,"ref") 
-  ;.Call('R_swig_librdf_digest_to_string', digest, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_digest_to_string', digest, PACKAGE='redland');
   
 }
 
@@ -303,7 +303,7 @@ class(`librdf_digest_to_string`) = c("SWIGFunction", class('librdf_digest_to_str
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   name = as(name, "character"); 
-  ;ans = .Call('R_swig_librdf_new_hash', world, name, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_hash', world, name, PACKAGE='redland');
   ans <- new("_p_librdf_hash_s", ref=ans) ;
   
   ans
@@ -321,7 +321,7 @@ class(`librdf_new_hash`) = c("SWIGFunction", class('librdf_new_hash'))
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   name = as(name, "character"); 
   string = as(string, "character"); 
-  ;ans = .Call('R_swig_librdf_new_hash_from_string', world, name, string, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_hash_from_string', world, name, string, PACKAGE='redland');
   ans <- new("_p_librdf_hash_s", ref=ans) ;
   
   ans
@@ -339,7 +339,7 @@ class(`librdf_new_hash_from_string`) = c("SWIGFunction", class('librdf_new_hash_
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   name = as(name, "character"); 
   if (inherits(string, "ExternalReference")) string = slot(string,"ref") 
-  ;ans = .Call('R_swig_librdf_new_hash_from_array_of_strings', world, name, string, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_hash_from_array_of_strings', world, name, string, PACKAGE='redland');
   ans <- new("_p_librdf_hash_s", ref=ans) ;
   
   ans
@@ -356,7 +356,7 @@ class(`librdf_new_hash_from_array_of_strings`) = c("SWIGFunction", class('librdf
 {
   if (inherits(hash, "ExternalReference")) hash = slot(hash,"ref") 
   if (inherits(filter, "ExternalReference")) filter = slot(filter,"ref") 
-  ;.Call('R_swig_librdf_hash_to_string', hash, filter, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_hash_to_string', hash, filter, PACKAGE='redland');
   
 }
 
@@ -369,7 +369,7 @@ class(`librdf_hash_to_string`) = c("SWIGFunction", class('librdf_hash_to_string'
 `librdf_free_hash` = function(hash)
 {
   if (inherits(hash, "ExternalReference")) hash = slot(hash,"ref") 
-  ;.Call('R_swig_librdf_free_hash', hash, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_hash', hash, PACKAGE='redland');
   
 }
 
@@ -381,7 +381,7 @@ class(`librdf_free_hash`) = c("SWIGFunction", class('librdf_free_hash'))
 
 `librdf_new_world` = function()
 {
-  ;ans = .Call('R_swig_librdf_new_world', PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_world', PACKAGE='redland');
   ans <- new("_p_librdf_world_s", ref=ans) ;
   
   ans
@@ -396,7 +396,7 @@ class(`librdf_new_world`) = c("SWIGFunction", class('librdf_new_world'))
 `librdf_free_world` = function(world)
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
-  ;.Call('R_swig_librdf_free_world', world, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_world', world, PACKAGE='redland');
   
 }
 
@@ -409,7 +409,7 @@ class(`librdf_free_world`) = c("SWIGFunction", class('librdf_free_world'))
 `librdf_world_open` = function(world)
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
-  ;.Call('R_swig_librdf_world_open', world, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_world_open', world, PACKAGE='redland');
   
 }
 
@@ -423,7 +423,7 @@ class(`librdf_world_open`) = c("SWIGFunction", class('librdf_world_open'))
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
-  ;ans = .Call('R_swig_librdf_world_get_feature', world, feature, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_world_get_feature', world, feature, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -441,7 +441,7 @@ class(`librdf_world_get_feature`) = c("SWIGFunction", class('librdf_world_get_fe
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
   if (inherits(value, "ExternalReference")) value = slot(value,"ref") 
-  ;.Call('R_swig_librdf_world_set_feature', world, feature, value, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_world_set_feature', world, feature, value, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -454,7 +454,7 @@ class(`librdf_world_set_feature`) = c("SWIGFunction", class('librdf_world_set_fe
 `librdf_parser_get_accept_header` = function(parser)
 {
   if (inherits(parser, "ExternalReference")) parser = slot(parser,"ref") 
-  ;.Call('R_swig_librdf_parser_get_accept_header', parser, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_get_accept_header', parser, PACKAGE='redland');
   
 }
 
@@ -469,7 +469,7 @@ class(`librdf_parser_get_accept_header`) = c("SWIGFunction", class('librdf_parse
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   if (inherits(user_data, "ExternalReference")) user_data = slot(user_data,"ref") 
   if (inherits(log_handler, "ExternalReference")) log_handler = slot(log_handler,"ref") 
-  ;.Call('R_swig_librdf_world_set_logger', world, user_data, log_handler, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_world_set_logger', world, user_data, log_handler, PACKAGE='redland');
   
 }
 
@@ -482,7 +482,7 @@ class(`librdf_world_set_logger`) = c("SWIGFunction", class('librdf_world_set_log
 `librdf_free_iterator` = function(s_arg1)
 {
   if (inherits(s_arg1, "ExternalReference")) s_arg1 = slot(s_arg1,"ref") 
-  ;.Call('R_swig_librdf_free_iterator', s_arg1, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_iterator', s_arg1, PACKAGE='redland');
   
 }
 
@@ -495,7 +495,7 @@ class(`librdf_free_iterator`) = c("SWIGFunction", class('librdf_free_iterator'))
 `librdf_iterator_end` = function(iterator, .copy = FALSE)
 {
   if (inherits(iterator, "ExternalReference")) iterator = slot(iterator,"ref") 
-  ;.Call('R_swig_librdf_iterator_end', iterator, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_iterator_end', iterator, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -508,7 +508,7 @@ class(`librdf_iterator_end`) = c("SWIGFunction", class('librdf_iterator_end'))
 `librdf_iterator_get_object` = function(iterator)
 {
   if (inherits(iterator, "ExternalReference")) iterator = slot(iterator,"ref") 
-  ;ans = .Call('R_swig_librdf_iterator_get_object', iterator, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_iterator_get_object', iterator, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -524,7 +524,7 @@ class(`librdf_iterator_get_object`) = c("SWIGFunction", class('librdf_iterator_g
 `librdf_iterator_get_context` = function(iterator)
 {
   if (inherits(iterator, "ExternalReference")) iterator = slot(iterator,"ref") 
-  ;ans = .Call('R_swig_librdf_iterator_get_context', iterator, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_iterator_get_context', iterator, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -540,7 +540,7 @@ class(`librdf_iterator_get_context`) = c("SWIGFunction", class('librdf_iterator_
 `librdf_iterator_next` = function(iterator, .copy = FALSE)
 {
   if (inherits(iterator, "ExternalReference")) iterator = slot(iterator,"ref") 
-  ;.Call('R_swig_librdf_iterator_next', iterator, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_iterator_next', iterator, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -554,7 +554,7 @@ class(`librdf_iterator_next`) = c("SWIGFunction", class('librdf_iterator_next'))
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   string = as(string, "character"); 
-  ;ans = .Call('R_swig_librdf_new_uri', world, string, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_uri', world, string, PACKAGE='redland');
   ans <- new("_p_librdf_uri_s", ref=ans) ;
   
   ans
@@ -570,7 +570,7 @@ class(`librdf_new_uri`) = c("SWIGFunction", class('librdf_new_uri'))
 `librdf_new_uri_from_uri` = function(uri)
 {
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
-  ;ans = .Call('R_swig_librdf_new_uri_from_uri', uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_uri_from_uri', uri, PACKAGE='redland');
   ans <- new("_p_librdf_uri_s", ref=ans) ;
   
   ans
@@ -587,7 +587,7 @@ class(`librdf_new_uri_from_uri`) = c("SWIGFunction", class('librdf_new_uri_from_
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   filename = as(filename, "character"); 
-  ;ans = .Call('R_swig_librdf_new_uri_from_filename', world, filename, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_uri_from_filename', world, filename, PACKAGE='redland');
   ans <- new("_p_librdf_uri_s", ref=ans) ;
   
   ans
@@ -603,7 +603,7 @@ class(`librdf_new_uri_from_filename`) = c("SWIGFunction", class('librdf_new_uri_
 `librdf_free_uri` = function(uri)
 {
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
-  ;.Call('R_swig_librdf_free_uri', uri, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_uri', uri, PACKAGE='redland');
   
 }
 
@@ -616,7 +616,7 @@ class(`librdf_free_uri`) = c("SWIGFunction", class('librdf_free_uri'))
 `librdf_uri_to_string` = function(uri)
 {
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
-  ;.Call('R_swig_librdf_uri_to_string', uri, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_uri_to_string', uri, PACKAGE='redland');
   
 }
 
@@ -630,7 +630,7 @@ class(`librdf_uri_to_string`) = c("SWIGFunction", class('librdf_uri_to_string'))
 {
   if (inherits(first_uri, "ExternalReference")) first_uri = slot(first_uri,"ref") 
   if (inherits(second_uri, "ExternalReference")) second_uri = slot(second_uri,"ref") 
-  ;.Call('R_swig_librdf_uri_equals', first_uri, second_uri, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_uri_equals', first_uri, second_uri, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -644,7 +644,7 @@ class(`librdf_uri_equals`) = c("SWIGFunction", class('librdf_uri_equals'))
 {
   if (inherits(first_uri, "ExternalReference")) first_uri = slot(first_uri,"ref") 
   if (inherits(second_uri, "ExternalReference")) second_uri = slot(second_uri,"ref") 
-  ;.Call('R_swig_librdf_uri_compare', first_uri, second_uri, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_uri_compare', first_uri, second_uri, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -657,7 +657,7 @@ class(`librdf_uri_compare`) = c("SWIGFunction", class('librdf_uri_compare'))
 `librdf_new_node` = function(world)
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
-  ;ans = .Call('R_swig_librdf_new_node', world, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node', world, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -674,7 +674,7 @@ class(`librdf_new_node`) = c("SWIGFunction", class('librdf_new_node'))
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   string = as(string, "character"); 
-  ;ans = .Call('R_swig_librdf_new_node_from_uri_string', world, string, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_uri_string', world, string, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -691,7 +691,7 @@ class(`librdf_new_node_from_uri_string`) = c("SWIGFunction", class('librdf_new_n
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
-  ;ans = .Call('R_swig_librdf_new_node_from_uri', world, uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_uri', world, uri, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -709,7 +709,7 @@ class(`librdf_new_node_from_uri`) = c("SWIGFunction", class('librdf_new_node_fro
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
   local_name = as(local_name, "character"); 
-  ;ans = .Call('R_swig_librdf_new_node_from_uri_local_name', world, uri, local_name, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_uri_local_name', world, uri, local_name, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -728,7 +728,7 @@ class(`librdf_new_node_from_uri_local_name`) = c("SWIGFunction", class('librdf_n
   uri_string = as(uri_string, "character"); 
   if (inherits(source_uri, "ExternalReference")) source_uri = slot(source_uri,"ref") 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;ans = .Call('R_swig_librdf_new_node_from_normalised_uri_string', world, uri_string, source_uri, base_uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_normalised_uri_string', world, uri_string, source_uri, base_uri, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -752,7 +752,7 @@ class(`librdf_new_node_from_normalised_uri_string`) = c("SWIGFunction", class('l
     warning("using only the first element of is_wf_xml");
   };
   
-  ;ans = .Call('R_swig_librdf_new_node_from_literal', world, string, inStrOrNull, is_wf_xml, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_literal', world, string, inStrOrNull, is_wf_xml, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -771,7 +771,7 @@ class(`librdf_new_node_from_literal`) = c("SWIGFunction", class('librdf_new_node
   string = as(string, "character"); 
   inStrOrNull = as(inStrOrNull, "character"); 
   if (inherits(inUriOrNull, "ExternalReference")) inUriOrNull = slot(inUriOrNull,"ref") 
-  ;ans = .Call('R_swig_librdf_new_node_from_typed_literal', world, string, inStrOrNull, inUriOrNull, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_typed_literal', world, string, inStrOrNull, inUriOrNull, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -787,7 +787,7 @@ class(`librdf_new_node_from_typed_literal`) = c("SWIGFunction", class('librdf_ne
 `librdf_new_node_from_node` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;ans = .Call('R_swig_librdf_new_node_from_node', node, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_node', node, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -804,7 +804,7 @@ class(`librdf_new_node_from_node`) = c("SWIGFunction", class('librdf_new_node_fr
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   inStrOrNull = as(inStrOrNull, "character"); 
-  ;ans = .Call('R_swig_librdf_new_node_from_blank_identifier', world, inStrOrNull, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_node_from_blank_identifier', world, inStrOrNull, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -820,7 +820,7 @@ class(`librdf_new_node_from_blank_identifier`) = c("SWIGFunction", class('librdf
 `librdf_free_node` = function(r)
 {
   if (inherits(r, "ExternalReference")) r = slot(r,"ref") 
-  ;.Call('R_swig_librdf_free_node', r, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_node', r, PACKAGE='redland');
   
 }
 
@@ -833,7 +833,7 @@ class(`librdf_free_node`) = c("SWIGFunction", class('librdf_free_node'))
 `librdf_node_get_uri` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;ans = .Call('R_swig_librdf_node_get_uri', node, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_node_get_uri', node, PACKAGE='redland');
   ans <- new("_p_librdf_uri_s", ref=ans) ;
   
   ans
@@ -849,7 +849,7 @@ class(`librdf_node_get_uri`) = c("SWIGFunction", class('librdf_node_get_uri'))
 `librdf_node_get_type` = function(node, .copy = FALSE)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_get_type', node, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_get_type', node, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -862,7 +862,7 @@ class(`librdf_node_get_type`) = c("SWIGFunction", class('librdf_node_get_type'))
 `librdf_node_get_literal_value` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_get_literal_value', node, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_get_literal_value', node, PACKAGE='redland');
   
 }
 
@@ -875,7 +875,7 @@ class(`librdf_node_get_literal_value`) = c("SWIGFunction", class('librdf_node_ge
 `librdf_node_get_literal_value_as_latin1` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_get_literal_value_as_latin1', node, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_get_literal_value_as_latin1', node, PACKAGE='redland');
   
 }
 
@@ -888,7 +888,7 @@ class(`librdf_node_get_literal_value_as_latin1`) = c("SWIGFunction", class('libr
 `librdf_node_get_literal_value_language` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_get_literal_value_language', node, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_get_literal_value_language', node, PACKAGE='redland');
   
 }
 
@@ -901,7 +901,7 @@ class(`librdf_node_get_literal_value_language`) = c("SWIGFunction", class('librd
 `librdf_node_get_literal_value_datatype_uri` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;ans = .Call('R_swig_librdf_node_get_literal_value_datatype_uri', node, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_node_get_literal_value_datatype_uri', node, PACKAGE='redland');
   ans <- new("_p_librdf_uri_s", ref=ans) ;
   
   ans
@@ -917,7 +917,7 @@ class(`librdf_node_get_literal_value_datatype_uri`) = c("SWIGFunction", class('l
 `librdf_node_get_literal_value_is_wf_xml` = function(node, .copy = FALSE)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_get_literal_value_is_wf_xml', node, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_get_literal_value_is_wf_xml', node, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -930,7 +930,7 @@ class(`librdf_node_get_literal_value_is_wf_xml`) = c("SWIGFunction", class('libr
 `librdf_node_get_li_ordinal` = function(node, .copy = FALSE)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_get_li_ordinal', node, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_get_li_ordinal', node, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -943,7 +943,7 @@ class(`librdf_node_get_li_ordinal`) = c("SWIGFunction", class('librdf_node_get_l
 `librdf_node_to_string` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_to_string', node, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_to_string', node, PACKAGE='redland');
   
 }
 
@@ -956,7 +956,7 @@ class(`librdf_node_to_string`) = c("SWIGFunction", class('librdf_node_to_string'
 `librdf_node_get_blank_identifier` = function(node)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_get_blank_identifier', node, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_get_blank_identifier', node, PACKAGE='redland');
   
 }
 
@@ -969,7 +969,7 @@ class(`librdf_node_get_blank_identifier`) = c("SWIGFunction", class('librdf_node
 `librdf_node_is_resource` = function(node, .copy = FALSE)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_is_resource', node, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_is_resource', node, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -982,7 +982,7 @@ class(`librdf_node_is_resource`) = c("SWIGFunction", class('librdf_node_is_resou
 `librdf_node_is_literal` = function(node, .copy = FALSE)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_is_literal', node, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_is_literal', node, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -995,7 +995,7 @@ class(`librdf_node_is_literal`) = c("SWIGFunction", class('librdf_node_is_litera
 `librdf_node_is_blank` = function(node, .copy = FALSE)
 {
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_is_blank', node, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_is_blank', node, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1009,7 +1009,7 @@ class(`librdf_node_is_blank`) = c("SWIGFunction", class('librdf_node_is_blank'))
 {
   if (inherits(first_node, "ExternalReference")) first_node = slot(first_node,"ref") 
   if (inherits(second_node, "ExternalReference")) second_node = slot(second_node,"ref") 
-  ;.Call('R_swig_librdf_node_equals', first_node, second_node, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_node_equals', first_node, second_node, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1022,7 +1022,7 @@ class(`librdf_node_equals`) = c("SWIGFunction", class('librdf_node_equals'))
 `librdf_new_statement` = function(world)
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
-  ;ans = .Call('R_swig_librdf_new_statement', world, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_statement', world, PACKAGE='redland');
   ans <- new("_p_librdf_statement_s", ref=ans) ;
   
   ans
@@ -1038,7 +1038,7 @@ class(`librdf_new_statement`) = c("SWIGFunction", class('librdf_new_statement'))
 `librdf_new_statement_from_statement` = function(statement)
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;ans = .Call('R_swig_librdf_new_statement_from_statement', statement, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_statement_from_statement', statement, PACKAGE='redland');
   ans <- new("_p_librdf_statement_s", ref=ans) ;
   
   ans
@@ -1057,7 +1057,7 @@ class(`librdf_new_statement_from_statement`) = c("SWIGFunction", class('librdf_n
   if (inherits(subject, "ExternalReference")) subject = slot(subject,"ref") 
   if (inherits(predicate, "ExternalReference")) predicate = slot(predicate,"ref") 
   if (inherits(object, "ExternalReference")) object = slot(object,"ref") 
-  ;ans = .Call('R_swig_librdf_new_statement_from_nodes', world, subject, predicate, object, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_statement_from_nodes', world, subject, predicate, object, PACKAGE='redland');
   ans <- new("_p_librdf_statement_s", ref=ans) ;
   
   ans
@@ -1073,7 +1073,7 @@ class(`librdf_new_statement_from_nodes`) = c("SWIGFunction", class('librdf_new_s
 `librdf_free_statement` = function(statement)
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_free_statement', statement, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_statement', statement, PACKAGE='redland');
   
 }
 
@@ -1086,7 +1086,7 @@ class(`librdf_free_statement`) = c("SWIGFunction", class('librdf_free_statement'
 `librdf_statement_get_subject` = function(statement)
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;ans = .Call('R_swig_librdf_statement_get_subject', statement, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_statement_get_subject', statement, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -1103,7 +1103,7 @@ class(`librdf_statement_get_subject`) = c("SWIGFunction", class('librdf_statemen
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
   if (inherits(subject, "ExternalReference")) subject = slot(subject,"ref") 
-  ;.Call('R_swig_librdf_statement_set_subject', statement, subject, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_statement_set_subject', statement, subject, PACKAGE='redland');
   
 }
 
@@ -1116,7 +1116,7 @@ class(`librdf_statement_set_subject`) = c("SWIGFunction", class('librdf_statemen
 `librdf_statement_get_predicate` = function(statement)
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;ans = .Call('R_swig_librdf_statement_get_predicate', statement, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_statement_get_predicate', statement, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -1133,7 +1133,7 @@ class(`librdf_statement_get_predicate`) = c("SWIGFunction", class('librdf_statem
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
   if (inherits(predicate, "ExternalReference")) predicate = slot(predicate,"ref") 
-  ;.Call('R_swig_librdf_statement_set_predicate', statement, predicate, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_statement_set_predicate', statement, predicate, PACKAGE='redland');
   
 }
 
@@ -1146,7 +1146,7 @@ class(`librdf_statement_set_predicate`) = c("SWIGFunction", class('librdf_statem
 `librdf_statement_get_object` = function(statement)
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;ans = .Call('R_swig_librdf_statement_get_object', statement, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_statement_get_object', statement, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -1163,7 +1163,7 @@ class(`librdf_statement_get_object`) = c("SWIGFunction", class('librdf_statement
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
   if (inherits(object, "ExternalReference")) object = slot(object,"ref") 
-  ;.Call('R_swig_librdf_statement_set_object', statement, object, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_statement_set_object', statement, object, PACKAGE='redland');
   
 }
 
@@ -1177,7 +1177,7 @@ class(`librdf_statement_set_object`) = c("SWIGFunction", class('librdf_statement
 {
   if (inherits(statement1, "ExternalReference")) statement1 = slot(statement1,"ref") 
   if (inherits(statement2, "ExternalReference")) statement2 = slot(statement2,"ref") 
-  ;.Call('R_swig_librdf_statement_equals', statement1, statement2, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_statement_equals', statement1, statement2, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1191,7 +1191,7 @@ class(`librdf_statement_equals`) = c("SWIGFunction", class('librdf_statement_equ
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
   if (inherits(partial_statement, "ExternalReference")) partial_statement = slot(partial_statement,"ref") 
-  ;.Call('R_swig_librdf_statement_match', statement, partial_statement, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_statement_match', statement, partial_statement, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1204,7 +1204,7 @@ class(`librdf_statement_match`) = c("SWIGFunction", class('librdf_statement_matc
 `librdf_statement_to_string` = function(statement)
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_statement_to_string', statement, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_statement_to_string', statement, PACKAGE='redland');
   
 }
 
@@ -1217,7 +1217,7 @@ class(`librdf_statement_to_string`) = c("SWIGFunction", class('librdf_statement_
 `librdf_statement_is_complete` = function(statement, .copy = FALSE)
 {
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_statement_is_complete', statement, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_statement_is_complete', statement, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1232,7 +1232,7 @@ class(`librdf_statement_is_complete`) = c("SWIGFunction", class('librdf_statemen
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   if (inherits(storage, "ExternalReference")) storage = slot(storage,"ref") 
   options_string = as(options_string, "character"); 
-  ;ans = .Call('R_swig_librdf_new_model', world, storage, options_string, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_model', world, storage, options_string, PACKAGE='redland');
   ans <- new("_p_librdf_model_s", ref=ans) ;
   
   ans
@@ -1250,7 +1250,7 @@ class(`librdf_new_model`) = c("SWIGFunction", class('librdf_new_model'))
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   if (inherits(storage, "ExternalReference")) storage = slot(storage,"ref") 
   if (inherits(options, "ExternalReference")) options = slot(options,"ref") 
-  ;ans = .Call('R_swig_librdf_new_model_with_options', world, storage, options, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_model_with_options', world, storage, options, PACKAGE='redland');
   ans <- new("_p_librdf_model_s", ref=ans) ;
   
   ans
@@ -1266,7 +1266,7 @@ class(`librdf_new_model_with_options`) = c("SWIGFunction", class('librdf_new_mod
 `librdf_new_model_from_model` = function(model)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;ans = .Call('R_swig_librdf_new_model_from_model', model, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_model_from_model', model, PACKAGE='redland');
   ans <- new("_p_librdf_model_s", ref=ans) ;
   
   ans
@@ -1282,7 +1282,7 @@ class(`librdf_new_model_from_model`) = c("SWIGFunction", class('librdf_new_model
 `librdf_free_model` = function(model)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_free_model', model, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_model', model, PACKAGE='redland');
   
 }
 
@@ -1295,7 +1295,7 @@ class(`librdf_free_model`) = c("SWIGFunction", class('librdf_free_model'))
 `librdf_model_size` = function(model, .copy = FALSE)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_model_size', model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_size', model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1311,7 +1311,7 @@ class(`librdf_model_size`) = c("SWIGFunction", class('librdf_model_size'))
   if (inherits(subject, "ExternalReference")) subject = slot(subject,"ref") 
   if (inherits(predicate, "ExternalReference")) predicate = slot(predicate,"ref") 
   if (inherits(object, "ExternalReference")) object = slot(object,"ref") 
-  ;.Call('R_swig_librdf_model_add', model, subject, predicate, object, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_add', model, subject, predicate, object, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1334,7 +1334,7 @@ class(`librdf_model_add`) = c("SWIGFunction", class('librdf_model_add'))
     warning("using only the first element of is_wf_xml");
   };
   
-  ;.Call('R_swig_librdf_model_add_string_literal_statement', model, subject, predicate, literal, inStrOrNull, is_wf_xml, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_add_string_literal_statement', model, subject, predicate, literal, inStrOrNull, is_wf_xml, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1352,7 +1352,7 @@ class(`librdf_model_add_string_literal_statement`) = c("SWIGFunction", class('li
   string = as(string, "character"); 
   inStrOrNull = as(inStrOrNull, "character"); 
   if (inherits(inUriOrNull, "ExternalReference")) inUriOrNull = slot(inUriOrNull,"ref") 
-  ;.Call('R_swig_librdf_model_add_typed_literal_statement', model, subject, predicate, string, inStrOrNull, inUriOrNull, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_add_typed_literal_statement', model, subject, predicate, string, inStrOrNull, inUriOrNull, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1366,7 +1366,7 @@ class(`librdf_model_add_typed_literal_statement`) = c("SWIGFunction", class('lib
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_model_add_statement', model, statement, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_add_statement', model, statement, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1380,7 +1380,7 @@ class(`librdf_model_add_statement`) = c("SWIGFunction", class('librdf_model_add_
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(statement_stream, "ExternalReference")) statement_stream = slot(statement_stream,"ref") 
-  ;.Call('R_swig_librdf_model_add_statements', model, statement_stream, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_add_statements', model, statement_stream, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1394,7 +1394,7 @@ class(`librdf_model_add_statements`) = c("SWIGFunction", class('librdf_model_add
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_model_remove_statement', model, statement, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_remove_statement', model, statement, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1408,7 +1408,7 @@ class(`librdf_model_remove_statement`) = c("SWIGFunction", class('librdf_model_r
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_model_contains_statement', model, statement, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_contains_statement', model, statement, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1421,7 +1421,7 @@ class(`librdf_model_contains_statement`) = c("SWIGFunction", class('librdf_model
 `librdf_model_as_stream` = function(model)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;ans = .Call('R_swig_librdf_model_as_stream', model, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_as_stream', model, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -1438,7 +1438,7 @@ class(`librdf_model_as_stream`) = c("SWIGFunction", class('librdf_model_as_strea
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;ans = .Call('R_swig_librdf_model_find_statements', model, statement, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_find_statements', model, statement, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -1456,7 +1456,7 @@ class(`librdf_model_find_statements`) = c("SWIGFunction", class('librdf_model_fi
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
   if (inherits(inNodeOrNull, "ExternalReference")) inNodeOrNull = slot(inNodeOrNull,"ref") 
-  ;ans = .Call('R_swig_librdf_model_find_statements_in_context', model, statement, inNodeOrNull, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_find_statements_in_context', model, statement, inNodeOrNull, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -1474,7 +1474,7 @@ class(`librdf_model_find_statements_in_context`) = c("SWIGFunction", class('libr
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(arc, "ExternalReference")) arc = slot(arc,"ref") 
   if (inherits(target, "ExternalReference")) target = slot(target,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_sources', model, arc, target, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_sources', model, arc, target, PACKAGE='redland');
   ans <- new("_p_librdf_iterator_s", ref=ans) ;
   
   ans
@@ -1492,7 +1492,7 @@ class(`librdf_model_get_sources`) = c("SWIGFunction", class('librdf_model_get_so
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(source, "ExternalReference")) source = slot(source,"ref") 
   if (inherits(target, "ExternalReference")) target = slot(target,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_arcs', model, source, target, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_arcs', model, source, target, PACKAGE='redland');
   ans <- new("_p_librdf_iterator_s", ref=ans) ;
   
   ans
@@ -1510,7 +1510,7 @@ class(`librdf_model_get_arcs`) = c("SWIGFunction", class('librdf_model_get_arcs'
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(source, "ExternalReference")) source = slot(source,"ref") 
   if (inherits(arc, "ExternalReference")) arc = slot(arc,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_targets', model, source, arc, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_targets', model, source, arc, PACKAGE='redland');
   ans <- new("_p_librdf_iterator_s", ref=ans) ;
   
   ans
@@ -1528,7 +1528,7 @@ class(`librdf_model_get_targets`) = c("SWIGFunction", class('librdf_model_get_ta
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(arc, "ExternalReference")) arc = slot(arc,"ref") 
   if (inherits(target, "ExternalReference")) target = slot(target,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_source', model, arc, target, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_source', model, arc, target, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -1546,7 +1546,7 @@ class(`librdf_model_get_source`) = c("SWIGFunction", class('librdf_model_get_sou
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(source, "ExternalReference")) source = slot(source,"ref") 
   if (inherits(target, "ExternalReference")) target = slot(target,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_arc', model, source, target, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_arc', model, source, target, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -1563,7 +1563,7 @@ class(`librdf_model_get_arc`) = c("SWIGFunction", class('librdf_model_get_arc'))
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_arcs_out', model, node, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_arcs_out', model, node, PACKAGE='redland');
   ans <- new("_p_librdf_iterator_s", ref=ans) ;
   
   ans
@@ -1580,7 +1580,7 @@ class(`librdf_model_get_arcs_out`) = c("SWIGFunction", class('librdf_model_get_a
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_arcs_in', model, node, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_arcs_in', model, node, PACKAGE='redland');
   ans <- new("_p_librdf_iterator_s", ref=ans) ;
   
   ans
@@ -1598,7 +1598,7 @@ class(`librdf_model_get_arcs_in`) = c("SWIGFunction", class('librdf_model_get_ar
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
   if (inherits(property, "ExternalReference")) property = slot(property,"ref") 
-  ;.Call('R_swig_librdf_model_has_arc_in', model, node, property, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_has_arc_in', model, node, property, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1613,7 +1613,7 @@ class(`librdf_model_has_arc_in`) = c("SWIGFunction", class('librdf_model_has_arc
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
   if (inherits(property, "ExternalReference")) property = slot(property,"ref") 
-  ;.Call('R_swig_librdf_model_has_arc_out', model, node, property, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_has_arc_out', model, node, property, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1628,7 +1628,7 @@ class(`librdf_model_has_arc_out`) = c("SWIGFunction", class('librdf_model_has_ar
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(source, "ExternalReference")) source = slot(source,"ref") 
   if (inherits(arc, "ExternalReference")) arc = slot(arc,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_target', model, source, arc, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_target', model, source, arc, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -1646,7 +1646,7 @@ class(`librdf_model_get_target`) = c("SWIGFunction", class('librdf_model_get_tar
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(context, "ExternalReference")) context = slot(context,"ref") 
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_model_context_add_statement', model, context, statement, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_context_add_statement', model, context, statement, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1661,7 +1661,7 @@ class(`librdf_model_context_add_statement`) = c("SWIGFunction", class('librdf_mo
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(context, "ExternalReference")) context = slot(context,"ref") 
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;.Call('R_swig_librdf_model_context_add_statements', model, context, stream, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_context_add_statements', model, context, stream, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1676,7 +1676,7 @@ class(`librdf_model_context_add_statements`) = c("SWIGFunction", class('librdf_m
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(context, "ExternalReference")) context = slot(context,"ref") 
   if (inherits(statement, "ExternalReference")) statement = slot(statement,"ref") 
-  ;.Call('R_swig_librdf_model_context_remove_statement', model, context, statement, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_context_remove_statement', model, context, statement, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1690,7 +1690,7 @@ class(`librdf_model_context_remove_statement`) = c("SWIGFunction", class('librdf
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(context, "ExternalReference")) context = slot(context,"ref") 
-  ;.Call('R_swig_librdf_model_context_remove_statements', model, context, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_context_remove_statements', model, context, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1704,7 +1704,7 @@ class(`librdf_model_context_remove_statements`) = c("SWIGFunction", class('librd
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(context, "ExternalReference")) context = slot(context,"ref") 
-  ;ans = .Call('R_swig_librdf_model_context_as_stream', model, context, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_context_as_stream', model, context, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -1720,7 +1720,7 @@ class(`librdf_model_context_as_stream`) = c("SWIGFunction", class('librdf_model_
 `librdf_model_sync` = function(model)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_model_sync', model, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_sync', model, PACKAGE='redland');
   
 }
 
@@ -1733,7 +1733,7 @@ class(`librdf_model_sync`) = c("SWIGFunction", class('librdf_model_sync'))
 `librdf_model_get_contexts` = function(model)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_contexts', model, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_contexts', model, PACKAGE='redland');
   ans <- new("_p_librdf_iterator_s", ref=ans) ;
   
   ans
@@ -1750,7 +1750,7 @@ class(`librdf_model_get_contexts`) = c("SWIGFunction", class('librdf_model_get_c
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(context, "ExternalReference")) context = slot(context,"ref") 
-  ;.Call('R_swig_librdf_model_contains_context', model, context, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_contains_context', model, context, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1764,7 +1764,7 @@ class(`librdf_model_contains_context`) = c("SWIGFunction", class('librdf_model_c
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
-  ;ans = .Call('R_swig_librdf_model_get_feature', model, feature, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_get_feature', model, feature, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -1782,7 +1782,7 @@ class(`librdf_model_get_feature`) = c("SWIGFunction", class('librdf_model_get_fe
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
   if (inherits(value, "ExternalReference")) value = slot(value,"ref") 
-  ;.Call('R_swig_librdf_model_set_feature', model, feature, value, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_set_feature', model, feature, value, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1799,7 +1799,7 @@ class(`librdf_model_set_feature`) = c("SWIGFunction", class('librdf_model_set_fe
   name = as(name, "character"); 
   mime_type = as(mime_type, "character"); 
   if (inherits(type_uri, "ExternalReference")) type_uri = slot(type_uri,"ref") 
-  ;.Call('R_swig_librdf_model_load', model, uri, name, mime_type, type_uri, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_load', model, uri, name, mime_type, type_uri, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1813,7 +1813,7 @@ class(`librdf_model_load`) = c("SWIGFunction", class('librdf_model_load'))
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
   if (inherits(query, "ExternalReference")) query = slot(query,"ref") 
-  ;ans = .Call('R_swig_librdf_model_query_execute', model, query, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_model_query_execute', model, query, PACKAGE='redland');
   ans <- new("_p_librdf_query_results", ref=ans) ;
   
   ans
@@ -1833,7 +1833,7 @@ class(`librdf_model_query_execute`) = c("SWIGFunction", class('librdf_model_quer
   name = as(name, "character"); 
   mime_type = as(mime_type, "character"); 
   if (inherits(inUriOrNull, "ExternalReference")) inUriOrNull = slot(inUriOrNull,"ref") 
-  ;.Call('R_swig_librdf_model_to_string', model, uri, name, mime_type, inUriOrNull, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_to_string', model, uri, name, mime_type, inUriOrNull, PACKAGE='redland');
   
 }
 
@@ -1846,7 +1846,7 @@ class(`librdf_model_to_string`) = c("SWIGFunction", class('librdf_model_to_strin
 `librdf_model_transaction_start` = function(model, .copy = FALSE)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_model_transaction_start', model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_transaction_start', model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1859,7 +1859,7 @@ class(`librdf_model_transaction_start`) = c("SWIGFunction", class('librdf_model_
 `librdf_model_transaction_commit` = function(model, .copy = FALSE)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_model_transaction_commit', model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_transaction_commit', model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1872,7 +1872,7 @@ class(`librdf_model_transaction_commit`) = c("SWIGFunction", class('librdf_model
 `librdf_model_transaction_rollback` = function(model, .copy = FALSE)
 {
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_model_transaction_rollback', model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_model_transaction_rollback', model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1888,7 +1888,7 @@ class(`librdf_model_transaction_rollback`) = c("SWIGFunction", class('librdf_mod
   storage_name = as(storage_name, "character"); 
   name = as(name, "character"); 
   options_string = as(options_string, "character"); 
-  ;ans = .Call('R_swig_librdf_new_storage', world, storage_name, name, options_string, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_storage', world, storage_name, name, options_string, PACKAGE='redland');
   ans <- new("_p_librdf_storage_s", ref=ans) ;
   
   ans
@@ -1904,7 +1904,7 @@ class(`librdf_new_storage`) = c("SWIGFunction", class('librdf_new_storage'))
 `librdf_new_storage_from_storage` = function(old_storage)
 {
   if (inherits(old_storage, "ExternalReference")) old_storage = slot(old_storage,"ref") 
-  ;ans = .Call('R_swig_librdf_new_storage_from_storage', old_storage, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_storage_from_storage', old_storage, PACKAGE='redland');
   ans <- new("_p_librdf_storage_s", ref=ans) ;
   
   ans
@@ -1920,7 +1920,7 @@ class(`librdf_new_storage_from_storage`) = c("SWIGFunction", class('librdf_new_s
 `librdf_free_storage` = function(storage)
 {
   if (inherits(storage, "ExternalReference")) storage = slot(storage,"ref") 
-  ;.Call('R_swig_librdf_free_storage', storage, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_storage', storage, PACKAGE='redland');
   
 }
 
@@ -1934,7 +1934,7 @@ class(`librdf_free_storage`) = c("SWIGFunction", class('librdf_free_storage'))
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   name = as(name, "character"); 
-  ;.Call('R_swig_librdf_parser_check_name', world, name, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_check_name', world, name, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -1950,7 +1950,7 @@ class(`librdf_parser_check_name`) = c("SWIGFunction", class('librdf_parser_check
   name = as(name, "character"); 
   mime_type = as(mime_type, "character"); 
   if (inherits(type_uri, "ExternalReference")) type_uri = slot(type_uri,"ref") 
-  ;ans = .Call('R_swig_librdf_new_parser', world, name, mime_type, type_uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_parser', world, name, mime_type, type_uri, PACKAGE='redland');
   ans <- new("_p_librdf_parser_s", ref=ans) ;
   
   ans
@@ -1966,7 +1966,7 @@ class(`librdf_new_parser`) = c("SWIGFunction", class('librdf_new_parser'))
 `librdf_free_parser` = function(parser)
 {
   if (inherits(parser, "ExternalReference")) parser = slot(parser,"ref") 
-  ;.Call('R_swig_librdf_free_parser', parser, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_parser', parser, PACKAGE='redland');
   
 }
 
@@ -1981,7 +1981,7 @@ class(`librdf_free_parser`) = c("SWIGFunction", class('librdf_free_parser'))
   if (inherits(parser, "ExternalReference")) parser = slot(parser,"ref") 
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
   if (inherits(inUriorNull, "ExternalReference")) inUriorNull = slot(inUriorNull,"ref") 
-  ;ans = .Call('R_swig_librdf_parser_parse_as_stream', parser, uri, inUriorNull, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_parser_parse_as_stream', parser, uri, inUriorNull, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -2000,7 +2000,7 @@ class(`librdf_parser_parse_as_stream`) = c("SWIGFunction", class('librdf_parser_
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
   if (inherits(inUriOrNull, "ExternalReference")) inUriOrNull = slot(inUriOrNull,"ref") 
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_parser_parse_into_model', parser, uri, inUriOrNull, model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_parse_into_model', parser, uri, inUriOrNull, model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2015,7 +2015,7 @@ class(`librdf_parser_parse_into_model`) = c("SWIGFunction", class('librdf_parser
   if (inherits(parser, "ExternalReference")) parser = slot(parser,"ref") 
   string = as(string, "character"); 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;ans = .Call('R_swig_librdf_parser_parse_string_as_stream', parser, string, base_uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_parser_parse_string_as_stream', parser, string, base_uri, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -2034,7 +2034,7 @@ class(`librdf_parser_parse_string_as_stream`) = c("SWIGFunction", class('librdf_
   string = as(string, "character"); 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_parser_parse_string_into_model', parser, string, base_uri, model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_parse_string_into_model', parser, string, base_uri, model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2055,7 +2055,7 @@ class(`librdf_parser_parse_string_into_model`) = c("SWIGFunction", class('librdf
   };
   
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;ans = .Call('R_swig_librdf_parser_parse_counted_string_as_stream', parser, string, length, base_uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_parser_parse_counted_string_as_stream', parser, string, length, base_uri, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -2080,7 +2080,7 @@ class(`librdf_parser_parse_counted_string_as_stream`) = c("SWIGFunction", class(
   
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_parser_parse_counted_string_into_model', parser, string, length, base_uri, model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_parse_counted_string_into_model', parser, string, length, base_uri, model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2094,7 +2094,7 @@ class(`librdf_parser_parse_counted_string_into_model`) = c("SWIGFunction", class
 {
   if (inherits(parser, "ExternalReference")) parser = slot(parser,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
-  ;ans = .Call('R_swig_librdf_parser_get_feature', parser, feature, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_parser_get_feature', parser, feature, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -2112,7 +2112,7 @@ class(`librdf_parser_get_feature`) = c("SWIGFunction", class('librdf_parser_get_
   if (inherits(parser, "ExternalReference")) parser = slot(parser,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
   if (inherits(value, "ExternalReference")) value = slot(value,"ref") 
-  ;.Call('R_swig_librdf_parser_set_feature', parser, feature, value, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_set_feature', parser, feature, value, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2127,7 +2127,7 @@ class(`librdf_parser_set_feature`) = c("SWIGFunction", class('librdf_parser_set_
   mime_type = as(mime_type, "character"); 
   buffer = as(buffer, "character"); 
   identifier = as(identifier, "character"); 
-  ;.Call('R_swig_librdf_parser_guess_name', mime_type, buffer, identifier, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_guess_name', mime_type, buffer, identifier, PACKAGE='redland');
   
 }
 
@@ -2143,7 +2143,7 @@ class(`librdf_parser_guess_name`) = c("SWIGFunction", class('librdf_parser_guess
   mime_type = as(mime_type, "character"); 
   buffer = as(buffer, "character"); 
   identifier = as(identifier, "character"); 
-  ;.Call('R_swig_librdf_parser_guess_name2', world, mime_type, buffer, identifier, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_guess_name2', world, mime_type, buffer, identifier, PACKAGE='redland');
   
 }
 
@@ -2162,7 +2162,7 @@ class(`librdf_parser_guess_name2`) = c("SWIGFunction", class('librdf_parser_gues
     warning("using only the first element of offset");
   };
   
-  ;.Call('R_swig_librdf_parser_get_namespaces_seen_prefix', parser, offset, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_get_namespaces_seen_prefix', parser, offset, PACKAGE='redland');
   
 }
 
@@ -2181,7 +2181,7 @@ class(`librdf_parser_get_namespaces_seen_prefix`) = c("SWIGFunction", class('lib
     warning("using only the first element of offset");
   };
   
-  ;ans = .Call('R_swig_librdf_parser_get_namespaces_seen_uri', parser, offset, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_parser_get_namespaces_seen_uri', parser, offset, PACKAGE='redland');
   ans <- new("_p_librdf_uri_s", ref=ans) ;
   
   ans
@@ -2197,7 +2197,7 @@ class(`librdf_parser_get_namespaces_seen_uri`) = c("SWIGFunction", class('librdf
 `librdf_parser_get_namespaces_seen_count` = function(parser, .copy = FALSE)
 {
   if (inherits(parser, "ExternalReference")) parser = slot(parser,"ref") 
-  ;.Call('R_swig_librdf_parser_get_namespaces_seen_count', parser, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_parser_get_namespaces_seen_count', parser, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2214,7 +2214,7 @@ class(`librdf_parser_get_namespaces_seen_count`) = c("SWIGFunction", class('libr
   if (inherits(uri, "ExternalReference")) uri = slot(uri,"ref") 
   query_string = as(query_string, "character"); 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;ans = .Call('R_swig_librdf_new_query', world, name, uri, query_string, base_uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_query', world, name, uri, query_string, base_uri, PACKAGE='redland');
   ans <- new("_p_librdf_query", ref=ans) ;
   
   ans
@@ -2230,7 +2230,7 @@ class(`librdf_new_query`) = c("SWIGFunction", class('librdf_new_query'))
 `librdf_new_query_from_query` = function(old_query)
 {
   if (inherits(old_query, "ExternalReference")) old_query = slot(old_query,"ref") 
-  ;ans = .Call('R_swig_librdf_new_query_from_query', old_query, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_query_from_query', old_query, PACKAGE='redland');
   ans <- new("_p_librdf_query", ref=ans) ;
   
   ans
@@ -2246,7 +2246,7 @@ class(`librdf_new_query_from_query`) = c("SWIGFunction", class('librdf_new_query
 `librdf_free_query` = function(query)
 {
   if (inherits(query, "ExternalReference")) query = slot(query,"ref") 
-  ;.Call('R_swig_librdf_free_query', query, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_query', query, PACKAGE='redland');
   
 }
 
@@ -2260,7 +2260,7 @@ class(`librdf_free_query`) = c("SWIGFunction", class('librdf_free_query'))
 {
   if (inherits(query, "ExternalReference")) query = slot(query,"ref") 
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;ans = .Call('R_swig_librdf_query_execute', query, model, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_query_execute', query, model, PACKAGE='redland');
   ans <- new("_p_librdf_query_results", ref=ans) ;
   
   ans
@@ -2276,7 +2276,7 @@ class(`librdf_query_execute`) = c("SWIGFunction", class('librdf_query_execute'))
 `librdf_query_get_limit` = function(query, .copy = FALSE)
 {
   if (inherits(query, "ExternalReference")) query = slot(query,"ref") 
-  ;.Call('R_swig_librdf_query_get_limit', query, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_get_limit', query, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2295,7 +2295,7 @@ class(`librdf_query_get_limit`) = c("SWIGFunction", class('librdf_query_get_limi
     warning("using only the first element of limit");
   };
   
-  ;.Call('R_swig_librdf_query_set_limit', query, limit, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_set_limit', query, limit, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2308,7 +2308,7 @@ class(`librdf_query_set_limit`) = c("SWIGFunction", class('librdf_query_set_limi
 `librdf_query_get_offset` = function(query, .copy = FALSE)
 {
   if (inherits(query, "ExternalReference")) query = slot(query,"ref") 
-  ;.Call('R_swig_librdf_query_get_offset', query, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_get_offset', query, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2327,7 +2327,7 @@ class(`librdf_query_get_offset`) = c("SWIGFunction", class('librdf_query_get_off
     warning("using only the first element of offset");
   };
   
-  ;.Call('R_swig_librdf_query_set_offset', query, offset, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_set_offset', query, offset, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2340,7 +2340,7 @@ class(`librdf_query_set_offset`) = c("SWIGFunction", class('librdf_query_set_off
 `librdf_query_results_as_stream` = function(query_results)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;ans = .Call('R_swig_librdf_query_results_as_stream', query_results, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_query_results_as_stream', query_results, PACKAGE='redland');
   ans <- new("_p_librdf_stream_s", ref=ans) ;
   
   ans
@@ -2356,7 +2356,7 @@ class(`librdf_query_results_as_stream`) = c("SWIGFunction", class('librdf_query_
 `librdf_query_results_get_count` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_get_count', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_get_count', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2369,7 +2369,7 @@ class(`librdf_query_results_get_count`) = c("SWIGFunction", class('librdf_query_
 `librdf_query_results_next` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_next', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_next', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2382,7 +2382,7 @@ class(`librdf_query_results_next`) = c("SWIGFunction", class('librdf_query_resul
 `librdf_query_results_finished` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_finished', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_finished', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2401,7 +2401,7 @@ class(`librdf_query_results_finished`) = c("SWIGFunction", class('librdf_query_r
     warning("using only the first element of offset");
   };
   
-  ;ans = .Call('R_swig_librdf_query_results_get_binding_value', query_results, offset, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_query_results_get_binding_value', query_results, offset, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -2423,7 +2423,7 @@ class(`librdf_query_results_get_binding_value`) = c("SWIGFunction", class('librd
     warning("using only the first element of offset");
   };
   
-  ;.Call('R_swig_librdf_query_results_get_binding_name', query_results, offset, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_get_binding_name', query_results, offset, PACKAGE='redland');
   
 }
 
@@ -2437,7 +2437,7 @@ class(`librdf_query_results_get_binding_name`) = c("SWIGFunction", class('librdf
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
   name = as(name, "character"); 
-  ;ans = .Call('R_swig_librdf_query_results_get_binding_value_by_name', query_results, name, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_query_results_get_binding_value_by_name', query_results, name, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -2453,7 +2453,7 @@ class(`librdf_query_results_get_binding_value_by_name`) = c("SWIGFunction", clas
 `librdf_query_results_get_bindings_count` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_get_bindings_count', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_get_bindings_count', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2469,7 +2469,7 @@ class(`librdf_query_results_get_bindings_count`) = c("SWIGFunction", class('libr
   name = as(name, "character"); 
   if (inherits(format_uri, "ExternalReference")) format_uri = slot(format_uri,"ref") 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;.Call('R_swig_librdf_query_results_to_file', query_results, name, format_uri, base_uri, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_to_file', query_results, name, format_uri, base_uri, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2486,7 +2486,7 @@ class(`librdf_query_results_to_file`) = c("SWIGFunction", class('librdf_query_re
   mime_type = as(mime_type, "character"); 
   if (inherits(format_uri, "ExternalReference")) format_uri = slot(format_uri,"ref") 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;.Call('R_swig_librdf_query_results_to_file2', query_results, name, mime_type, format_uri, base_uri, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_to_file2', query_results, name, mime_type, format_uri, base_uri, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2501,7 +2501,7 @@ class(`librdf_query_results_to_file2`) = c("SWIGFunction", class('librdf_query_r
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
   if (inherits(format_uri, "ExternalReference")) format_uri = slot(format_uri,"ref") 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;.Call('R_swig_librdf_query_results_to_string', query_results, format_uri, base_uri, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_to_string', query_results, format_uri, base_uri, PACKAGE='redland');
   
 }
 
@@ -2518,7 +2518,7 @@ class(`librdf_query_results_to_string`) = c("SWIGFunction", class('librdf_query_
   mime_type = as(mime_type, "character"); 
   if (inherits(format_uri, "ExternalReference")) format_uri = slot(format_uri,"ref") 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
-  ;.Call('R_swig_librdf_query_results_to_string2', query_results, name, mime_type, format_uri, base_uri, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_to_string2', query_results, name, mime_type, format_uri, base_uri, PACKAGE='redland');
   
 }
 
@@ -2531,7 +2531,7 @@ class(`librdf_query_results_to_string2`) = c("SWIGFunction", class('librdf_query
 `librdf_free_query_results` = function(query_results)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_free_query_results', query_results, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_query_results', query_results, PACKAGE='redland');
   
 }
 
@@ -2544,7 +2544,7 @@ class(`librdf_free_query_results`) = c("SWIGFunction", class('librdf_free_query_
 `librdf_query_results_is_bindings` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_is_bindings', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_is_bindings', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2557,7 +2557,7 @@ class(`librdf_query_results_is_bindings`) = c("SWIGFunction", class('librdf_quer
 `librdf_query_results_is_boolean` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_is_boolean', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_is_boolean', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2570,7 +2570,7 @@ class(`librdf_query_results_is_boolean`) = c("SWIGFunction", class('librdf_query
 `librdf_query_results_is_graph` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_is_graph', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_is_graph', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2583,7 +2583,7 @@ class(`librdf_query_results_is_graph`) = c("SWIGFunction", class('librdf_query_r
 `librdf_query_results_is_syntax` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_is_syntax', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_is_syntax', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2596,7 +2596,7 @@ class(`librdf_query_results_is_syntax`) = c("SWIGFunction", class('librdf_query_
 `librdf_query_results_get_boolean` = function(query_results, .copy = FALSE)
 {
   if (inherits(query_results, "ExternalReference")) query_results = slot(query_results,"ref") 
-  ;.Call('R_swig_librdf_query_results_get_boolean', query_results, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_query_results_get_boolean', query_results, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2610,7 +2610,7 @@ class(`librdf_query_results_get_boolean`) = c("SWIGFunction", class('librdf_quer
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
   name = as(name, "character"); 
-  ;.Call('R_swig_librdf_serializer_check_name', world, name, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_serializer_check_name', world, name, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2626,7 +2626,7 @@ class(`librdf_serializer_check_name`) = c("SWIGFunction", class('librdf_serializ
   name = as(name, "character"); 
   mime_type = as(mime_type, "character"); 
   if (inherits(type_uri, "ExternalReference")) type_uri = slot(type_uri,"ref") 
-  ;ans = .Call('R_swig_librdf_new_serializer', world, name, mime_type, type_uri, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_new_serializer', world, name, mime_type, type_uri, PACKAGE='redland');
   ans <- new("_p_librdf_serializer_s", ref=ans) ;
   
   ans
@@ -2642,7 +2642,7 @@ class(`librdf_new_serializer`) = c("SWIGFunction", class('librdf_new_serializer'
 `librdf_free_serializer` = function(serializer)
 {
   if (inherits(serializer, "ExternalReference")) serializer = slot(serializer,"ref") 
-  ;.Call('R_swig_librdf_free_serializer', serializer, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_serializer', serializer, PACKAGE='redland');
   
 }
 
@@ -2658,7 +2658,7 @@ class(`librdf_free_serializer`) = c("SWIGFunction", class('librdf_free_serialize
   name = as(name, "character"); 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;.Call('R_swig_librdf_serializer_serialize_stream_to_file', serializer, name, base_uri, stream, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_serializer_serialize_stream_to_file', serializer, name, base_uri, stream, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2674,7 +2674,7 @@ class(`librdf_serializer_serialize_stream_to_file`) = c("SWIGFunction", class('l
   name = as(name, "character"); 
   if (inherits(inUriOrNull, "ExternalReference")) inUriOrNull = slot(inUriOrNull,"ref") 
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_serializer_serialize_model_to_file', serializer, name, inUriOrNull, model, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_serializer_serialize_model_to_file', serializer, name, inUriOrNull, model, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2689,7 +2689,7 @@ class(`librdf_serializer_serialize_model_to_file`) = c("SWIGFunction", class('li
   if (inherits(serializer, "ExternalReference")) serializer = slot(serializer,"ref") 
   if (inherits(base_uri, "ExternalReference")) base_uri = slot(base_uri,"ref") 
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;.Call('R_swig_librdf_serializer_serialize_stream_to_string', serializer, base_uri, stream, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_serializer_serialize_stream_to_string', serializer, base_uri, stream, PACKAGE='redland');
   
 }
 
@@ -2704,7 +2704,7 @@ class(`librdf_serializer_serialize_stream_to_string`) = c("SWIGFunction", class(
   if (inherits(serializer, "ExternalReference")) serializer = slot(serializer,"ref") 
   if (inherits(inUriOrNull, "ExternalReference")) inUriOrNull = slot(inUriOrNull,"ref") 
   if (inherits(model, "ExternalReference")) model = slot(model,"ref") 
-  ;.Call('R_swig_librdf_serializer_serialize_model_to_string', serializer, inUriOrNull, model, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_serializer_serialize_model_to_string', serializer, inUriOrNull, model, PACKAGE='redland');
   
 }
 
@@ -2718,7 +2718,7 @@ class(`librdf_serializer_serialize_model_to_string`) = c("SWIGFunction", class('
 {
   if (inherits(serializer, "ExternalReference")) serializer = slot(serializer,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
-  ;ans = .Call('R_swig_librdf_serializer_get_feature', serializer, feature, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_serializer_get_feature', serializer, feature, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -2736,7 +2736,7 @@ class(`librdf_serializer_get_feature`) = c("SWIGFunction", class('librdf_seriali
   if (inherits(serializer, "ExternalReference")) serializer = slot(serializer,"ref") 
   if (inherits(feature, "ExternalReference")) feature = slot(feature,"ref") 
   if (inherits(value, "ExternalReference")) value = slot(value,"ref") 
-  ;.Call('R_swig_librdf_serializer_set_feature', serializer, feature, value, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_serializer_set_feature', serializer, feature, value, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2751,7 +2751,7 @@ class(`librdf_serializer_set_feature`) = c("SWIGFunction", class('librdf_seriali
   if (inherits(serializer, "ExternalReference")) serializer = slot(serializer,"ref") 
   if (inherits(nspace, "ExternalReference")) nspace = slot(nspace,"ref") 
   prefix = as(prefix, "character"); 
-  ;.Call('R_swig_librdf_serializer_set_namespace', serializer, nspace, prefix, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_serializer_set_namespace', serializer, nspace, prefix, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2764,7 +2764,7 @@ class(`librdf_serializer_set_namespace`) = c("SWIGFunction", class('librdf_seria
 `librdf_free_stream` = function(stream)
 {
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;.Call('R_swig_librdf_free_stream', stream, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_free_stream', stream, PACKAGE='redland');
   
 }
 
@@ -2777,7 +2777,7 @@ class(`librdf_free_stream`) = c("SWIGFunction", class('librdf_free_stream'))
 `librdf_stream_end` = function(stream, .copy = FALSE)
 {
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;.Call('R_swig_librdf_stream_end', stream, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_stream_end', stream, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2790,7 +2790,7 @@ class(`librdf_stream_end`) = c("SWIGFunction", class('librdf_stream_end'))
 `librdf_stream_next` = function(stream, .copy = FALSE)
 {
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;.Call('R_swig_librdf_stream_next', stream, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_stream_next', stream, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2803,7 +2803,7 @@ class(`librdf_stream_next`) = c("SWIGFunction", class('librdf_stream_next'))
 `librdf_stream_get_object` = function(stream)
 {
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;ans = .Call('R_swig_librdf_stream_get_object', stream, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_stream_get_object', stream, PACKAGE='redland');
   ans <- new("_p_librdf_statement_s", ref=ans) ;
   
   ans
@@ -2819,7 +2819,7 @@ class(`librdf_stream_get_object`) = c("SWIGFunction", class('librdf_stream_get_o
 `librdf_stream_get_context` = function(stream)
 {
   if (inherits(stream, "ExternalReference")) stream = slot(stream,"ref") 
-  ;ans = .Call('R_swig_librdf_stream_get_context', stream, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_stream_get_context', stream, PACKAGE='redland');
   ans <- new("_p_librdf_node_s", ref=ans) ;
   
   ans
@@ -2835,7 +2835,7 @@ class(`librdf_stream_get_context`) = c("SWIGFunction", class('librdf_stream_get_
 `librdf_log_message_code` = function(message, .copy = FALSE)
 {
   if (inherits(message, "ExternalReference")) message = slot(message,"ref") 
-  ;.Call('R_swig_librdf_log_message_code', message, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_log_message_code', message, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2848,7 +2848,7 @@ class(`librdf_log_message_code`) = c("SWIGFunction", class('librdf_log_message_c
 `librdf_log_message_level` = function(message, .copy = FALSE)
 {
   if (inherits(message, "ExternalReference")) message = slot(message,"ref") 
-  ;.Call('R_swig_librdf_log_message_level', message, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_log_message_level', message, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2861,7 +2861,7 @@ class(`librdf_log_message_level`) = c("SWIGFunction", class('librdf_log_message_
 `librdf_log_message_facility` = function(message, .copy = FALSE)
 {
   if (inherits(message, "ExternalReference")) message = slot(message,"ref") 
-  ;.Call('R_swig_librdf_log_message_facility', message, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_log_message_facility', message, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2874,7 +2874,7 @@ class(`librdf_log_message_facility`) = c("SWIGFunction", class('librdf_log_messa
 `librdf_log_message_message` = function(message)
 {
   if (inherits(message, "ExternalReference")) message = slot(message,"ref") 
-  ;.Call('R_swig_librdf_log_message_message', message, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_log_message_message', message, PACKAGE='redland');
   
 }
 
@@ -2887,7 +2887,7 @@ class(`librdf_log_message_message`) = c("SWIGFunction", class('librdf_log_messag
 `librdf_log_message_locator` = function(message)
 {
   if (inherits(message, "ExternalReference")) message = slot(message,"ref") 
-  ;ans = .Call('R_swig_librdf_log_message_locator', message, PACKAGE='Redland');
+  ;ans = .Call('R_swig_librdf_log_message_locator', message, PACKAGE='redland');
   ans <- new("_p_raptor_locator", ref=ans) ;
   
   ans
@@ -2903,7 +2903,7 @@ class(`librdf_log_message_locator`) = c("SWIGFunction", class('librdf_log_messag
 `raptor_locator_line` = function(locator, .copy = FALSE)
 {
   if (inherits(locator, "ExternalReference")) locator = slot(locator,"ref") 
-  ;.Call('R_swig_raptor_locator_line', locator, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_locator_line', locator, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2916,7 +2916,7 @@ class(`raptor_locator_line`) = c("SWIGFunction", class('raptor_locator_line'))
 `raptor_locator_column` = function(locator, .copy = FALSE)
 {
   if (inherits(locator, "ExternalReference")) locator = slot(locator,"ref") 
-  ;.Call('R_swig_raptor_locator_column', locator, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_locator_column', locator, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2929,7 +2929,7 @@ class(`raptor_locator_column`) = c("SWIGFunction", class('raptor_locator_column'
 `raptor_locator_byte` = function(locator, .copy = FALSE)
 {
   if (inherits(locator, "ExternalReference")) locator = slot(locator,"ref") 
-  ;.Call('R_swig_raptor_locator_byte', locator, as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_locator_byte', locator, as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -2942,7 +2942,7 @@ class(`raptor_locator_byte`) = c("SWIGFunction", class('raptor_locator_byte'))
 `raptor_locator_file` = function(locator)
 {
   if (inherits(locator, "ExternalReference")) locator = slot(locator,"ref") 
-  ;.Call('R_swig_raptor_locator_file', locator, PACKAGE='Redland');
+  ;.Call('R_swig_raptor_locator_file', locator, PACKAGE='redland');
   
 }
 
@@ -2955,7 +2955,7 @@ class(`raptor_locator_file`) = c("SWIGFunction", class('raptor_locator_file'))
 `raptor_locator_uri` = function(locator)
 {
   if (inherits(locator, "ExternalReference")) locator = slot(locator,"ref") 
-  ;.Call('R_swig_raptor_locator_uri', locator, PACKAGE='Redland');
+  ;.Call('R_swig_raptor_locator_uri', locator, PACKAGE='redland');
   
 }
 
@@ -2968,7 +2968,7 @@ class(`raptor_locator_uri`) = c("SWIGFunction", class('raptor_locator_uri'))
 `librdf_internal_test_error` = function(world)
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
-  ;.Call('R_swig_librdf_internal_test_error', world, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_internal_test_error', world, PACKAGE='redland');
   
 }
 
@@ -2981,7 +2981,7 @@ class(`librdf_internal_test_error`) = c("SWIGFunction", class('librdf_internal_t
 `librdf_internal_test_warning` = function(world)
 {
   if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
-  ;.Call('R_swig_librdf_internal_test_warning', world, PACKAGE='Redland');
+  ;.Call('R_swig_librdf_internal_test_warning', world, PACKAGE='redland');
   
 }
 
@@ -2993,7 +2993,7 @@ class(`librdf_internal_test_warning`) = c("SWIGFunction", class('librdf_internal
 
 `librdf_short_copyright_string_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_librdf_short_copyright_string_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_short_copyright_string_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3005,7 +3005,7 @@ librdf_short_copyright_string = librdf_short_copyright_string_get
 
 `librdf_copyright_string_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_librdf_copyright_string_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_copyright_string_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3017,7 +3017,7 @@ librdf_copyright_string = librdf_copyright_string_get
 
 `librdf_version_string_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_librdf_version_string_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_version_string_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3029,7 +3029,7 @@ librdf_version_string = librdf_version_string_get
 
 `librdf_version_major_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_librdf_version_major_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_version_major_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3041,7 +3041,7 @@ librdf_version_major = librdf_version_major_get
 
 `librdf_version_minor_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_librdf_version_minor_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_version_minor_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3053,7 +3053,7 @@ librdf_version_minor = librdf_version_minor_get
 
 `librdf_version_release_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_librdf_version_release_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_version_release_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3065,7 +3065,7 @@ librdf_version_release = librdf_version_release_get
 
 `librdf_version_decimal_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_librdf_version_decimal_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_librdf_version_decimal_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3077,7 +3077,7 @@ librdf_version_decimal = librdf_version_decimal_get
 
 `raptor_version_string_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_raptor_version_string_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_version_string_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3089,7 +3089,7 @@ raptor_version_string = raptor_version_string_get
 
 `raptor_version_major_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_raptor_version_major_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_version_major_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3101,7 +3101,7 @@ raptor_version_major = raptor_version_major_get
 
 `raptor_version_minor_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_raptor_version_minor_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_version_minor_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3113,7 +3113,7 @@ raptor_version_minor = raptor_version_minor_get
 
 `raptor_version_release_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_raptor_version_release_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_version_release_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3125,7 +3125,7 @@ raptor_version_release = raptor_version_release_get
 
 `raptor_version_decimal_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_raptor_version_decimal_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_raptor_version_decimal_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3137,7 +3137,7 @@ raptor_version_decimal = raptor_version_decimal_get
 
 `rasqal_version_string_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_rasqal_version_string_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_rasqal_version_string_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3149,7 +3149,7 @@ rasqal_version_string = rasqal_version_string_get
 
 `rasqal_version_major_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_rasqal_version_major_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_rasqal_version_major_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3161,7 +3161,7 @@ rasqal_version_major = rasqal_version_major_get
 
 `rasqal_version_minor_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_rasqal_version_minor_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_rasqal_version_minor_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3173,7 +3173,7 @@ rasqal_version_minor = rasqal_version_minor_get
 
 `rasqal_version_release_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_rasqal_version_release_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_rasqal_version_release_get', as.logical(.copy), PACKAGE='redland');
   
 }
 
@@ -3185,7 +3185,7 @@ rasqal_version_release = rasqal_version_release_get
 
 `rasqal_version_decimal_get` = function(.copy = FALSE)
 {
-  ;.Call('R_swig_rasqal_version_decimal_get', as.logical(.copy), PACKAGE='Redland');
+  ;.Call('R_swig_rasqal_version_decimal_get', as.logical(.copy), PACKAGE='redland');
   
 }
 

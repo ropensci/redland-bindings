@@ -8540,7 +8540,7 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {NULL, NULL, 0}
 };
 
-SWIGEXPORT void R_init_Redland(DllInfo *dll) {
+SWIGEXPORT void R_init_redland(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
 
 

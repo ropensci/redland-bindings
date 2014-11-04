@@ -2,7 +2,10 @@
 #
 # Makefile.am - automake file for R interface to Redland
 #
+# Copyright (C) 2014 Matthew Jones
+# Derived from code that was originally copyrighted:
 # Copyright (C) 2010 David Beckett - http://www.dajobe.org/
+# And used under the terms of the Apache V2.0 license.
 # 
 # This package is Free Software and part of Redland http://librdf.org/
 # 
@@ -37,9 +40,6 @@ SWIG_CRUFT=
 
 TEST_CRUFT=redland/inst/tests/test-out.rdf
 
-#luadir=@LUA_EXTENSION_DIR@
-#lua_DATA=$(LUA_PACKAGE).$(LUA_SO_SUFFIX)
-
 EXTRA_DIST= $(SWIG_OUTPUTS)
 
 CLEANFILES=$(R_PACKAGE_SRC)/$(R_PACKAGE).o $(R_PACKAGE)-stamp \
@@ -58,7 +58,6 @@ $(R_PACKAGE).c: @REDLAND_SWIG@
 	cat Redland.R.in >> redland/R/Redland.R
 
 #swig -r -namespace -v $(SWIG_OPTS) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
-#swig -v -Wall -r -namespace -outdir redland/R -o redland/src/redland.c Redland.i 
 
 $(R_PACKAGE).o: $(R_PACKAGE).c
 	-cd $(R_PACKAGE_SRC) && R CMD SHLIB $(R_PACKAGE).c util.c
@@ -69,7 +68,9 @@ $(R_PACKAGE)-stamp: $(R_PACKAGE).o
 	-touch $(R_PACKAGE)-stamp
 
 test-R:
-	$(R) test.R
+	pwd
+	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(testthat); load_all(); test()'
+	cd ..
 
 check-local: test-R
 

@@ -32,7 +32,7 @@ R_CFLAGS=@R_CFLAGS@
 R_LDFLAGS=@R_LDFLAGS@
 R_SO_SUFFIX=so
 
-SWIG_OUTPUTS=$(R_PACKAGE).c util.c
+SWIG_OUTPUTS=$(R_PACKAGE_SRC)/$(R_PACKAGE).c
 SWIG_CRUFT=
 
 TEST_CRUFT=redland/inst/tests/test-out.rdf
@@ -42,8 +42,9 @@ TEST_CRUFT=redland/inst/tests/test-out.rdf
 
 EXTRA_DIST= $(SWIG_OUTPUTS)
 
-CLEANFILES=$(R_PACKAGE).o $(R_PACKAGE)-stamp \
-$(R_PACKAGE).$(R_SO_SUFFIX) $(R_PACKAGE).bundle $(TEST_CRUFT)
+CLEANFILES=$(R_PACKAGE_SRC)/$(R_PACKAGE).o $(R_PACKAGE)-stamp \
+$(R_PACKAGE_SRC)/$(R_PACKAGE).$(R_SO_SUFFIX) $(R_PACKAGE_SRC)/util.o \
+$(R_PACKAGE).bundle $(TEST_CRUFT)
 MAINTAINERCLEANFILES=$(SWIG_OUTPUTS) $(SWIG_CRUFT) $(R_PACKAGE).c.orig
 
 RUN=@REDLAND_RUN@
@@ -56,7 +57,7 @@ $(R_PACKAGE).c: @REDLAND_SWIG@
 #swig -v -Wall -r -namespace -outdir redland/R -o redland/src/redland.c Redland.i 
 
 $(R_PACKAGE).o: $(R_PACKAGE).c
-	-cd $(R_PACKAGE_SRC) && R CMD SHLIB $(SWIG_OUTPUTS)
+	-cd $(R_PACKAGE_SRC) && R CMD SHLIB $(R_PACKAGE).c util.c
 	-cd ../..
 
 $(R_PACKAGE).$(R_SO_SUFFIX): $(R_PACKAGE)-stamp

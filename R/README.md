@@ -17,14 +17,15 @@ To build the package:
     docker run --rm -it redland-bindings /bin/bash
     ```
 
-2. Run SWIG to generate the shared libraries and compile the R package code, and startup R
+2. Run `autoconf` and `make` to generate the shared libraries and compile the R package code, and startup R
     ```bash
-    cd redland-bindings/R
-    ./swig.sh
-    cd redland
+    cd /redland-bindings
+    ./autogen.sh --with-R
+	make
+    cd R/redland
     ```
 
-3. Install devtools in R and load the package
+3. Load devtools in R and load the package
     ```r
     > install.packages("devtools")
     > library(devtools)

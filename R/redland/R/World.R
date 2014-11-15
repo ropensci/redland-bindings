@@ -38,5 +38,7 @@ setClass("World", slots = c(world = "_p_librdf_world_s"))
 #' @export
 setMethod("initialize", signature = "World", definition = function(.Object) {
     .Object@world <- librdf_new_world();
+    genv <- globalenv()
+    assign("rdf_world", .Object, envir=genv)
     return(.Object)
 })

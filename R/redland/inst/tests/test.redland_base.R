@@ -63,7 +63,7 @@ test_that("librdf basic functions", {
     pred <- librdf_new_node_from_uri_string(world, "http://purl.org/dc/elements/1.1/title")
     expect_that(pred, not(is_null()))
     expect_that(class(pred), matches("_p_librdf_node_s"))
-    object <- librdf_new_node_from_uri_string(world, "Matt Jones' Home Page")
+    object <- librdf_new_node_from_literal(world, "Matt Jones' Home Page", "", 0)
     expect_that(object, not(is_null()))
     expect_that(class(object), matches("_p_librdf_node_s"))
     statement <- librdf_new_statement_from_nodes(world, subject, pred, object)

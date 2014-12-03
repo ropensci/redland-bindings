@@ -28,22 +28,25 @@
 #' \dontrun{
 #' node <- new("Node")
 #' }
-setClass("Node", slots = c(node = "_p_librdf_node_s"))
+setClass("Node", slots = c(librdf_node = "_p_librdf_node_s"))
 
-#' Initialize the Node object.
+setGeneric("Node", function(world, literal) {
+  standardGeneric("Node")
+})
+
+#' Node Constructor.
 #' @description 
 #' @details
-#' @param .Object the Node object being created
+#' @param world a World object
 #' @param literal a literal character value to be used as the vale of the node
 #' @return the Node object
 #' @export
-setMethod("initialize", signature = "Node", definition = function(.Object,
-    literal=as.character(NA)) {
-    if (!exists("rdf_world", globalenv())) {
-        world <- new("World")
-    }
-    if (!is.na(literal)) {
-        .Object@node <- librdf_new_node_from_literal(rdf_world@world, literal, "", 0)
-    }
-    return(.Object)
+setMethod("Node", signature("World", "character"), definition = function(world, literal=as.character(NA)) {
+  .Object <- new("Node")
+  if (!is.na(literal)) {
+    .Object@librdf_node <- librdf_new_node(world@librdf_world)
+  } else {
+    .Object@librdf_node <- librdf_new_node_from_literal(world@librdf_world, literal, "", 0)
+  }
+  return(.Object)
 })

@@ -21,7 +21,6 @@
 #' @details   
 #' @slot world A redland world object
 #' @author Matthew Jones
-#' @include redland.R
 #' @rdname World-class
 #' @include redland.R
 #' @keywords classes
@@ -29,16 +28,34 @@
 #' \dontrun{
 #' world <- new("World")
 #' }
-setClass("World", slots = c(world = "_p_librdf_world_s"))
+setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
+
+setGeneric("World", function(.Object) {
+  standardGeneric("World")
+})
 
 #' Initialize the World object.
 #' @description 
 #' @details
 #' @return the World object
 #' @export
-setMethod("initialize", signature = "World", definition = function(.Object) {
-    .Object@world <- librdf_new_world();
-    genv <- globalenv()
-    assign("rdf_world", .Object, envir=genv)
+setMethod("World", signature(), definition = function() {
+    .Object <- new("World")
+    .Object@librdf_world <- librdf_new_world();
+    librdf_world_open(.Object@librdf_world)    
     return(.Object)
 })
+
+setGeneric("destroy", function(.Object) {
+  standardGeneric("destroy")
+})
+
+#' Initialize the World object.
+#' @description 
+#' @details
+#' @return the World object
+#' @export
+setMethod("destroy", signature(), definition = function(.Object) {
+  librdf_free_world(.Object@librdf_world);
+})
+

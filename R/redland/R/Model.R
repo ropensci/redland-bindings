@@ -28,33 +28,27 @@
 #' @exportClass Model
 #' @examples
 #' \dontrun{
-#' world <- new("Storage")
+#' model <- new("Model", storage, options)
 #' }
 setClass("Model", slots=c(librdf_model = "_p_librdf_model_s"))
 
 #' Constructor for a Model object.
 #' @return the World object
 #' @export
-setGeneric("Model", function(world, storage, options) {
-  standardGeneric("Model")
-})
-
-setMethod("Model", signature("World", "Storage", "character"), 
-          function(world, storage, options) {
-  .Object <- new("Model")
-  .Object@librdf_model <- librdf_new_model(world@librdf_world, storage@librdf_storage, options);
-  return(.Object)
+setMethod("initialize", signature = "Model", definition = function(.Object, world, storage, options) {
+    stopifnot(!is.null(world), !is.null(storage))
+    .Object@librdf_model <- librdf_new_model(world@librdf_world, storage@librdf_storage, options);
+    return(.Object)
 })
 
 #' Add a Statement object to the Model
 #' @param .Object a Model object
-#' @param statement the statement that will be added
+#' @param statement the Statement that will be added
 #' @export
 setGeneric("addStatement", function(.Object, statement) {
   standardGeneric("addStatement")
 })
 
-setMethod("addStatement", signature("Model", "Statement"), 
-          function(.Object, statement) {
-  librdf_model_add_statement(.Object@librdf_model, statement@librdf_statement);
-          })
+setMethod("addStatement", signature("Model", "Statement"), function(.Object, statement) {
+    librdf_model_add_statement(.Object@librdf_model, statement@librdf_statement);
+})

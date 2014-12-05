@@ -26,15 +26,11 @@
 #' @exportClass Storage
 #' @examples
 #' \dontrun{
-#' storage <- Storage(world, "hashes", name="", options="hash-type='memory'")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 #'}
 setClass("Storage", slots = c(librdf_storage = "_p_librdf_storage_s",
                               type = "character"
 ))
-
-setGeneric("Storage", function(world, type, name, options) {
-  standardGeneric("Storage")
-})
 
 #' Constructor for Storage object
 #' @param world the World object
@@ -43,11 +39,11 @@ setGeneric("Storage", function(world, type, name, options) {
 #' @param options storage options
 #' @return the Storage object
 #' @export
-setMethod("Storage", signature("World", "character", "character", "character"), 
-          definition = function(world, type, name, options) {
-  .Object <- new("Storage")
-  .Object@librdf_storage <- librdf_new_storage(world@librdf_world, type, name, options);
-   #librdf_storage_open(.Object@librdf_storage)
+setMethod("initialize", signature = "Storage", definition = function(.Object, world, type="hashes", name="", options="hash-type='memory'") {
+    stopifnot(!is.null(world))
+    .Object@type <- type
+    .Object@librdf_storage <- librdf_new_storage(world@librdf_world, type, name, options);
+    #librdf_storage_open(.Object@librdf_storage)
             
   return(.Object)
 })

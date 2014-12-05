@@ -17,7 +17,7 @@
 #
 
 #' An RDF Statement object
-#' @slot librdf_statement A redland storage object
+#' @slot librdf_statement A redland statement object
 #' @author Peter Slaughter
 #' @rdname Statement-class
 #' @include redland.R
@@ -27,7 +27,7 @@
 #' @exportClass Statement
 #' @examples
 #' \dontrun{
-#' stmt <- Statement(world, subject, predicate, object)
+#' stmt <- new("Statement", world, subject, predicate, object)
 #' }
 setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 
@@ -38,14 +38,9 @@ setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 #' @param object a Node object
 #' @return the Statement object
 #' @export
-setGeneric("Statement", function(world, subject, predicate, object) {
-  standardGeneric("Statement")
-})
-
-setMethod("Statement", signature("World", "Node", "Node", "Node"), 
-          definition = function(world, subject, predicate, object) {
-  .Object <- new("Statement")
-  .Object@librdf_statement <- librdf_new_statement_from_nodes(world@librdf_world, 
+setMethod("initialize", signature = "Statement", definition = function(.Object, world, subject, predicate, object) {
+    # TODO: Test that all provided params are not null
+    .Object@librdf_statement <- librdf_new_statement_from_nodes(world@librdf_world, 
                                                                  subject@librdf_node, 
                                                                  predicate@librdf_node, 
                                                                  object@librdf_node);            

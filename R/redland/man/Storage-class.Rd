@@ -13,7 +13,7 @@ A Redland Storage object
 }}
 \examples{
 \dontrun{
-storage <- Storage(world, "hashes", name="", options="hash-type='memory'")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 }
 }
 \author{

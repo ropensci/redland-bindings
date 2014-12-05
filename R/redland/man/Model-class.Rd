@@ -13,7 +13,8 @@ An RDF Model object.
 }}
 \examples{
 \dontrun{
-world <- new("Storage")
+model <- new("Model", world, storage, options)
+addStatement(model, statement)
 }
 }
 \author{

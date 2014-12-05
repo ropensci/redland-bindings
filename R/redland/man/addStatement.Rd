@@ -8,7 +8,7 @@ addStatement(.Object, statement)
 \arguments{
 \item{.Object}{a Model object}
 
-\item{statement}{the statement that will be added}
+\item{statement}{the Statement that will be added}
 }
 \description{
 Add a Statement object to the Model

@@ -5,7 +5,6 @@ exportClasses(Node)
 exportClasses(Statement)
 exportClasses(Storage)
 exportClasses(World)
-exportMethods(Storage)
 exportMethods(destroy)
 exportMethods(initialize)
 

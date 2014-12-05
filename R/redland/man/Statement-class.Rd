@@ -9,11 +9,11 @@ An RDF Statement object
 \section{Slots}{
 
 \describe{
-\item{\code{librdf_statement}}{A redland storage object}
+\item{\code{librdf_statement}}{A redland statement object}
 }}
 \examples{
 \dontrun{
-stmt <- Statement(world, subject, predicate, object)
+stmt <- new("Statement", world, subject, predicate, object)
 }
 }
 \author{

@@ -17,18 +17,17 @@
 #
 
 #' A Redland Storage object
-#' @description
-#' @details   
 #' @slot librdf_storage A redland storage object
 #' @author Peter Slaughter
 #' @rdname Storage-class
 #' @include redland.R
 #' @include World.R
 #' @keywords classes
+#' @exportClass Storage
 #' @examples
 #' \dontrun{
 #' storage <- Storage(world, "hashes", name="", options="hash-type='memory'")
-#'
+#'}
 setClass("Storage", slots = c(librdf_storage = "_p_librdf_storage_s",
                               type = "character"
 ))
@@ -38,8 +37,6 @@ setGeneric("Storage", function(world, type, name, options) {
 })
 
 #' Constructor for Storage object
-#' @description
-#' @details
 #' @param world the World object
 #' @param type the Redland storage type
 #' @param name storage instance name

@@ -16,9 +16,7 @@
 #   limitations under the License.
 #
 
-#' An RDF Model object
-#' @description
-#' @details   
+#' An RDF Model object.
 #' @slot librdf_model A redland model object
 #' @author Peter Slaughter
 #' @rdname Model-class
@@ -27,6 +25,7 @@
 #' @include Storage.R
 #' @include Statement.R
 #' @keywords classes
+#' @exportClass Model
 #' @examples
 #' \dontrun{
 #' world <- new("Storage")
@@ -34,8 +33,6 @@
 setClass("Model", slots=c(librdf_model = "_p_librdf_model_s"))
 
 #' Constructor for a Model object.
-#' @description 
-#' @details
 #' @return the World object
 #' @export
 setGeneric("Model", function(world, storage, options) {
@@ -50,8 +47,6 @@ setMethod("Model", signature("World", "Storage", "character"),
 })
 
 #' Add a Statement object to the Model
-#' @description 
-#' @details
 #' @param .Object a Model object
 #' @param statement the statement that will be added
 #' @export

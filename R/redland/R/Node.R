@@ -18,13 +18,13 @@
 
 #' A Redland Node, used to store one node in an RDF triple statement.
 #' @description A Node represents a RDF Resource, Property, or Literal.
-#' @details   
 #' @slot librdf_node A redland node object
 #' @author Matthew Jones
 #' @include redland.R
 #' @include World.R
 #' @rdname Node-class
 #' @keywords classes
+#' @exportClass Node
 #' @examples
 #' \dontrun{
 #' node <- new("Node", world, "A Node Value")
@@ -32,8 +32,6 @@
 setClass("Node", slots = c(librdf_node = "_p_librdf_node_s"))
 
 #' Initialize a Node object.
-#' @description 
-#' @details
 #' @param .Object the Node object to be initialized
 #' @param world a World object
 #' @param literal a literal character value to be used as the vale of the node

@@ -17,8 +17,6 @@
 #
 
 #' An RDF Statement object
-#' @description
-#' @details   
 #' @slot librdf_statement A redland storage object
 #' @author Peter Slaughter
 #' @rdname Statement-class
@@ -26,6 +24,7 @@
 #' @include World.R
 #' @include Node.R
 #' @keywords classes
+#' @exportClass Statement
 #' @examples
 #' \dontrun{
 #' stmt <- Statement(world, subject, predicate, object)
@@ -33,8 +32,6 @@
 setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 
 #' Construct a Statement object.
-#' @description 
-#' @details
 #' @param world a World object
 #' @param subject a Node object
 #' @param predicate a Node object

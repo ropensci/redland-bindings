@@ -17,13 +17,12 @@
 #
 
 #' A Redland World, used to initialize the Redland RDF library.
-#' @description
-#' @details   
 #' @slot world A redland world object
 #' @author Matthew Jones
 #' @rdname World-class
 #' @include redland.R
 #' @keywords classes
+#' @exportClass World
 #' @examples
 #' \dontrun{
 #' world <- new("World")
@@ -31,8 +30,6 @@
 setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
 
 #' Initialize the World object.
-#' @description 
-#' @details
 #' @return the World object
 #' @export
 setMethod("initialize", signature = "World", definition = function(.Object) {
@@ -46,8 +43,6 @@ setGeneric("destroy", function(.Object) {
 })
 
 #' Destroy the World object.
-#' @description 
-#' @details
 #' @return the World object
 #' @export
 setMethod("destroy", signature(), definition = function(.Object) {

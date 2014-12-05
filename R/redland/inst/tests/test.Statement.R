@@ -20,9 +20,15 @@ test_that("Statement constructor", {
     expect_that(stmt, not(is_null()))
     expect_that(class(stmt@librdf_statement), matches("_p_librdf_statement_s"))
     
-    # Test that node creation fails if world is not provided or is null
-    #err <- try(node <- new("Node", literal="Fee Fi Fo Fum"), silent=TRUE)
-    #expect_that(class(err), matches("try-error"))
-    #err <- try(node <- new("Node", world=NULL, literal="Fee Fi Fo Fum"), silent=TRUE)
-    #expect_that(class(err), matches("try-error"))
+    # Test that statement creation fails if world is not provided or is null
+    err <- try(stmt <- new("Statement", world=NULL, subject=subject, predicate=predicate, object=object), silent=TRUE)
+    expect_that(class(err), matches("try-error"))
+    
+    # Test that statement creation fails if subject, predicate, or object is not provided or is null
+    err <- try(stmt <- new("Statement", world=world, subject=NULL, predicate=predicate, object=object), silent=TRUE)
+    expect_that(class(err), matches("try-error"))
+    err <- try(stmt <- new("Statement", world=world, subject=subject, predicate=NULL, object=object), silent=TRUE)
+    expect_that(class(err), matches("try-error"))
+    err <- try(stmt <- new("Statement", world=world, subject=subject, predicate=predicate, object=NULL), silent=TRUE)
+    expect_that(class(err), matches("try-error"))
 })

@@ -39,7 +39,10 @@ setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 #' @return the Statement object
 #' @export
 setMethod("initialize", signature = "Statement", definition = function(.Object, world, subject, predicate, object) {
-    # TODO: Test that all provided params are not null
+    # Ensure that all provided params are not null
+    stopifnot(!is.null(world), !is.null(subject), !is.null(predicate), !is.null(object))
+    
+    # Create the underlying redland statement object
     .Object@librdf_statement <- librdf_new_statement_from_nodes(world@librdf_world, 
                                                                  subject@librdf_node, 
                                                                  predicate@librdf_node, 

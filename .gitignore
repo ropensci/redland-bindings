@@ -33,3 +33,6 @@ stamp*
 **/.Rbuildignore
 **/*.o
 **/*.so
+**/.Rproj.user
+**/redland-stamp
+**/test-out.rdf

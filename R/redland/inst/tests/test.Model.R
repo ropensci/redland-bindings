@@ -24,4 +24,16 @@ test_that("Model constructor", {
     # Test that model creation fails if storage is not provided or is null
     err <- try(model <- new("Model", world, storage=NULL, options=""), silent=TRUE)
     expect_that(class(err), matches("try-error"))
+    
+    # Test adding a Statement to the Model
+    subject <- new("Node", world, literal="subject")
+    expect_that(class(subject@librdf_node), matches("_p_librdf_node_s"))
+    predicate <- new("Node", world, literal="subject")
+    expect_that(class(predicate@librdf_node), matches("_p_librdf_node_s"))
+    object <- new("Node", world, literal="subject")
+    expect_that(class(object@librdf_node), matches("_p_librdf_node_s"))
+    statement <- new("Statement", world, subject, predicate, object)
+    expect_that(statement, not(is_null()))
+    expect_that(class(statement@librdf_statement), matches("_p_librdf_statement_s"))
+    addStatement(model, statement)
 })

@@ -28,7 +28,8 @@
 #' @exportClass Model
 #' @examples
 #' \dontrun{
-#' model <- new("Model", storage, options)
+#' model <- new("Model", world, storage, options)
+#' addStatement(model, statement)
 #' }
 setClass("Model", slots=c(librdf_model = "_p_librdf_model_s"))
 

@@ -407,3 +407,11 @@ exportMethods(
         "rasqal_version_release_get",
         "rasqal_version_decimal_get"
 )
+
+exportClasses(
+    "World",
+    "Node",
+    "Statement",
+    "Storage",
+    "Model"
+)

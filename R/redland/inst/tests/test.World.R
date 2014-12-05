@@ -6,5 +6,5 @@ test_that("World constructor", {
     library(redland)
     world <- new("World");
     expect_that(class(world), matches("World"))
-    expect_that(class(world@world), matches("_p_librdf_world_s"))
+    expect_that(class(world@librdf_world), matches("_p_librdf_world_s"))
 })

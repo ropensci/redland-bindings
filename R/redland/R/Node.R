@@ -19,31 +19,32 @@
 #' A Redland Node, used to store one node in an RDF triple statement.
 #' @description A Node represents a RDF Resource, Property, or Literal.
 #' @details   
-#' @slot node A redland node object
+#' @slot librdf_node A redland node object
 #' @author Matthew Jones
 #' @include redland.R
+#' @include World.R
 #' @rdname Node-class
 #' @keywords classes
 #' @examples
 #' \dontrun{
-#' node <- new("Node")
+#' node <- new("Node", world, "A Node Value")
 #' }
-setClass("Node", slots = c(node = "_p_librdf_node_s"))
+setClass("Node", slots = c(librdf_node = "_p_librdf_node_s"))
 
-#' Initialize the Node object.
+#' Initialize a Node object.
 #' @description 
 #' @details
-#' @param .Object the Node object being created
+#' @param .Object the Node object to be initialized
+#' @param world a World object
 #' @param literal a literal character value to be used as the vale of the node
 #' @return the Node object
 #' @export
-setMethod("initialize", signature = "Node", definition = function(.Object,
-    literal=as.character(NA)) {
-    if (!exists("rdf_world", globalenv())) {
-        world <- new("World")
-    }
+setMethod("initialize", signature = "Node", definition = function(.Object, world, literal=as.character(NA)) {
+    stopifnot(!is.null(world))
     if (!is.na(literal)) {
-        .Object@node <- librdf_new_node_from_literal(rdf_world@world, literal, "", 0)
+        .Object@librdf_node <- librdf_new_node(world@librdf_world)
+    } else {
+        .Object@librdf_node <- librdf_new_node_from_literal(world@librdf_world, literal, "", 0)
     }
     return(.Object)
 })

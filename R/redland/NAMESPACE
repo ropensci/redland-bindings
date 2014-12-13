@@ -10,7 +10,6 @@ exportClasses(World)
 exportMethods(Parser)
 exportMethods(Storage)
 exportMethods(World)
-exportMethods(parseStringToModel)
 exportMethods(destroy)
 exportMethods(initialize)
 

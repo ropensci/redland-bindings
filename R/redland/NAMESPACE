@@ -2,10 +2,15 @@
 
 exportClasses(Model)
 exportClasses(Node)
+exportClasses(Parser)
+exportClasses(Serializer)
 exportClasses(Statement)
 exportClasses(Storage)
 exportClasses(World)
+exportMethods(Parser)
 exportMethods(Storage)
+exportMethods(World)
+exportMethods(parseStringToModel)
 exportMethods(destroy)
 exportMethods(initialize)
 
@@ -418,4 +423,3 @@ exportMethods(
         "rasqal_version_release_get",
         "rasqal_version_decimal_get"
 )
-

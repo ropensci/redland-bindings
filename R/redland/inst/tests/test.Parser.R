@@ -1,8 +1,8 @@
-context("Serializer tests")
+context("Parser tests")
 test_that("redland library loads", {
   library(redland)
 })
-test_that("Model constructor", {
+test_that("Parser constructor", {
   library(redland)
   world <- new("World")
   expect_that(world, not(is_null()))
@@ -24,29 +24,19 @@ test_that("Model constructor", {
   expect_that(model, not(is_null()))
   expect_that(class(model@librdf_model), matches("_p_librdf_model_s"))
   
-  # Test adding a Statement to the Model
-  subject <- new("Node", world, uri="http://www.johnsmith.com/")
-  expect_that(class(subject@librdf_node), matches("_p_librdf_node_s"))
-  predicate <- new("Node", world, uri="http://purl.org/dc/elements/1.1/creator")
-  expect_that(class(predicate@librdf_node), matches("_p_librdf_node_s"))
-  object <- new("Node", world, literal="John Smith")
-  expect_that(class(object@librdf_node), matches("_p_librdf_node_s"))
-  statement <- new("Statement", world, subject, predicate, object)
-  expect_that(statement, not(is_null()))
-  expect_that(class(statement@librdf_statement), matches("_p_librdf_statement_s"))
-  addStatement(model, statement)
+  # Test parsing an RDF document into a Model
+  parser <- new("Parser", world)
+  expect_that(parser, not(is_null()))
+  expect_that(class(parser@librdf_parser), matches("_p_librdf_parser_s"))
   
-  # Test creating a Serializer
-  serializer <- new("Serializer", world, mimeType="application/rdf+xml")
+  parseFileIntoModel(parser, world, "../testfiles/example.rdf", model)
+  
+  # Test creating a Serializer and serializing the content just parsed into the model
+  serializer <- new("Serializer", world)
   expect_that(serializer, not(is_null()))
   expect_that(class(serializer@librdf_serializer), matches("_p_librdf_serializer_s"))
   
-  # Test adding a namespace to a serializer
-  status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")
-  expect_that(status, equals(0))
-  
   # Test performing a serialization on an RDF model
-  rdf <- serializeToCharacter(serializer, world, model, "")
+  rdf <- serializeToCharacter(serializer, world, model)
   expect_that(rdf, matches("John Smith"))
-  
 })

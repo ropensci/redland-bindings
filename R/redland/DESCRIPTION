@@ -24,8 +24,9 @@ Collate:
     'Node.R'
     'Statement.R'
     'Model.R'
-    'util.R'
     'Parser.R'
+    'Query.R'
     'Serializer.R'
+    'util.R'
 License: Apache License 2.0
 BugReports: https://github.com/ropensci/redland-bindings/issues

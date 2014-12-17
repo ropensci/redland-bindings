@@ -30,6 +30,7 @@
 #' serializer <- new("Serializer", world, factoryName, mimeType, typeUri)
 #' setNameSpace(serializer, world, namespace, prefix)
 #' RDF <- serializeToCharacter(serializer, world, model, baseUri)
+#' }
 setClass("Serializer", slots = c(librdf_serializer = "_p_librdf_serializer_s"))
 
 #' Construct a Serialzier object.

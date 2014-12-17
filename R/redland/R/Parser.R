@@ -17,9 +17,9 @@
 #
 
 #' An RDF Parser object
-#' @description
-#' @details
-#' @slot librdf_serializer A redland statement object
+#' @description The Parser class provides methods to parse RDF content into a Redland
+#' RDF model.
+#' @slot librdf_parser A redland parser object
 #' @author Peter Slaughter
 #' @rdname Parser-class
 #' @include redland.R
@@ -31,11 +31,14 @@
 #' \dontrun{
 #' parser <- new("Parser", world, name, mimeType, typeUri)
 #' parserIntoModel(parser, uri, baseUri, model)
+#' }
 setClass("Parser", slots = c(librdf_parser = "_p_librdf_parser_s"))
 
-#' Construct a Parser object.
+#' Initialize a Parser object.
+#' @description A Parser object is initialized for a specific RDF serialization.
+#' @details The serialization format that are supported by 
 #' @param world a World object
-#' @param name name of the parser
+#' @param name name of the parser factory to use
 #' @param mimeType a mime type of the syntax of the model
 #' @param typeUri a URI for the syntax of the model
 #' @return the Parser object
@@ -59,18 +62,21 @@ setMethod("initialize", signature = "Parser", definition = function(.Object, wor
 })
 
 #' Parse the contents of a file into a model
-#' @description
-#' @details
-#' @param .Object a Parser object
+#' @description The contents of a the specified file are read and parsed into the initialized
+#' Parser object
+#' @details The parser factory name specified during initialization determines how the content is
+#' parsed, for example, if 'rdfxml' was specified during parser initialization, then the parser
+#' expects RDF/XML content as specified in the W3C recommendation (http://www.we3.org/TR/REC-rdf-syntax)
+#' @param .Object a Parser object 
 #' @param file a file that contains the RDF content
 #' @param model a Model object to parse the RDF content into
 #' @param baseUri a base URI (i.e. XML base) to apply to the model
 #' @export
-setGeneric("parseFileIntoModel", function(.Object, filePath, model, ...) {
+setGeneric("parseFileIntoModel", function(.Object, world, filePath, model, ...) {
   standardGeneric("parseFileIntoModel")
 })
 
-setMethod("parseFileIntoModel", signature("Parser", "character", "Model"), function(.Object, filePath, model, baseUri=as.character(NA)) {
+setMethod("parseFileIntoModel", signature("Parser", "World", "character", "Model"), function(.Object, world, filePath, model, baseUri=as.character(NA)) {
   stopifnot(!is.null(model))
   
   if(is.na(baseUri)) {
@@ -84,7 +90,7 @@ setMethod("parseFileIntoModel", signature("Parser", "character", "Model"), funct
   stopifnot (!class(err) == "try-error")
   
   fileUri = sprintf("file://%s", absFilePath)
-  contentUri <- librdf_new_uri(librdf_world, fileUri)
+  contentUri <- librdf_new_uri(world@librdf_world, fileUri)
   status <- librdf_parser_parse_into_model(.Object@librdf_parser, contentUri, NULL, model@librdf_model)
   
 })

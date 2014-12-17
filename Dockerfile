@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     make \
     vim \
     r-recommended
-RUN R --no-save -e 'options(repos = c(CRAN = "http://cran.rstudio.com")); install.packages(c("devtools", "testthat", "roxygen2"))' 
+RUN R --no-save -e 'options(repos = c(CRAN = "http://cran.rstudio.com")); install.packages(c("devtools", "testthat", "roxygen2", "knitr"))' 
 RUN cd /usr/bin && ln -s swig3.0 swig && cd /
 RUN git clone https://github.com/ropensci/redland-bindings.git
 RUN cd /redland-bindings && \

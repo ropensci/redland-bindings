@@ -22,11 +22,16 @@
 #' @rdname World-class
 #' @include redland.R
 #' @keywords classes
+## @useDynLib librdf
+## @useDynLib libraptor2
+## @useDynLib librasqal
+## @useDynLib redland
 #' @exportClass World
 #' @examples
 #' \dontrun{
 #' world <- new("World")
 #' }
+#' @export
 setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
 
 #' Initialize the World object.
@@ -48,4 +53,5 @@ setGeneric("destroy", function(.Object) {
 setMethod("destroy", signature(), definition = function(.Object) {
   librdf_free_world(.Object@librdf_world);
 })
+
 

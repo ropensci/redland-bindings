@@ -27,6 +27,8 @@ Collate:
     'Parser.R'
     'Query.R'
     'Serializer.R'
+    'mergeNamespace_roclet.R'
     'util.R'
 License: Apache License 2.0
 BugReports: https://github.com/ropensci/redland-bindings/issues
+Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace"))

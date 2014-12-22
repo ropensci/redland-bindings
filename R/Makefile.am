@@ -52,10 +52,9 @@ RUN=@REDLAND_RUN@
 SWIG_OPTS=-I$(srcdir)
 
 $(R_PACKAGE).c: @REDLAND_SWIG@
-	swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ Redland.i
-	cat NAMESPACE.in redland/R/NAMESPACE > redland/NAMESPACE
-	rm redland/R/NAMESPACE
+	swig -r -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ Redland.i
 	cat Redland.R.in >> redland/R/redland.R
+	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(roxygen2); document()'
 
 #swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
 

@@ -73,9 +73,10 @@ test_that("librdf basic functions", {
     rc <- librdf_model_add_statement(model, statement)
     expect_that(rc, equals(0))    
     
-    librdf_free_node(subject)
-    librdf_free_node(pred)
-    librdf_free_node(object)
+    # Comment out these lines to prevent memory related crash. See test.librdf_free_statement.R for details.
+    #librdf_free_node(subject)
+    #librdf_free_node(pred)
+    #librdf_free_node(object)
     librdf_free_statement(statement)
     
     # Test serialization of the model to a text file

@@ -1,4 +1,4 @@
-ontext("librdf free memroy tests")
+context("librdf free memroy tests")
 test_that("redland library loads", {
   library(redland)
 })

@@ -68,7 +68,7 @@ $(R_PACKAGE)-stamp: $(R_PACKAGE).o
 
 test-R:
 	pwd
-	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(testthat); load_all(); test()'
+	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(testthat); library(roxygen2); load_all(); test()'
 	cd ..
 
 check-local: test-R

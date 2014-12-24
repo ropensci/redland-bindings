@@ -68,7 +68,7 @@ roc_process.mergeNamespace <- function(roclet, partita, base_path, options = lis
 roc_output.mergeNamespace <- function(roclet, results, base_path, options = list(), check) {
   
   filePathNS <- file.path(base_path, "NAMESPACE")
-  filePathNSlibrdf <- file.path(base_path, "R/NAMESPACE")
+  filePathNSlibrdf <- file.path(base_path, "inst/build/NAMESPACE.swig")
   
   NScontents <- if (file.exists(filePathNS)) readLines(filePathNS) else ""
   NSlibrdfContents <- if (file.exists(filePathNSlibrdf)) readLines(filePathNSlibrdf) else ""

@@ -2,7 +2,7 @@ context("Serializer tests")
 test_that("redland library loads", {
   library(redland)
 })
-test_that("Model constructor", {
+test_that("Serializer constructor", {
   library(redland)
   world <- new("World")
   expect_that(world, not(is_null()))
@@ -45,8 +45,15 @@ test_that("Model constructor", {
   status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")
   expect_that(status, equals(0))
   
-  # Test performing a serialization on an RDF model
+  # Test serialization of an RDF model to a string
   rdf <- serializeToCharacter(serializer, world, model, "")
   expect_that(rdf, matches("John Smith"))
+  
+  # Test serialization of an RDF model to a file
+  filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")
+  status <- serializeToFile(serializer, world, model, filePath)
+  found <- grep("John Smith", readLines(filePath))
+  expect_that(found, is_more_than(0))
+  unlink(filePath)
   
 })

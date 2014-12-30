@@ -87,6 +87,7 @@ setGeneric("serializeToCharacter", function(.Object, world, model, ...) {
 })
 
 setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), function(.Object, world, model, baseUri=as.character(NA)) {
+  stopifnot(!is.null(world))
   stopifnot(!is.null(model))
   
   # Convert baseUri to a librdf_uri
@@ -98,4 +99,32 @@ setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), fun
   
   RDFstring <- librdf_serializer_serialize_model_to_string(.Object@librdf_serializer, librdf_uri, model@librdf_model)
   return(RDFstring)
+})
+
+#' Serialize a model to a file
+#' @param .Object a Serializer object
+#' @param world a World object
+#' @param model a Model object
+#' @param filePath a file path that the serialized model will be written to
+#' @param baseUri a base URI to use for the serialization
+#' @return an integer containing the return status where non zero indicates an error occured during serialization
+#' @export
+setGeneric("serializeToFile", function(.Object, world, model, filePath, ...) {
+  standardGeneric("serializeToFile")
+})
+
+setMethod("serializeToFile", signature("Serializer", "World", "Model", "character"), function(.Object, world, model, filePath, baseUri=as.character(NA)) {
+  stopifnot(!is.null(world))
+  stopifnot(!is.null(model))
+  stopifnot(!is.null(filePath))
+  
+  # Convert baseUri to a librdf_uri
+  if(is.na(baseUri)) {
+    librdf_uri <- NULL
+  } else {
+    librdf_uri <- librdf_new_uri(world@librdf_world, baseUri)
+  }
+  
+  status <-librdf_serializer_serialize_model_to_file (.Object@librdf_serializer, filePath, librdf_uri, model@librdf_model);
+  return(status)
 })

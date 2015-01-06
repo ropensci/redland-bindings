@@ -14,7 +14,7 @@ test_that("librdf basic functions", {
     
     parser <- librdf_new_parser(world,'rdfxml','application/rdf+xml',NULL)
     expect_that(class(parser), matches("_p_librdf_parser_s"))
-    uri <- librdf_new_uri(world,'file:../../../../data/dc.rdf')
+    uri <- librdf_new_uri(world,'file:../testfiles/dc.rdf')
     #uri <- librdf_new_uri(world,'file:../../data/dc.rdf')
     expect_that(class(uri), matches("_p_librdf_uri_s"))
     rv <- librdf_parser_parse_into_model(parser,uri,uri,model)

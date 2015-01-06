@@ -25,7 +25,7 @@
 ## @useDynLib librdf
 ## @useDynLib libraptor2
 ## @useDynLib librasqal
-## @useDynLib redland
+#' @useDynLib redland
 #' @exportClass World
 #' @examples
 #' \dontrun{

@@ -56,6 +56,8 @@ $(R_PACKAGE).c: @REDLAND_SWIG@
 	cat Redland.R.in >> redland/R/redland.R
 	mv $(R_PACKAGE)/R/NAMESPACE $(R_PACKAGE)/inst/build/NAMESPACE.swig
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(roxygen2); document()'
+	cp ../data/dc.rdf $(R_PACKAGE)/inst/testfiles
+	chmod 755 $(R_PACKAGE)/inst/testfiles/dc.rdf
 	-cd ..
 
 #swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@

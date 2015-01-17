@@ -1,4 +1,4 @@
-context("librdf free memroy tests")
+context("librdf free memory tests")
 test_that("redland library loads", {
   library(redland)
 })

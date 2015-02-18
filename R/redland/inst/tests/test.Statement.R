@@ -31,4 +31,45 @@ test_that("Statement constructor", {
   expect_that(class(err), matches("try-error"))
   err <- try(stmt <- new("Statement", world=world, subject=subject, predicate=predicate, object=NULL), silent=TRUE)
   expect_that(class(err), matches("try-error"))
+  
+  # Test statement creation when subject, predicate, object are passed in as character and RDF type is not specified
+  stmt <- new("Statement", world=world, 
+              subject="https://cn.dataone.org/cn/v1/resolve/resourceMap_5cbcdecd-6b0e-4b24-a0be-20291b2e49a7#aggregation",
+              predicate="http://purl.org/dc/terms/identifier",
+              object="resourceMap_5cbcdecd-6b0e-4b24-a0be-20291b2e49a7^^xsd:string")
+              
+  expect_that(getTermType(stmt, "subject"), matches("resource"))
+  expect_that(getTermType(stmt, "predicate"), matches("resource"))
+  expect_that(getTermType(stmt, "object"), matches("literal"))
+  
+  stmt <- new("Statement", world=world, 
+              subject="_:foo1",
+              predicate="http://purl.org/dc/terms/identifier",
+              object=NULL)
+  
+  
+  expect_that(getTermType(stmt, "subject"), matches("blank"))
+  expect_that(getTermType(stmt, "predicate"), matches("resource"))
+  expect_that(getTermType(stmt, "object"), matches("blank"))
+  
+  # Test statement creation when subject, predicate and object are passed in as charater and RDF types are specified
+  stmt <- new("Statement", world=world, 
+              subject="http://www.exmaple.com/subject",
+              predicate="http://purl.org/dc/terms/identifier",
+              object="http://www.exmaple.com/object", subjectType="blank", objectType="literal")
+  
+  expect_that(getTermType(stmt, "subject"), matches("blank"))
+  expect_that(getTermType(stmt, "predicate"), matches("resource"))
+  expect_that(getTermType(stmt, "object"), matches("literal"))
+  
+  #err <- try(freeNode(subject), silent=TRUE)
+  #expect_that(class(err), not(matches("try-error")))
+  #err <- try(freeNode(predicate), silent=TRUE)
+  #expect_that(class(err), not(matches("try-error")))
+  #err <- try(freeNode(object), silent=TRUE)
+  #expect_that(class(err), not(matches("try-error")))
+  #err <- try(freeStatement(stmt), silent=TRUE)
+  #expect_that(class(err), not(matches("try-error")))
+  #err <- try(freeWorld(world), silent=TRUE)
+  #expect_that(class(err), not(matches("try-error")))
 })

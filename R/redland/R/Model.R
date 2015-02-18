@@ -51,5 +51,18 @@ setGeneric("addStatement", function(.Object, statement) {
 })
 
 setMethod("addStatement", signature("Model", "Statement"), function(.Object, statement) {
-    librdf_model_add_statement(.Object@librdf_model, statement@librdf_statement);
+  
+  librdf_model_add_statement(.Object@librdf_model, statement@librdf_statement);
+})
+
+#' Free memory used by a librdf model.
+#' @details After this method is called, the Model object is no longer usable and should
+#' be deleted \code{"rm(model)"} and a new object created.
+#' @param .Object a Model object
+#' @export
+setGeneric("freeModel", function(.Object) {
+  standardGeneric("freeModel")
+})
+setMethod("freeModel", signature("Model"), function(.Object) {
+  librdf_free_model(.Object@librdf_model)
 })

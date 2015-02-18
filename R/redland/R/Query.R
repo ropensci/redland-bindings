@@ -62,3 +62,17 @@ setMethod("initialize",
 
   return(.Object)
 })
+
+
+#' Free memory used by a librdf model.
+#' @details After this method is called, the Model object is no longer usable and should
+#' be deleted \code{"rm(query)"} and a new object created.
+#' @param .Object a Model object
+#' @export
+setGeneric("freeQuery", function(.Object) {
+  standardGeneric("freeQuery")
+})
+
+setMethod("freeQuery", signature("Query"), function(.Object) {
+  librdf_free_query(.Object@librdf_query)
+})

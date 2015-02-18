@@ -7,4 +7,7 @@ test_that("World constructor", {
     world <- new("World");
     expect_that(class(world), matches("World"))
     expect_that(class(world@librdf_world), matches("_p_librdf_world_s"))
+    err <- try(freeWorld(world), silent=TRUE)
+    expect_that(class(err), not(matches("try-error")))
+    
 })

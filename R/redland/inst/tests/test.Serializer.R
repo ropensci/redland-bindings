@@ -56,4 +56,19 @@ test_that("Serializer constructor", {
   expect_that(found, is_more_than(0))
   unlink(filePath)
   
+  err <- try(freeStatement(statement), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeSerializer(serializer), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeModel(model), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeStorage(storage), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeWorld(world), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
 })

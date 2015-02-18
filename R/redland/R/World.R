@@ -39,19 +39,19 @@ setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
 #' @export
 setMethod("initialize", signature = "World", definition = function(.Object) {
     .Object@librdf_world <- librdf_new_world();
-    librdf_world_open(.Object@librdf_world)    
+    librdf_world_open(.Object@librdf_world)
     return(.Object)
 })
 
-setGeneric("destroy", function(.Object) {
-  standardGeneric("destroy")
-})
-
-#' Destroy the World object.
-#' @return the World object
+#' Free memory used by a librdf world object
+#' @details After this method is called, the World object is no longer usable and should
+#' be deleted \code{"rm(world)"} and a new object created.
+#' @param .Object a World object
 #' @export
-setMethod("destroy", signature(), definition = function(.Object) {
-  librdf_free_world(.Object@librdf_world);
+setGeneric("freeWorld", function(.Object) {
+  standardGeneric("freeWorld")
 })
 
-
+setMethod("freeWorld", signature("World"), function(.Object) {
+  librdf_free_world(.Object@librdf_world)
+})

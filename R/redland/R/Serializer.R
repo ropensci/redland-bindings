@@ -69,6 +69,7 @@ setGeneric("setNameSpace", function(.Object, world, namespace, prefix) {
 })
 
 setMethod("setNameSpace", signature("Serializer", "World", "character", "character"), function(.Object, world, namespace, prefix) {
+  
   stopifnot(!is.null(world))
   
   librdf_uri <- librdf_new_uri(world@librdf_world, namespace)
@@ -87,6 +88,7 @@ setGeneric("serializeToCharacter", function(.Object, world, model, ...) {
 })
 
 setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), function(.Object, world, model, baseUri=as.character(NA)) {
+  
   stopifnot(!is.null(world))
   stopifnot(!is.null(model))
   
@@ -114,6 +116,7 @@ setGeneric("serializeToFile", function(.Object, world, model, filePath, ...) {
 })
 
 setMethod("serializeToFile", signature("Serializer", "World", "Model", "character"), function(.Object, world, model, filePath, baseUri=as.character(NA)) {
+  
   stopifnot(!is.null(world))
   stopifnot(!is.null(model))
   stopifnot(!is.null(filePath))
@@ -127,4 +130,15 @@ setMethod("serializeToFile", signature("Serializer", "World", "Model", "characte
   
   status <-librdf_serializer_serialize_model_to_file (.Object@librdf_serializer, filePath, librdf_uri, model@librdf_model);
   return(status)
+})
+
+#' Free memory used by a librdf serializer
+#' @param .Object a Serializer object
+#' @export
+setGeneric("freeSerializer", function(.Object) {
+  standardGeneric("freeSerializer")
+})
+
+ setMethod("freeSerializer", signature("Serializer"), function(.Object) {
+  librdf_free_serializer(.Object@librdf_serializer)
 })

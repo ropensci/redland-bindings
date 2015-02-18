@@ -94,3 +94,17 @@ setMethod("parseFileIntoModel", signature("Parser", "World", "character", "Model
   status <- librdf_parser_parse_into_model(.Object@librdf_parser, contentUri, NULL, model@librdf_model)
   
 })
+
+
+#' Free memory used by a librdf parser
+#' @details After freeNode is called, the Node object is no longer usable and should
+#' be deleted  \code{"rm(nodeName)"} and a new object created.
+#' @param .Object a Node object
+#' @export
+setGeneric("freeParser", function(.Object) {
+  standardGeneric("freeParser")
+})
+
+setMethod("freeParser", signature("Parser"), function(.Object) {
+  librdf_free_parser(.Object@librdf_parser)
+})

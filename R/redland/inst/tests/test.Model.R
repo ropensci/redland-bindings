@@ -37,4 +37,13 @@ test_that("Model constructor", {
   expect_that(statement, not(is_null()))
   expect_that(class(statement@librdf_statement), matches("_p_librdf_statement_s"))
   addStatement(model, statement)
+  
+  err <- try(freeStatement(statement), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  err <- try(freeModel(model), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  err <- try(freeStorage(storage), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  err <- try(freeWorld(world), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
 })

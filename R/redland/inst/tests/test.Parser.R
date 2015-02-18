@@ -39,4 +39,19 @@ test_that("Parser constructor", {
   # Test performing a serialization on an RDF model
   rdf <- serializeToCharacter(serializer, world, model)
   expect_that(rdf, matches("John Smith"))
+  
+  err <- try(freeModel(model), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeStorage(storage), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeParser(parser), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeSerializer(serializer), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  err <- try(freeWorld(world), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
 })

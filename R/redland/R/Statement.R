@@ -35,8 +35,9 @@
 #' predicate and object. An alternative way to create a Statement object is to provide the
 #' subject, predicate and object as character values. If this later method is used, the character values will be evaluated to
 #' determine the appropriate RDF type for the subject and object. Note that the RDF type for the predicate will always
-#' be 'uri' (aka 'resource').
-#'   
+#' be 'uri' (aka 'resource'). If the automatic determination of RDF types is not desired, then the \code{subjectType} and
+#' \code{objectType} parameters can be specified to explicitly set the RDF types.
+#'
 #' @examples
 #' \dontrun{
 #' subject <- new("Node", blank="_:myid1")
@@ -70,7 +71,7 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
          (is.null(object) || class(object) == "character") ) {
     # If subjectType was not specified, determine the subjectType by inspecting the
     # subject value
-    if (missing(subjectType)) {
+    if (is.na(subjectType)) {
       if (is.null(subject)) {
         subjectType <- "blank"
       } else if (length(grep("^_:", subject)) == 1) {
@@ -96,7 +97,7 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
     
     predicateNode <- new("Node", world, uri=predicate)
     
-    if (missing(objectType)) {
+    if (is.na(objectType)) {
       if (is.null(object)) {
         objectType <- "blank"
       } else if (length(grep("^http:", object)) == 1) {

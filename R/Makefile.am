@@ -30,6 +30,7 @@ R=R
 
 R_PACKAGE=redland
 R_PACKAGE_SRC=$(R_PACKAGE)/src
+R_PACKAGE_BUILD=$(R_PACKAGE)/inst/build
 
 R_CFLAGS=@R_CFLAGS@
 R_LDFLAGS=@R_LDFLAGS@
@@ -54,7 +55,6 @@ SWIG_OPTS=-I$(srcdir)
 $(R_PACKAGE).c: @REDLAND_SWIG@
 	swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ Redland.i
 	cat Redland.R.in >> redland/R/redland.R
-	mv $(R_PACKAGE)/R/NAMESPACE $(R_PACKAGE)/inst/build/NAMESPACE.swig
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(roxygen2); document()'
 	cp ../data/dc.rdf $(R_PACKAGE)/inst/testfiles
 	chmod 755 $(R_PACKAGE)/inst/testfiles/dc.rdf
@@ -63,8 +63,8 @@ $(R_PACKAGE).c: @REDLAND_SWIG@
 #swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
 
 $(R_PACKAGE).o: $(R_PACKAGE).c
-	-cd $(R_PACKAGE_SRC) && R CMD SHLIB $(R_PACKAGE).c util.c
-	-cd ../..
+	-pushd $(R_PACKAGE_BUILD) && ./make all
+	-popd
 
 $(R_PACKAGE).$(R_SO_SUFFIX): $(R_PACKAGE)-stamp
 $(R_PACKAGE)-stamp: $(R_PACKAGE).o

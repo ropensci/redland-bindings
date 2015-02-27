@@ -63,7 +63,7 @@ $(R_PACKAGE).c: @REDLAND_SWIG@
 #swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
 
 $(R_PACKAGE).o: $(R_PACKAGE).c
-	-pushd $(R_PACKAGE_BUILD) && ./make all
+	-pushd $(R_PACKAGE_BUILD) && make all
 	-popd
 
 $(R_PACKAGE).$(R_SO_SUFFIX): $(R_PACKAGE)-stamp

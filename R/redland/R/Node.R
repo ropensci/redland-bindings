@@ -47,9 +47,10 @@ setClass("Node", slots = c(librdf_node = "_p_librdf_node_s"))
 #' @param literal a literal character value to be assigned to the node
 #' @param uri a uri character value to be assigned to the node
 #' @param blank a blank node identifier to be assigned to the node
+#' @param datatype_uri a uri used to specify the datatype of a literal node, i.e. http://www.w3.org/2001/XMLSchema#string
 #' @return the Node object
 #' @export
-setMethod("initialize", signature = "Node", definition = function(.Object, world, literal, uri, blank) {
+setMethod("initialize", signature = "Node", definition = function(.Object, world, literal, uri, blank, datatype_uri) {
   stopifnot(!is.null(world))
   
   # Neither 'literal' nor 'uri', nor 'blank' was specified, so create a blank node with librdf generated id
@@ -64,7 +65,12 @@ setMethod("initialize", signature = "Node", definition = function(.Object, world
     if(literal == "") {
       stop(sprintf("Invalid value specified for Node type of literal: \"%s\""), literal)
     } else {
-      .Object@librdf_node <- librdf_new_node_from_literal(world@librdf_world, literal, "", 0)
+      if (missing(datatype_uri)) {
+        .Object@librdf_node <- librdf_new_node_from_literal(world@librdf_world, literal, "", 0)
+      } else {
+        type_uri <- librdf_new_uri(world@librdf_world, datatype_uri)
+        .Object@librdf_node <- librdf_new_node_from_typed_literal(world@librdf_world, literal, "", type_uri)
+      }
     }
   } else if (!missing(blank)) {
     # Create a blank node with a librdf generated unique identifier

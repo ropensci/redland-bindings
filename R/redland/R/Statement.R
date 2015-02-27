@@ -58,11 +58,15 @@ setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 #' @param subject a Node object
 #' @param predicate a Node object
 #' @param object a Node object
+#' @param subjectType the Node type of the subject, i.e. "blank", "uri"
+#' @param objectType the Node type of the object, i.e. "blank", "uri", "literal"
+#' @param datatype_uri the datatype URI to associate with a object literal value
 #' @return the Statement object
 #' @export
 setMethod("initialize", signature = "Statement", definition = function(.Object, world, subject, predicate, object, 
                                                                        subjectType=as.character(NA), 
-                                                                       objectType=as.character(NA)) {
+                                                                       objectType=as.character(NA),
+                                                                       datatype_uri=as.character(NA)) {
   # Ensure that all provided params are not null
   stopifnot(!is.null(world), !missing(subject), !missing(predicate), !missing(object))
   
@@ -126,7 +130,11 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
     } else if (objectType == "uri") {
       objectNode <- new("Node", world, uri=object)
     } else {
-      objectNode <- new("Node", world, literal=object)
+      if(is.na(datatype_uri)) { 
+        objectNode <- new("Node", world, literal=object)
+      } else {
+        objectNode <- new("Node", world, literal=object, datatype_uri=datatype_uri)
+      }
     }
     
     .Object@librdf_statement <- librdf_new_statement_from_nodes(world@librdf_world, 

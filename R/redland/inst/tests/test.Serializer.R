@@ -29,7 +29,7 @@ test_that("Serializer constructor", {
   expect_that(class(subject@librdf_node), matches("_p_librdf_node_s"))
   predicate <- new("Node", world, uri="http://purl.org/dc/elements/1.1/creator")
   expect_that(class(predicate@librdf_node), matches("_p_librdf_node_s"))
-  object <- new("Node", world, literal="John Smith")
+  object <- new("Node", world, literal="John Smith", datatype_uri="http://www.w3.org/2001/XMLSchema#string")
   expect_that(class(object@librdf_node), matches("_p_librdf_node_s"))
   statement <- new("Statement", world, subject, predicate, object)
   expect_that(statement, not(is_null()))

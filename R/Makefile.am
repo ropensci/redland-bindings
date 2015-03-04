@@ -52,23 +52,13 @@ RUN=@REDLAND_RUN@
 
 SWIG_OPTS=-I$(srcdir)
 
-$(R_PACKAGE).c: @REDLAND_SWIG@
-	swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ Redland.i
+$(R_PACKAGE_SRC)/redland.c: @REDLAND_SWIG@
+	swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/redland.c Redland.i
 	cat Redland.R.in >> redland/R/redland.R
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(roxygen2); document()'
 	cp ../data/dc.rdf $(R_PACKAGE)/inst/testfiles
 	chmod 755 $(R_PACKAGE)/inst/testfiles/dc.rdf
 	-cd ..
-
-#swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/$@ @REDLAND_SWIG@
-
-$(R_PACKAGE).o: $(R_PACKAGE).c
-	-pushd $(R_PACKAGE_BUILD) && make all
-	-popd
-
-$(R_PACKAGE).$(R_SO_SUFFIX): $(R_PACKAGE)-stamp
-$(R_PACKAGE)-stamp: $(R_PACKAGE).o
-	-touch $(R_PACKAGE)-stamp
 
 test-R:
 	pwd
@@ -77,5 +67,7 @@ test-R:
 
 check-local: test-R
 
-all: $(R_PACKAGE).$(R_SO_SUFFIX)
+all: $(R_PACKAGE_SRC)/redland.c
+	cd $(R_PACKAGE_BUILD) && make all
+	cd ../../..
 

@@ -58,8 +58,8 @@ test_that("Query works", {
 
 # Query the RDF model with a SPARQL query that should return all triples
 queryString <- 'PREFIX orcid: <https://orcid.org/> PREFIX dataone: <https://cn.dataone.org/cn/v1/resolve/> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?a ?b ?c WHERE { ?a ?b ?c . }'
-expect_that(class(query), matches("Query"))
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
+expect_that(class(query), matches("Query"))
 queryResult <- executeQuery(query, model)
 expect_that(class(queryResult), matches("QueryResult"))
 

@@ -29,8 +29,8 @@ AM_LDFLAGS=@LIBRDF_LDFLAGS@
 R=R
 
 R_PACKAGE=redland
-R_PACKAGE_SRC=$(R_PACKAGE)/src
-R_PACKAGE_BUILD=$(R_PACKAGE)/inst
+R_PACKAGE_SRC=redland/src
+R_PACKAGE_BUILD=redland/inst
 # If you are rebuilding the wrapper .Rd files for functions defined in
 # the SWIG geneated R/redland.R script, you need to have the redland
 # source dowloaded and built. Currently the source is available from

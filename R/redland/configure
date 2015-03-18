@@ -2,8 +2,10 @@
 # This script is called by R package installation when
 # the command "R CMD INSTALL" is invoked.
 
-echo "Running redland installation configuration"
+if [ ! -e inst/Makefile ] ; then
+  cd inst && ./configure
+  cd ..
+fi
 
-pushd inst/build ; make all
-	
-echo "redland installation configuration done"
+cd inst && make all
+cd ..

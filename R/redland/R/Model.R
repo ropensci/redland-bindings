@@ -34,6 +34,10 @@
 setClass("Model", slots=c(librdf_model = "_p_librdf_model_s"))
 
 #' Constructor for a Model object.
+#' @param .Object a Node object
+#' @param world a World object
+#' @param storage a Storage object
+#' @param options extra options for model initialization
 #' @return the World object
 #' @export
 setMethod("initialize", signature = "Model", definition = function(.Object, world, storage, options) {
@@ -50,6 +54,9 @@ setGeneric("addStatement", function(.Object, statement) {
   standardGeneric("addStatement")
 })
 
+#' @describeIn Model
+#' @param .Object a Model object
+#' @param statement the Statement that will be added
 setMethod("addStatement", signature("Model", "Statement"), function(.Object, statement) {
   
   librdf_model_add_statement(.Object@librdf_model, statement@librdf_statement);
@@ -63,6 +70,8 @@ setMethod("addStatement", signature("Model", "Statement"), function(.Object, sta
 setGeneric("freeModel", function(.Object) {
   standardGeneric("freeModel")
 })
+
+#' @describeIn Model
 setMethod("freeModel", signature("Model"), function(.Object) {
   librdf_free_model(.Object@librdf_model)
 })

@@ -23,7 +23,7 @@
 
 R=R
 
-SRCDIR=../../../src
+SRCDIR=../src
 SRCS=$(SRCDIR)/redland.c $(SRCDIR)/util.c
 
 MAKEVARS=$(SRCDIR)/Makevars
@@ -53,7 +53,7 @@ CLEAN_FILES = aclocal.m4 \
         config.status
 
 $(LIBS): $(SRCS) $(MAKEVARS)
-	-cd $(SRCDIR) ; R CMD SHLIB redland.c util.c
+	cd $(SRCDIR) && R CMD SHLIB redland.c util.c
 
 $(MAKEVARS):
 	-echo "PKG_CFLAGS = @LIBRDF_CPPFLAGS@" > $@

@@ -1,11 +1,13 @@
 Package: redland
 Version: 0.1
 Title: Redland RDF library bindings in R
+Author: Matt Jones <slaughter@nceas.ucsb.edu>
 Authors@R: c( person("Matthew", "Jones", role = c("aut", "cre"), email =
     "jones@nceas.ucsb.edu"), person("Carl", "Boettiger", role = "aut", email =
     "cboettig@gmail.com"), person("Scott", "Chamberlain", role = "aut", email =
     "myrmecocystus@gmail.com"), person("Peter", "Slaughter", role = "aut",
     email = "slaughter@nceas.ucsb.edu"))
+Maintainer: Peter Slaughter <slaughter@nceas.ucsb.edu>
 VignetteBuilder: knitr
 Description: Routines for serializing and deserializing RDF (Resource
     Description Framework) Statements using the Redland librdf library.  The
@@ -14,6 +16,8 @@ Description: Routines for serializing and deserializing RDF (Resource
 Depends:
     R (>= 3.1.1),
     methods
+Imports:
+    roxygen2
 Suggests:
     knitr,
     testthat
@@ -26,6 +30,7 @@ Collate:
     'Model.R'
     'Parser.R'
     'Query.R'
+    'QueryResults.R'
     'Serializer.R'
     'mergeNamespace_roclet.R'
     'util.R'

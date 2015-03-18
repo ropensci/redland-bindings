@@ -42,6 +42,7 @@ test_that("Statement constructor", {
   expect_that(getTermType(stmt, "predicate"), matches("resource"))
   expect_that(getTermType(stmt, "object"), matches("literal"))
   
+  # Test 
   stmt <- new("Statement", world=world, 
               subject="_:foo1",
               predicate="http://purl.org/dc/terms/identifier",
@@ -50,6 +51,18 @@ test_that("Statement constructor", {
   expect_that(getTermType(stmt, "subject"), matches("blank"))
   expect_that(getTermType(stmt, "predicate"), matches("resource"))
   expect_that(getTermType(stmt, "object"), matches("blank"))
+  
+  err <- try(freeStatement(stmt), silent=TRUE)
+  expect_that(class(err), not(matches("try-error")))
+  
+  stmt <- new("Statement", world=world, 
+              subject=NULL,
+              predicate="http://purl.org/dc/terms/identifier",
+              object="id1234")
+  
+  expect_that(getTermType(stmt, "subject"), matches("blank"))
+  expect_that(getTermType(stmt, "predicate"), matches("resource"))
+  expect_that(getTermType(stmt, "object"), matches("literal"))
   
   err <- try(freeStatement(stmt), silent=TRUE)
   expect_that(class(err), not(matches("try-error")))

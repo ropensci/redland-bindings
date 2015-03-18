@@ -37,6 +37,7 @@
 #' roxygen2::roxygenize()
 #' devtools::document()
 #' }
+#' @import roxygen2
 #' @export
 mergeNamespace_roclet <- function() {
   #cat(sprintf("Called mergeNamespace_roclet.\n"))
@@ -53,14 +54,17 @@ mergeNamespace_roclet <- function() {
 #' @param options unused by this roclet
 #' @export
 roc_process.mergeNamespace <- function(roclet, partita, base_path, options = list()) {
-  on.exit(detach(".redland-temp"))
-  attach(NULL, name=".redland-temp")
+#   on.exit(detach(".redland-temp"))
+#   attach(NULL, name=".redland-temp")
+  tmpEnv <- new.env()
   # Load the Redland wrapper file into a temporary environment
   filePath <- sprintf("%s/R/redland.R", base_path)
-  source(filePath, as.environment(".redland-temp"))
+  #source(filePath, as.environment(".redland-temp"))
+  source(file=filePath, local=tmpEnv)
   # Check each Redland function to see if it has the SWIGfunction attribute set, and if so
   # include this function name in the list of functions to be exported
-  funcList <- ls(as.environment(".redland-temp"))
+  #funcList <- ls(as.environment(".redland-temp"))
+  funcList <- ls(tmpEnv)
   exportFuncList <- list()
   for (functionName in funcList) {
     funcType <- attr(get(functionName), "class")[1]

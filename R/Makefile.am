@@ -30,7 +30,13 @@ R=R
 
 R_PACKAGE=redland
 R_PACKAGE_SRC=$(R_PACKAGE)/src
-R_PACKAGE_BUILD=$(R_PACKAGE)/inst/build
+R_PACKAGE_BUILD=$(R_PACKAGE)/inst
+# If you are rebuilding the wrapper .Rd files for functions defined in
+# the SWIG geneated R/redland.R script, you need to have the redland
+# source dowloaded and built. Currently the source is available from
+# https://github.com/dajobe/librdf. The source dir, for example could
+# be "/home/smith/git/redland-1.0.17"
+REDLAND_SRC=<enter-your-redland-source-dir-here>
 
 R_CFLAGS=@R_CFLAGS@
 R_LDFLAGS=@R_LDFLAGS@
@@ -52,22 +58,33 @@ RUN=@REDLAND_RUN@
 
 SWIG_OPTS=-I$(srcdir)
 
+$(R_PACKAGE_BUILD)/Makefile: $(R_PACKAGE_BUILD)/Makefile.in $(R_PACKAGE_BUILD)/configure 
+	-cd $(R_PACKAGE_BUILD) ; ./configure
+
+$(R_PACKAGE_BUILD)/configure: $(R_PACKAGE_BUILD)/configure.ac
+	-cd $(R_PACKAGE_BUILD) ; autoconf
+
+$(R_PACKAGE_BUILD)/Makefile.in: $(R_PACKAGE_BUILD)/Makefile.am
+	-cd $(R_PACKAGE_BUILD) ; aclocal ; automake --foreign --add-missing --copy --force-missing
+
 $(R_PACKAGE_SRC)/redland.c: @REDLAND_SWIG@
 	swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/redland.c Redland.i
 	cat Redland.R.in >> redland/R/redland.R
+	cat redland/R/redland.R | sed 's/RSWIG_createNewRef/SWIG_createNewRef/' > redland/R/redland.R.fix
+	mv redland/R/redland.R.fix redland/R/redland.R
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(roxygen2); document()'
 	cp ../data/dc.rdf $(R_PACKAGE)/inst/testfiles
 	chmod 755 $(R_PACKAGE)/inst/testfiles/dc.rdf
-	-cd ..
 
 test-R:
 	pwd
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(testthat); library(roxygen2); load_all(); test()'
-	cd ..
+
+librdfDocs:
+	$(R) --no-save -e 'source("createLibrdfDocs.R") ; mkDocs(redlandDocDir="$(REDLAND_SRC)/docs", verbose=FALSE, librdfDocsURL="http://librdf.org/docs")'
 
 check-local: test-R
 
-all: $(R_PACKAGE_SRC)/redland.c
+all: $(R_PACKAGE_SRC)/redland.c $(R_PACKAGE_BUILD)/Makefile
 	cd $(R_PACKAGE_BUILD) && make all
-	cd ../../..
 

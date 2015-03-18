@@ -18,6 +18,7 @@
 
 #' A Redland Storage object
 #' @slot librdf_storage A redland storage object
+#' @slot type the storage type to create, i.e. "hashes", "mysql", "postgresql", ...
 #' @author Peter Slaughter
 #' @rdname Storage-class
 #' @include redland.R
@@ -33,6 +34,7 @@ setClass("Storage", slots = c(librdf_storage = "_p_librdf_storage_s",
 ))
 
 #' Constructor for Storage object
+#' @param .Object the Storage object
 #' @param world the World object
 #' @param type the Redland storage type
 #' @param name storage instance name
@@ -51,12 +53,14 @@ setMethod("initialize", signature = "Storage", definition = function(.Object, wo
 #' Free memory used by a librdf storage object
 #' @details After this method is called, the Storage object is no longer usable and should
 #' be deleted \code{"rm(storage)"} and a new object created.
-#' @param .Object a Storage object
+#' @param .Object a Storage object to free memory for
 #' @export
 setGeneric("freeStorage", function(.Object) {
   standardGeneric("freeStorage")
 })
 
+#' @describeIn Storage
+#' @param .Object a Storage object
 setMethod("freeStorage", signature("Storage"), function(.Object) {
   librdf_free_storage(.Object@librdf_storage)
 })

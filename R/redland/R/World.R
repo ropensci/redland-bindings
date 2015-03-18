@@ -17,7 +17,7 @@
 #
 
 #' A Redland World, used to initialize the Redland RDF library.
-#' @slot world A redland world object
+#' @slot librdf_world A redland world object
 #' @author Matthew Jones
 #' @rdname World-class
 #' @include redland.R
@@ -31,10 +31,12 @@
 #' \dontrun{
 #' world <- new("World")
 #' }
+#' @import methods
 #' @export
 setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
 
 #' Initialize the World object.
+#' @param .Object the World object
 #' @return the World object
 #' @export
 setMethod("initialize", signature = "World", definition = function(.Object) {
@@ -52,6 +54,8 @@ setGeneric("freeWorld", function(.Object) {
   standardGeneric("freeWorld")
 })
 
+#' @describeIn World
+#' @param .Object a World object
 setMethod("freeWorld", signature("World"), function(.Object) {
   librdf_free_world(.Object@librdf_world)
 })

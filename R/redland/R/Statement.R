@@ -24,11 +24,6 @@
 #' @include World.R
 #' @include Node.R
 #' @keywords classes
-#' @param subject value of type \code{"Node"} or \code{"character"}, the value for the RDF subject
-#' @param predicate value of type \code{"Node"} or \code{"character"}, the value for the RDF predicate
-#' @param object value of type \code{"Node"} or \code{"character"}, the value for the RDF object
-#' @param subjectType value of type \code{"character"}, the RDF term type to assign to the subject
-#' @param objectType value of type \code{"character"}, the RDF term type to assign to the object
 #' @exportClass Statement
 #' @description A Statement object is created using the provided subject, predicate and object.
 #' @details A Statement object can be created from Node objects that are provided for the subject,
@@ -54,6 +49,7 @@
 setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 
 #' Construct a Statement object.
+#' @param .Object the Statement object
 #' @param world a World object
 #' @param subject a Node object
 #' @param predicate a Node object
@@ -70,6 +66,9 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
   # Ensure that all provided params are not null
   stopifnot(!is.null(world), !missing(subject), !missing(predicate), !missing(object))
   
+  # The subject, predicate and object have all been passed in as characters, so we need to
+  # evaluate them and create appropriate Node objects from them that will be used to 
+  # create the statement object.
   if ( (is.null(subject) || class(subject) == "character") &&
          class(predicate) == "character" && 
          (is.null(object) || class(object) == "character") ) {
@@ -88,7 +87,9 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
     } else if (subjectType != "uri" && subjectType != "blank") {
       stop(sprintf("Invalid value for subjectType: %s", subjectType))
     }
-        
+      
+    # Create the subject Node from the passed in character value, and the
+    # node type that was either passed in or determined from the character value
     if (is.null(subject)) {
       subjectNode <- new("Node", world)
     } else if (subjectType == "blank") {
@@ -99,8 +100,10 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
       stop(sprintf("Invalid type for subject node: %s", subject))
     }
     
+    # The predicate is always a URI
     predicateNode <- new("Node", world, uri=predicate)
     
+    # Determine the type of the object node from the passed in value
     if (is.na(objectType)) {
       if (is.null(object)) {
         objectType <- "blank"
@@ -123,6 +126,8 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
       stop(sprintf("Invalid value for objectType: %s", objectType))
     }
     
+    # Create the object Node from the passed in character value, and the type
+    # that was either passed in or determined from the argument value
     if (is.null(object)) {
       objectNode <- new("Node", world)
     } else if (objectType == "blank") {
@@ -142,6 +147,8 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
                                                                 predicateNode@librdf_node, 
                                                                 objectNode@librdf_node);
   } else {
+    # The subject, predicate and object have all been passed in as Node objects, so create
+    # the statement from these objects directly.
     if (class(subject) == "Node" && class(predicate) == "Node" && class(object) == "Node") {
       # Create the underlying redland statement object
       .Object@librdf_statement <- librdf_new_statement_from_nodes(world@librdf_world, 
@@ -161,12 +168,16 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
 #' @description After a Statement object has been created, this method can
 #' be used to determine the RDF type ("uri", "literal", "blank") that has been
 #' assigned to the specified RDF term, i.e. "subject", "predicate", "object".
+#' @param .Object a Statement object
 #' @param term the RDF term for which the type will be returned
 #' @export
 setGeneric("getTermType", function(.Object, term) {
   standardGeneric("getTermType")
 })
 
+#' @describeIn Statement
+#' @param .Object a Statement Object
+#' @param term the RDF term for which the type will be returned
 setMethod("getTermType", signature("Statement", "character"), function(.Object, term) {
   if (term != "subject" && term != "predicate" && term != "object") {
     stop("Must specify \"subject\", \"predicate\", or \"object\" for term")
@@ -202,6 +213,8 @@ setMethod("getTermType", signature("Statement", "character"), function(.Object, 
 setGeneric("freeStatement", function(.Object) {
   standardGeneric("freeStatement")
 })
+
+#' @describeIn Statement
 setMethod("freeStatement", signature("Statement"), function(.Object) {
   librdf_free_statement(.Object@librdf_statement)
   

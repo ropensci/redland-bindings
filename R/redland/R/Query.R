@@ -16,13 +16,19 @@
 #   limitations under the License.
 #
 
-#' A Query object is used to query an RDF model
+#' Query an RDF model
+#' @description The Query class is used to execuate a query on a Model object using the default query
+#' language SPARQL. For more information, please refer to \url{http://librdf.org/rasqal/} for details on 
+#' supported query languages.
+#' @details A Query is executed using the executeQuery method, which returns a QueryResults object that
+#' can be interated over the query solution sequence.
 #' @slot librdf_query A redland query object
 #' @author Scott Chamberlain, Peter Slaughter
 #' @rdname Query-class
 #' @include redland.R
 #' @keywords classes
 #' @exportClass Query
+#' @references www.example.com
 #' @examples
 #' \dontrun{
 #' queryString <- 'PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?a ?c WHERE { ?a prov:Agent ?c . }'
@@ -59,6 +65,8 @@ setGeneric("executeQuery", function(.Object, model) {
   standardGeneric("executeQuery")
 })
 
+#' @param .Object a Query object
+#' @param model a Model object
 #' @describeIn Query
 setMethod("executeQuery", signature("Query"), function(.Object, model) {
   results <- librdf_query_execute(.Object@librdf_query, model@librdf_model) 
@@ -74,6 +82,7 @@ setGeneric("setQueryResultLimit", function(.Object, limit) {
   standardGeneric("setQueryResultLimit")
 })
 
+#' @param limit max number of results to return
 #' @describeIn Query
 setMethod("setQueryResultLimit", signature("Query"), function(.Object, limit) {
   librdf_query_set_limit(.Object@librdf_query, as.integer(limit))

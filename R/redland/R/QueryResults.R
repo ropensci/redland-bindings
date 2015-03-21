@@ -17,7 +17,7 @@
 #
 
 #' QueryResult is used to retrieve query results from a Query object.
-#' @slot librdf_query A redland query object
+#' @slot librdf_query_results A redland query object
 #' @author Peter Slaughter
 #' @rdname QueryResults-class
 #' @include redland.R
@@ -46,12 +46,13 @@ setMethod("initialize", signature = "QueryResults", definition = function(.Objec
 
 #' Get the next query result
 #' @description The next query result is returned
-#' @param .Object a Query object
+#' @param .Object a QueryResults object
 #' @export
 setGeneric("getNextResult", function(.Object) {
   standardGeneric("getNextResult")
 })
 
+#' @param .Object a QueryResults object
 #' @describeIn QueryResults
 setMethod("getNextResult", signature("QueryResults"), function(.Object) {
 

@@ -3,22 +3,22 @@
 \docType{methods}
 \name{[<-,ExternalReference-method}
 \alias{[<-,ExternalReference-method}
-\title{Do more stuff}
+\title{Assign values in a list of ExternalReferences}
 \usage{
 \S4method{[}{ExternalReference}(x, i, j, ...) <- value
 }
 \arguments{
-\item{x}{an ExternalReference}
+\item{x}{a list of ExternalReferences}
 
-\item{i}{a value}
+\item{i}{row subscript}
 
-\item{j}{a value}
+\item{j}{column subscript}
 
-\item{...}{some values}
+\item{...}{additional arguments}
 
-\item{value}{a value}
+\item{value}{a value to assign}
 }
 \description{
-We are doing lots of stuff now
+Assign values in a list of ExternalReferences
 }
 

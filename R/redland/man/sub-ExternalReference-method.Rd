@@ -3,22 +3,22 @@
 \docType{methods}
 \name{[,ExternalReference-method}
 \alias{[,ExternalReference-method}
-\title{Do some stuff}
+\title{Subset a list of ExternalReferences}
 \usage{
 \S4method{[}{ExternalReference}(x, i, j, ..., drop = TRUE)
 }
 \arguments{
-\item{x}{an ExternalReference}
+\item{x}{a list of ExternalReferences}
 
-\item{i}{a value}
+\item{i}{row subscript}
 
-\item{j}{a value}
+\item{j}{column subscript}
 
-\item{...}{some values}
+\item{...}{additional arguments}
 
 \item{drop}{a logical}
 }
 \description{
-this method does some stuff
+Subset a list of ExternalReferences
 }
 

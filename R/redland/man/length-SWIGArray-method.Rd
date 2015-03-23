@@ -3,7 +3,7 @@
 \docType{methods}
 \name{length,SWIGArray-method}
 \alias{length,SWIGArray-method}
-\title{Length of a SWIGArray}
+\title{Return length of a SWIGArray}
 \usage{
 \S4method{length}{SWIGArray}(x)
 }
@@ -11,6 +11,6 @@
 \item{x}{the SWIGArray}
 }
 \description{
-Length of a SWIGArray
+Return length of a SWIGArray
 }
 

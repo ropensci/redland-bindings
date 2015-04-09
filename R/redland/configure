@@ -2,10 +2,5 @@
 # This script is called by R package installation when
 # the command "R CMD INSTALL" is invoked.
 
-if [ ! -e inst/Makefile ] ; then
-  cd inst && ./configure
-  cd ..
-fi
-
-cd inst && make all
+cd inst && ./configure && make all
 cd ..

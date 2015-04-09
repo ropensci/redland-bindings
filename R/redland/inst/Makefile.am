@@ -32,32 +32,24 @@ LIBS=$(SRCDIR)/redland.so
 CLEAN_FILES = aclocal.m4 \
         autoscan.log  \
         config.h \
-	config.h.in~ \
-	configure \
-        INSTALL \
-        redland.o \
+        ../src/redland.o \
         stamp-h1 \
-        util.o \
+        ../src/util.o \
         autom4te.cache \
         config.h.in \
         config.log \
-        COPYING \
 	Makefile \
-	missing \
-	compile \
-	install-sh \
-	Makefile.in \
 	ltmain.sh \
-	NEWS \
-	README \
         config.status
 
-$(LIBS): $(SRCS) $(MAKEVARS)
+$(LIBS): $(SRCS)
+	-echo "PKG_CFLAGS = @LIBRDF_CPPFLAGS@" > $(MAKEVARS)
+	-echo "PKG_LIBS = @LIBRDF_LDFLAGS@ @RASQAL_LDFLAGS@ " >> $(MAKEVARS)
 	cd $(SRCDIR) && R CMD SHLIB redland.c util.c
 
-$(MAKEVARS):
-	-echo "PKG_CFLAGS = @LIBRDF_CPPFLAGS@" > $@
-	-echo "PKG_LIBS = @LIBRDF_LDFLAGS@ @RASQAL_LDFLAGS@ " >> $@
+#$(MAKEVARS):
+#	-echo "PKG_CFLAGS = @LIBRDF_CPPFLAGS@" > $@
+#	-echo "PKG_LIBS = @LIBRDF_LDFLAGS@ @RASQAL_LDFLAGS@ " >> $@
 
 all:	${LIBS}
 

@@ -4,6 +4,8 @@
 AC_PREREQ([2.69])
 AC_INIT([redland], [1.0.17.2])
 AM_INIT_AUTOMAKE()
+# Disable maintainer mode so that make will not try to rebuild all automake files
+AM_MAINTAINER_MODE()
 
 AC_CONFIG_SRCDIR([../src/redland.c])
 #AC_CONFIG_HEADERS([config.h])

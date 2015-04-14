@@ -7,9 +7,9 @@ AC_INIT([redland], [1.0.17.2])
 AC_CONFIG_SRCDIR([../src/redland.c])
 #AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([foreign])
 # Disable maintainer mode so that make will not try to rebuild all automake files
-AM_MAINTAINER_MODE()
+AM_MAINTAINER_MODE
 
 MIN_REDLAND_VERSION=1.0.15
 OUR_REDLAND_VERSION=`echo $PACKAGE_VERSION | sed -e 's,\.[0-9]$,,'`

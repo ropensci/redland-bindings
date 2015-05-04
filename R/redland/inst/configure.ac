@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([redland], [1.0.17.2])
+AC_INIT([redland], [1.0.14])
 
 AC_CONFIG_SRCDIR([../src/redland.c])
 #AC_CONFIG_HEADERS([config.h])
@@ -11,7 +11,7 @@ AM_INIT_AUTOMAKE([foreign])
 # Disable maintainer mode so that make will not try to rebuild all automake files
 AM_MAINTAINER_MODE
 
-MIN_REDLAND_VERSION=1.0.15
+MIN_REDLAND_VERSION=1.0.14
 OUR_REDLAND_VERSION=`echo $PACKAGE_VERSION | sed -e 's,\.[0-9]$,,'`
 
 # Checks for programs.

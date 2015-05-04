@@ -1,7 +1,7 @@
 Package: redland
 Version: 0.1
 Title: Redland RDF library bindings in R
-Author: Matt Jones <slaughter@nceas.ucsb.edu>
+Author: Matt Jones <jones@nceas.ucsb.edu>
 Authors@R: c( person("Matthew", "Jones", role = c("aut", "cre"), email =
     "jones@nceas.ucsb.edu"), person("Carl", "Boettiger", role = "aut", email =
     "cboettig@gmail.com"), person("Scott", "Chamberlain", role = "aut", email =
@@ -33,6 +33,7 @@ Collate:
     'QueryResults.R'
     'Serializer.R'
     'mergeNamespace_roclet.R'
+    'redland-package.R'
     'util.R'
 License: Apache License 2.0
 BugReports: https://github.com/ropensci/redland-bindings/issues

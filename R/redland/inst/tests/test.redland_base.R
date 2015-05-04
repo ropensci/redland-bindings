@@ -84,8 +84,11 @@ test_that("librdf basic functions", {
     expect_that(serializer, not(is_null()))
     expect_that(class(serializer), matches("_p_librdf_serializer"))
     base = librdf_new_uri(world, "http://example.org/base.rdf");
-    librdf_serializer_serialize_model_to_file(serializer,'./test-out.rdf',base,model);
-    expect_that(file.exists('./test-out.rdf'), is_true())
+    filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")
+    
+    librdf_serializer_serialize_model_to_file(serializer,filePath,base,model);
+    expect_that(file.exists(filePath), is_true())
+    unlink(filePath)
     
     # Free resources
     librdf_free_serializer(serializer);

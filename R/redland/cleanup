@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Remove files used by the building and installation that are not
+# needed to use redland.
+
+pkg_dir=${R_LIBRARY_DIR}/${R_PACKAGE_NAME}
+echo "Cleaning from $pkg_dir"
+
+files="src/Makevars \
+src/*.o \
+AUTHORS \
+COPYING \
+ChangeLog \
+INSTALL \
+Makefile \
+Makefile.am \
+Makefile.in \
+README \
+aclocal.m4 \
+compile  \
+config.log \
+config.status  \
+configure  \
+configure.ac  \
+install-sh  
+ltmain.sh \
+missing"
+
+for i in $files ; do
+    fn=${pkg_dir}/${i}
+    if [ -e $fn ] ; then
+        #echo "rm $fn"
+        rm -f $fn
+    fi
+done
+
+if [-e ${pkg_dir}/autom4te.cache ] ; then
+    rm -rf ${pkg_dir}/autom4te.cache
+fi

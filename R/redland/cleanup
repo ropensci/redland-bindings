@@ -34,6 +34,6 @@ for i in $files ; do
     fi
 done
 
-if [-e ${pkg_dir}/autom4te.cache ] ; then
+if [ -e ${pkg_dir}/autom4te.cache ] ; then
     rm -rf ${pkg_dir}/autom4te.cache
 fi

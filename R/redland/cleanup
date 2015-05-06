@@ -17,7 +17,6 @@ aclocal.m4 \
 compile  \
 config.log \
 config.status  \
-configure  \
 configure.ac  \
 install-sh  \
 ltmain.sh \

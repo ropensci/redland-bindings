@@ -4,7 +4,6 @@
 # needed to use redland.
 
 pkg_dir=${R_LIBRARY_DIR}/${R_PACKAGE_NAME}
-echo "Cleaning from $pkg_dir"
 
 files="AUTHORS \
 COPYING \
@@ -20,14 +19,13 @@ config.log \
 config.status  \
 configure  \
 configure.ac  \
-install-sh  
+install-sh  \
 ltmain.sh \
 missing"
 
 for i in $files ; do
     fn=${pkg_dir}/${i}
     if [ -e $fn ] ; then
-        #echo "rm $fn"
         rm -f $fn
     fi
 done

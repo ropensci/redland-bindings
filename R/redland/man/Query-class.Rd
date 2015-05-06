@@ -7,7 +7,7 @@
 \alias{freeQuery,Query-method}
 \alias{getQueryResultLimit,Query-method}
 \alias{setQueryResultLimit,Query-method}
-\title{A Query object is used to query an RDF model}
+\title{Query an RDF model}
 \usage{
 \S4method{executeQuery}{Query}(.Object, model)
 
@@ -17,8 +17,21 @@
 
 \S4method{freeQuery}{Query}(.Object)
 }
+\arguments{
+\item{.Object}{a Query object}
+
+\item{model}{a Model object}
+
+\item{limit}{max number of results to return}
+}
 \description{
-A Query object is used to query an RDF model
+The Query class is used to execuate a query on a Model object using the default query
+language SPARQL. For more information, please refer to \url{http://librdf.org/rasqal/} for details on
+supported query languages.
+}
+\details{
+A Query is executed using the executeQuery method, which returns a QueryResults object that
+can be interated over the query solution sequence.
 }
 \section{Methods (by generic)}{
 \itemize{
@@ -43,6 +56,9 @@ query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql"
 }
 \author{
 Scott Chamberlain, Peter Slaughter
+}
+\references{
+www.example.com
 }
 \keyword{classes}
 

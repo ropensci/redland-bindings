@@ -7,7 +7,7 @@
 getNextResult(.Object)
 }
 \arguments{
-\item{.Object}{a Query object}
+\item{.Object}{a QueryResults object}
 }
 \description{
 The next query result is returned

@@ -5,16 +5,20 @@
 \alias{initialize,Node-method}
 \title{Initialize a Node object.}
 \usage{
-\S4method{initialize}{Node}(.Object, world, literal, uri)
+\S4method{initialize}{Node}(.Object, world, literal, uri, blank, datatype_uri)
 }
 \arguments{
 \item{.Object}{the Node object to be initialized}
 
 \item{world}{a World object}
 
-\item{literal}{a literal character value to be used as the vale of the node}
+\item{literal}{a literal character value to be assigned to the node}
 
-\item{uri}{a uri character value to be used as the value of the node}
+\item{uri}{a uri character value to be assigned to the node}
+
+\item{blank}{a blank node identifier to be assigned to the node}
+
+\item{datatype_uri}{a uri used to specify the datatype of a literal node, i.e. http://www.w3.org/2001/XMLSchema#string}
 }
 \value{
 the Node object

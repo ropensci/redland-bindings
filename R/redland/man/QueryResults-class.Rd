@@ -11,6 +11,9 @@
 
 \S4method{freeQueryResults}{QueryResults}(.Object)
 }
+\arguments{
+\item{.Object}{a QueryResults object}
+}
 \description{
 QueryResult is used to retrieve query results from a Query object.
 }
@@ -23,7 +26,7 @@ QueryResult is used to retrieve query results from a Query object.
 \section{Slots}{
 
 \describe{
-\item{\code{librdf_query}}{A redland query object}
+\item{\code{librdf_query_results}}{A redland query object}
 }}
 \examples{
 \dontrun{

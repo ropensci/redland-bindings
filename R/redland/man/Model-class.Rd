@@ -3,10 +3,28 @@
 \docType{class}
 \name{Model-class}
 \alias{Model-class}
+\alias{addStatement,Model,Statement-method}
+\alias{freeModel,Model-method}
 \title{An RDF Model object.}
+\usage{
+\S4method{addStatement}{Model,Statement}(.Object, statement)
+
+\S4method{freeModel}{Model}(.Object)
+}
+\arguments{
+\item{.Object}{a Model object}
+
+\item{statement}{the Statement that will be added}
+}
 \description{
 An RDF Model object.
 }
+\section{Methods (by generic)}{
+\itemize{
+\item \code{addStatement}: 
+
+\item \code{freeModel}: 
+}}
 \section{Slots}{
 
 \describe{

@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{redland RDF}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{knitr}
   %\usepackage[utf8]{inputenc}
 ---
 

@@ -5,9 +5,6 @@
 \usage{
 librdf_new_world (  )
 }
-\arguments{
-
-}
 \value{
 _p_librdf_world_s
 }

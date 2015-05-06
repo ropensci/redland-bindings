@@ -30,9 +30,9 @@ stamp*
 **/.Rhistory
 **/*.RData
 **/*.Rproj
-**/.Rbuildignore
 **/*.o
 **/*.so
 **/.Rproj.user
 **/redland-stamp
 **/test-out.rdf
+.Rproj.user

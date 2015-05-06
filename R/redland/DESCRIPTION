@@ -1,5 +1,5 @@
 Package: redland
-Version: 0.1
+Version: 0.2.0.9000
 Title: Redland RDF library bindings in R
 Author: Matt Jones <jones@nceas.ucsb.edu>
 Authors@R: c( person("Matthew", "Jones", role = c("aut", "cre"), email =

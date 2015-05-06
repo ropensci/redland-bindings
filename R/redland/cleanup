@@ -6,9 +6,7 @@
 pkg_dir=${R_LIBRARY_DIR}/${R_PACKAGE_NAME}
 echo "Cleaning from $pkg_dir"
 
-files="src/Makevars \
-src/*.o \
-AUTHORS \
+files="AUTHORS \
 COPYING \
 ChangeLog \
 INSTALL \

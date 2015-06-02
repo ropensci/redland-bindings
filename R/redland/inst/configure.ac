@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.62])
 AC_INIT([redland], [1.0.14])
 
 AC_CONFIG_SRCDIR([../src/redland.c])

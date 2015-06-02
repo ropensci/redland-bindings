@@ -20,7 +20,8 @@ Imports:
 Suggests:
     knitr,
     testthat
-SystemRequirements: librdf-dev (Ubuntu), redland (MacPorts), redland (cygwin)
+SystemRequirements: Mac OSX: redland (>= 1.0.14) ; Linux: librdf0 (>= 1.0.14),
+    librdf0-dev (>= 1.0.14)
 Collate:
     'redland.R'
     'World.R'
@@ -38,4 +39,3 @@ Collate:
 License: Apache License 2.0
 BugReports: https://github.com/ropensci/redland-bindings/issues
 Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace"))
-SystemRequirements: Mac OSX: redland (>= 1.0.15) ; Linux: librdf0 (>= 1.0.15), librdf0-dev (>= 1.0.15)

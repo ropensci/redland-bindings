@@ -23,7 +23,7 @@ dnl
 dnl 
 
 
-AC_INIT([Redland librdf Language bindings],[1.0.17.2],[http://bugs.librdf.org/],[redland-bindings])
+AC_INIT([Redland librdf Language bindings],[1.0.14],[http://bugs.librdf.org/],[redland-bindings])
 AC_PREREQ([2.62])
 AC_CONFIG_SRCDIR(perl/example.pl)
 AC_REVISION($Revision$)dnl
@@ -34,7 +34,7 @@ AM_INIT_AUTOMAKE([1.11 check-news std-options -Wobsolete -Wportability -Wsyntax 
 AM_MAINTAINER_MODE
 
 dnl 1.0.14 probably also works (Raptor and Rasqal dependencies the same)
-MIN_REDLAND_VERSION=1.0.15
+MIN_REDLAND_VERSION=1.0.14
 
 AC_CANONICAL_HOST
 

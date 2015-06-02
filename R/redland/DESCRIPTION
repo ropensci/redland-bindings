@@ -20,6 +20,7 @@ Imports:
 Suggests:
     knitr,
     testthat
+SystemRequirements: librdf-dev (Ubuntu), redland (MacPorts), redland (cygwin)
 Collate:
     'redland.R'
     'World.R'

@@ -1,5 +1,5 @@
 Package: redland
-Version: 0.2.1
+Version: 1.0.0
 Title: RDF Library Bindings in R
 Authors@R: c( person("Matthew", "Jones", role = c("aut", "cre"), email =
     "jones@nceas.ucsb.edu"), person("Carl", "Boettiger", role = "aut", email =

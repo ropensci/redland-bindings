@@ -1,13 +1,12 @@
 Package: redland
-Version: 0.2.0.9000
-Title: Redland RDF library bindings in R
-Author: Matt Jones <jones@nceas.ucsb.edu>
+Version: 0.2.1
+Title: RDF Library Bindings in R
 Authors@R: c( person("Matthew", "Jones", role = c("aut", "cre"), email =
     "jones@nceas.ucsb.edu"), person("Carl", "Boettiger", role = "aut", email =
     "cboettig@gmail.com"), person("Scott", "Chamberlain", role = "aut", email =
     "myrmecocystus@gmail.com"), person("Peter", "Slaughter", role = "aut",
     email = "slaughter@nceas.ucsb.edu"))
-Maintainer: Peter Slaughter <slaughter@nceas.ucsb.edu>
+Maintainer: Matthew Jones <jones@nceas.ucsb.edu>
 VignetteBuilder: knitr
 Description: Routines for serializing and deserializing RDF (Resource
     Description Framework) Statements using the Redland librdf library.  The
@@ -38,3 +37,4 @@ Collate:
 License: Apache License 2.0
 BugReports: https://github.com/ropensci/redland-bindings/issues
 Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace"))
+SystemRequirements: Mac OSX: redland (>= 1.0.15) ; Linux: librdf0 (>= 1.0.15), librdf0-dev (>= 1.0.15)

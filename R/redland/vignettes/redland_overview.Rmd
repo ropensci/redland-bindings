@@ -28,7 +28,7 @@ parser <- new("Parser", world)
 parseFileIntoModel(parser, world, system.file("testfiles", "dc.rdf", package="redland"), model)
   
 ```
-Next the RDF graph is queried for statements of interest, using the SPARQL query syntax (http://www.w3.org/TR/rdf-sparql-query/):
+Next the RDF graph is queried for statements of interest, using the [SPARQL query syntax](http://www.w3.org/TR/rdf-sparql-query)
 
 ```
 queryString <- 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c WHERE { ?a dc:creator ?c . }'

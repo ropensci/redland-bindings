@@ -9,7 +9,4 @@
 The redland R package provides methods to create, query and write information stored in the
 Resource Description Framework (RDF).
 }
-\section{redland}{
-
-}
 

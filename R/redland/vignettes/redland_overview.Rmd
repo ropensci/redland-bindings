@@ -19,7 +19,7 @@ An introduction to RDF can be found at http://www.w3.org/TR/2014/NOTE-rdf11-prim
 
 The following example reads an RDF graph from a disk file that was previously saved in the RDF/XML format:
 
-```
+```{r}
 library(redland)
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -30,7 +30,7 @@ parseFileIntoModel(parser, world, system.file("testfiles", "dc.rdf", package="re
 ```
 Next the RDF graph is queried for statements of interest, using the [SPARQL query syntax](http://www.w3.org/TR/rdf-sparql-query)
 
-```
+```{r}
 queryString <- 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c WHERE { ?a dc:creator ?c . }'
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
 queryResult <- executeQuery(query, model)
@@ -42,7 +42,7 @@ Additional results can be obtained by calling getNextResult() until a null value
 been returned.
 
 Next, additional statements can be added to the RDF graph:
-```
+```{r}
 stmt <- new("Statement", world=world, 
         subject="http://www.dajobe.org/",
         predicate="http://purl.org/dc/elements/1.1/language",
@@ -52,7 +52,7 @@ addStatement(model, stmt)
 
 Now the RDF graph can be written to disk:
 
-```
+```{r}
 serializer <- new("Serializer", world, mimeType="application/rdf+xml")
 status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")  
 filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")

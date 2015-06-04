@@ -8,25 +8,25 @@ test_that("librdf basic functions", {
     expect_that(class(world), matches("_p_librdf_world_s"))
     storage <- librdf_new_storage(world,'hashes','dummy',"new=yes,hash-type='memory'")
     expect_that(class(storage), matches("_p_librdf_storage_s"))
-    
+
     model <- librdf_new_model(world,storage,'')
     expect_that(class(model), matches("_p_librdf_model_s"))
-    
+
     parser <- librdf_new_parser(world,'rdfxml','application/rdf+xml',NULL)
     expect_that(class(parser), matches("_p_librdf_parser_s"))
-    uri <- librdf_new_uri(world,'file:../testfiles/dc.rdf')
+    uri <- librdf_new_uri(world,'file:../../inst/testfiles/dc.rdf')
     #uri <- librdf_new_uri(world,'file:../../data/dc.rdf')
     expect_that(class(uri), matches("_p_librdf_uri_s"))
     rv <- librdf_parser_parse_into_model(parser,uri,uri,model)
     expect_that(rv, equals(0))
     librdf_free_uri(uri);
     librdf_free_parser(parser);
-    
+
     query <- librdf_new_query(world, 'sparql', NULL, "PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c ?d WHERE { ?a dc:title ?c . OPTIONAL { ?a dc:related ?d } }", NULL)
     results <- librdf_model_query_execute(model, query);
     expect_that(results, not(is_null()))
     expect_that(class(results), matches("_p_librdf_query_results"))
-    
+
     # Convert the whole sparql result to a string and check its value
     qstr <- librdf_query_results_to_string(results, NULL, NULL)
     expect_that(qstr, matches("http://www.dajobe.org/"))
@@ -54,7 +54,7 @@ test_that("librdf basic functions", {
         }
         rc <- librdf_query_results_next(results)
     }
-    
+
     # Test adding a new Statement to the model
     about <- "http://matt.magisa.org/"
     subject <- librdf_new_node_from_uri_string(world, about)
@@ -71,25 +71,25 @@ test_that("librdf basic functions", {
     expect_that(class(statement), matches("_p_librdf_statement_s"))
 
     rc <- librdf_model_add_statement(model, statement)
-    expect_that(rc, equals(0))    
-    
+    expect_that(rc, equals(0))
+
     # Comment out these lines to prevent memory related crash. See test.librdf_free_statement.R for details.
     #librdf_free_node(subject)
     #librdf_free_node(pred)
     #librdf_free_node(object)
     librdf_free_statement(statement)
-    
+
     # Test serialization of the model to a text file
     serializer <- librdf_new_serializer(world, "rdfxml", "", NULL);
     expect_that(serializer, not(is_null()))
     expect_that(class(serializer), matches("_p_librdf_serializer"))
     base = librdf_new_uri(world, "http://example.org/base.rdf");
     filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")
-    
+
     librdf_serializer_serialize_model_to_file(serializer,filePath,base,model);
     expect_that(file.exists(filePath), is_true())
     unlink(filePath)
-    
+
     # Free resources
     librdf_free_serializer(serializer);
     librdf_free_uri(base);

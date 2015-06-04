@@ -1,0 +1,79 @@
+---
+title: "redland: create, query and write RDF graphs"
+author: "Matthew Jones"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{redland RDF}
+  %\VignetteEngine{knitr}
+  %\usepackage[utf8]{inputenc}
+---
+
+<!--    This work was created by the National Center for Ecological Analysis and Synthesis.
+
+     Copyright 2015
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   
+-->
+
+## Introduction
+
+The `redland` R package provides methods to create, query and write to disk data stored in the Resource Description Framework (RDF). RDF provides a standardized way to make statements about resources and the relationships between them. Typical resources include datasets that are available via URLs. Resources don't have to be available online, for example a resource could also be the name of the person that created a dataset. A collection of RDF statements comprise an RDF graph, which can be read and interpreted by an RDF capable software application that uses the resources described in the graph. 
+
+An introduction to RDF can be found at http://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624.
+
+## Examples
+
+The following example reads an RDF graph from a disk file that was previously saved in the RDF/XML format:
+
+```{r}
+library(redland)
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+model <- new("Model", world=world, storage, options="")
+parser <- new("Parser", world)
+parseFileIntoModel(parser, world, system.file("testfiles", "dc.rdf", package="redland"), model)
+  
+```
+Next the RDF graph is queried for statements of interest, using the [SPARQL query syntax](http://www.w3.org/TR/rdf-sparql-query)
+
+```{r}
+queryString <- 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c WHERE { ?a dc:creator ?c . }'
+query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
+queryResult <- executeQuery(query, model)
+result <- getNextResult(queryResult)
+cat(sprintf("Result from query: %s\n", result))
+```
+
+Additional results can be obtained by calling getNextResult() until a null value is returned, which indicates that all results have
+been returned.
+
+Next, additional statements can be added to the RDF graph:
+```{r}
+stmt <- new("Statement", world=world, 
+        subject="http://www.dajobe.org/",
+        predicate="http://purl.org/dc/elements/1.1/language",
+        object="en")
+addStatement(model, stmt)
+```
+
+Now the RDF graph can be written to disk:
+
+```{r}
+serializer <- new("Serializer", world, mimeType="application/rdf+xml")
+status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")  
+filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")
+status <- serializeToFile(serializer, world, model, filePath)
+```
+

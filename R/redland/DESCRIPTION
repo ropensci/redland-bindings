@@ -1,12 +1,13 @@
 Package: redland
-Version: 1.0.0
+Version: 1.0.17
 Title: RDF Library Bindings in R
-Authors@R: c( person("Matthew", "Jones", role = c("aut", "cre"), email =
-    "jones@nceas.ucsb.edu"), person("Carl", "Boettiger", role = "aut", email =
-    "cboettig@gmail.com"), person("Scott", "Chamberlain", role = "aut", email =
-    "myrmecocystus@gmail.com"), person("Peter", "Slaughter", role = "aut",
-    email = "slaughter@nceas.ucsb.edu"))
+Authors@R: c( person("Matthew", "Jones", "B.", role = c("aut", "cre"), email =
+    "jones@nceas.ucsb.edu"), person("Peter", "Slaughter", role = "aut",
+    email = "slaughter@nceas.ucsb.edu"), person("Carl", "Boettiger",
+    role = "ctb", email = "cboettig@gmail.com"), person("Scott", "Chamberlain",
+    role = "ctb", email = "myrmecocystus@gmail.com"))
 Maintainer: Matthew Jones <jones@nceas.ucsb.edu>
+Date: 2015
 VignetteBuilder: knitr
 Description: Routines for serializing and deserializing RDF (Resource
     Description Framework) Statements using the Redland librdf library.  The

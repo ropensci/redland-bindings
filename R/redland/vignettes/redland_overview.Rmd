@@ -9,6 +9,24 @@ vignette: >
   %\usepackage[utf8]{inputenc}
 ---
 
+<!--    This work was created by the National Center for Ecological Analysis and Synthesis.
+
+     Copyright 2015
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   
+-->
+
 ## Introduction
 
 The `redland` R package provides methods to create, query and write to disk data stored in the Resource Description Framework (RDF). RDF provides a standardized way to make statements about resources and the relationships between them. Typical resources include datasets that are available via URLs. Resources don't have to be available online, for example a resource could also be the name of the person that created a dataset. A collection of RDF statements comprise an RDF graph, which can be read and interpreted by an RDF capable software application that uses the resources described in the graph. 

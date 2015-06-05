@@ -22,13 +22,15 @@ install-sh  \
 ltmain.sh \
 missing"
 
+# cleanup files
 for i in $files ; do
     fn=${pkg_dir}/${i}
-    if [ -e $fn ] ; then
+    if [ ! -z $fn ] && [ -e $fn ] ; then
         rm -f $fn
     fi
 done
 
-if [ -e ${pkg_dir}/autom4te.cache ] ; then
+# cleanup dirs
+if [ ! -z $pkg_dir ] && [ -d ${pkg_dir}/autom4te.cache ] ; then
     rm -rf ${pkg_dir}/autom4te.cache
 fi

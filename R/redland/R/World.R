@@ -18,7 +18,6 @@
 
 #' A Redland World, used to initialize the Redland RDF library.
 #' @slot librdf_world A redland world object
-#' @author Matthew Jones
 #' @rdname World-class
 #' @include redland.R
 #' @keywords classes

@@ -19,7 +19,6 @@
 #' A Redland Node, used to store one node in an RDF triple statement.
 #' @description A Node represents a RDF Resource, Property, Literal or an RDF blank Node.
 #' @slot librdf_node A redland node object
-#' @author Matthew Jones
 #' @include redland.R
 #' @include World.R
 #' @rdname Node-class

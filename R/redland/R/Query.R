@@ -23,7 +23,6 @@
 #' @details A Query is executed using the executeQuery method, which returns a QueryResults object that
 #' can be interated over the query solution sequence.
 #' @slot librdf_query A redland query object
-#' @author Scott Chamberlain, Peter Slaughter
 #' @rdname Query-class
 #' @include redland.R
 #' @keywords classes

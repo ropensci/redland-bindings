@@ -20,7 +20,6 @@
 #' @description The Parser class provides methods to parse RDF content into a Redland
 #' RDF model.
 #' @slot librdf_parser A redland parser object
-#' @author Peter Slaughter
 #' @rdname Parser-class
 #' @include redland.R
 #' @include World.R

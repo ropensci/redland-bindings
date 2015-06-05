@@ -19,7 +19,6 @@
 #' A Redland Storage object
 #' @slot librdf_storage A redland storage object
 #' @slot type the storage type to create, i.e. "hashes", "mysql", "postgresql", ...
-#' @author Peter Slaughter
 #' @rdname Storage-class
 #' @include redland.R
 #' @include World.R

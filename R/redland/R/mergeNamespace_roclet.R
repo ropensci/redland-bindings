@@ -31,7 +31,6 @@
 #' Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace"))
 #' 
 #' The 'namespace' roclet must always run before the 'mergeNamespace' roclet.
-#' @author Peter Slaughter
 #' @examples
 #' \dontrun{
 #' roxygen2::roxygenize()

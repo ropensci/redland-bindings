@@ -17,7 +17,6 @@
 
 #' An RDF Model object.
 #' @slot librdf_model A redland model object
-#' @author Peter Slaughter
 #' @rdname Model-class
 #' @include redland.R
 #' @include World.R

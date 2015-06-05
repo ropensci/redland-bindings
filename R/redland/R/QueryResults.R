@@ -18,7 +18,6 @@
 
 #' QueryResult is used to retrieve query results from a Query object.
 #' @slot librdf_query_results A redland query object
-#' @author Peter Slaughter
 #' @rdname QueryResults-class
 #' @include redland.R
 #' @keywords classes

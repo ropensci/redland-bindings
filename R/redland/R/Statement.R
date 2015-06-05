@@ -18,7 +18,6 @@
 
 #' An RDF Statement object
 #' @slot librdf_statement A redland statement object
-#' @author Peter Slaughter
 #' @rdname Statement-class
 #' @include redland.R
 #' @include World.R

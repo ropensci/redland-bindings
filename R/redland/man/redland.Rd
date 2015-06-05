@@ -44,4 +44,7 @@ wrapper classes and functions are also availabe via R help, i.e. \code{'help("No
 \author{
 Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)
 }
+\author{
+Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)
+}
 

@@ -1,7 +1,7 @@
 
 # redland
 
-The R package 'redland' provides methods to create, query and write information stored in the Resource Description Framework (RDF). 
+The R package `redland` provides methods to create, query and write information stored in the Resource Description Framework (RDF). 
 An introduction to RDF can be found at http://www.w3.org/TR/rdf-primer.
 
 This package is implemented as R scripts that provide an R interface (aka "wrapper") to the Redland RDF C libraries that are described at http://librdf.org/docs/api/index.html.

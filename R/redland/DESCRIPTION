@@ -6,8 +6,8 @@ Authors@R: c( person(c("Matthew", "B."), "Jones", role = c("aut", "cre"), email 
     email = "slaughter@nceas.ucsb.edu"), person("Carl", "Boettiger",
     role = "ctb", email = "cboettig@gmail.com"), person("Scott", "Chamberlain",
     role = "ctb", email = "myrmecocystus@gmail.com"))
-Maintainer: Matthew Jones <jones@nceas.ucsb.edu>
-Date: 2015
+Maintainer: Matthew B. Jones <jones@nceas.ucsb.edu>
+Date: 2015-06-05
 VignetteBuilder: knitr
 Description: Routines for serializing and deserializing RDF (Resource
     Description Framework) Statements using the Redland librdf library.  The

@@ -30,7 +30,7 @@ R=R
 
 R_PACKAGE=redland
 R_PACKAGE_SRC=redland/src
-R_PACKAGE_BUILD=redland/inst
+R_PACKAGE_BUILD=redland/tools
 # If you are rebuilding the wrapper .Rd files for functions defined in
 # the SWIG geneated R/redland.R script, you need to have the redland
 # source dowloaded and built. Currently the source is available from
@@ -45,7 +45,7 @@ R_SO_SUFFIX=so
 SWIG_OUTPUTS=$(R_PACKAGE_SRC)/$(R_PACKAGE).c
 SWIG_CRUFT=
 
-TEST_CRUFT=redland/inst/tests/test-out.rdf
+TEST_CRUFT=redland/tools/test-out.rdf
 
 EXTRA_DIST= $(SWIG_OUTPUTS)
 
@@ -73,8 +73,8 @@ $(R_PACKAGE_SRC)/redland.c: @REDLAND_SWIG@
 	cat redland/R/redland.R | sed 's/RSWIG_createNewRef/SWIG_createNewRef/' > redland/R/redland.R.fix
 	mv redland/R/redland.R.fix redland/R/redland.R
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(roxygen2); document()'
-	cp ../data/dc.rdf $(R_PACKAGE)/inst/testfiles
-	chmod 755 $(R_PACKAGE)/inst/testfiles/dc.rdf
+	cp ../data/dc.rdf $(R_PACKAGE)/inst/extdata
+	chmod 755 $(R_PACKAGE)/inst/extdata/dc.rdf
 
 test-R:
 	pwd

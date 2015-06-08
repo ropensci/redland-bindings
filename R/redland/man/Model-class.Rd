@@ -36,8 +36,5 @@ model <- new("Model", world, storage, options)
 addStatement(model, statement)
 }
 }
-\author{
-Peter Slaughter
-}
 \keyword{classes}
 

@@ -52,8 +52,5 @@ stmt <- new("Statement", world, subject=NULL,
                                 object="http://www.nothing.com", objectType="literal")
 }
 }
-\author{
-Peter Slaughter
-}
 \keyword{classes}
 

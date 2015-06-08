@@ -34,8 +34,5 @@ query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql"
 queryResult <- executeQuery(query, results)
 }
 }
-\author{
-Peter Slaughter
-}
 \keyword{classes}
 

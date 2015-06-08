@@ -44,8 +44,5 @@ parser <- new("Parser", world, name, mimeType, typeUri)
 parserIntoModel(parser, uri, baseUri, model)
 }
 }
-\author{
-Peter Slaughter
-}
 \keyword{classes}
 

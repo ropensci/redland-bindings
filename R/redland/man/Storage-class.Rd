@@ -30,8 +30,5 @@ A Redland Storage object
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 }
 }
-\author{
-Peter Slaughter
-}
 \keyword{classes}
 

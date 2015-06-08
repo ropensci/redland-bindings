@@ -54,9 +54,6 @@ queryString <- 'PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?a ?c WHERE { ?
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
 }
 }
-\author{
-Scott Chamberlain, Peter Slaughter
-}
 \references{
 www.example.com
 }

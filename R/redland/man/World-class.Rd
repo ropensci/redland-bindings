@@ -28,8 +28,5 @@ A Redland World, used to initialize the Redland RDF library.
 world <- new("World")
 }
 }
-\author{
-Matthew Jones
-}
 \keyword{classes}
 

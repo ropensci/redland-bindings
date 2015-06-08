@@ -42,8 +42,5 @@ node <- new("Node", world, literal="A Node Value")
 node <- new("Node", world, uri="http://www.example.com")
 }
 }
-\author{
-Matthew Jones
-}
 \keyword{classes}
 

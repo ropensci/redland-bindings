@@ -19,8 +19,5 @@ setNameSpace(serializer, world, namespace, prefix)
 RDF <- serializeToCharacter(serializer, world, model, baseUri)
 }
 }
-\author{
-Peter Slaughter
-}
 \keyword{classes}
 

@@ -31,7 +31,4 @@ roxygen2::roxygenize()
 devtools::document()
 }
 }
-\author{
-Peter Slaughter
-}
 

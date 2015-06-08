@@ -5,32 +5,6 @@
 
 pkg_dir=${R_LIBRARY_DIR}/${R_PACKAGE_NAME}
 
-files="AUTHORS \
-COPYING \
-ChangeLog \
-INSTALL \
-Makefile \
-Makefile.am \
-Makefile.in \
-README \
-aclocal.m4 \
-compile  \
-config.log \
-config.status  \
-configure.ac  \
-install-sh  \
-ltmain.sh \
-missing"
-
-# cleanup files
-for i in $files ; do
-    fn=${pkg_dir}/${i}
-    if [ ! -z $fn ] && [ -e $fn ] ; then
-        rm -f $fn
-    fi
-done
-
-# cleanup dirs
-if [ ! -z $pkg_dir ] && [ -d ${pkg_dir}/autom4te.cache ] ; then
-    rm -rf ${pkg_dir}/autom4te.cache
+if [ ! -z $pkg_dir ] && [ -d ${pkg_dir}/testfiles ] ; then
+    rm -rf ${pkg_dir}/testfiles
 fi

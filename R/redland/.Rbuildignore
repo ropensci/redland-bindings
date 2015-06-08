@@ -1,2 +1,16 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^README\.Rmd$
+^README-*\.png$
+^packrat/
+^\.Rprofile$
+inst/compile
+inst/config.log
+inst/config.status
+inst/configure.ac
+inst/COPYING
+inst/Makefile.am
+inst/missing
+src/Makevars
+src/*.o
+src/*.so

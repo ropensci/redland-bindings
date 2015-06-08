@@ -37,6 +37,6 @@ Collate:
     'mergeNamespace_roclet.R'
     'redland-package.R'
     'util.R'
-License: Apache License 2.0
+License: Apache License 2.0 + file NOTICE
 BugReports: https://github.com/ropensci/redland-bindings/issues
 Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace"))

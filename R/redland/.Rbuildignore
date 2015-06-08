@@ -9,8 +9,7 @@ tools/config.log
 tools/config.status
 tools/configure.ac
 tools/COPYING
-tools/Makefile
-tools/Makefile.am
+tools/Makefile$
 tools/missing
 src/Makevars
 src/*.o

@@ -29,7 +29,7 @@ test_that("Parser constructor", {
   expect_that(parser, not(is_null()))
   expect_that(class(parser@librdf_parser), matches("_p_librdf_parser_s"))
 
-  parseFileIntoModel(parser, world, system.file('testfiles/example.rdf', package='redland'), model)
+  parseFileIntoModel(parser, world, system.file('extdata/example.rdf', package='redland'), model)
 
   # Test creating a Serializer and serializing the content just parsed into the model
   serializer <- new("Serializer", world)

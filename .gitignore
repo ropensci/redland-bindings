@@ -36,3 +36,5 @@ stamp*
 **/redland-stamp
 **/test-out.rdf
 .Rproj.user
+Makevars
+ltmain.sh

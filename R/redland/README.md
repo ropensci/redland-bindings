@@ -1,5 +1,10 @@
 
-# redland
+## redland
+
+- **Author**: Matthew B. Jones and Peter Slaughter ([NCEAS](http://www.nceas.ucsb.edu))
+- **License**: [Apache 2](http://opensource.org/licenses/Apache-2.0)
+- [Package source code on Github](https://github.com/ropensci/redland-bindings)
+- [**Submit Bugs and feature requests**](https://github.com/ropensci/redland-bindings/issues)
 
 The R package `redland` provides methods to create, query and write information 
 stored in the Resource Description Framework (RDF). An introduction to RDF can be 

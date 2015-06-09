@@ -55,7 +55,7 @@ world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 model <- new("Model", world=world, storage, options="")
 parser <- new("Parser", world)
-parseFileIntoModel(parser, world, system.file("testfiles", "dc.rdf", package="redland"), model)
+parseFileIntoModel(parser, world, system.file("extdata", "dc.rdf", package="redland"), model)
 }
 }
 \author{

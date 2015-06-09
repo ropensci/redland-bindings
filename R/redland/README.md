@@ -1,10 +1,21 @@
 
 # redland
 
-The R package `redland` provides methods to create, query and write information stored in the Resource Description Framework (RDF). 
-An introduction to RDF can be found at http://www.w3.org/TR/rdf-primer.
+The R package `redland` provides methods to create, query and write information 
+stored in the Resource Description Framework (RDF). An introduction to RDF can be 
+found at http://www.w3.org/TR/rdf-primer.  In brief, RDF provides a structured
+graph consisting of Statements composed of Subject, Predicate, and Object Nodes.
 
-This package is implemented as R scripts that provide an R interface (aka "wrapper") to the Redland RDF C libraries that are described at http://librdf.org/docs/api/index.html.
+This package is implemented as R scripts that provide an R interface (aka 
+"wrapper") to the Redland RDF C libraries that are described at 
+http://librdf.org/docs/api/index.html.  In this redland R wrapper, S4 classes are
+used to model RDF data structures.   A `redland::Statement` is composed of 
+`redland::Node`s representing the subject, predicate, and object of each triple 
+statement.  Statements can be composed into a graph by adding them to a 
+`redland::Model`, which in turn can be serialized and deserialized to RDF's text 
+formats using `redland::Serializer` and `redland::Parser`, respectively.
+
+See the `redland_overview` vignette for a brief example of usage.
 
 ## Installation Notes 
 

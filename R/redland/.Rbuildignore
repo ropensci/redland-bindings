@@ -9,6 +9,7 @@ tools/config.log
 tools/config.status
 tools/configure.ac
 tools/COPYING
+tools/ltmain.sh
 tools/Makefile$
 tools/missing
 src/Makevars

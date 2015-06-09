@@ -234,7 +234,7 @@ world &lt;- new(&quot;World&quot;)
 storage &lt;- new(&quot;Storage&quot;, world, &quot;hashes&quot;, name=&quot;&quot;, options=&quot;hash-type=&#39;memory&#39;&quot;)
 model &lt;- new(&quot;Model&quot;, world=world, storage, options=&quot;&quot;)
 parser &lt;- new(&quot;Parser&quot;, world)
-parseFileIntoModel(parser, world, system.file(&quot;testfiles&quot;, &quot;dc.rdf&quot;, package=&quot;redland&quot;), model)
+parseFileIntoModel(parser, world, system.file(&quot;extdata&quot;, &quot;dc.rdf&quot;, package=&quot;redland&quot;), model)
 </code></pre>
 
 <p>Next the RDF graph is queried for statements of interest, using the <a href="http://www.w3.org/TR/rdf-sparql-query">SPARQL query syntax</a></p>

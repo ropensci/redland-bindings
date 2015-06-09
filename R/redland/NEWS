@@ -1,10 +1,11 @@
-# Version 1.0.17
+Version 1.0.17
+--------------
 
 NEW FEATURES
 
 * Initial version (see help topic for 'redland', e.g. "?redland")
 
-* Includes API wrappers for corresponding Redland 1.0.17
+* Includes API wrappers for corresponding Redland 1.0.17 C library
 
 NEW S4 CLASSES
 

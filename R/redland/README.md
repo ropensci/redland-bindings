@@ -41,4 +41,51 @@ apt-get install librdf0
 apt-get install librdf0-dev
 ```
 
-Once the Redland C libraries are installed, you may proceed with the installation of the redland R package.
+Once the Redland C libraries are installed, you may proceed with the installation of the redland R package
+using typical R facilities, such as install.packages:
+
+```sh
+R --no-save -e 'install.packages("redland")'
+```
+
+## Example Usage
+
+The `redland` library can be sued for a wide variety of RDF parsing and creation tasks.  Some examples
+are provided in the `redland_overview` vignette.  As a quick start, here is an example that
+creates an RDF graph using an in-memory storage model, adds some triples, and then
+serializes the graph to disk.
+
+```r
+library(redland)
+
+# World is the redland mechanism for scoping models
+world <- new("World")
+
+# Storage provides a mechanism to store models; in-memory hashes are convenient for small models
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+
+# A model is a set of Statements, and is associated with a particular Storage instance
+model <- new("Model", world=world, storage, options="")
+
+# Add some Dublin Core properties to the model
+dc <- "http://purl.org/dc/elements/1.1/"
+stmt <- new("Statement", world=world, 
+        subject="http://ropensci.org/", predicate=paste0(dc, "title"), object="ROpenSci")
+addStatement(model, stmt)
+stmt <- new("Statement", world=world, 
+        subject="http://ropensci.org/", predicate=paste0(dc, "language"), object="en")
+addStatement(model, stmt)
+stmt <- new("Statement", world=world, 
+        subject="http://ropensci.org/", predicate=paste0(dc, "license"), 
+        object="https://creativecommons.org/licenses/by/2.0/")
+addStatement(model, stmt)
+
+# Serialize the model to a TTL file
+serializer <- new("Serializer", world, name="turtle", mimeType="text/turtle")
+status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")  
+filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".ttl")
+status <- serializeToFile(serializer, world, model, filePath)
+readLines(file(filePath))
+```
+
+[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)

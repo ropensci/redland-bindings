@@ -50,7 +50,7 @@ R --no-save -e 'install.packages("redland")'
 
 ## Example Usage
 
-The `redland` library can be sued for a wide variety of RDF parsing and creation tasks.  Some examples
+The `redland` library can be used for a wide variety of RDF parsing and creation tasks.  Some examples
 are provided in the `redland_overview` vignette.  As a quick start, here is an example that
 creates an RDF graph using an in-memory storage model, adds some triples, and then
 serializes the graph to disk.

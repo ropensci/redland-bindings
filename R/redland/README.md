@@ -89,4 +89,6 @@ status <- serializeToFile(serializer, world, model, filePath)
 readLines(file(filePath))
 ```
 
+[![nceas_footer](https://www.nceas.ucsb.edu/files/newLogo_0.png)](http://www.nceas.ucsb.edu)
+
 [![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)

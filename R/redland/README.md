@@ -1,5 +1,6 @@
 
 ## redland
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/redland)](http://cran.r-project.org/web/packages/redland)
 
 - **Author**: Matthew B. Jones and Peter Slaughter ([NCEAS](http://www.nceas.ucsb.edu))
 - **License**: [Apache 2](http://opensource.org/licenses/Apache-2.0)

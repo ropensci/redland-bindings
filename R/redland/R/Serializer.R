@@ -18,6 +18,7 @@
 #' An RDF Serializer object
 #' @slot librdf_serializer A redland statement object
 #' @rdname Serializer-class
+#' @aliases Serializer
 #' @include redland.R
 #' @include World.R
 #' @include Model.R

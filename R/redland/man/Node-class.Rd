@@ -2,10 +2,11 @@
 % Please edit documentation in R/Node.R
 \docType{class}
 \name{Node-class}
+\alias{Node}
 \alias{Node-class}
 \alias{getBlankNodeId,Node-method}
 \alias{getNodeType,Node-method}
-\title{A Redland Node, used to store one node in an RDF triple statement.}
+\title{A Redland Node object is used to store one node of an RDF triple statement.}
 \usage{
 \S4method{getNodeType}{Node}(.Object)
 

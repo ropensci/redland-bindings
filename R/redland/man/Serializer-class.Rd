@@ -2,6 +2,7 @@
 % Please edit documentation in R/Serializer.R
 \docType{class}
 \name{Serializer-class}
+\alias{Serializer}
 \alias{Serializer-class}
 \title{An RDF Serializer object}
 \description{

@@ -2,10 +2,11 @@
 % Please edit documentation in R/QueryResults.R
 \docType{class}
 \name{QueryResults-class}
+\alias{QueryResults}
 \alias{QueryResults-class}
 \alias{freeQueryResults,QueryResults-method}
 \alias{getNextResult,QueryResults-method}
-\title{QueryResult is used to retrieve query results from a Query object.}
+\title{A Redland QueryResult object is used to inspect query results from a Query object.}
 \usage{
 \S4method{getNextResult}{QueryResults}(.Object)
 
@@ -15,7 +16,7 @@
 \item{.Object}{a QueryResults object}
 }
 \description{
-QueryResult is used to retrieve query results from a Query object.
+A Redland QueryResult object is used to inspect query results from a Query object.
 }
 \section{Methods (by generic)}{
 \itemize{

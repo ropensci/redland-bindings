@@ -15,9 +15,16 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-#' An RDF Model object.
+#' A Redland Model object
+#' @description A Model object is used to store the statements (triples) of an RDF model.
+#' @details A Model may be created manually by creating \code{\link{Statement}} and adding
+#' them to the Model using \code{\link{addStatement}}, or a Model may be read in from a
+#' previously saved file using \code{\link{parseFileIntoModel}}. Once a Model is created,
+#' it can be queried using \code{\link{Query}}.
+#' @seealso View examples of creating models by viewing the \code{'redland_overview'} vignette: \code{'vignette("redland_overview")'}
 #' @slot librdf_model A redland model object
 #' @rdname Model-class
+#' @aliases Model
 #' @include redland.R
 #' @include World.R
 #' @include Storage.R

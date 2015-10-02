@@ -2,12 +2,13 @@
 % Please edit documentation in R/Query.R
 \docType{class}
 \name{Query-class}
+\alias{Query}
 \alias{Query-class}
 \alias{executeQuery,Query-method}
 \alias{freeQuery,Query-method}
 \alias{getQueryResultLimit,Query-method}
 \alias{setQueryResultLimit,Query-method}
-\title{Query an RDF model}
+\title{A Redland Query object, used to query an RDF model}
 \usage{
 \S4method{executeQuery}{Query}(.Object, model)
 

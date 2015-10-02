@@ -2,10 +2,11 @@
 % Please edit documentation in R/Model.R
 \docType{class}
 \name{Model-class}
+\alias{Model}
 \alias{Model-class}
 \alias{addStatement,Model,Statement-method}
 \alias{freeModel,Model-method}
-\title{An RDF Model object.}
+\title{A Redland Model object}
 \usage{
 \S4method{addStatement}{Model,Statement}(.Object, statement)
 
@@ -17,7 +18,13 @@
 \item{statement}{the Statement that will be added}
 }
 \description{
-An RDF Model object.
+A Model object is used to store the statements (triples) of an RDF model.
+}
+\details{
+A Model may be created manually by creating \code{\link{Statement}} and adding
+them to the Model using \code{\link{addStatement}}, or a Model may be read in from a
+previously saved file using \code{\link{parseFileIntoModel}}. Once a Model is created,
+it can be queried using \code{\link{Query}}.
 }
 \section{Methods (by generic)}{
 \itemize{
@@ -35,6 +42,9 @@ An RDF Model object.
 model <- new("Model", world, storage, options)
 addStatement(model, statement)
 }
+}
+\seealso{
+View examples of creating models by viewing the \code{'redland_overview'} vignette: \code{'vignette("redland_overview")'}
 }
 \keyword{classes}
 

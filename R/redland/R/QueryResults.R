@@ -16,9 +16,10 @@
 #   limitations under the License.
 #
 
-#' QueryResult is used to retrieve query results from a Query object.
+#' A Redland QueryResult object is used to inspect query results from a Query object.
 #' @slot librdf_query_results A redland query object
 #' @rdname QueryResults-class
+#' @aliases QueryResults
 #' @include redland.R
 #' @keywords classes
 #' @exportClass QueryResults

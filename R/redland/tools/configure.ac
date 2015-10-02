@@ -30,14 +30,18 @@ if $PKG_CONFIG --exists redland; then
   AC_MSG_RESULT($REDLAND_VERSION)
 else
   AC_MSG_RESULT(not found)
-  AC_MSG_ERROR(Redland is not installed - see http://librdf.org/ to get a version $OUR_REDLAND_VERSION or newer)
+  AC_MSG_ERROR(Redland is not installed - Please see https://github.com/ropensci/redland-bindings/tree/master/R/redland/README.md)
 fi
 
 if $PKG_CONFIG --atleast-version=$MIN_REDLAND_VERSION redland; then
   :
 else
-  AC_MSG_ERROR(Redland version $REDLAND_VERSION found. $MIN_REDLAND_VERSION or newer is required - see http://librdf.org/)
+  AC_MSG_ERROR(Redland version $REDLAND_VERSION found. $MIN_REDLAND_VERSION or newer is required - Please see https://github.com/ropensci/redland-bindings/tree/master/R/redland/README.md)
 fi
+
+#if $PKG_CONFIG --variable=have_raptor2_api redland; then
+#  AC_MSG_ERROR(Redland header files are not installed. Please see https://github.com/ropensci/redland-bindings/tree/master/R/redland/README.md) 
+#fi
 
 # Checks for libraries.
 AC_CHECK_LIB([raptor2], [raptor_parse])

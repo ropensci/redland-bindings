@@ -2,6 +2,7 @@
 % Please edit documentation in R/Statement.R
 \docType{class}
 \name{Statement-class}
+\alias{Statement}
 \alias{Statement-class}
 \alias{freeStatement,Statement-method}
 \alias{getTermType,Statement,character-method}

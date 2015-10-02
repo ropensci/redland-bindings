@@ -2,6 +2,7 @@
 % Please edit documentation in R/Storage.R
 \docType{class}
 \name{Storage-class}
+\alias{Storage}
 \alias{Storage-class}
 \alias{freeStorage,Storage-method}
 \title{A Redland Storage object}

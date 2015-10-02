@@ -16,9 +16,10 @@
 #   limitations under the License.
 #
 
-#' A Redland World, used to initialize the Redland RDF library.
+#' A Redland World object, used to initialize the Redland RDF library.
 #' @slot librdf_world A redland world object
 #' @rdname World-class
+#' @aliases World
 #' @include redland.R
 #' @keywords classes
 ## @useDynLib librdf

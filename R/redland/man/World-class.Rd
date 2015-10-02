@@ -2,9 +2,10 @@
 % Please edit documentation in R/World.R
 \docType{class}
 \name{World-class}
+\alias{World}
 \alias{World-class}
 \alias{freeWorld,World-method}
-\title{A Redland World, used to initialize the Redland RDF library.}
+\title{A Redland World object, used to initialize the Redland RDF library.}
 \usage{
 \S4method{freeWorld}{World}(.Object)
 }
@@ -12,7 +13,7 @@
 \item{.Object}{a World object}
 }
 \description{
-A Redland World, used to initialize the Redland RDF library.
+A Redland World object, used to initialize the Redland RDF library.
 }
 \section{Methods (by generic)}{
 \itemize{

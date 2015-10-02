@@ -19,6 +19,7 @@
 #' An RDF Statement object
 #' @slot librdf_statement A redland statement object
 #' @rdname Statement-class
+#' @aliases Statement
 #' @include redland.R
 #' @include World.R
 #' @include Node.R

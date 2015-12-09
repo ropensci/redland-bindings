@@ -59,6 +59,8 @@ setMethod("initialize", signature = "Serializer", definition = function(.Object,
 })
 
 #' Set a namespace for the serializer
+#' @rdname setNameSpace
+#' @aliases setNameSpace
 #' @param .Object a Serializer object
 #' @param world a World object
 #' @param namespace the namespace to add to the serializer
@@ -68,11 +70,7 @@ setGeneric("setNameSpace", function(.Object, world, namespace, prefix) {
   standardGeneric("setNameSpace")
 })
 
-#' Set a namespace for the serializer
-#' @param .Object a Serializer object
-#' @param world a World object
-#' @param namespace the namespace to add to the serializer
-#' @param prefix the namespace prefix to associate with the namespace
+#' @describeIn setNameSpace
 setMethod("setNameSpace", signature("Serializer", "World", "character", "character"), function(.Object, world, namespace, prefix) {
   
   stopifnot(!is.null(world))
@@ -82,6 +80,8 @@ setMethod("setNameSpace", signature("Serializer", "World", "character", "charact
 })
 
 #' Serialize a model to a character vector
+#' @rdname serializeToCharacter
+#' @alias serializeToCharacter
 #' @param .Object a Serializer object
 #' @param world a World object
 #' @param model a Model object
@@ -92,12 +92,7 @@ setGeneric("serializeToCharacter", function(.Object, world, model, ...) {
   standardGeneric("serializeToCharacter")
 })
 
-#' Serialize a model to a character vector
-#' @param .Object a Serializer object
-#' @param world a World object
-#' @param model a Model object
-#' @param baseUri a URI to prepend to relative URIs in the document
-## @describeIn Serializer
+#' @describeIn serializeToCharacter
 setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), function(.Object, world, model, baseUri=as.character(NA)) {
   
   stopifnot(!is.null(world))
@@ -115,6 +110,8 @@ setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), fun
 })
 
 #' Serialize a model to a file
+#' @rdname serializeToFile
+#' @aliases serializeToFile
 #' @param .Object a Serializer object
 #' @param world a World object
 #' @param model a Model object
@@ -126,12 +123,7 @@ setGeneric("serializeToFile", function(.Object, world, model, filePath, ...) {
   standardGeneric("serializeToFile")
 })
 
-#' Serialize a model to a file
-#' @param .Object a Serializer object
-#' @param world a World object
-#' @param model a Model object
-#' @param filePath a file path that the serialized model will be written to
-#' @param baseUri a base URI to use for the serialization
+#' @describeIn serializeToFile
 setMethod("serializeToFile", signature("Serializer", "World", "Model", "character"), function(.Object, world, model, filePath, baseUri=as.character(NA)) {
   
   stopifnot(!is.null(world))
@@ -150,14 +142,15 @@ setMethod("serializeToFile", signature("Serializer", "World", "Model", "characte
 })
 
 #' Free memory used by a librdf serializer
+#' @rdname freeSerializer
+#' @aliases freeSerializer
 #' @param .Object a Serializer object
 #' @export
 setGeneric("freeSerializer", function(.Object) {
   standardGeneric("freeSerializer")
 })
 
-#'  Free memory used by a librdf serializer
-#' @param .Object a Serializer object
+#' @describeIn freeSerializer
 setMethod("freeSerializer", signature("Serializer"), function(.Object) {
   librdf_free_serializer(.Object@librdf_serializer)
 })

@@ -21,6 +21,7 @@
 #' RDF model.
 #' @slot librdf_parser A redland parser object
 #' @rdname Parser-class
+#' @aliases Parser
 #' @include redland.R
 #' @include World.R
 #' @include Model.R
@@ -67,6 +68,8 @@ setMethod("initialize", signature = "Parser", definition = function(.Object, wor
 #' @details The parser factory name specified during initialization determines how the content is
 #' parsed, for example, if 'rdfxml' was specified during parser initialization, then the parser
 #' expects RDF/XML content as specified in the W3C recommendation (http://www.we3.org/TR/REC-rdf-syntax)
+#' @rdname parseFileIntoModel
+#' @aliases parseFileIntoModel
 #' @param .Object a Parser object 
 #' @param world a World object
 #' @param filePath a file that contains the RDF content
@@ -77,12 +80,7 @@ setGeneric("parseFileIntoModel", function(.Object, world, filePath, model, ...) 
   standardGeneric("parseFileIntoModel")
 })
 
-#' @describeIn Parser
-#' #' @param .Object a Parser object 
-#' @param world a World object
-#' @param filePath a file that contains the RDF content
-#' @param model a Model object to parse the RDF content into
-#' @param baseUri a base URI (i.e. XML base) to apply to the model
+#' @describeIn parseFileIntoModel
 setMethod("parseFileIntoModel", signature("Parser", "World", "character", "Model"), function(.Object, world, filePath, model, baseUri=as.character(NA)) {
   stopifnot(!is.null(model))
   
@@ -106,13 +104,15 @@ setMethod("parseFileIntoModel", signature("Parser", "World", "character", "Model
 #' Free memory used by a librdf parser
 #' @details After freeNode is called, the Node object is no longer usable and should
 #' be deleted  \code{"rm(nodeName)"} and a new object created.
+#' @rdname freeParser
+#' @aliases freeParser
 #' @param .Object a Node object
 #' @export
 setGeneric("freeParser", function(.Object) {
   standardGeneric("freeParser")
 })
 
-#' @describeIn Parser
+#' @describeIn freeParser
 setMethod("freeParser", signature("Parser"), function(.Object) {
   librdf_free_parser(.Object@librdf_parser)
 })

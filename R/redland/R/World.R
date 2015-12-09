@@ -48,14 +48,15 @@ setMethod("initialize", signature = "World", definition = function(.Object) {
 #' Free memory used by a librdf world object
 #' @details After this method is called, the World object is no longer usable and should
 #' be deleted \code{"rm(world)"} and a new object created.
+#' @rdname freeWorld
+#' @aliases freeWorld
 #' @param .Object a World object
 #' @export
 setGeneric("freeWorld", function(.Object) {
   standardGeneric("freeWorld")
 })
 
-#' @describeIn World
-#' @param .Object a World object
+#' @describeIn freeWorld
 setMethod("freeWorld", signature("World"), function(.Object) {
   librdf_free_world(.Object@librdf_world)
 })

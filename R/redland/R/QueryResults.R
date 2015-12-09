@@ -46,14 +46,15 @@ setMethod("initialize", signature = "QueryResults", definition = function(.Objec
 
 #' Get the next query result
 #' @description The next query result is returned
+#' @rdname getNextResult
+#' @aliases getNextResult
 #' @param .Object a QueryResults object
 #' @export
 setGeneric("getNextResult", function(.Object) {
   standardGeneric("getNextResult")
 })
 
-#' @param .Object a QueryResults object
-#' @describeIn QueryResults
+#' @describeIn getNextResult
 setMethod("getNextResult", signature("QueryResults"), function(.Object) {
 
   nodeNames <- list()
@@ -87,6 +88,8 @@ setMethod("getNextResult", signature("QueryResults"), function(.Object) {
 #' Free memory used by a librdf query results
 #' @details After this method is called, the QueryResults object is no longer usable and should
 #' be deleted with \code{"rm(query)"}.
+#' @rdname freeQueryResults
+#' @aliases freeQueryResults
 #' @param .Object a QueryResults object
 #' @export
 setGeneric("freeQueryResults", function(.Object) {

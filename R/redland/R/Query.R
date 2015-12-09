@@ -24,6 +24,7 @@
 #' can be interated over the query solution sequence.
 #' @slot librdf_query A redland query object
 #' @rdname Query-class
+#' @aliases Query
 #' @include redland.R
 #' @keywords classes
 #' @exportClass Query
@@ -56,6 +57,8 @@ setMethod("initialize",
 
 #' Execute a query
 #' @description The initialize query is executed and the result is returned as a QueryResult object
+#' @rdname executeQuery
+#' @aliases executeQuery
 #' @param .Object a Query object
 #' @param model a Model object
 #' @return a QueryResults object
@@ -64,9 +67,7 @@ setGeneric("executeQuery", function(.Object, model) {
   standardGeneric("executeQuery")
 })
 
-#' @param .Object a Query object
-#' @param model a Model object
-#' @describeIn Query
+#' @describeIn executeQuery
 setMethod("executeQuery", signature("Query"), function(.Object, model) {
   results <- librdf_query_execute(.Object@librdf_query, model@librdf_model) 
   queryResultObj <- new("QueryResults", results)
@@ -74,6 +75,8 @@ setMethod("executeQuery", signature("Query"), function(.Object, model) {
 })
 
 #' Set limit on returned query results
+#' @rdname setQueryResultsLimit
+#' @aliases setQueryResultsLimit
 #' @param .Object a Query object
 #' @param limit the result set limit. Specify a value >= to have a limit, or a value < 0 to have no limit.
 #' @export
@@ -81,13 +84,14 @@ setGeneric("setQueryResultLimit", function(.Object, limit) {
   standardGeneric("setQueryResultLimit")
 })
 
-#' @param limit max number of results to return
-#' @describeIn Query
+#' @describeIn setQueryResultsLimit
 setMethod("setQueryResultLimit", signature("Query"), function(.Object, limit) {
   librdf_query_set_limit(.Object@librdf_query, as.integer(limit))
 })
 
 #' Get the query result limit
+#' @rdname getQueryResultsLimit
+#' @aliases getQueryResultsLimit
 #' @param .Object a Query object
 #' @return the query result limit. If a limit is set then the value will be >= 0. If the value is < 0, no limit is set
 #' @export
@@ -95,7 +99,7 @@ setGeneric("getQueryResultLimit", function(.Object) {
   standardGeneric("getQueryResultLimit")
 })
 
-#' @describeIn Query
+#' @describeIn getQueryResultsLimit
 setMethod("getQueryResultLimit", signature("Query"), function(.Object) {
   return(librdf_query_get_limit (.Object@librdf_query))
 })
@@ -103,13 +107,15 @@ setMethod("getQueryResultLimit", signature("Query"), function(.Object) {
 #' Free memory used by a librdf query
 #' @details After this method is called, the Query object is no longer usable and should
 #' be deleted \code{"rm(query)"} and a new object created.
+#' @rdname freeQuery
+#' @aliases freeQuery
 #' @param .Object a Query object
 #' @export
 setGeneric("freeQuery", function(.Object) {
   standardGeneric("freeQuery")
 })
 
-#' @describeIn Query
+#' @describeIn freeQuery
 setMethod("freeQuery", signature("Query"), function(.Object) {
   librdf_free_query(.Object@librdf_query)
 })

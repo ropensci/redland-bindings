@@ -1,5 +1,5 @@
 Package: redland
-Version: 1.0.17-1
+Version: 1.0.17-2
 Title: RDF Library Bindings in R
 Authors@R: c( person(c("Matthew", "B."), "Jones", role = c("aut", "cre"), email =
     "jones@nceas.ucsb.edu"), person("Peter", "Slaughter", role = "aut",
@@ -25,9 +25,9 @@ SystemRequirements: Mac OSX: redland (>= 1.0.14) ; Linux: librdf0 (>= 1.0.14),
 Collate:
     'redland.R'
     'World.R'
+    'Storage.R'
     'Node.R'
     'Statement.R'
-    'Storage.R'
     'Model.R'
     'Parser.R'
     'Query.R'

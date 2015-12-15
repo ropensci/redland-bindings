@@ -27,11 +27,17 @@ See the `redland_overview` vignette for a brief example of usage.
 
 Before the `redland` R package can be installed, the redland C libraries must be installed.
 
-On Mac OSX you can use Macports to install the necessary libraries. From a terminal window
-you can enter the command:
+On Mac OSX you can use the package management system [HomeBrew](http://brew.sh) to install the necessary libraries. The HomeBrew
+software can be installed with the following command entered at a terminal window:
 
 ```
-sudo port install redland
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Once HomeBrew has been installed, you can then enter the following command to install the Redland C libraries:
+
+```
+brew install redland
 ```
 
 On Ubuntu the redland C libraries are installed with the commands:
@@ -42,11 +48,15 @@ apt-get install librdf0
 apt-get install librdf0-dev
 ```
 
-Once the Redland C libraries are installed, you may proceed with the installation of the redland R package
+Once the Redland C libraries are installed, you may proceed with the installation of the redland R package. The redland R package is currently in pre-release and is available via the NCEAS drat
+repository. To install the redland package, enter the following commands at the R console:
 using typical R facilities, such as install.packages:
 
-```sh
-R --no-save -e 'install.packages("redland")'
+```
+install.packages("drat")
+library(drat)
+addRepo("NCEAS")
+install.packages("redland")
 ```
 
 ## Example Usage

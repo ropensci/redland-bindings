@@ -1,5 +1,5 @@
 Package: redland
-Version: 1.0.17-2
+Version: 1.0.17-1
 Title: RDF Library Bindings in R
 Authors@R: c( person(c("Matthew", "B."), "Jones", role = c("aut", "cre"), email =
     "jones@nceas.ucsb.edu"), person("Peter", "Slaughter", role = "aut",
@@ -13,7 +13,7 @@ Description: Routines for serializing and deserializing RDF (Resource
     package provides an R-based API that binds R classes the corresponding
     librdf C-library functions.
 Depends:
-    R (>= 3.1.1),
+    R (>= 3.2.1),
     methods
 Imports:
     roxygen2

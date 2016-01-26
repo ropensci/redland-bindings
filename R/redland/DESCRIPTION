@@ -25,9 +25,9 @@ SystemRequirements: Mac OSX: redland (>= 1.0.14) ; Linux: librdf0 (>= 1.0.14),
 Collate:
     'redland.R'
     'World.R'
-    'Storage.R'
     'Node.R'
     'Statement.R'
+    'Storage.R'
     'Model.R'
     'Parser.R'
     'Query.R'

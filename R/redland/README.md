@@ -1,4 +1,3 @@
-
 ## redland
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/redland)](http://cran.r-project.org/web/packages/redland)
 
@@ -25,12 +24,7 @@ See the `redland_overview` vignette for a brief example of usage.
 
 ## Installation Notes 
 
-The *redland* R package has not been released to CRAN yet, nor have its dependencies, so you need to install the 
-dependencies manually before installing the package itself.  The main dependency is the `redland` R package
-which must be installed on your OS prior to installing the R code. The R package *drat* can be used to
-install the *redland* R package from the NCEAS repository.
-
-Before the `redland` R package can be installed, the Redland C libraries must be installed.
+The *redland* R package has not been released to CRAN yet. Before the `redland` R package can be installed, the Redland C libraries must be installed.
 
 ### Installing on Mac OS X
 
@@ -45,7 +39,7 @@ port version
 ```
 
 ### Installing with Macports
-If you are already using the MacPorts package manager, you can install *dataone* with the following commands, 
+If you are already using the MacPorts package manager, you can install *redland* with the following commands, 
 otherwise, it is recommended that you skip to the next section *Installing with HomeBrew*. To install
 the *redland* R package with MacPorts, enter these commands at a terminal window:
 
@@ -57,7 +51,7 @@ Then enter these commands in the R console:
 install.packages("drat")
 library(drat)
 addRepo("NCEAS")
-install.packages("redland", type="source")
+install.packages("redland")
 library(redland)
 ```
 
@@ -82,7 +76,7 @@ Next, install the *redland* R package with these commands typed at the R console
 install.packages("drat")
 library(drat)
 addRepo("NCEAS")
-install.packages("redland", type="binary")
+install.packages("redland")
 library(redland)
 ```
   

@@ -2,10 +2,10 @@
 title: "redland: create, query and write RDF graphs"
 author: "Matthew Jones"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: html_document
 vignette: >
   %\VignetteIndexEntry{redland RDF}
-  %\VignetteEngine{knitr}
+  %\VignetteEngine{knitr::rmarkdown}
   %\usepackage[utf8]{inputenc}
 ---
 

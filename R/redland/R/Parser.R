@@ -94,6 +94,10 @@ setMethod("parseFileIntoModel", signature("Parser", "World", "character", "Model
   err <- try(absFilePath <- normalizePath(filePath, mustWork = TRUE))
   stopifnot (!class(err) == "try-error")
   
+  # Absolute paths on Windows require leading slash: /C:/foo/bar
+  if(grepl("^[a-zA-Z]:", absFilePath))
+    absFilePath <- paste0("/", absFilePath)
+  
   fileUri = sprintf("file://%s", absFilePath)
   contentUri <- librdf_new_uri(world@librdf_world, fileUri)
   status <- librdf_parser_parse_into_model(.Object@librdf_parser, contentUri, NULL, model@librdf_model)

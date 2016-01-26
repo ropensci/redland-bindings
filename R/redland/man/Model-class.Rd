@@ -19,6 +19,14 @@ it can be queried using \code{\link{Query}}.
 \describe{
 \item{\code{librdf_model}}{A redland model object}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{Model-initialize}}}{: Initialize a Model object}
+  \item{\code{\link{addStatement}}}{: Add a Statement object to the Model}
+  \item{\code{\link{freeModel}}}{: Free memory used by a librdf model object}
+}
+}
 \examples{
 \dontrun{
 model <- new("Model", world, storage, options)
@@ -27,6 +35,8 @@ addStatement(model, statement)
 }
 \seealso{
 View examples of creating models by viewing the \code{'redland_overview'} vignette: \code{'vignette("redland_overview")'}
+
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

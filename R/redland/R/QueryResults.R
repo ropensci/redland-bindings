@@ -16,13 +16,22 @@
 #   limitations under the License.
 #
 
-#' A Redland QueryResult object is used to inspect query results from a Query object.
+#' @title A Redland QueryResults object is used to inspect query results from a Query object.
+#' @description The QueryResults object contains the RDF statements that were returned from
+#' a query on an RDF model.
 #' @slot librdf_query_results A redland query object
 #' @rdname QueryResults-class
 #' @aliases QueryResults
 #' @include redland.R
 #' @keywords classes
-#' @exportClass QueryResults
+#' @export
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{QueryResults-initialize}}}{: Initialize a QueryResults object.}
+#'   \item{\code{\link{getNextResult}}}{: Get the next query result.}
+#'   \item{\code{\link{freeQueryResults}}}{: Free memory used by a librdf query result.}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
 #' @examples
 #' \dontrun{
 #' query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)

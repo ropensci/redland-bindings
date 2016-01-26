@@ -29,7 +29,14 @@
 #' @include Storage.R
 #' @include Statement.R
 #' @keywords classes
-#' @exportClass Model
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{Model-initialize}}}{: Initialize a Model object}
+#'   \item{\code{\link{addStatement}}}{: Add a Statement object to the Model}
+#'   \item{\code{\link{freeModel}}}{: Free memory used by a librdf model object}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
+#' @export
 #' @examples
 #' \dontrun{
 #' model <- new("Model", world, storage, options)

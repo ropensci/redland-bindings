@@ -16,7 +16,7 @@
 #   limitations under the License.
 #
 
-#' An RDF Statement object
+#' @title An RDF Statement object
 #' @slot librdf_statement A redland statement object
 #' @rdname Statement-class
 #' @aliases Statement
@@ -24,7 +24,7 @@
 #' @include World.R
 #' @include Node.R
 #' @keywords classes
-#' @exportClass Statement
+#' @export
 #' @description A Statement object is created using the provided subject, predicate and object.
 #' @details A Statement object can be created from Node objects that are provided for the subject,
 #' predicate and object. An alternative way to create a Statement object is to provide the
@@ -32,7 +32,13 @@
 #' determine the appropriate RDF type for the subject and object. Note that the RDF type for the predicate will always
 #' be 'uri' (aka 'resource'). If the automatic determination of RDF types is not desired, then the \code{subjectType} and
 #' \code{objectType} parameters can be specified to explicitly set the RDF types.
-#'
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{Statement-initialize}}}{: Initialize a Statement object.}
+#'   \item{\code{\link{getTermType}}}{: Return the redland node type for the specified RDF term in a statement.}
+#'   \item{\code{\link{freeStatement}}}{: Free memory used by a librdf statement.}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
 #' @examples
 #' \dontrun{
 #' subject <- new("Node", blank="_:myid1")

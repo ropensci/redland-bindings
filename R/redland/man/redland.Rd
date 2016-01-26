@@ -21,16 +21,16 @@ An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer}.
 The redland R package classes and the corresponding Redland C library types are shown in the following table:
 \tabular{llll}{
 \strong{Concept}\tab \strong{Redland C type}\tab \strong{redland R class}\tab \strong{Purpose}\cr
-Resource / Literal\tab librdf_node\tab redland::Node\tab RDF Model & Syntax nodes\cr
-Statement / Triple\tab librdf_statement\tab redland::Statement\tab RDF Model & Syntax arcs (statements, triples) [isa Resource]\cr
-Model\tab librdf_model\tab redland::Model\tab Set of Statements usually held in one Storage.\cr
-Node\tab librdf_node\tab redland::Node\tab The subject, predicate or object of a Statement\cr
-Storage\tab librdf_storage\tab redland::Storage\tab Storage for Models either persistant or in-memory.\cr
-Parser\tab librdf_parser\tab redland::Parser\tab Syntaxes parsers delivering Stream of Statements or writing to a Model\cr
-Query\tab librdf_query\tab redland::Query\tab Querying of an Model delivering a QueryResults\cr
-QueryResults\tab librdf_query_results\tab redland::QueryResults\tab Results of applying an Query to a Model giving either variable bindings with Node values or Stream of Statements\cr
-Serializer\tab librdf_serializer\tab redland::Serializer\tab Serializes a Model into a syntax such as RDF/XML\cr
-World\tab librdf_world\tab redland::World\tab RDF wrapper class handling Redland startup/shutdown\cr
+Resource / Literal\tab librdf_node\tab \link[=Node-class]{redland::Node}\tab RDF Model & Syntax nodes\cr
+Statement / Triple\tab librdf_statement\tab \link[=Statement-class]{redland::Statement}\tab RDF Model & Syntax arcs (statements, triples) [isa Resource]\cr
+Model\tab librdf_model\tab \link[=Model-class]{redland::Model}\tab Set of Statements usually held in one Storage.\cr
+Node\tab librdf_node\tab \link[=Node-class]{redland::Node}\tab The subject, predicate or object of a Statement\cr
+Storage\tab librdf_storage\tab \link[=Storage-class]{redland::Storage}\tab Storage for Models either persistant or in-memory.\cr
+Parser\tab librdf_parser\tab \link[=Parser-class]{redland::Parser}\tab Syntaxes parsers delivering Stream of Statements or writing to a Model\cr
+Query\tab librdf_query\tab \link[=Query-class]{redland::Query}\tab Querying of an Model delivering a QueryResults\cr
+QueryResults\tab librdf_query_results\tab \link[=QueryResults-class]{redland::QueryResults}\tab Results of applying an Query to a Model giving either variable bindings with Node values or Stream of Statements\cr
+Serializer\tab librdf_serializer\tab \link[=Serializer-class]{redland::Serializer}\tab Serializes a Model into a syntax such as RDF/XML\cr
+World\tab librdf_world\tab \link[=World-class]{redland::World}\tab RDF wrapper class handling Redland startup/shutdown\cr
 }
 }
 \note{

@@ -15,7 +15,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-#' An RDF Serializer object
+#' @title An RDF Serializer object.
+#' @description The Serializer class provides methods to convert a Model object
+#' to other forms, for example, write out a Model to a file.
 #' @slot librdf_serializer A redland statement object
 #' @rdname Serializer-class
 #' @aliases Serializer
@@ -23,7 +25,16 @@
 #' @include World.R
 #' @include Model.R
 #' @keywords classes
-#' @exportClass Serializer
+#' @export
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{Serializer-initialize}}}{: Initialize a Serializer object.}
+#'   \item{\code{\link{setNameSpace}}}{: Set a namespace for the serializer.}
+#'   \item{\code{\link{serializeToCharacter}}}{: Serialize a model to a character vector.}
+#'   \item{\code{\link{serializeToFile}}}{: Serialize a model to a file.}
+#'   \item{\code{\link{freeSerializer}}}{: Free memory used by a librdf serializer.}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
 #' @examples
 #' \dontrun{
 #' serializer <- new("Serializer", world, factoryName, mimeType, typeUri)
@@ -33,6 +44,8 @@
 setClass("Serializer", slots = c(librdf_serializer = "_p_librdf_serializer_s"))
 
 #' Construct a Serializer object.
+#' @rdname Serializer-initialize
+#' @aliases Serializer-initialize
 #' @param .Object the Serializer object
 #' @param world a World object
 #' @param name name of a previously created serializer factory to use

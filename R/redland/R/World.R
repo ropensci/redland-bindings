@@ -15,27 +15,33 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
-
-#' A Redland World object, used to initialize the Redland RDF library.
+#' @title A Redland World object, used to initialize the Redland RDF library.
+#' @description A World object is the top level object in the Redland RDF library
+#' implementation, so it contains all other objects needed to process RDF
+#' Models.
 #' @slot librdf_world A redland world object
-#' @rdname World-class
 #' @aliases World
 #' @include redland.R
 #' @keywords classes
-## @useDynLib librdf
-## @useDynLib libraptor2
-## @useDynLib librasqal
 #' @useDynLib redland
-#' @exportClass World
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{World-initialize}}}{: Initialize a World object}
+#'   \item{\code{\link{freeWorld}}}{: Free memory used by a librdf world object}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
 #' @examples
 #' \dontrun{
 #' world <- new("World")
 #' }
+#' 
 #' @import methods
 #' @export
 setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
 
 #' Initialize the World object.
+#' @rdname World-initialize
+#' @aliases World-initialize
 #' @param .Object the World object
 #' @return the World object
 #' @export

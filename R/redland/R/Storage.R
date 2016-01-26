@@ -24,7 +24,13 @@
 #' @include redland.R
 #' @include World.R
 #' @keywords classes
-#' @exportClass Storage
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{Storage-initialize}}}{: Initialize a Storage object}
+#'   \item{\code{\link{freeStorage}}}{: Free memory used by a librdf storage object}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
+#' @export
 #' @examples
 #' \dontrun{
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -33,7 +39,9 @@ setClass("Storage", slots = c(librdf_storage = "_p_librdf_storage_s",
                               type = "character"
 ))
 
-#' Constructor for Storage object
+#' Initialize a Storage object
+#' @rdname Storage-initialize
+#' @aliases Storage-initialize
 #' @param .Object the Storage object
 #' @param world the World object
 #' @param type the Redland storage type

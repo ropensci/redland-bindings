@@ -16,7 +16,7 @@
 #   limitations under the License.
 #
 
-#' Query an RDF model
+#' @title Query an RDF model
 #' @description The Query class is used to execuate a query on a Model object using the default query
 #' language SPARQL. For more information, please refer to \url{http://librdf.org/rasqal/} for details on 
 #' supported query languages.
@@ -27,8 +27,17 @@
 #' @aliases Query
 #' @include redland.R
 #' @keywords classes
-#' @exportClass Query
+#' @export
 #' @references www.example.com
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{Query-initialize}}}{: Initialize a Query object.}
+#'   \item{\code{\link{executeQuery}}}{: Execute a query.}
+#'   \item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
+#'   \item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
+#'   \item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
 #' @examples
 #' \dontrun{
 #' queryString <- 'PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?a ?c WHERE { ?a prov:Agent ?c . }'
@@ -37,6 +46,8 @@
 setClass("Query", slots = c(librdf_query = "_p_librdf_query"))
 
 #' Initialize the Query object.
+#' @rdname Query-initialize
+#' @aliases Query-initialize
 #' @param .Object the Query object
 #' @param world a World object
 #' @param querystring a query string for the language specified in 'query_language'

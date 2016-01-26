@@ -16,7 +16,7 @@
 #   limitations under the License.
 #
 
-#' An RDF Parser object
+#' @title An RDF Parser object
 #' @description The Parser class provides methods to parse RDF content into a Redland
 #' RDF model.
 #' @slot librdf_parser A redland parser object
@@ -26,7 +26,14 @@
 #' @include World.R
 #' @include Model.R
 #' @keywords classes
-#' @exportClass Serializer
+#' @export
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{\link{Parser-initialize}}}{: Initialize a Parser object.}
+#'   \item{\code{\link{parseFileIntoModel}}}{: Parse the contents of a file into a model.}
+#'   \item{\code{\link{freeParser}}}{: Free memory used by a librdf parser.}
+#' }
+#' @seealso \code{\link{redland}}{: redland package}
 #' @examples
 #' \dontrun{
 #' parser <- new("Parser", world, name, mimeType, typeUri)
@@ -37,6 +44,8 @@ setClass("Parser", slots = c(librdf_parser = "_p_librdf_parser_s"))
 #' Initialize a Parser object.
 #' @description A Parser object is initialized for a specific RDF serialization.
 #' @details The serialization format that are supported by 
+#' @rdname Parser-initialize
+#' @aliases Parser-initialize
 #' @param .Object the Parser object
 #' @param world a World object
 #' @param name name of the parser factory to use

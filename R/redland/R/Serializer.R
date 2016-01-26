@@ -58,9 +58,8 @@ setMethod("initialize", signature = "Serializer", definition = function(.Object,
   return(.Object)
 })
 
-#' Set a namespace for the serializer
+#' Set a namespace for the serializer.
 #' @rdname setNameSpace
-#' @aliases setNameSpace
 #' @param .Object a Serializer object
 #' @param world a World object
 #' @param namespace the namespace to add to the serializer
@@ -70,7 +69,7 @@ setGeneric("setNameSpace", function(.Object, world, namespace, prefix) {
   standardGeneric("setNameSpace")
 })
 
-#' @describeIn setNameSpace
+#' @rdname setNameSpace
 setMethod("setNameSpace", signature("Serializer", "World", "character", "character"), function(.Object, world, namespace, prefix) {
   
   stopifnot(!is.null(world))
@@ -79,20 +78,20 @@ setMethod("setNameSpace", signature("Serializer", "World", "character", "charact
   librdf_serializer_set_namespace(.Object@librdf_serializer, librdf_uri, prefix)
 })
 
-#' Serialize a model to a character vector
+#' Serialize a model to a character vector.
 #' @rdname serializeToCharacter
-#' @alias serializeToCharacter
 #' @param .Object a Serializer object
 #' @param world a World object
 #' @param model a Model object
-#' @param ... baseUri a URI to prepend to relative URIs in the document
+#' @param ... Additional parameters
 #' @return a character vector containing the serialized model
 #' @export
 setGeneric("serializeToCharacter", function(.Object, world, model, ...) {
   standardGeneric("serializeToCharacter")
 })
 
-#' @describeIn serializeToCharacter
+#' @rdname serializeToCharacter
+#' @param baseUri a URI to prepend to relative URIs in the document
 setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), function(.Object, world, model, baseUri=as.character(NA)) {
   
   stopifnot(!is.null(world))
@@ -109,21 +108,21 @@ setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), fun
   return(RDFstring)
 })
 
-#' Serialize a model to a file
+#' Serialize a model to a file.
 #' @rdname serializeToFile
-#' @aliases serializeToFile
 #' @param .Object a Serializer object
 #' @param world a World object
 #' @param model a Model object
 #' @param filePath a file path that the serialized model will be written to
-#' @param ... baseUri a base URI to use for the serialization
+#' @param ... Additional parameters
 #' @return an integer containing the return status where non zero indicates an error occured during serialization
 #' @export
 setGeneric("serializeToFile", function(.Object, world, model, filePath, ...) {
   standardGeneric("serializeToFile")
 })
 
-#' @describeIn serializeToFile
+#' @rdname serializeToFile
+#' @param baseUri a base URI to use for the serialization
 setMethod("serializeToFile", signature("Serializer", "World", "Model", "character"), function(.Object, world, model, filePath, baseUri=as.character(NA)) {
   
   stopifnot(!is.null(world))
@@ -141,16 +140,15 @@ setMethod("serializeToFile", signature("Serializer", "World", "Model", "characte
   return(status)
 })
 
-#' Free memory used by a librdf serializer
+#' Free memory used by a librdf serializer.
 #' @rdname freeSerializer
-#' @aliases freeSerializer
 #' @param .Object a Serializer object
 #' @export
 setGeneric("freeSerializer", function(.Object) {
   standardGeneric("freeSerializer")
 })
 
-#' @describeIn freeSerializer
+#' @rdname freeSerializer
 setMethod("freeSerializer", signature("Serializer"), function(.Object) {
   librdf_free_serializer(.Object@librdf_serializer)
 })

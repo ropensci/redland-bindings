@@ -69,18 +69,18 @@ setMethod("initialize", signature = "Parser", definition = function(.Object, wor
 #' parsed, for example, if 'rdfxml' was specified during parser initialization, then the parser
 #' expects RDF/XML content as specified in the W3C recommendation (http://www.we3.org/TR/REC-rdf-syntax)
 #' @rdname parseFileIntoModel
-#' @aliases parseFileIntoModel
 #' @param .Object a Parser object 
 #' @param world a World object
 #' @param filePath a file that contains the RDF content
 #' @param model a Model object to parse the RDF content into
-#' @param ... baseUri a base URI (i.e. XML base) to apply to the model
+#' @param ... (Additional parameters)
 #' @export
 setGeneric("parseFileIntoModel", function(.Object, world, filePath, model, ...) {
   standardGeneric("parseFileIntoModel")
 })
 
-#' @describeIn parseFileIntoModel
+#' @rdname parseFileIntoModel
+#' @param baseUri a base URI (i.e. XML base) to apply to the model
 setMethod("parseFileIntoModel", signature("Parser", "World", "character", "Model"), function(.Object, world, filePath, model, baseUri=as.character(NA)) {
   stopifnot(!is.null(model))
   
@@ -109,14 +109,13 @@ setMethod("parseFileIntoModel", signature("Parser", "World", "character", "Model
 #' @details After freeNode is called, the Node object is no longer usable and should
 #' be deleted  \code{"rm(nodeName)"} and a new object created.
 #' @rdname freeParser
-#' @aliases freeParser
 #' @param .Object a Node object
 #' @export
 setGeneric("freeParser", function(.Object) {
   standardGeneric("freeParser")
 })
 
-#' @describeIn freeParser
+#' @rdname freeParser
 setMethod("freeParser", signature("Parser"), function(.Object) {
   librdf_free_parser(.Object@librdf_parser)
 })

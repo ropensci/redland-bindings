@@ -2,8 +2,9 @@
 % Please edit documentation in R/Storage.R
 \docType{methods}
 \name{initialize,Storage-method}
+\alias{Storage-initialize}
 \alias{initialize,Storage-method}
-\title{Constructor for Storage object}
+\title{Initialize a Storage object}
 \usage{
 \S4method{initialize}{Storage}(.Object, world, type = "hashes", name = "",
   options = "hash-type='memory'")
@@ -23,6 +24,6 @@
 the Storage object
 }
 \description{
-Constructor for Storage object
+Initialize a Storage object
 }
 

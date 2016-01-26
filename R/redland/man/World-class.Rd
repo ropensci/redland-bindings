@@ -6,17 +6,30 @@
 \alias{World-class}
 \title{A Redland World object, used to initialize the Redland RDF library.}
 \description{
-A Redland World object, used to initialize the Redland RDF library.
+A World object is the top level object in the Redland RDF library
+implementation, so it contains all other objects needed to process RDF
+Models.
 }
 \section{Slots}{
 
 \describe{
 \item{\code{librdf_world}}{A redland world object}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{World-initialize}}}{: Initialize a World object}
+  \item{\code{\link{freeWorld}}}{: Free memory used by a librdf world object}
+}
+}
 \examples{
 \dontrun{
 world <- new("World")
 }
+
+}
+\seealso{
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

@@ -2,6 +2,7 @@
 % Please edit documentation in R/Query.R
 \docType{methods}
 \name{initialize,Query-method}
+\alias{Query-initialize}
 \alias{initialize,Query-method}
 \title{Initialize the Query object.}
 \usage{

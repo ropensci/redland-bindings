@@ -49,6 +49,8 @@
 setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 
 #' Construct a Statement object.
+#' @rdname Statement-initialize
+#' @aliases Statement-initialize
 #' @param .Object the Statement object
 #' @param world a World object
 #' @param subject a Node object
@@ -169,7 +171,6 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
 #' be used to determine the RDF type ("uri", "literal", "blank") that has been
 #' assigned to the specified RDF term, i.e. "subject", "predicate", "object".
 #' @rdname getTermType
-#' @aliases getTermType
 #' @param .Object a Statement object
 #' @param term the RDF term for which the type will be returned
 #' @export
@@ -177,7 +178,7 @@ setGeneric("getTermType", function(.Object, term) {
   standardGeneric("getTermType")
 })
 
-#' @describeIn getTermType
+#' @rdname getTermType
 setMethod("getTermType", signature("Statement", "character"), function(.Object, term) {
   if (term != "subject" && term != "predicate" && term != "object") {
     stop("Must specify \"subject\", \"predicate\", or \"object\" for term")
@@ -209,15 +210,13 @@ setMethod("getTermType", signature("Statement", "character"), function(.Object, 
 #' @details After this method is called, the Statement object is no longer usable and should
 #' be deleted  \code{"rm(statement)"} and a new object created.
 #' @rdname freeStatement
-#' @aliases freeStatement
 #' @param .Object a Statement object
 #' @export
 setGeneric("freeStatement", function(.Object) {
   standardGeneric("freeStatement")
 })
 
-#' @describeIn freeStatement
+#' @rdname freeStatement
 setMethod("freeStatement", signature("Statement"), function(.Object) {
   librdf_free_statement(.Object@librdf_statement)
-  
 })

@@ -15,10 +15,20 @@ A Redland Storage object
 
 \item{\code{type}}{the storage type to create, i.e. "hashes", "mysql", "postgresql", ...}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{Storage-initialize}}}{: Initialize a Storage object}
+  \item{\code{\link{freeStorage}}}{: Free memory used by a librdf storage object}
+}
+}
 \examples{
 \dontrun{
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 }
+}
+\seealso{
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

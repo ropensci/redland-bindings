@@ -2,6 +2,7 @@
 % Please edit documentation in R/World.R
 \docType{methods}
 \name{initialize,World-method}
+\alias{World-initialize}
 \alias{initialize,World-method}
 \title{Initialize the World object.}
 \usage{

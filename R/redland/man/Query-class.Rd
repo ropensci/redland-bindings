@@ -19,6 +19,16 @@ can be interated over the query solution sequence.
 \describe{
 \item{\code{librdf_query}}{A redland query object}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{Query-initialize}}}{: Initialize a Query object.}
+  \item{\code{\link{executeQuery}}}{: Execute a query.}
+  \item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
+  \item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
+  \item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
+}
+}
 \examples{
 \dontrun{
 queryString <- 'PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?a ?c WHERE { ?a prov:Agent ?c . }'
@@ -27,6 +37,9 @@ query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql"
 }
 \references{
 www.example.com
+}
+\seealso{
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

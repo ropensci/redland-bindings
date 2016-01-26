@@ -4,21 +4,35 @@
 \name{Serializer-class}
 \alias{Serializer}
 \alias{Serializer-class}
-\title{An RDF Serializer object}
+\title{An RDF Serializer object.}
 \description{
-An RDF Serializer object
+The Serializer class provides methods to convert a Model object
+to other forms, for example, write out a Model to a file.
 }
 \section{Slots}{
 
 \describe{
 \item{\code{librdf_serializer}}{A redland statement object}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{Serializer-initialize}}}{: Initialize a Serializer object.}
+  \item{\code{\link{setNameSpace}}}{: Set a namespace for the serializer.}
+  \item{\code{\link{serializeToCharacter}}}{: Serialize a model to a character vector.}
+  \item{\code{\link{serializeToFile}}}{: Serialize a model to a file.}
+  \item{\code{\link{freeSerializer}}}{: Free memory used by a librdf serializer.}
+}
+}
 \examples{
 \dontrun{
 serializer <- new("Serializer", world, factoryName, mimeType, typeUri)
 setNameSpace(serializer, world, namespace, prefix)
 RDF <- serializeToCharacter(serializer, world, model, baseUri)
 }
+}
+\seealso{
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

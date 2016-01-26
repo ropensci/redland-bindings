@@ -14,8 +14,7 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-
-#' A Redland Model object
+#' @title A Redland Model object
 #' @description A Model object is used to store the statements (triples) of an RDF model.
 #' @details A Model may be created manually by creating \code{\link{Statement}} and adding
 #' them to the Model using \code{\link{addStatement}}, or a Model may be read in from a
@@ -43,6 +42,8 @@ setClass("Model", slots=c(librdf_model = "_p_librdf_model_s"))
 #' @param world a World object
 #' @param storage a Storage object
 #' @param options extra options for model initialization
+#' @rdname Model-initialize
+#' @aliases Model-initialize
 #' @return the World object
 #' @export
 setMethod("initialize", signature = "Model", definition = function(.Object, world, storage, options) {
@@ -53,7 +54,6 @@ setMethod("initialize", signature = "Model", definition = function(.Object, worl
 
 #' Add a Statement object to the Model
 #' @rdname addStatement
-#' @aliases addStatement
 #' @param .Object a Model object
 #' @param statement the Statement that will be added
 #' @export
@@ -61,7 +61,7 @@ setGeneric("addStatement", function(.Object, statement) {
   standardGeneric("addStatement")
 })
 
-#' @describeIn addStatement
+#' @rdname addStatement
 setMethod("addStatement", signature("Model", "Statement"), function(.Object, statement) {
   
   librdf_model_add_statement(.Object@librdf_model, statement@librdf_statement);
@@ -69,7 +69,6 @@ setMethod("addStatement", signature("Model", "Statement"), function(.Object, sta
 
 #' Free memory used by a librdf model.
 #' @rdname freeModel
-#' @aliases freeModel
 #' @details After this method is called, the Model object is no longer usable and should
 #' be deleted \code{"rm(model)"} and a new object created.
 #' @param .Object a Model object
@@ -78,7 +77,7 @@ setGeneric("freeModel", function(.Object) {
   standardGeneric("freeModel")
 })
 
-#' @describeIn freeModel
+#' @rdname freeModel
 setMethod("freeModel", signature("Model"), function(.Object) {
   librdf_free_model(.Object@librdf_model)
 })

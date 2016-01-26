@@ -2,6 +2,7 @@
 % Please edit documentation in R/Model.R
 \docType{methods}
 \name{initialize,Model-method}
+\alias{Model-initialize}
 \alias{initialize,Model-method}
 \title{Constructor for a Model object.}
 \usage{

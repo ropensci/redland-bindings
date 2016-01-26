@@ -2,6 +2,7 @@
 % Please edit documentation in R/Serializer.R
 \docType{methods}
 \name{initialize,Serializer-method}
+\alias{Serializer-initialize}
 \alias{initialize,Serializer-method}
 \title{Construct a Serializer object.}
 \usage{

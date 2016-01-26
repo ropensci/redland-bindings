@@ -14,11 +14,22 @@ RDF model.
 \describe{
 \item{\code{librdf_parser}}{A redland parser object}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{Parser-initialize}}}{: Initialize a Parser object.}
+  \item{\code{\link{parseFileIntoModel}}}{: Parse the contents of a file into a model.}
+  \item{\code{\link{freeParser}}}{: Free memory used by a librdf parser.}
+}
+}
 \examples{
 \dontrun{
 parser <- new("Parser", world, name, mimeType, typeUri)
 parserIntoModel(parser, uri, baseUri, model)
 }
+}
+\seealso{
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

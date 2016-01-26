@@ -2,6 +2,7 @@
 % Please edit documentation in R/Node.R
 \docType{methods}
 \name{initialize,Node-method}
+\alias{Node-initialize}
 \alias{initialize,Node-method}
 \title{Initialize a Node object.}
 \usage{

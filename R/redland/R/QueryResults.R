@@ -35,6 +35,8 @@ setClass("QueryResults", slots = c(librdf_query_results = "_p_librdf_query_resul
 #' return value of \code{'Query.execute()'}.
 #' @details A QueryResults object is returned by the \code{Query.executeQuery()} method, so typically a user
 #' does not initialize a QueryResult object by calling \code{new("QueryResult", ...)}
+#' @rdname QueryResults-initialize
+#' @aliases QueryResults-initialize
 #' @param .Object the QueryResults object.
 #' @param results a librdf query result
 #' @return the QueryResults object
@@ -44,17 +46,16 @@ setMethod("initialize", signature = "QueryResults", definition = function(.Objec
   return(.Object)
 })
 
-#' Get the next query result
-#' @description The next query result is returned
+#' Get the next query result.
+#' @description The next query result is returned. .
 #' @rdname getNextResult
-#' @aliases getNextResult
 #' @param .Object a QueryResults object
 #' @export
 setGeneric("getNextResult", function(.Object) {
   standardGeneric("getNextResult")
 })
 
-#' @describeIn getNextResult
+#' @rdname getNextResult
 setMethod("getNextResult", signature("QueryResults"), function(.Object) {
 
   nodeNames <- list()
@@ -86,17 +87,16 @@ setMethod("getNextResult", signature("QueryResults"), function(.Object) {
 })
 
 #' Free memory used by a librdf query results
-#' @details After this method is called, the QueryResults object is no longer usable and should
+#' @description After this method is called, the QueryResults object is no longer usable and should
 #' be deleted with \code{"rm(query)"}.
 #' @rdname freeQueryResults
-#' @aliases freeQueryResults
 #' @param .Object a QueryResults object
 #' @export
 setGeneric("freeQueryResults", function(.Object) {
   standardGeneric("freeQueryResults")
 })
 
-#' @describeIn QueryResults
+#' @rdname freeQueryResults
 setMethod("freeQueryResults", signature("QueryResults"), function(.Object) {
   # Have to free all of the nodes that were created by the query result that
   # hold the bound node values

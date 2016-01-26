@@ -2,6 +2,7 @@
 % Please edit documentation in R/Parser.R
 \docType{methods}
 \name{initialize,Parser-method}
+\alias{Parser-initialize}
 \alias{initialize,Parser-method}
 \title{Initialize a Parser object.}
 \usage{

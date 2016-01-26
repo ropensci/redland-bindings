@@ -49,14 +49,13 @@ setMethod("initialize", signature = "World", definition = function(.Object) {
 #' @details After this method is called, the World object is no longer usable and should
 #' be deleted \code{"rm(world)"} and a new object created.
 #' @rdname freeWorld
-#' @aliases freeWorld
 #' @param .Object a World object
 #' @export
 setGeneric("freeWorld", function(.Object) {
   standardGeneric("freeWorld")
 })
 
-#' @describeIn freeWorld
+#' @rdname freeWorld
 setMethod("freeWorld", signature("World"), function(.Object) {
   librdf_free_world(.Object@librdf_world)
 })

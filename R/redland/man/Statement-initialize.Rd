@@ -2,6 +2,7 @@
 % Please edit documentation in R/Statement.R
 \docType{methods}
 \name{initialize,Statement-method}
+\alias{Statement-initialize}
 \alias{initialize,Statement-method}
 \title{Construct a Statement object.}
 \usage{

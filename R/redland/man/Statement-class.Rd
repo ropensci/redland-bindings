@@ -21,6 +21,14 @@ be 'uri' (aka 'resource'). If the automatic determination of RDF types is not de
 \describe{
 \item{\code{librdf_statement}}{A redland statement object}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{Statement-initialize}}}{: Initialize a Statement object.}
+  \item{\code{\link{getTermType}}}{: Return the redland node type for the specified RDF term in a statement.}
+  \item{\code{\link{freeStatement}}}{: Free memory used by a librdf statement.}
+}
+}
 \examples{
 \dontrun{
 subject <- new("Node", blank="_:myid1")
@@ -34,6 +42,9 @@ stmt <- new("Statement", world, subject=NULL,
                                 predicate="http://www.example.com/hasAddr",
                                 object="http://www.nothing.com", objectType="literal")
 }
+}
+\seealso{
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

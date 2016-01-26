@@ -4,20 +4,32 @@
 \name{QueryResults-class}
 \alias{QueryResults}
 \alias{QueryResults-class}
-\title{A Redland QueryResult object is used to inspect query results from a Query object.}
+\title{A Redland QueryResults object is used to inspect query results from a Query object.}
 \description{
-A Redland QueryResult object is used to inspect query results from a Query object.
+The QueryResults object contains the RDF statements that were returned from
+a query on an RDF model.
 }
 \section{Slots}{
 
 \describe{
 \item{\code{librdf_query_results}}{A redland query object}
 }}
+\section{Methods}{
+
+\itemize{
+  \item{\code{\link{QueryResults-initialize}}}{: Initialize a QueryResults object.}
+  \item{\code{\link{getNextResult}}}{: Get the next query result.}
+  \item{\code{\link{freeQueryResults}}}{: Free memory used by a librdf query result.}
+}
+}
 \examples{
 \dontrun{
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
 queryResult <- executeQuery(query, results)
 }
+}
+\seealso{
+\code{\link{redland}}{: redland package}
 }
 \keyword{classes}
 

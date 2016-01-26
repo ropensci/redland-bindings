@@ -58,7 +58,6 @@ setMethod("initialize",
 #' Execute a query
 #' @description The initialize query is executed and the result is returned as a QueryResult object
 #' @rdname executeQuery
-#' @aliases executeQuery
 #' @param .Object a Query object
 #' @param model a Model object
 #' @return a QueryResults object
@@ -67,7 +66,7 @@ setGeneric("executeQuery", function(.Object, model) {
   standardGeneric("executeQuery")
 })
 
-#' @describeIn executeQuery
+#' @rdname executeQuery
 setMethod("executeQuery", signature("Query"), function(.Object, model) {
   results <- librdf_query_execute(.Object@librdf_query, model@librdf_model) 
   queryResultObj <- new("QueryResults", results)
@@ -84,14 +83,13 @@ setGeneric("setQueryResultLimit", function(.Object, limit) {
   standardGeneric("setQueryResultLimit")
 })
 
-#' @describeIn setQueryResultsLimit
+#' @rdname setQueryResultsLimit
 setMethod("setQueryResultLimit", signature("Query"), function(.Object, limit) {
   librdf_query_set_limit(.Object@librdf_query, as.integer(limit))
 })
 
 #' Get the query result limit
 #' @rdname getQueryResultsLimit
-#' @aliases getQueryResultsLimit
 #' @param .Object a Query object
 #' @return the query result limit. If a limit is set then the value will be >= 0. If the value is < 0, no limit is set
 #' @export
@@ -99,7 +97,7 @@ setGeneric("getQueryResultLimit", function(.Object) {
   standardGeneric("getQueryResultLimit")
 })
 
-#' @describeIn getQueryResultsLimit
+#' @rdname getQueryResultsLimit
 setMethod("getQueryResultLimit", signature("Query"), function(.Object) {
   return(librdf_query_get_limit (.Object@librdf_query))
 })
@@ -108,14 +106,13 @@ setMethod("getQueryResultLimit", signature("Query"), function(.Object) {
 #' @details After this method is called, the Query object is no longer usable and should
 #' be deleted \code{"rm(query)"} and a new object created.
 #' @rdname freeQuery
-#' @aliases freeQuery
 #' @param .Object a Query object
 #' @export
 setGeneric("freeQuery", function(.Object) {
   standardGeneric("freeQuery")
 })
 
-#' @describeIn freeQuery
+#' @rdname freeQuery
 setMethod("freeQuery", signature("Query"), function(.Object) {
   librdf_free_query(.Object@librdf_query)
 })

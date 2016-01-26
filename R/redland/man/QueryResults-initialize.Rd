@@ -2,6 +2,7 @@
 % Please edit documentation in R/QueryResults.R
 \docType{methods}
 \name{initialize,QueryResults-method}
+\alias{QueryResults-initialize}
 \alias{initialize,QueryResults-method}
 \title{Initialize the QueryResults object.}
 \usage{

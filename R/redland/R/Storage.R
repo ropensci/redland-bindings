@@ -51,17 +51,16 @@ setMethod("initialize", signature = "Storage", definition = function(.Object, wo
 })
 
 #' Free memory used by a librdf storage object
-#' @details After this method is called, the Storage object is no longer usable and should
+#' @description After this method is called, the Storage object is no longer usable and should
 #' be deleted \code{"rm(storage)"} and a new object created.
-#' @rdname Storage
-#' @aliases Storage
+#' @rdname freeStorage
 #' @param .Object a Storage object to free memory for
 #' @export
 setGeneric("freeStorage", function(.Object) {
   standardGeneric("freeStorage")
 })
 
-#' @describeIn Storage
+#' @rdname freeStorage
 setMethod("freeStorage", signature("Storage"), function(.Object) {
   librdf_free_storage(.Object@librdf_storage)
 })

@@ -13,7 +13,7 @@ Description: Routines for serializing and deserializing RDF (Resource
     package provides an R-based API that binds R classes the corresponding
     librdf C-library functions.
 Depends:
-    R (>= 3.2.1),
+    R (>= 3.1.1),
     methods
 Imports:
     roxygen2

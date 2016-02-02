@@ -6,7 +6,7 @@ Authors@R: c(person("Matthew B.", "Jones", role = c("aut", "cre"), email = "jone
   person("Carl", "Boettiger", role = c("ctb"), email = "cboettig@gmail.com"), 
   person("Scott", "Chamberlain", role = c("ctb"), email = "myrmecocystus@gmail.com"),
   person("Jeroen", "Ooms", role=c("ctb"), email="jereonooms@gmail.com"))
-Date: 2015-06-08
+Date: 2016-02-02
 VignetteBuilder: knitr
 Description: Routines for serializing and deserializing RDF (Resource
     Description Framework) Statements using the Redland librdf library.  The

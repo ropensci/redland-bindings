@@ -1,6 +1,4 @@
 
-This version of the redland R package contains updated build scripts that use Rtools for Windows binary builds.
-
 ## Test environments
 
 * OS X 10.10.5, R 3.2.3
@@ -13,7 +11,11 @@ This version of the redland R package contains updated build scripts that use Rt
 ## R CMD check results
 
 * There were no ERRORs or WARNINGs.
-* There was one NOTE, indicating that this is a new submission.
+* There were two NOTES: 
+  * one indicating that this is a new submission.
+  * For the Windows build only, one NOTE regarding "sub-directories of 1Mb or more"
+    The "libs" directory contains only the redland.dll files build for each Windows
+    sub-architecture (i385, x64) and is necessary for the redland package to run.
 
 ## Downstream dependencies
 

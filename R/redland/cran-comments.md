@@ -10,7 +10,9 @@
 
 ## R CMD check results
 
-* There were no ERRORs or WARNINGs.
+* There were no ERRORs.
+* There were several WARNINGS, all of which originate in the upstream librdf code library
+  which is being wrapped in R, and so are not due to the code in this package.
 * There were the following 2 NOTES: 
   - A NOTE checking CRAN incoming feasibility:
     - indicating that this is a new submission.

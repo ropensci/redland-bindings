@@ -1,7 +1,8 @@
 ## redland
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/redland)](http://cran.r-project.org/web/packages/redland)
 
-- **Author**: Matthew B. Jones, Peter Slaughter, Jeroen Ooms, Carl Boettiger, and Scott Chamberlain ([NCEAS](http://www.nceas.ucsb.edu))
+- **Authors**: Matthew B. Jones, Peter Slaughter, Jeroen Ooms, Carl Boettiger, and Scott Chamberlain ([NCEAS](http://www.nceas.ucsb.edu))
+- [doi:10.5063/F1VM496B](http://doi.org/10.5063/F1VM496B)
 - **License**: [Apache 2](http://opensource.org/licenses/Apache-2.0)
 - [Package source code on Github](https://github.com/ropensci/redland-bindings)
 - [**Submit Bugs and feature requests**](https://github.com/ropensci/redland-bindings/issues)

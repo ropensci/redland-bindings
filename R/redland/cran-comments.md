@@ -28,6 +28,7 @@
     For the Windows builds only, the "libs" directory contains only the redland.dll 
     files build for each Windows sub-architecture (i385, x64) and is necessary for 
     the redland package to run.
+* Fixed the format of the DOI in the CITATION file so that it resolves properly
  
 ## Downstream dependencies
 

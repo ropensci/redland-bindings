@@ -22,9 +22,8 @@
       - RDF (3:8, 11:51)
       - Redland (12:26)
       - librdf (12:34, 13:44)
-    - indicating (possibly) invalid DOI: doi:10.5063/F1VM496B 
-      This DOI is currently reserved from EZID and will be made public when this 
-      package is submitted to CRAN.
+    - indicating an invalid URL http://cran.r-project.org/package=redland, which
+      does not resolve because this is a new package submission
   - A NOTE regarding "sub-directories of 1Mb or more" for the libs directory.
     For the Windows builds only, the "libs" directory contains only the redland.dll 
     files build for each Windows sub-architecture (i385, x64) and is necessary for 

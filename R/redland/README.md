@@ -141,6 +141,9 @@ status <- serializeToFile(serializer, world, model, filePath)
 readLines(file(filePath))
 ```
 
+## Acknowledgements
+Work on this package was supported by NSF-ABI grant #1262458 to C. Gries, M. Jones, and S. Collins. 
+
 [![nceas_footer](https://www.nceas.ucsb.edu/files/newLogo_0.png)](http://www.nceas.ucsb.edu)
 
 [![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)

@@ -49,9 +49,6 @@ sudo port install redland
 ```
 Then enter these commands in the R console:
 ```
-install.packages("drat")
-library(drat)
-addRepo("NCEAS")
 install.packages("redland")
 library(redland)
 ```
@@ -74,9 +71,6 @@ brew install redland
 
 Next, install the *redland* R package with these commands typed at the R console window:
 ```
-install.packages("drat")
-library(drat)
-addRepo("NCEAS")
 install.packages("redland")
 library(redland)
 ```
@@ -95,9 +89,6 @@ sudo apt-get install librdf0 librdf0-dev
 Then install the R packages from the R console:
 
 ```
-install.packages("drat")
-library(drat)
-addRepo("NCEAS")
 install.packages("redland")
 library(redland)
 ```

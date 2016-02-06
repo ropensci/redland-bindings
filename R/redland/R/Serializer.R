@@ -36,11 +36,17 @@
 #' }
 #' @seealso \code{\link{redland}}{: redland package}
 #' @examples
-#' \dontrun{
-#' serializer <- new("Serializer", world, factoryName, mimeType, typeUri)
-#' setNameSpace(serializer, world, namespace, prefix)
-#' RDF <- serializeToCharacter(serializer, world, model, baseUri)
-#' }
+#' world <- new("World")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+#' model <- new("Model", world, storage, options="")
+#' filePath <- system.file("extdata/example.rdf", package="redland")
+#' parser <- new("Parser", world)
+#' parseFileIntoModel(parser, world, filePath, model)
+#' # Creat the default "rdfxml" serizlizer
+#' serializer <- new("Serializer", world)
+#' # Add a namespace definition to the serializer
+#' status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")
+#' rdf <- serializeToCharacter(serializer, world, model, baseUri="")
 setClass("Serializer", slots = c(librdf_serializer = "_p_librdf_serializer_s"))
 
 #' Construct a Serializer object.
@@ -156,6 +162,20 @@ setMethod("serializeToFile", signature("Serializer", "World", "Model", "characte
 #' Free memory used by a librdf serializer.
 #' @rdname freeSerializer
 #' @param .Object a Serializer object
+#' @examples 
+#' world <- new("World")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+#' model <- new("Model", world, storage, options="")
+#' filePath <- system.file("extdata/example.rdf", package="redland")
+#' parser <- new("Parser", world)
+#' parseFileIntoModel(parser, world, filePath, model)
+#' # Creat the default "rdfxml" serizlizer
+#' serializer <- new("Serializer", world)
+#' # At this point, some operations would be performed with the Serializer object. 
+#' # See '?Serializer' for a complete example.
+#' # When the serializer object is no longer needed, the resources it had allocated can be freed.
+#' freeSerializer(serializer)
+#' rm(serializer)
 #' @export
 setGeneric("freeSerializer", function(.Object) {
   standardGeneric("freeSerializer")

@@ -31,10 +31,7 @@
 #' }
 #' @seealso \code{\link{redland}}{: redland package}
 #' @examples
-#' \dontrun{
 #' world <- new("World")
-#' }
-#' 
 #' @import methods
 #' @export
 setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
@@ -57,6 +54,12 @@ setMethod("initialize", signature = "World", definition = function(.Object) {
 #' @rdname freeWorld
 #' @param .Object a World object
 #' @export
+#' @examples
+#' world <- new("World")
+#' # At this point we would perform some operations using the world object.
+#' # When the world object is no longer needed, we can free the resources it has allocated.
+#' result <- freeWorld(world)
+#' rm(world)
 setGeneric("freeWorld", function(.Object) {
   standardGeneric("freeWorld")
 })

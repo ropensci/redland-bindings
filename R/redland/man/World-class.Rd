@@ -23,10 +23,7 @@ Models.
 }
 }
 \examples{
-\dontrun{
 world <- new("World")
-}
-
 }
 \seealso{
 \code{\link{redland}}{: redland package}

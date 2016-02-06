@@ -17,4 +17,13 @@ freeStorage(.Object)
 After this method is called, the Storage object is no longer usable and should
 be deleted \code{"rm(storage)"} and a new object created.
 }
+\examples{
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+# At this point we would perform some operations using the storage object.
+# See '?redland' for a complete example.
+# When the Storage object is no longer needed, the resources it had allocated can be freed.
+status <- freeStorage(storage)
+rm(storage)
+}
 

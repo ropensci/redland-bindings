@@ -20,4 +20,11 @@ Free memory used by a librdf world object
 After this method is called, the World object is no longer usable and should
 be deleted \code{"rm(world)"} and a new object created.
 }
+\examples{
+world <- new("World")
+# At this point we would perform some operations using the world object.
+# When the world object is no longer needed, we can free the resources it has allocated.
+result <- freeWorld(world)
+rm(world)
+}
 

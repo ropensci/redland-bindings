@@ -38,10 +38,9 @@
 #' @seealso \code{\link{redland}}{: redland package}
 #' @export
 #' @examples
-#' \dontrun{
-#' model <- new("Model", world, storage, options)
-#' addStatement(model, statement)
-#' }
+#' world <- new("World")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+#' model <- new("Model", world, storage, options="")
 setClass("Model", slots=c(librdf_model = "_p_librdf_model_s"))
 
 #' Constructor for a Model object.
@@ -63,7 +62,11 @@ setMethod("initialize", signature = "Model", definition = function(.Object, worl
 #' @rdname addStatement
 #' @param .Object a Model object
 #' @param statement the Statement that will be added
-#' @export
+#' @export 
+#' @examples
+#' world <- new("World")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+#' model <- new("Model", world, storage, options="")
 setGeneric("addStatement", function(.Object, statement) {
   standardGeneric("addStatement")
 })
@@ -80,6 +83,15 @@ setMethod("addStatement", signature("Model", "Statement"), function(.Object, sta
 #' be deleted \code{"rm(model)"} and a new object created.
 #' @param .Object a Model object
 #' @export
+#' @examples
+#' world <- new("World")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+#' model <- new("Model", world, storage, options="")
+#' # At this point, some operations would be performed with the model.
+#' # See '?redland' for a complete example.
+#' # When the Model object is no longer needed, the resources it has allocated can be freed.
+#' freeModel(model)
+#' rm(model)
 setGeneric("freeModel", function(.Object) {
   standardGeneric("freeModel")
 })

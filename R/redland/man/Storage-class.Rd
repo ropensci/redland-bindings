@@ -23,9 +23,8 @@ A Redland Storage object
 }
 }
 \examples{
-\dontrun{
+world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
-}
 }
 \seealso{
 \code{\link{redland}}{: redland package}

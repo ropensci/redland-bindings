@@ -33,4 +33,13 @@ The parser factory name specified during initialization determines how the conte
 parsed, for example, if 'rdfxml' was specified during parser initialization, then the parser
 expects RDF/XML content as specified in the W3C recommendation (http://www.we3.org/TR/REC-rdf-syntax)
 }
+\examples{
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+model <- new("Model", world, storage, options="")
+# Create the default "rdfxml" parser
+parser <- new("Parser", world)
+filePath <- system.file("extdata/example.rdf", package="redland")
+parseFileIntoModel(parser, world, filePath, model)
+}
 

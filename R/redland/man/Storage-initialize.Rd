@@ -26,4 +26,8 @@ the Storage object
 \description{
 Initialize a Storage object
 }
+\examples{
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+}
 

@@ -20,4 +20,14 @@ Free memory used by a librdf model.
 After this method is called, the Model object is no longer usable and should
 be deleted \code{"rm(model)"} and a new object created.
 }
+\examples{
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+model <- new("Model", world, storage, options="")
+# At this point, some operations would be performed with the model.
+# See '?redland' for a complete example.
+# When the Model object is no longer needed, the resources it has allocated can be freed.
+freeModel(model)
+rm(model)
+}
 

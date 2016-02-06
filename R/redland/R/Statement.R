@@ -40,18 +40,20 @@
 #' }
 #' @seealso \code{\link{redland}}{: redland package}
 #' @examples
-#' \dontrun{
-#' subject <- new("Node", blank="_:myid1")
-#' predicate <- new("Node", uri="http://www.example.com/isa")
-#' object <- new("Node", literal="thing")
+#' world <- new("World")
+#' # Create nodes manually and add to the statment
+#' subject <- new("Node", blank="_:myid1", world)
+#' predicate <- new("Node", uri="http://www.example.com/isa", world)
+#' object <- new("Node", literal="thing", world)
 #' stmt <- new("Statement", world, subject, predicate, object)
+#' 
+#' # Create the statement specifying node values directly
 #' stmt <- new("Statement", world, subject="http://www.example.com/myevent",
 #'                                 predicate="http://example.com/occurredAt",
 #'                                 object="Tue Feb 17 14:05:13 PST 2015")
 #' stmt <- new("Statement", world, subject=NULL, 
 #'                                 predicate="http://www.example.com/hasAddr",
 #'                                 object="http://www.nothing.com", objectType="literal")
-#' }
 setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 
 #' Construct a Statement object.
@@ -180,6 +182,13 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
 #' @param .Object a Statement object
 #' @param term the RDF term for which the type will be returned
 #' @export
+#' @examples
+#' world <- new("World")
+#' subject <- new("Node", blank="_:myid1", world)
+#' predicate <- new("Node", uri="http://www.example.com/isa", world)
+#' object <- new("Node", literal="thing", world)
+#' stmt <- new("Statement", world, subject, predicate, object, world)
+#' termType <- getTermType(stmt, "predicate")
 setGeneric("getTermType", function(.Object, term) {
   standardGeneric("getTermType")
 })
@@ -211,12 +220,22 @@ setMethod("getTermType", signature("Statement", "character"), function(.Object, 
   }
 })
 
-
 #' Free memory used by a librdf statement
 #' @details After this method is called, the Statement object is no longer usable and should
-#' be deleted  \code{"rm(statement)"} and a new object created.
+#' be deleted  \code{"rm(statement)"} and a new object created. This method frees
+#' all resources for the statement, as well as each node in the statement.
 #' @rdname freeStatement
 #' @param .Object a Statement object
+#' @examples 
+#' world <- new("World")
+#' stmt <- new("Statement", world, subject="http://www.example.com/myevent",
+#'                                 predicate="http://example.com/occurredAt",
+#'                                 object="Tue Feb 17 14:05:13 PST 2015")
+#' # At this point, some operations would be performed with the Statement.
+#' # See '?redland' for a complete example.
+#' # When the Statement object is no longer needed, the resources it had allocated can be freed.
+#' freeStatement(stmt)                                
+#' rm(stmt)
 #' @export
 setGeneric("freeStatement", function(.Object) {
   standardGeneric("freeStatement")

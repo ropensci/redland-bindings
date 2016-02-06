@@ -18,4 +18,9 @@ addStatement(.Object, statement)
 \description{
 Add a Statement object to the Model
 }
+\examples{
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+model <- new("Model", world, storage, options="")
+}
 

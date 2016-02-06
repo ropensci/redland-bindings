@@ -32,9 +32,8 @@
 #' @seealso \code{\link{redland}}{: redland package}
 #' @export
 #' @examples
-#' \dontrun{
+#' world <- new("World")
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
-#'}
 setClass("Storage", slots = c(librdf_storage = "_p_librdf_storage_s",
                               type = "character"
 ))
@@ -48,6 +47,9 @@ setClass("Storage", slots = c(librdf_storage = "_p_librdf_storage_s",
 #' @param name storage instance name
 #' @param options storage options
 #' @return the Storage object
+#' @examples
+#' world <- new("World")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 #' @export
 setMethod("initialize", signature = "Storage", definition = function(.Object, world, type="hashes", name="", options="hash-type='memory'") {
     stopifnot(!is.null(world))
@@ -63,6 +65,14 @@ setMethod("initialize", signature = "Storage", definition = function(.Object, wo
 #' be deleted \code{"rm(storage)"} and a new object created.
 #' @rdname freeStorage
 #' @param .Object a Storage object to free memory for
+#' @examples 
+#' world <- new("World")
+#' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+#' # At this point we would perform some operations using the storage object.
+#' # See '?redland' for a complete example.
+#' # When the Storage object is no longer needed, the resources it had allocated can be freed.
+#' status <- freeStorage(storage)
+#' rm(storage)
 #' @export
 setGeneric("freeStorage", function(.Object) {
   standardGeneric("freeStorage")

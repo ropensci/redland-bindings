@@ -23,10 +23,13 @@ RDF model.
 }
 }
 \examples{
-\dontrun{
-parser <- new("Parser", world, name, mimeType, typeUri)
-parserIntoModel(parser, uri, baseUri, model)
-}
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+model <- new("Model", world, storage, options="")
+# Create the default "rdfxml" parser
+parser <- new("Parser", world)
+filePath <- system.file("extdata/example.rdf", package="redland")
+parseFileIntoModel(parser, world, filePath, model)
 }
 \seealso{
 \code{\link{redland}}{: redland package}

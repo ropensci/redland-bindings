@@ -28,10 +28,9 @@ it can be queried using \code{\link{Query}}.
 }
 }
 \examples{
-\dontrun{
-model <- new("Model", world, storage, options)
-addStatement(model, statement)
-}
+world <- new("World")
+storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
+model <- new("Model", world, storage, options="")
 }
 \seealso{
 View examples of creating models by viewing the \code{'redland_overview'} vignette: \code{'vignette("redland_overview")'}

@@ -30,18 +30,20 @@ be 'uri' (aka 'resource'). If the automatic determination of RDF types is not de
 }
 }
 \examples{
-\dontrun{
-subject <- new("Node", blank="_:myid1")
-predicate <- new("Node", uri="http://www.example.com/isa")
-object <- new("Node", literal="thing")
+world <- new("World")
+# Create nodes manually and add to the statment
+subject <- new("Node", blank="_:myid1", world)
+predicate <- new("Node", uri="http://www.example.com/isa", world)
+object <- new("Node", literal="thing", world)
 stmt <- new("Statement", world, subject, predicate, object)
+
+# Create the statement specifying node values directly
 stmt <- new("Statement", world, subject="http://www.example.com/myevent",
                                 predicate="http://example.com/occurredAt",
                                 object="Tue Feb 17 14:05:13 PST 2015")
 stmt <- new("Statement", world, subject=NULL, 
                                 predicate="http://www.example.com/hasAddr",
                                 object="http://www.nothing.com", objectType="literal")
-}
 }
 \seealso{
 \code{\link{redland}}{: redland package}

@@ -20,4 +20,9 @@ a character vector containing the Node type
 A Node has a type that is assigned at initialization and can have one of the following values:
 'resource', 'literal', 'blank' and 'unknown'.
 }
+\examples{
+world <- new("World")
+node <- new("Node", world, uri="http://www.example.com")
+nodeType <- getNodeType(node)
+}
 

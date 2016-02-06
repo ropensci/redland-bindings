@@ -20,4 +20,12 @@ After a Statement object has been created, this method can
 be used to determine the RDF type ("uri", "literal", "blank") that has been
 assigned to the specified RDF term, i.e. "subject", "predicate", "object".
 }
+\examples{
+world <- new("World")
+subject <- new("Node", blank="_:myid1", world)
+predicate <- new("Node", uri="http://www.example.com/isa", world)
+object <- new("Node", literal="thing", world)
+stmt <- new("Statement", world, subject, predicate, object, world)
+termType <- getTermType(stmt, "predicate")
+}
 

@@ -164,18 +164,3 @@ setMethod("getBlankNodeId", signature("Node"), function(.Object) {
     return(as.character(NA))
   }
 })
-
-# Commented out for now as freeing the librdf_node objects and the librdf_statement objects
-# causes R to crash - see test.librdf_free_statement
-# #' Free memory used by a librdf node.
-# #' @details After freeNode is called, the Node object is no longer usable and should
-# #' be deleted  \code{"rm(nodeName)"} and a new object created.
-# #' @param .Object a Node object
-# #' @export
-# setGeneric("freeNode", function(.Object) {
-#   standardGeneric("freeNode")
-# })
-# 
-# setMethod("freeNode", signature("Node"), function(.Object) {
-#   librdf_free_node(.Object@librdf_node)
-# })

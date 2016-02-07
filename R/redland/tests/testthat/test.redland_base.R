@@ -15,7 +15,6 @@ test_that("librdf basic functions", {
     parser <- librdf_new_parser(world,'rdfxml','application/rdf+xml',NULL)
     expect_that(class(parser), matches("_p_librdf_parser_s"))
     uri <- librdf_new_uri(world,paste0('file:',system.file('extdata/dc.rdf', package='redland')))
-    #uri <- librdf_new_uri(world,'file:../../data/dc.rdf')
     expect_that(class(uri), matches("_p_librdf_uri_s"))
     rv <- librdf_parser_parse_into_model(parser,uri,uri,model)
     expect_that(rv, equals(0))
@@ -50,7 +49,6 @@ test_that("librdf basic functions", {
             if (i == 2) {
                 expect_that(nval, matches("(unbound)"))
             }
-            #print(paste(binding_name, "=", nval, sep=""))
         }
         rc <- librdf_query_results_next(results)
     }
@@ -73,10 +71,7 @@ test_that("librdf basic functions", {
     rc <- librdf_model_add_statement(model, statement)
     expect_that(rc, equals(0))
 
-    # Comment out these lines to prevent memory related crash. See test.librdf_free_statement.R for details.
-    #librdf_free_node(subject)
-    #librdf_free_node(pred)
-    #librdf_free_node(object)
+    # Don't need to call librdf_free_node, just librdf_free_statement.
     librdf_free_statement(statement)
 
     # Test serialization of the model to a text file

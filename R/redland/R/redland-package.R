@@ -57,7 +57,8 @@
 #' for the R SWIG interface functions can be found via R help i.e. \code{'?librdf_iterator'}.
 #'
 #' @examples
-#' # This example creates the necessary R objects to hold an RDF model and reads in a file that contains
+#' # This example creates the necessary R objects to hold an RDF model and reads 
+#' in a file that contains
 #' # RDF/XML statements. This model is then queried for and the query results inspected.
 #' world <- new("World")
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")

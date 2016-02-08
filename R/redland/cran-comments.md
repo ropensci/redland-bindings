@@ -29,6 +29,7 @@
     files build for each Windows sub-architecture (i385, x64) and is necessary for 
     the redland package to run.
 * Fixed the format of the DOI in the CITATION file so that it resolves properly
+* Examples have been added to the Roxygen documentation for all methods 
  
 ## Downstream dependencies
 

@@ -58,8 +58,8 @@
 #'
 #' @examples
 #' # This example creates the necessary R objects to hold an RDF model and reads 
-#' in a file that contains
-#' # RDF/XML statements. This model is then queried for and the query results inspected.
+#' # in a file that contains RDF/XML statements. This model is then queried for 
+#' # and the query results inspected.
 #' world <- new("World")
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 #' model <- new("Model", world, storage, options="")

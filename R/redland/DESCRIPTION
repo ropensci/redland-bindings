@@ -1,5 +1,5 @@
 Package: redland
-Version: 1.0.17-4
+Version: 1.0.17-5
 Title: RDF Library Bindings in R
 Authors@R: c(
   person("Matthew B.", "Jones", role = c("aut", "cre"), email="jones@nceas.ucsb.edu"),
@@ -9,9 +9,11 @@ Authors@R: c(
   person("Scott", "Chamberlain", role = c("aut"), email = "myrmecocystus@gmail.com"))
 Date: 2016-02-02
 VignetteBuilder: knitr
-Description: Routines for parsing and serializing RDF (Resource Description Framework)
-    Statements using the Redland librdf library.  The package provides an R-based API
-    that binds R classes the corresponding librdf C-library functions.
+Description: The redland package provides methods to parse, query and serialize information 
+    stored in the Resource Description Framework (RDF), described at <http://www.w3.org/TR/rdf-primer>,
+    by providing an R interface to the Redland RDF C library, described at <http://librdf.org/docs/api/index.html>.
+    In brief, RDF provides a structured graph consisting of Statements composed of Subject, 
+    Predicate, and Object Nodes.
 Depends:
     R (>= 3.1.1),
     methods

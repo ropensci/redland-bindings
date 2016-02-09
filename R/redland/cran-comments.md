@@ -30,6 +30,8 @@
     the redland package to run.
 * Fixed the format of the DOI in the CITATION file so that it resolves properly
 * Examples have been added to the Roxygen documentation for all methods 
+* URLs have been added to the DESCRIPTION for the terms "Resource Description Framework" 
+  and "Redland C libraries"
  
 ## Downstream dependencies
 

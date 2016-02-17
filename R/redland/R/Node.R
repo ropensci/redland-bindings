@@ -76,7 +76,7 @@ setMethod("initialize", signature = "Node", definition = function(.Object, world
   } else if (!missing(literal)) {
     # a literal value was specified, but a blank value is not valid
     if(literal == "") {
-      stop(sprintf("Invalid value specified for Node type of literal: \"%s\""), literal)
+      stop(sprintf("Invalid value specified for Node type of literal: \"%s\"", literal))
     } else {
       if (missing(datatype_uri)) {
         .Object@librdf_node <- librdf_new_node_from_literal(world@librdf_world, literal, "", 0)

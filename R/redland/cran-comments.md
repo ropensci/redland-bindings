@@ -18,10 +18,8 @@
     - indicating that this is a new submission.
     - indicating possible mispelled words in the DESCRIPTION. These have been checked
       and are either valid acronyms or proper names:
-      - API (13:33)
-      - RDF (3:8, 11:51)
-      - Redland (12:26)
-      - librdf (12:34, 13:44)
+      - RDF (3:8, 12:51, 12:57, 13:27, 13:77, 14:69)
+      - Redland (13:69)
     - indicating an invalid URL http://cran.r-project.org/package=redland, which
       does not resolve because this is a new package submission
   - A NOTE regarding "sub-directories of 1Mb or more" for the libs directory.

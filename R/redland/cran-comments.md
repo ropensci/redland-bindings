@@ -33,7 +33,7 @@
 * Duplicated the required inst/NOTICE file (which is what Beckett et al. 
   require as part of the license terms) in an inst/COPYRIGHTS file to satisfy 
   CRAN requirements, added additional explanation, and referenced it in the 
-  DESCRIPTION file.
+  DESCRIPTION file, along with cph entries in Authors@R.
  
 ## Downstream dependencies
 

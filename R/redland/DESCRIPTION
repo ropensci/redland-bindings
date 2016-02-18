@@ -6,8 +6,12 @@ Authors@R: c(
   person("Peter", "Slaughter", role = c("aut"), email = "slaughter@nceas.ucsb.edu"),
   person("Jeroen", "Ooms", role = c("aut"), email="jereonooms@gmail.com"),
   person("Carl", "Boettiger", role = c("aut"), email = "cboettig@gmail.com"),
-  person("Scott", "Chamberlain", role = c("aut"), email = "myrmecocystus@gmail.com"))
-Date: 2016-02-02
+  person("Scott", "Chamberlain", role = c("aut"), email = "myrmecocystus@gmail.com"),
+  person("David", "Beckett", role = c("cph")),
+  person("University of Bristol", role = c("cph")),
+  person("Regents of the University of California", role = c("cph"))
+  )
+Date: 2016-02-17
 VignetteBuilder: knitr
 Description: Provides methods to parse, query and serialize information
     stored in the Resource Description Framework (RDF). RDF is described at <http://www.w3.org/TR/rdf-primer>.

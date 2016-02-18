@@ -30,6 +30,10 @@
 * Examples have been added to the Roxygen documentation for all methods 
 * URLs have been added to the DESCRIPTION for the terms "Resource Description Framework" 
   and "Redland C libraries"
+* Duplicated the required inst/NOTICE file (which is what Beckett et al. 
+  require as part of the license terms) in an inst/COPYRIGHTS file to satisfy 
+  CRAN requirements, added additional explanation, and referenced it in the 
+  DESCRIPTION file.
  
 ## Downstream dependencies
 

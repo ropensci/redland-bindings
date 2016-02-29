@@ -25,7 +25,7 @@ See the `redland_overview` vignette for a brief example of usage.
 
 ## Installation Notes 
 
-The *redland* R package has not been released to CRAN yet. Before the `redland` R package can be installed, the Redland C libraries must be installed.
+The *redland* R package is now available from CRAN. Before the `redland` R package can be installed, the Redland C libraries must be installed.
 
 ### Installing on Mac OS X
 
@@ -49,9 +49,12 @@ sudo port install redland
 ```
 Then enter these commands in the R console:
 ```
-install.packages("redland")
+install.packages("redland", type="source")
 library(redland)
 ```
+
+Please note that the *install.packages* command specifies a "source" installation. Installing from
+source is only necessary if Macports is being used, and is not a requirement if Homebrew is used.
 
 The *redland* R package should be available for use at this point
 
@@ -87,6 +90,18 @@ sudo apt-get install librdf0 librdf0-dev
 ```
 
 Then install the R packages from the R console:
+
+```
+install.packages("redland")
+library(redland)
+```
+
+## Installing on Windows
+
+For windows, the redland R package is distributed as a binary release, and it is not necessary to install any 
+additional system libraries.
+
+To install the R packages from the R console:
 
 ```
 install.packages("redland")

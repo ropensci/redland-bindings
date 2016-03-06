@@ -23,7 +23,7 @@ test_that("librdf basic functions", {
 
     query <- librdf_new_query(world, 'sparql', NULL, "PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c ?d WHERE { ?a dc:title ?c . OPTIONAL { ?a dc:related ?d } }", NULL)
     results <- librdf_model_query_execute(model, query);
-    expect_that(results, not(is_null()))
+    expect_false(is.null(results))
     expect_that(class(results), matches("_p_librdf_query_results"))
 
     # Convert the whole sparql result to a string and check its value
@@ -56,16 +56,16 @@ test_that("librdf basic functions", {
     # Test adding a new Statement to the model
     about <- "http://matt.magisa.org/"
     subject <- librdf_new_node_from_uri_string(world, about)
-    expect_that(subject, not(is_null()))
+    expect_false(is.null(subject))
     expect_that(class(subject), matches("_p_librdf_node_s"))
     pred <- librdf_new_node_from_uri_string(world, "http://purl.org/dc/elements/1.1/title")
-    expect_that(pred, not(is_null()))
+    expect_false(is.null(pred))
     expect_that(class(pred), matches("_p_librdf_node_s"))
     object <- librdf_new_node_from_literal(world, "Matt Jones' Home Page", "", 0)
-    expect_that(object, not(is_null()))
+    expect_false(is.null(object))
     expect_that(class(object), matches("_p_librdf_node_s"))
     statement <- librdf_new_statement_from_nodes(world, subject, pred, object)
-    expect_that(statement, not(is_null()))
+    expect_false(is.null(statement))
     expect_that(class(statement), matches("_p_librdf_statement_s"))
 
     rc <- librdf_model_add_statement(model, statement)
@@ -76,7 +76,7 @@ test_that("librdf basic functions", {
 
     # Test serialization of the model to a text file
     serializer <- librdf_new_serializer(world, "rdfxml", "", NULL);
-    expect_that(serializer, not(is_null()))
+    expect_false(is.null(serializer))
     expect_that(class(serializer), matches("_p_librdf_serializer"))
     base = librdf_new_uri(world, "http://example.org/base.rdf");
     filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")

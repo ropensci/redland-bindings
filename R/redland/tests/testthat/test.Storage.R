@@ -5,11 +5,11 @@ test_that("redland library loads", {
 test_that("Storage constructor", {
     library(redland)
     world <- new("World")
-    expect_that(world, not(is_null()))
+    expect_false(is.null(world))
     
     # Test creating the Storage system
     storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
-    expect_that(storage, not(is_null()))
+    expect_false(is.null(storage))
     expect_that(class(storage@librdf_storage), matches("_p_librdf_storage_s"))
     
     # Test that storage creation fails if world is not provided or is null

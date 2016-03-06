@@ -5,7 +5,7 @@ test_that("redland library loads", {
 test_that("Statement constructor", {
   library(redland)
   world <- new("World")
-  expect_that(world, not(is_null()))
+  expect_false(is.null(world))
   
   # Test creating Subject, predicate, and object Nodes
   subject <- new("Node", world, literal="subject")
@@ -17,7 +17,7 @@ test_that("Statement constructor", {
   
   # Test creating the Statement
   stmt <- new("Statement", world, subject, predicate, object)
-  expect_that(stmt, not(is_null()))
+  expect_false(is.null(stmt))
   expect_that(class(stmt@librdf_statement), matches("_p_librdf_statement_s"))
   
   # Test that statement creation fails if world is not provided or is null
@@ -53,7 +53,7 @@ test_that("Statement constructor", {
   expect_that(getTermType(stmt, "object"), matches("blank"))
   
   err <- try(freeStatement(stmt), silent=TRUE)
-  expect_that(class(err), not(matches("try-error")))
+  expect_false(class(err) == "try-error")
   
   stmt <- new("Statement", world=world, 
               subject=NULL,
@@ -65,7 +65,7 @@ test_that("Statement constructor", {
   expect_that(getTermType(stmt, "object"), matches("literal"))
   
   err <- try(freeStatement(stmt), silent=TRUE)
-  expect_that(class(err), not(matches("try-error")))
+  expect_false(class(err) == "try-error")
   
   # Test statement creation when subject, predicate and object are passed in as charater and RDF types are specified
   stmt <- new("Statement", world=world, 
@@ -78,7 +78,7 @@ test_that("Statement constructor", {
   expect_that(getTermType(stmt, "object"), matches("literal"))
   
   err <- try(freeStatement(stmt), silent=TRUE)
-  expect_that(class(err), not(matches("try-error")))
+  expect_false(class(err) == "try-error")
   err <- try(freeWorld(world), silent=TRUE)
-  expect_that(class(err), not(matches("try-error")))
+  expect_false(class(err) == "try-error")
 })

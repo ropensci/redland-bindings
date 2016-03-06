@@ -5,11 +5,11 @@ test_that("redland library loads", {
 test_that("Node constructor", {
   library(redland)
   world <- new("World")
-  expect_that(world, not(is_null()))
+  expect_false(is.null(world))
   
   # Test creating a blank node
   node <- new("Node", world);
-  expect_that(node, not(is_null()))
+  expect_false(is.null(node))
   expect_that(class(node), matches("Node"))
   expect_that(getNodeType(node), matches("blank"))
   
@@ -34,15 +34,11 @@ test_that("Node constructor", {
   node <- new("Node", world, literal="Fee Fi Fo Fum")
   expect_that(class(node@librdf_node), matches("_p_librdf_node_s"))
   expect_that(getNodeType(node), matches("literal"))
-  #   err <- try(freeNode(node), silent=TRUE)
-  #   expect_that(class(err), not(matches("try-error")))
   
   # Test creating a node with a URI value
   node <- new("Node", world, uri="http://www.example.com/")
   expect_that(class(node@librdf_node), matches("_p_librdf_node_s"))
   expect_that(getNodeType(node), matches("resource"))
-  #   err <- try(freeNode(node), silent=TRUE)
-  #   expect_that(class(err), not(matches("try-error")))
   
   # Test that node creation fails if world is not provided or is null
   err <- try(node <- new("Node", literal="Fee Fi Fo Fum"), silent=TRUE)

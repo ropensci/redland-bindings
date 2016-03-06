@@ -1,3 +1,12 @@
+Version 1.0.17-7
+
+BUG FIXES
+
+* Unit tests have been updated to be compatible with the changes in the
+  'testthat' package that were made in development version testthat_0.11.0.9000,
+  and will be released to CRAN on 4/4/2016. The updated unit tests pass with both
+  the current version of testthat (0.11.0) and the new version (0.11.0.9000).
+
 Version 1.0.17
 --------------
 

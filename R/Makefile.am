@@ -58,15 +58,6 @@ RUN=@REDLAND_RUN@
 
 SWIG_OPTS=-I$(srcdir)
 
-$(R_PACKAGE_BUILD)/Makefile: $(R_PACKAGE_BUILD)/Makefile.in $(R_PACKAGE_BUILD)/configure 
-	-cd $(R_PACKAGE_BUILD) ; ./configure
-
-$(R_PACKAGE_BUILD)/configure: $(R_PACKAGE_BUILD)/configure.ac
-	-cd $(R_PACKAGE_BUILD) ; autoconf
-
-$(R_PACKAGE_BUILD)/Makefile.in: $(R_PACKAGE_BUILD)/Makefile.am
-	-cd $(R_PACKAGE_BUILD) ; aclocal ; automake --foreign --add-missing --copy --force-missing
-
 $(R_PACKAGE_SRC)/redland.c: @REDLAND_SWIG@
 	swig -r -namespace -v $(SWIG_OPTS) -module $(R_PACKAGE) -outdir $(R_PACKAGE)/R -o redland/src/redland.c Redland.i
 	cat Redland.R.in >> redland/R/redland.R
@@ -75,6 +66,9 @@ $(R_PACKAGE_SRC)/redland.c: @REDLAND_SWIG@
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(roxygen2); document()'
 	cp ../data/dc.rdf $(R_PACKAGE)/inst/extdata
 	chmod 755 $(R_PACKAGE)/inst/extdata/dc.rdf
+
+$(R_PACKAGE_SRC)/redland.so: 
+	R CMD INSTALL --no-multiarch --with-keep.source $(R_PACKAGE)
 
 test-R:
 	pwd
@@ -85,6 +79,5 @@ librdfDocs:
 
 check-local: test-R
 
-all: $(R_PACKAGE_SRC)/redland.c $(R_PACKAGE_BUILD)/Makefile
-	cd $(R_PACKAGE_BUILD) && make all
+all: $(R_PACKAGE_SRC)/redland.c $(R_PACKAGE_SRC)/redland.so
 

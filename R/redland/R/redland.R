@@ -192,8 +192,8 @@ x
 setAs('ExternalReference', 'character',
 function(from) {if (!is.null(from$"__str__")) from$"__str__"()})
 
-suppressWarnings(setMethod('print', 'ExternalReference',
-function(x) {print(as(x, "character"))}))
+suppressMessages(suppressWarnings(setMethod('print', 'ExternalReference',
+function(x) {print(as(x, "character"))})))
 
 # Start of librdf_new_digest
 

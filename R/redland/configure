@@ -40,8 +40,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     curl -fsSL https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C $BREWDIR
     HOMEBREW_CACHE="/tmp" $BREWDIR/bin/brew install pkg-config 2>&1 | sed 's/Warning/Note/g'
     HOMEBREW_CACHE="/tmp" $BREWDIR/bin/brew install $PKG_BREW_NAME --force-bottle 2>&1 | sed 's/Warning/Note/g'
-    rm -f $BREWDIR/Cellar/$PKG_BREW_NAME/*/lib/*.dylib
-    rm -f $BREWDIR/opt/$PKG_BREW_NAME/lib/*.dylib
+    rm -f $BREWDIR/Cellar/*/*/lib/*.dylib
+    rm -f $BREWDIR/opt/*/lib/*.dylib
   fi
   PKG_CFLAGS=$($BREWDIR/opt/pkg-config/bin/pkg-config --cflags ${PKG_CONFIG_NAME})
   PKG_LIBS=$($BREWDIR/opt/pkg-config/bin/pkg-config --libs --static ${PKG_CONFIG_NAME})

@@ -4,13 +4,19 @@ PKG_CPPFLAGS= -I../windows/redland-1.0.17/include \
 	
 PKG_LIBS=-L../windows/redland-1.0.17/lib${R_ARCH} -lrdf \
   -pipe -lrasqal -lpcre -lraptor2 -lxml2 -lpcre -lws2_32
-  
+
+## Workaround for missing _mkgmtime on Win32, See also
+## https://sourceforge.net/p/mingw-w64/bugs/473/
+ifeq "${R_ARCH}" "/i386"
+PKG_LIBS += -lmsvcr100
+endif
+
 PKG_CFLAGS=-DRASQAL_STATIC -DRAPTOR_STATIC -DREDLAND_STATIC
 
 all: clean winlibs
 
-clean:
-	rm -f *.o *.so *.dll
-
 winlibs: clean
 	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/winlibs.R"
+
+clean:
+	rm -f $(OBJECTS) redland.dll

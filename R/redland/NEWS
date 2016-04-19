@@ -1,3 +1,14 @@
+Version 1.0.17-8
+
+NEW FEATURES
+
+* For Mac OS X, binary installations no longer require Redland system libraries to be installed,
+  as these libraries are now statically linked into the redland package shared library 'redland.so'.
+  
+BUG FIXES
+  
+* Fixed an unresolved symbol problem with Windows 32 bit builds under R 3.3.0 (and gcc 4.9.3 tool chain) 
+
 Version 1.0.17-7
 
 BUG FIXES

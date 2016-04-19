@@ -25,11 +25,24 @@ See the `redland_overview` vignette for a brief example of usage.
 
 ## Installation Notes 
 
-The *redland* R package is now available from CRAN. Before the `redland` R package can be installed, the Redland C libraries must be installed.
+The *redland* R package is now available from CRAN. Before the `redland` R package can be installed, the Redland C libraries may need to be installed, depending on the platform type you are installing to and whether or not you wish to install
+from source.
 
 ### Installing on Mac OS X
 
-On Mac OS X, the required Redland C libraries can be installed with either [Mac Ports](https://www.macports.org) package manager
+On Mac OS X, the binary build from CRAN can be installed without installing the Redland C libraries by typing the
+following commands in the R console:
+
+```
+install.packages("redland")
+library(redland)
+```
+
+The *redland* R package should be available for use at this point.
+
+Alternatively, to install *redland* from source, please continue reading this section.
+
+The required Redland C libraries can be installed with either [Mac Ports](https://www.macports.org) package manager
 or the [HomeBrew](http://brew.sh) package manager. The HomeBrew package manager can be significantly faster to install
 but either one will work provided the directions shown below are followed.
 
@@ -39,7 +52,7 @@ You can check if you have MacPorts installed by entering the following command i
 port version
 ```
 
-### Installing with Macports
+#### Installing on Mac OS X with Macports
 If you are already using the MacPorts package manager, you can install *redland* with the following commands, 
 otherwise, it is recommended that you skip to the next section *Installing with HomeBrew*. To install
 the *redland* R package with MacPorts, enter these commands at a terminal window:
@@ -58,7 +71,7 @@ source is only necessary if Macports is being used, and is not a requirement if 
 
 The *redland* R package should be available for use at this point
 
-### Installing with HomeBrew
+#### Installing on Mac OS X with HomeBrew
 On Mac OS X you can use the package management system [HomeBrew](http://brew.sh) to install the 
 necessary libraries. The HomeBrew software can be installed with the following command entered at a terminal window:
 
@@ -74,11 +87,11 @@ brew install redland
 
 Next, install the *redland* R package with these commands typed at the R console window:
 ```
-install.packages("redland")
+install.packages("redland", type="source")
 library(redland)
 ```
   
-The *redland* R package should be available for use at this point
+The *redland* R package should be available for use at this point.
 
 ## Installing on Ubuntu
 

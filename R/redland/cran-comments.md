@@ -3,7 +3,15 @@
 
 * OS X 10.10.5, R 3.2.3
 * Ubuntu 14.04, R 3.2.3 
-* Windows 7, R 3.1.1, R 3.2.3
+* Windows 7 (i386, x86_64), R 3.1.1, R 3.2.4, R 3.3.0 beta (2016-04-17 r70499)
+
+## Problems fixed in this build
+
+* Mac OS X binary builds now create a redland.so file that does not
+  librdf.0.dylib during package load but instead links this library in
+  statically, to make package installation easier for the user.
+  
+* Fixed an unresolved symbol issue during builds on Windows (32 bit only) with R 3.3.0 beta
 
 ## R CMD check results
 
@@ -23,4 +31,4 @@
  
 ## Downstream dependencies
 
-* Currently there are no downstream dependencies
+* The downstream dependency 'datapack' has been tested with this release.

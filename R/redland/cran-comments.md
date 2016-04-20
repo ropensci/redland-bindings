@@ -31,4 +31,5 @@
  
 ## Downstream dependencies
 
-* The downstream dependency 'datapack' has been tested with this release.
+* The downstream dependencies have been checked with devtools::revdep_check(), which passed
+  with 0 errors, 0 warnings, 0 notes.

@@ -7,7 +7,7 @@
 
 ## Problems fixed in this build
 
-* Mac OS X binary builds now create a redland.so file that does not
+* Mac OS X binary builds now create a redland.so file that does not refer to
   librdf.0.dylib during package load but instead links this library in
   statically, to make package installation easier for the user.
   

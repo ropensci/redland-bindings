@@ -31,5 +31,5 @@
  
 ## Downstream dependencies
 
-* The downstream dependencies have been checked with devtools::revdep_check(), which passed
+* The downstream dependencies (datapack) have been checked with devtools::revdep_check(), which passed
   with 0 errors, 0 warnings, 0 notes.

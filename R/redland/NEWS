@@ -4,6 +4,8 @@ BUG FIXES
   
 * Vignettes now build with R 3.4.0 and are now updated to the ./doc directory by package installation.
 
+* Added an installation cleanup script
+
 Version 1.0.17-8
 
 NEW FEATURES

@@ -4,7 +4,7 @@ Title: RDF Library Bindings in R
 Authors@R: c(
   person("Matthew B.", "Jones", role = c("aut", "cre"), email="jones@nceas.ucsb.edu"),
   person("Peter", "Slaughter", role = c("aut"), email = "slaughter@nceas.ucsb.edu"),
-  person("Jeroen", "Ooms", role = c("aut"), email="jereonooms@gmail.com"),
+  person("Jeroen", "Ooms", role = c("aut"), email="jeroen@berkeley.edu"),
   person("Carl", "Boettiger", role = c("aut"), email = "cboettig@gmail.com"),
   person("Scott", "Chamberlain", role = c("aut"), email = "myrmecocystus@gmail.com"),
   person("David", "Beckett", role = c("cph")),

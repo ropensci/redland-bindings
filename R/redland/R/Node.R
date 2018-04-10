@@ -29,7 +29,8 @@
 #' \itemize{
 #'   \item{\code{\link{Node-initialize}}}{: Initialize a Node object.}
 #'   \item{\code{\link{getNodeType}}}{: Determine the node type and return as a string.}
-#'   \item{\code{\link{getBlankNodeId}}}{: Get the blank identifier that has been assigned for a specified Node object.}
+#'   \item{\code{\link{getNodeValue}}}{: Determine the node type and return as a string.}
+#'   \item{\code{\link{getBlankNodeId}}}{: Get the value of the node as a string.}
 #' }
 #' @seealso \code{\link{redland}}{: redland package}
 #' @examples
@@ -162,5 +163,48 @@ setMethod("getBlankNodeId", signature("Node"), function(.Object) {
     return(librdf_node_get_blank_identifier(.Object@librdf_node))
   } else {
     return(as.character(NA))
+  }
+})
+
+#' Get the value of the node as a string
+#' @details The value of the node is returned as a string. If the node type is
+#' 'blank', then the blank node identifier is returned. If the node type is
+#' 'literal', then the literal value is returned with the form "<value>"@<language>,
+#' e.g. \"¡Hola, amigo! ¿Cómo estás?"@es". If the node type is 'uri'
+#' then the value is returned as a string.
+#' @rdname getNodeValue
+#' @encoding UTF-8
+#' @param .Object a Node object
+#' @return a string representation of the Node's value
+#' @examples 
+#' world <- new("World")
+#' node <- new("Node", world, literal="¡Hola, amigo! ¿Cómo estás?", language="es")
+#' value <- getNodeValue(node)
+#' @export
+setGeneric("getNodeValue", function(.Object) {
+  standardGeneric("getNodeValue")
+})
+
+#' @rdname getNodeValue
+setMethod("getNodeValue", signature("Node"), function(.Object) {
+  if(librdf_node_is_resource(.Object@librdf_node)) {
+    librdf_uri <- librdf_node_get_uri(.Object@librdf_node) 
+    val <- librdf_uri_to_string(librdf_uri)
+    librdf_free_uri(librdf_uri)
+    return(val)
+  } else if (librdf_node_is_literal(.Object@librdf_node)) {
+    val <- librdf_node_get_literal_value(.Object@librdf_node)
+    lang <- librdf_node_get_literal_value_language(.Object@librdf_node)
+    # If the node has a language tag defined, then include it, otherwise don't
+    if(is.null(lang) || is.na(lang) || lang == "") {
+        literal <- sprintf("%s", val)
+    } else {
+        literal <- sprintf("\"%s\"@%s\"", val, lang)
+    }
+    return(literal)
+  } else if (librdf_node_is_blank(.Object@librdf_node)) {
+    return(getBlankNodeId(.Object))
+  } else {
+    stop("Node type unknown, cannot get the node value")
   }
 })

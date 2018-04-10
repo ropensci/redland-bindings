@@ -46,5 +46,4 @@ Collate:
 License: Apache License 2.0
 Copyright: See file (inst/)COPYRIGHTS.
 BugReports: https://github.com/ropensci/redland-bindings/issues
-Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace"))
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

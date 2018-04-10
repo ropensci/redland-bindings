@@ -2,8 +2,8 @@
 % Please edit documentation in R/Parser.R
 \docType{class}
 \name{Parser-class}
-\alias{Parser}
 \alias{Parser-class}
+\alias{Parser}
 \title{An RDF Parser object}
 \description{
 The Parser class provides methods to parse RDF content into a Redland
@@ -14,6 +14,7 @@ RDF model.
 \describe{
 \item{\code{librdf_parser}}{A redland parser object}
 }}
+
 \section{Methods}{
 
 \itemize{
@@ -22,6 +23,7 @@ RDF model.
   \item{\code{\link{freeParser}}}{: Free memory used by a librdf parser.}
 }
 }
+
 \examples{
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -35,4 +37,3 @@ parseFileIntoModel(parser, world, filePath, model)
 \code{\link{redland}}{: redland package}
 }
 \keyword{classes}
-

@@ -23,4 +23,3 @@ setNameSpace(.Object, world, namespace, prefix)
 \description{
 Set a namespace for the serializer.
 }
-

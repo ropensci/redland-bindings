@@ -2,8 +2,8 @@
 % Please edit documentation in R/Storage.R
 \docType{methods}
 \name{initialize,Storage-method}
-\alias{Storage-initialize}
 \alias{initialize,Storage-method}
+\alias{Storage-initialize}
 \title{Initialize a Storage object}
 \usage{
 \S4method{initialize}{Storage}(.Object, world, type = "hashes", name = "",
@@ -30,4 +30,3 @@ Initialize a Storage object
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 }
-

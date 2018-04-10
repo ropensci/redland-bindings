@@ -30,4 +30,3 @@ model <- new("Model", world, storage, options="")
 freeModel(model)
 rm(model)
 }
-

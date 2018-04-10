@@ -2,8 +2,8 @@
 % Please edit documentation in R/World.R
 \docType{class}
 \name{World-class}
-\alias{World}
 \alias{World-class}
+\alias{World}
 \title{A Redland World object, used to initialize the Redland RDF library.}
 \description{
 A World object is the top level object in the Redland RDF library
@@ -15,6 +15,7 @@ Models.
 \describe{
 \item{\code{librdf_world}}{A redland world object}
 }}
+
 \section{Methods}{
 
 \itemize{
@@ -22,6 +23,7 @@ Models.
   \item{\code{\link{freeWorld}}}{: Free memory used by a librdf world object}
 }
 }
+
 \examples{
 world <- new("World")
 }
@@ -29,4 +31,3 @@ world <- new("World")
 \code{\link{redland}}{: redland package}
 }
 \keyword{classes}
-

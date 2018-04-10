@@ -19,4 +19,3 @@ the query result limit. If a limit is set then the value will be >= 0. If the va
 \description{
 Get the query result limit
 }
-

@@ -27,4 +27,3 @@ world <- new("World")
 result <- freeWorld(world)
 rm(world)
 }
-

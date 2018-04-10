@@ -2,8 +2,8 @@
 % Please edit documentation in R/Model.R
 \docType{methods}
 \name{initialize,Model-method}
-\alias{Model-initialize}
 \alias{initialize,Model-method}
+\alias{Model-initialize}
 \title{Constructor for a Model object.}
 \usage{
 \S4method{initialize}{Model}(.Object, world, storage, options)
@@ -23,4 +23,3 @@ the World object
 \description{
 Constructor for a Model object.
 }
-

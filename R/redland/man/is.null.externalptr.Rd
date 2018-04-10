@@ -15,4 +15,3 @@ logical TRUE if the pointer is NULL, otherwise FALSE
 \description{
 The pointer is treated as an externalptr and checked via a call in C to see if it is NULL.
 }
-

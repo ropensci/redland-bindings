@@ -2,8 +2,8 @@
 % Please edit documentation in R/QueryResults.R
 \docType{class}
 \name{QueryResults-class}
-\alias{QueryResults}
 \alias{QueryResults-class}
+\alias{QueryResults}
 \title{A Redland QueryResults object is used to inspect query results from a Query object.}
 \description{
 The QueryResults object contains the RDF statements that were returned from
@@ -14,6 +14,7 @@ a query on an RDF model.
 \describe{
 \item{\code{librdf_query_results}}{A redland query object}
 }}
+
 \section{Methods}{
 
 \itemize{
@@ -22,6 +23,7 @@ a query on an RDF model.
   \item{\code{\link{freeQueryResults}}}{: Free memory used by a librdf query result.}
 }
 }
+
 \examples{
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -50,4 +52,3 @@ result <- getNextResult(queryResult)
 \code{\link{redland}}{: redland package}
 }
 \keyword{classes}
-

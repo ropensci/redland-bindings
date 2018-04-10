@@ -2,8 +2,8 @@
 % Please edit documentation in R/Query.R
 \docType{class}
 \name{Query-class}
-\alias{Query}
 \alias{Query-class}
+\alias{Query}
 \title{Query an RDF model}
 \description{
 The Query class is used to execuate a query on a Model object using the default query
@@ -18,7 +18,10 @@ can be interated over the query solution sequence.
 
 \describe{
 \item{\code{librdf_query}}{A redland query object}
+
+\item{\code{librdf_world}}{A redland world object}
 }}
+
 \section{Methods}{
 
 \itemize{
@@ -26,9 +29,12 @@ can be interated over the query solution sequence.
   \item{\code{\link{executeQuery}}}{: Execute a query.}
   \item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
   \item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
+  \item{\code{\link{getResults}}}{: Return all query results.}
+  \item{\code{\link{writeResults}}}{: Write query results to a file.}
   \item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
 }
 }
+
 \examples{
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -61,4 +67,3 @@ www.example.com
 \code{\link{redland}}{: redland package}
 }
 \keyword{classes}
-

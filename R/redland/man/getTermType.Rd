@@ -28,4 +28,3 @@ object <- new("Node", literal="thing", world)
 stmt <- new("Statement", world, subject, predicate, object, world)
 termType <- getTermType(stmt, "predicate")
 }
-

@@ -25,4 +25,3 @@ world <- new("World")
 node <- new("Node", world, uri="http://www.example.com")
 nodeType <- getNodeType(node)
 }
-

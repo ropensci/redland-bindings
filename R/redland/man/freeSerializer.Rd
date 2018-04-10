@@ -31,4 +31,3 @@ serializer <- new("Serializer", world)
 freeSerializer(serializer)
 rm(serializer)
 }
-

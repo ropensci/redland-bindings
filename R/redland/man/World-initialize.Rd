@@ -2,8 +2,8 @@
 % Please edit documentation in R/World.R
 \docType{methods}
 \name{initialize,World-method}
-\alias{World-initialize}
 \alias{initialize,World-method}
+\alias{World-initialize}
 \title{Initialize the World object.}
 \usage{
 \S4method{initialize}{World}(.Object)
@@ -17,4 +17,3 @@ the World object
 \description{
 Initialize the World object.
 }
-

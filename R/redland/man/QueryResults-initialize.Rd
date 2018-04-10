@@ -2,8 +2,8 @@
 % Please edit documentation in R/QueryResults.R
 \docType{methods}
 \name{initialize,QueryResults-method}
-\alias{QueryResults-initialize}
 \alias{initialize,QueryResults-method}
+\alias{QueryResults-initialize}
 \title{Initialize the QueryResults object.}
 \usage{
 \S4method{initialize}{QueryResults}(.Object, results)
@@ -24,4 +24,3 @@ return value of \code{'Query.execute()'}.
 A QueryResults object is returned by the \code{Query.executeQuery()} method, so typically a user
 does not initialize a QueryResult object by calling \code{new("QueryResult", ...)}
 }
-

@@ -2,8 +2,8 @@
 % Please edit documentation in R/Model.R
 \docType{class}
 \name{Model-class}
-\alias{Model}
 \alias{Model-class}
+\alias{Model}
 \title{A Redland Model object}
 \description{
 A Model object is used to store the statements (triples) of an RDF model.
@@ -19,6 +19,7 @@ it can be queried using \code{\link{Query}}.
 \describe{
 \item{\code{librdf_model}}{A redland model object}
 }}
+
 \section{Methods}{
 
 \itemize{
@@ -27,6 +28,7 @@ it can be queried using \code{\link{Query}}.
   \item{\code{\link{freeModel}}}{: Free memory used by a librdf model object}
 }
 }
+
 \examples{
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -38,4 +40,3 @@ View examples of creating models by viewing the \code{'redland_overview'} vignet
 \code{\link{redland}}{: redland package}
 }
 \keyword{classes}
-

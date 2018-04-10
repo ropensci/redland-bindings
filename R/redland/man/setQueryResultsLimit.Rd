@@ -3,8 +3,8 @@
 \docType{methods}
 \name{setQueryResultLimit}
 \alias{setQueryResultLimit}
-\alias{setQueryResultLimit,Query-method}
 \alias{setQueryResultsLimit}
+\alias{setQueryResultLimit,Query-method}
 \title{Set limit on returned query results}
 \usage{
 setQueryResultLimit(.Object, limit)
@@ -19,4 +19,3 @@ setQueryResultLimit(.Object, limit)
 \description{
 Set limit on returned query results
 }
-

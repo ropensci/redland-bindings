@@ -2,8 +2,8 @@
 % Please edit documentation in R/Storage.R
 \docType{class}
 \name{Storage-class}
-\alias{Storage}
 \alias{Storage-class}
+\alias{Storage}
 \title{A Redland Storage object}
 \description{
 A Redland Storage object
@@ -15,6 +15,7 @@ A Redland Storage object
 
 \item{\code{type}}{the storage type to create, i.e. "hashes", "mysql", "postgresql", ...}
 }}
+
 \section{Methods}{
 
 \itemize{
@@ -22,6 +23,7 @@ A Redland Storage object
   \item{\code{\link{freeStorage}}}{: Free memory used by a librdf storage object}
 }
 }
+
 \examples{
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -30,4 +32,3 @@ storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'"
 \code{\link{redland}}{: redland package}
 }
 \keyword{classes}
-

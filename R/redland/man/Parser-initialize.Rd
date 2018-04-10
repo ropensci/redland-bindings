@@ -2,8 +2,8 @@
 % Please edit documentation in R/Parser.R
 \docType{methods}
 \name{initialize,Parser-method}
-\alias{Parser-initialize}
 \alias{initialize,Parser-method}
+\alias{Parser-initialize}
 \title{Initialize a Parser object.}
 \usage{
 \S4method{initialize}{Parser}(.Object, world, name = "rdfxml",
@@ -29,4 +29,3 @@ A Parser object is initialized for a specific RDF serialization.
 \details{
 The serialization format that are supported by
 }
-

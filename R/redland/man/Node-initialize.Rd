@@ -2,11 +2,12 @@
 % Please edit documentation in R/Node.R
 \docType{methods}
 \name{initialize,Node-method}
-\alias{Node-initialize}
 \alias{initialize,Node-method}
+\alias{Node-initialize}
 \title{Initialize a Node object.}
 \usage{
-\S4method{initialize}{Node}(.Object, world, literal, uri, blank, datatype_uri)
+\S4method{initialize}{Node}(.Object, world, literal, uri, blank, datatype_uri,
+  language)
 }
 \arguments{
 \item{.Object}{the Node object to be initialized}
@@ -19,7 +20,9 @@
 
 \item{blank}{a blank node identifier to be assigned to the node}
 
-\item{datatype_uri}{a uri used to specify the datatype of a literal node, i.e. http://www.w3.org/2001/XMLSchema#string}
+\item{datatype_uri}{a uri used to specify the datatype of a literal node, i.e. "http://www.w3.org/2001/XMLSchema#string"}
+
+\item{language}{a character value specifying the RDF language tag (excluding the "@" symbol), i.e. "fr"}
 }
 \value{
 the Node object
@@ -34,4 +37,6 @@ in serialization, for example a Node created with 'node1 <- new("Node", literal=
 differently that a Node created with 'node1 <- new("Node", url="http://www.example.com")', with the former being processed
 as an RDF literal and the latter processed as an RDF resource.
 }
-
+\note{
+Refer to https://www.w3.org/TR/rdf11-concepts information on language tags.
+}

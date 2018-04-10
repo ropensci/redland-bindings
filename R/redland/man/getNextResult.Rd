@@ -16,4 +16,3 @@ getNextResult(.Object)
 \description{
 The next query result is returned. .
 }
-

@@ -2,8 +2,8 @@
 % Please edit documentation in R/Serializer.R
 \docType{methods}
 \name{initialize,Serializer-method}
-\alias{Serializer-initialize}
 \alias{initialize,Serializer-method}
+\alias{Serializer-initialize}
 \title{Construct a Serializer object.}
 \usage{
 \S4method{initialize}{Serializer}(.Object, world, name = "rdfxml",
@@ -26,4 +26,3 @@ the Serializer object
 \description{
 Construct a Serializer object.
 }
-

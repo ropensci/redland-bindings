@@ -13,7 +13,7 @@ executeQuery(.Object, model)
 \arguments{
 \item{.Object}{a Query object}
 
-\item{model}{a Model object}
+\item{model}{a Model object containing the statments to query}
 }
 \value{
 a QueryResults object
@@ -21,4 +21,3 @@ a QueryResults object
 \description{
 The initialize query is executed and the result is returned as a QueryResult object
 }
-

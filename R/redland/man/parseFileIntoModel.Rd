@@ -42,4 +42,3 @@ parser <- new("Parser", world)
 filePath <- system.file("extdata/example.rdf", package="redland")
 parseFileIntoModel(parser, world, filePath, model)
 }
-

@@ -32,4 +32,3 @@ stmt <- new("Statement", world, subject="http://www.example.com/myevent",
 freeStatement(stmt)                                
 rm(stmt)
 }
-

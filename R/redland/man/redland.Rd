@@ -67,4 +67,3 @@ result <- getNextResult(queryResult)
 \author{
 Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)
 }
-

@@ -28,4 +28,3 @@ a character vector containing the serialized model
 \description{
 Serialize a model to a character vector.
 }
-

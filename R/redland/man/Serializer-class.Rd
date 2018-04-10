@@ -2,8 +2,8 @@
 % Please edit documentation in R/Serializer.R
 \docType{class}
 \name{Serializer-class}
-\alias{Serializer}
 \alias{Serializer-class}
+\alias{Serializer}
 \title{An RDF Serializer object.}
 \description{
 The Serializer class provides methods to convert a Model object
@@ -14,6 +14,7 @@ to other forms, for example, write out a Model to a file.
 \describe{
 \item{\code{librdf_serializer}}{A redland statement object}
 }}
+
 \section{Methods}{
 
 \itemize{
@@ -24,6 +25,7 @@ to other forms, for example, write out a Model to a file.
   \item{\code{\link{freeSerializer}}}{: Free memory used by a librdf serializer.}
 }
 }
+
 \examples{
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -41,4 +43,3 @@ rdf <- serializeToCharacter(serializer, world, model, baseUri="")
 \code{\link{redland}}{: redland package}
 }
 \keyword{classes}
-

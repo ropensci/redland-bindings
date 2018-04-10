@@ -30,4 +30,3 @@ world <- new("World")
 node <- new("Node", world, blank=NULL)
 nodeId <- getBlankNodeId(node)
 }
-

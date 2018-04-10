@@ -2,8 +2,8 @@
 % Please edit documentation in R/Query.R
 \docType{methods}
 \name{initialize,Query-method}
-\alias{Query-initialize}
 \alias{initialize,Query-method}
+\alias{Query-initialize}
 \title{Initialize the Query object.}
 \usage{
 \S4method{initialize}{Query}(.Object, world, querystring, base_uri = NULL,
@@ -28,4 +28,3 @@ the Query object
 \description{
 Initialize the Query object.
 }
-

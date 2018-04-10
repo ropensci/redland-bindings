@@ -40,4 +40,3 @@ result <- getNextResult(queryResult)
 freeQueryResults(queryResult)
 rm(queryResult)
 }
-

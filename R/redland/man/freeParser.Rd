@@ -34,4 +34,3 @@ parseFileIntoModel(parser, world, filePath, model)
 freeParser(parser)
 rm(parser)
 }
-

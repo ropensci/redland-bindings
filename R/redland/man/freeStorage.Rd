@@ -26,4 +26,3 @@ storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'"
 status <- freeStorage(storage)
 rm(storage)
 }
-

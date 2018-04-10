@@ -23,4 +23,3 @@ world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 model <- new("Model", world, storage, options="")
 }
-

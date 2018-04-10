@@ -30,4 +30,3 @@ an integer containing the return status where non zero indicates an error occure
 \description{
 Serialize a model to a file.
 }
-

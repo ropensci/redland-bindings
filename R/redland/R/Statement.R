@@ -20,6 +20,7 @@
 #' @slot librdf_statement A redland statement object
 #' @rdname Statement-class
 #' @aliases Statement
+#' @encoding UTF-8
 #' @include redland.R
 #' @include World.R
 #' @include Node.R
@@ -54,6 +55,11 @@
 #' stmt <- new("Statement", world, subject=NULL, 
 #'                                 predicate="http://www.example.com/hasAddr",
 #'                                 object="http://www.nothing.com", objectType="literal")
+#' stmt <- new("Statement", world, subject="http://www.example.com/BobSmith", 
+#'                                 predicate="http://www.example.com/says",
+#'                                 object="¡Hola, amigo! ¿Cómo estás?", 
+#'                                 objectType="literal",
+#'                                 language="es")
 setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 
 #' Construct a Statement object.
@@ -67,12 +73,14 @@ setClass("Statement", slots = c(librdf_statement = "_p_librdf_statement_s"))
 #' @param subjectType the Node type of the subject, i.e. "blank", "uri"
 #' @param objectType the Node type of the object, i.e. "blank", "uri", "literal"
 #' @param datatype_uri the datatype URI to associate with a object literal value
+#' @param language a character value specifying the RDF language tag for an object literal value (excluding the "@" symbol), i.e. "fr"
 #' @return the Statement object
 #' @export
 setMethod("initialize", signature = "Statement", definition = function(.Object, world, subject, predicate, object, 
                                                                        subjectType=as.character(NA), 
                                                                        objectType=as.character(NA),
-                                                                       datatype_uri=as.character(NA)) {
+                                                                       datatype_uri=as.character(NA),
+                                                                       language=as.character(NA)) {
   # Ensure that all provided params are not null
   stopifnot(!is.null(world), !missing(subject), !missing(predicate), !missing(object))
   
@@ -145,10 +153,11 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
     } else if (objectType == "uri") {
       objectNode <- new("Node", world, uri=object)
     } else {
+      if(is.na(language)) language <- ""
       if(is.na(datatype_uri)) { 
-        objectNode <- new("Node", world, literal=object)
+        objectNode <- new("Node", world, literal=object, language=language)
       } else {
-        objectNode <- new("Node", world, literal=object, datatype_uri=datatype_uri)
+        objectNode <- new("Node", world, literal=object, datatype_uri=datatype_uri, language=language)
       }
     }
     

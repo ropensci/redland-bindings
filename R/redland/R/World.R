@@ -23,7 +23,7 @@
 #' @aliases World
 #' @include redland.R
 #' @keywords classes
-#' @useDynLib redland
+#' @useDynLib redland, .registration = TRUE
 #' @section Methods:
 #' \itemize{
 #'   \item{\code{\link{World-initialize}}}{: Initialize a World object}

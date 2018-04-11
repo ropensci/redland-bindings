@@ -17,7 +17,7 @@ getResults(.Object, model, ...)
 
 \item{...}{additional parameters}
 
-\item{formatName}{a string specifying the RDF format name. Currently the supported formats are "rdfxml" ,"turtle" and "json"}
+\item{formatName}{a string specifying the RDF format name. Currently the supported formats are "rdfxml" ,"turtle", "json", "csv"}
 }
 \description{
 Return all query results

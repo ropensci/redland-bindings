@@ -142,7 +142,7 @@ setMethod("getQueryResultLimit", signature("Query"), function(.Object) {
 #' @rdname getResults
 #' @param .Object a Query object
 #' @param model a Model object
-#' @param formatName a string specifying the RDF format name. Currently the supported formats are "rdfxml" ,"turtle" and "json"
+#' @param formatName a string specifying the RDF format name. Currently the supported formats are "rdfxml" ,"turtle", "json", "csv"
 #' @examples
 #' world <- new("World")
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")

@@ -10,35 +10,35 @@ test_that("Parser constructor", {
   # Test creating the Storage system
   storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
   expect_false(is.null(storage))
-  expect_that(class(storage@librdf_storage), matches("_p_librdf_storage_s"))
+  expect_match(class(storage@librdf_storage), "_p_librdf_storage_s")
 
   # Test creating the Model
   model <- new("Model", world, storage, options="")
   expect_false(is.null(model))
-  expect_that(class(model@librdf_model), matches("_p_librdf_model_s"))
+  expect_match(class(model@librdf_model), "_p_librdf_model_s")
 
   # Test that model creation fails if world is not provided or is null
   err <- try(model <- new("Model", world=NULL, storage, options=""), silent=TRUE)
-  expect_that(class(err), matches("try-error"))
+  expect_match(class(err), "try-error")
 
   expect_false(is.null(model))
-  expect_that(class(model@librdf_model), matches("_p_librdf_model_s"))
+  expect_match(class(model@librdf_model), "_p_librdf_model_s")
 
   # Test parsing an RDF document into a Model
   parser <- new("Parser", world)
   expect_false(is.null(parser))
-  expect_that(class(parser@librdf_parser), matches("_p_librdf_parser_s"))
+  expect_match(class(parser@librdf_parser), "_p_librdf_parser_s")
 
   parseFileIntoModel(parser, world, system.file('extdata/example.rdf', package='redland'), model)
 
   # Test creating a Serializer and serializing the content just parsed into the model
   serializer <- new("Serializer", world)
   expect_false(is.null(serializer))
-  expect_that(class(serializer@librdf_serializer), matches("_p_librdf_serializer_s"))
+  expect_match(class(serializer@librdf_serializer), "_p_librdf_serializer_s")
 
   # Test performing a serialization on an RDF model
   rdf <- serializeToCharacter(serializer, world, model)
-  expect_that(rdf, matches("John Smith"))
+  expect_match(rdf, "John Smith")
 
   err <- try(freeModel(model), silent=TRUE)
   expect_false(class(err) ==  "try-error")

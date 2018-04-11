@@ -10,19 +10,19 @@ test_that("Query works", {
   # Test creating the Storage system
   storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
   expect_false(is.null(storage))
-  expect_that(class(storage@librdf_storage), matches("_p_librdf_storage_s"))
+  expect_match(class(storage@librdf_storage), "_p_librdf_storage_s")
   
   # Test creating the Model
   model <- new("Model", world, storage, options="")
   expect_false(is.null(model))
-  expect_that(class(model@librdf_model), matches("_p_librdf_model_s"))
+  expect_match(class(model@librdf_model), "_p_librdf_model_s")
   
   # Test that model creation fails if world is not provided or is null
   err <- try(model <- new("Model", world=NULL, storage, options=""), silent=TRUE)
-  expect_that(class(err), matches("try-error"))
+  expect_match(class(err), "try-error")
   
   expect_false(is.null(model))
-  expect_that(class(model@librdf_model), matches("_p_librdf_model_s"))
+  expect_match(class(model@librdf_model), "_p_librdf_model_s")
   
   # Add typical statements to the model
   stmt <- new("Statement", world=world, 
@@ -59,9 +59,9 @@ test_that("Query works", {
 # Query the RDF model with a SPARQL query that should return all triples
 queryString <- 'PREFIX orcid: <https://orcid.org/> PREFIX dataone: <https://cn.dataone.org/cn/v1/resolve/> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?a ?b ?c WHERE { ?a ?b ?c . }'
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
-expect_that(class(query), matches("Query"))
+expect_match(class(query), "Query")
 queryResult <- executeQuery(query, model)
-expect_that(class(queryResult), matches("QueryResult"))
+expect_match(class(queryResult), "QueryResult")
 
 # Retrieve query results and check the actual result count against the expected count
 result <- getNextResult(queryResult)
@@ -72,7 +72,7 @@ while(!is.null(result)) {
   if(i > 5) {
     break
   }
-  expect_that(class(result), matches("list"))
+  expect_match(class(result), "list")
   result <- getNextResult(queryResult)
 }
 expect_that(i, equals(5))
@@ -85,9 +85,9 @@ rm(queryResult)
 # Query the RDF model with a new query that should only have one triple returned
 queryString <- 'PREFIX orcid: <https://orcid.org/> PREFIX dataone: <https://cn.dataone.org/cn/v1/resolve/> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?a ?c WHERE { ?a prov:Agent ?c . }'
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
-expect_that(class(query), matches("Query"))
+expect_match(class(query), "Query")
 queryResult <- executeQuery(query, model)
-expect_that(class(queryResult), matches("QueryResult"))
+expect_match(class(queryResult), "QueryResult")
 
 # Retrieve query results and check the actual result count against the expected count
 result <- getNextResult(queryResult)
@@ -98,7 +98,7 @@ while(! is.null(result)) {
   if(i > 5) {
     break
   }
-  expect_that(class(result), matches("list"))
+  expect_match(class(result), "list")
   result <- getNextResult(queryResult)
 }
 expect_that(i, equals(1))

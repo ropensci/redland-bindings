@@ -10,36 +10,36 @@ test_that("Serializer constructor", {
   # Test creating the Storage system
   storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
   expect_false(is.null(storage))
-  expect_that(class(storage@librdf_storage), matches("_p_librdf_storage_s"))
+  expect_match(class(storage@librdf_storage), "_p_librdf_storage_s")
   
   # Test creating the Model
   model <- new("Model", world, storage, options="")
   expect_false(is.null(model))
-  expect_that(class(model@librdf_model), matches("_p_librdf_model_s"))
+  expect_match(class(model@librdf_model), "_p_librdf_model_s")
   
   # Test that model creation fails if world is not provided or is null
   err <- try(model <- new("Model", world=NULL, storage, options=""), silent=TRUE)
-  expect_that(class(err), matches("try-error"))
+  expect_match(class(err), "try-error")
   
   expect_false(is.null(model))
-  expect_that(class(model@librdf_model), matches("_p_librdf_model_s"))
+  expect_match(class(model@librdf_model), "_p_librdf_model_s")
   
   # Test adding a Statement to the Model
   subject <- new("Node", world, uri="http://www.johnsmith.com/")
-  expect_that(class(subject@librdf_node), matches("_p_librdf_node_s"))
+  expect_match(class(subject@librdf_node), "_p_librdf_node_s")
   predicate <- new("Node", world, uri="http://purl.org/dc/elements/1.1/creator")
-  expect_that(class(predicate@librdf_node), matches("_p_librdf_node_s"))
+  expect_match(class(predicate@librdf_node), "_p_librdf_node_s")
   object <- new("Node", world, literal="John Smith", datatype_uri="http://www.w3.org/2001/XMLSchema#string")
-  expect_that(class(object@librdf_node), matches("_p_librdf_node_s"))
+  expect_match(class(object@librdf_node), "_p_librdf_node_s")
   statement <- new("Statement", world, subject, predicate, object)
   expect_false(is.null(statement))
-  expect_that(class(statement@librdf_statement), matches("_p_librdf_statement_s"))
+  expect_match(class(statement@librdf_statement), "_p_librdf_statement_s")
   addStatement(model, statement)
   
   # Test creating a Serializer
   serializer <- new("Serializer", world, mimeType="application/rdf+xml")
   expect_false(is.null(serializer))
-  expect_that(class(serializer@librdf_serializer), matches("_p_librdf_serializer_s"))
+  expect_match(class(serializer@librdf_serializer), "_p_librdf_serializer_s")
   
   # Test adding a namespace to a serializer
   status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")
@@ -47,7 +47,7 @@ test_that("Serializer constructor", {
   
   # Test serialization of an RDF model to a string
   rdf <- serializeToCharacter(serializer, world, model, "")
-  expect_that(rdf, matches("John Smith"))
+  expect_match(rdf, "John Smith")
   
   # Test serialization of an RDF model to a file
   filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")

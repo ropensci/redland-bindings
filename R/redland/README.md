@@ -14,7 +14,11 @@ graph consisting of Statements composed of Subject, Predicate, and Object Nodes.
 
 This package is implemented as R scripts that provide an R interface (aka 
 "wrapper") to the Redland RDF C libraries that are described at 
-http://librdf.org/docs/api/index.html.  In this redland R wrapper, S4 classes are
+http://librdf.org/docs/api/index.html. Additional information about the software that
+provides the connection or 'bindings' between R and the Redland RDF C libraries 
+is available at https://github.com/ropensci/redland-bindings/tree/master/R. 
+
+In this redland R package, S4 classes are
 used to model RDF data structures.   A `redland::Statement` is composed of 
 `redland::Node`s representing the subject, predicate, and object of each triple 
 statement.  Statements can be composed into a graph by adding them to a 

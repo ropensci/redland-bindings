@@ -26,7 +26,8 @@ Imports:
 Suggests:
     knitr,
     testthat,
-    rmarkdown
+    rmarkdown,
+    stringi
 SystemRequirements: Mac OSX: redland (>= 1.0.14) ; Linux: librdf0 (>= 1.0.14),
     librdf0-dev (>= 1.0.14)
 Collate:

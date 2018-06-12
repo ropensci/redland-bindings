@@ -161,6 +161,17 @@ query <-'SELECT ?s ?p ?o WHERE { ?s ?p ?o}'
 queryObj <- new("Query", world, query)
 queryResult <- executeQuery(queryObj, model)
 r <-getNextResult(queryResult)
+
+# The Redlands library can return UTF characters that are outside the
+# ASCII range as the unicode literal string, i.e.  https://en.wikipedia.org/wiki/List_of_Unicode_characters.
+# If 'stringi' is available, then check the original representation, otherwise check the escaped codepoint
+# representation.
+if(require("stringi", character.only = TRUE)) {
+    expect_match(stringi::stri_unescape_unicode(r$o), "Maëlle Salmon")
+} else {
+    expect_match(r$o, '"Ma\\\\u00EBlle Salmon"@fr')
+}
+
 freeQuery(queryObj)
 rm(queryObj)
 freeQueryResults(queryResult)
@@ -210,7 +221,6 @@ test_that("getResults, writeResults work", {
   rm(query)
   
   # Test writeResults
-  
   world <- new("World")
   storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
   model <- new("Model", world, storage, options="")

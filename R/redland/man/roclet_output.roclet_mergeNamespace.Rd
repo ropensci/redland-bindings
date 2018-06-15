@@ -17,6 +17,6 @@
 }
 \description{
 The 'roclet_output' function handles output of the results from the 'roc_process' function.
-This function mergeds the NAMESPACE file created by the 'namespace' roclet with the list of Redland RDF
+This function merges the NAMESPACE file created by the 'namespace' roclet with the list of Redland RDF
 functions determined by the 'roc_process' function.
 }

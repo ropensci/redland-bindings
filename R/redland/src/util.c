@@ -2,7 +2,7 @@
 #include <Rinternals.h>
 #include <Rmath.h>
 
-SEXP isnull(SEXP pointer) {
+SEXP C_isnull(SEXP pointer) {
     void *ptr = R_ExternalPtrAddr(pointer);
     SEXP rvalue = PROTECT(NEW_LOGICAL(1));
     if (ptr==NULL) {

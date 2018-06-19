@@ -23,6 +23,6 @@
 #' @export
 is.null.externalptr <- function(pointer) {
     if (class(pointer)!="externalptr") stop("pointer is not an externalptr.")
-    rv <- .Call("isnull", pointer)
+    rv <- .Call("C_isnull", pointer)
     return(rv)
 }

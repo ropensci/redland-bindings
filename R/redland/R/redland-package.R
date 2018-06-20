@@ -45,7 +45,7 @@
 #'
 #' @note
 #' In order to communicate with the Redland RDF C libraries, the redland R package uses an interface layer that is created
-#' with the software package \emph{Simplified Wrapper and Interface Generator} (\href{http://swig.org}{SWIG}).
+#' with the software package \emph{Simplified Wrapper and Interface Generator} (\href{https://github.com/swig/swig}{SWIG}).
 #' The relationship between the redland R package and the Redland C libraries is:
 #'
 #' User script -> redland R package -> SWIG R interface -> Redland C libraries -> RDF data

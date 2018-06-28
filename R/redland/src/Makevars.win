@@ -8,7 +8,7 @@ PKG_LIBS=-L../windows/redland-1.0.17/lib${R_ARCH} -lrdf \
 ## Workaround for missing _mkgmtime on Win32, See also
 ## https://sourceforge.net/p/mingw-w64/bugs/473/
 ifeq "${R_ARCH}" "/i386"
-PKG_LIBS += ${subst gcc-4.9.3,-lmsvcr100,${COMPILED_BY}}
+PKG_LIBS += ${patsubst gcc-%,-lmsvcr100,${COMPILED_BY}}
 endif
 
 PKG_CFLAGS=-DRASQAL_STATIC -DRAPTOR_STATIC -DREDLAND_STATIC

@@ -24,6 +24,7 @@ Depends:
 Imports:
     roxygen2
 Suggests:
+    spelling,
     knitr,
     testthat,
     rmarkdown,

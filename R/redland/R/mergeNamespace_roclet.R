@@ -28,7 +28,7 @@
 #' @details The following line must be present in the DESCRIPTION file for this roclet to be
 #' called automatically when 'roxygen2::roxygenize()' or 'devtools::document()' is called:
 #' 
-#' Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace"))
+#' Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace_roclet"))
 #' 
 #' The 'namespace' roclet must always run before the 'mergeNamespace' roclet.
 #' @examples

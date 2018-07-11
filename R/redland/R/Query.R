@@ -174,11 +174,12 @@ setGeneric("getResults", function(.Object, model, ...) {
 })
 
 #' @rdname getResults
-setMethod("getResults", signature("Query"), function(.Object, model, formatName) {
+setMethod("getResults", signature("Query"), function(.Object, model, formatName="rdfxml") {
   queryResult <- executeQuery(.Object, model)
   if (!is.null(queryResult@librdf_query_results) && librdf_query_results_finished(queryResult@librdf_query_results) == 0) {
     # It appears that this redland C library function doesn't allow specifying 'formatName' as "" or NULL, so the next two
     # arguments can never be used. Also, a text value has to be specified for the 3rd argument (mimeType) otherwise the function crashes.
+    if(is.null(formatName) || formatName == "") formatName="rdfxml"
     results <- librdf_query_results_to_string2(queryResult@librdf_query_results, formatName, "application/rdf+xml", NULL, NULL);
     return(results)
   } else {

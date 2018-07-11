@@ -8,7 +8,7 @@
 \usage{
 getResults(.Object, model, ...)
 
-\S4method{getResults}{Query}(.Object, model, formatName)
+\S4method{getResults}{Query}(.Object, model, formatName = "rdfxml")
 }
 \arguments{
 \item{.Object}{a Query object}

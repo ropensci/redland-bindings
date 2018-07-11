@@ -51,3 +51,4 @@ BugReports: https://github.com/ropensci/redland-bindings/issues
 RoxygenNote: 6.0.1
 URL:   https://github.com/ropensci/redland-bindings/tree/master/R/redland https://github.com/ropensci/redland-bindings/tree/master/R
 Encoding: UTF-8
+Language: en-US

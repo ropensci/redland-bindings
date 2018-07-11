@@ -17,7 +17,7 @@
 #
 
 #' @title Query an RDF model
-#' @description The Query class is used to execuate a query on a Model object using the default query
+#' @description The Query class is used to execute a query on a Model object using the default query
 #' language SPARQL. For more information, please refer to \url{http://librdf.org/rasqal/} for details on 
 #' supported query languages.
 #' @details A Query is executed using the executeQuery method, which returns a QueryResults object that

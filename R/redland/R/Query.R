@@ -174,7 +174,6 @@ setGeneric("getResults", function(.Object, model, ...) {
 })
 
 #' @rdname getResults
-#' @param formatName
 setMethod("getResults", signature("Query"), function(.Object, model, formatName) {
   queryResult <- executeQuery(.Object, model)
   if (!is.null(queryResult@librdf_query_results) && librdf_query_results_finished(queryResult@librdf_query_results) == 0) {

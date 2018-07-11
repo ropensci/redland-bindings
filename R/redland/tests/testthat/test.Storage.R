@@ -1,6 +1,8 @@
 context("Storage tests")
 test_that("redland library loads", {
     library(redland)
+    # Add a line to this test to prevent 'Empty test' (skipped) msg.
+    expect_true(require(redland))
 })
 test_that("Storage constructor", {
     library(redland)

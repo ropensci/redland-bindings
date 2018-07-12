@@ -7,7 +7,7 @@
 \title{Query an RDF model}
 \description{
 The Query class is used to execute a query on a Model object using the default query
-language SPARQL. For more information, please refer to \url{http://librdf.org/rasqal/} for details on 
+language SPARQL. For more information, please refer to \url{http://librdf.org/rasqal/} for details on
 supported query languages.
 }
 \details{
@@ -25,13 +25,13 @@ can be interated over the query solution sequence.
 \section{Methods}{
 
 \itemize{
-  \item{\code{\link{Query-initialize}}}{: Initialize a Query object.}
-  \item{\code{\link{executeQuery}}}{: Execute a query.}
-  \item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
-  \item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
-  \item{\code{\link{getResults}}}{: Return all query results.}
-  \item{\code{\link{writeResults}}}{: Write query results to a file.}
-  \item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
+\item{\code{\link{Query-initialize}}}{: Initialize a Query object.}
+\item{\code{\link{executeQuery}}}{: Execute a query.}
+\item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
+\item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
+\item{\code{\link{getResults}}}{: Return all query results.}
+\item{\code{\link{writeResults}}}{: Write query results to a file.}
+\item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
 }
 }
 

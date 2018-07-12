@@ -19,8 +19,8 @@ Models.
 \section{Methods}{
 
 \itemize{
-  \item{\code{\link{World-initialize}}}{: Initialize a World object}
-  \item{\code{\link{freeWorld}}}{: Free memory used by a librdf world object}
+\item{\code{\link{World-initialize}}}{: Initialize a World object}
+\item{\code{\link{freeWorld}}}{: Free memory used by a librdf world object}
 }
 }
 

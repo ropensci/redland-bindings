@@ -24,7 +24,7 @@ Get the value of the node as a string
 The value of the node is returned as a string. If the node type is
 'blank', then the blank node identifier is returned. If the node type is
 'literal', then the literal value is returned with the form "<value>"@<language>,
-e.g. "¡Hola, amigo! ¿Cómo estás?"@es". If the node type is 'uri'
+e.g. \"¡Hola, amigo! ¿Cómo estás?"@es". If the node type is 'uri'
 then the value is returned as a string.
 }
 \examples{

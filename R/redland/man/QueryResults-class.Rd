@@ -18,9 +18,9 @@ a query on an RDF model.
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{QueryResults-initialize}}}{: Initialize a QueryResults object.}
-\item{\code{\link{getNextResult}}}{: Get the next query result.}
-\item{\code{\link{freeQueryResults}}}{: Free memory used by a librdf query result.}
+  \item{\code{\link{QueryResults-initialize}}}{: Initialize a QueryResults object.}
+  \item{\code{\link{getNextResult}}}{: Get the next query result.}
+  \item{\code{\link{freeQueryResults}}}{: Free memory used by a librdf query result.}
 }
 }
 

@@ -26,9 +26,9 @@ be 'uri' (aka 'resource'). If the automatic determination of RDF types is not de
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{Statement-initialize}}}{: Initialize a Statement object.}
-\item{\code{\link{getTermType}}}{: Return the redland node type for the specified RDF term in a statement.}
-\item{\code{\link{freeStatement}}}{: Free memory used by a librdf statement.}
+  \item{\code{\link{Statement-initialize}}}{: Initialize a Statement object.}
+  \item{\code{\link{getTermType}}}{: Return the redland node type for the specified RDF term in a statement.}
+  \item{\code{\link{freeStatement}}}{: Free memory used by a librdf statement.}
 }
 }
 

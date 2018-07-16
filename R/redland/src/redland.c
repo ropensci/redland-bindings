@@ -8363,7 +8363,10 @@ SWIGEXPORT void SWIG_init(void) {
 }
 #include <R_ext/Rdynload.h>
 
+extern SEXP isnull(SEXP);
+
 SWIGINTERN R_CallMethodDef CallEntries[] = {
+   {"isnull", (DL_FUNC) &isnull, 1},
    {"R_swig_librdf_parser_set_feature", (DL_FUNC) &R_swig_librdf_parser_set_feature, 4},
    {"R_swig_librdf_parser_get_feature", (DL_FUNC) &R_swig_librdf_parser_get_feature, 2},
    {"R_swig_librdf_model_set_feature", (DL_FUNC) &R_swig_librdf_model_set_feature, 4},
@@ -8566,17 +8569,7 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {NULL, NULL, 0}
 };
 
-SWIGEXPORT void R_init_Redland(DllInfo *dll) {
+SWIGEXPORT void R_init_redland(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-
-
-SWIG_init();
-SWIG_InitializeModule(0);
-
-
     R_useDynamicSymbols(dll, FALSE);
-    R_forceSymbols(dll, TRUE);
-
-
 }
-

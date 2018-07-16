@@ -463,5 +463,4 @@ called when the redland.so shared object is loaded.  */
 
 %insert("sinitroutine") %{
     R_useDynamicSymbols(dll, FALSE);
-    R_forceSymbols(dll, TRUE);
 %}

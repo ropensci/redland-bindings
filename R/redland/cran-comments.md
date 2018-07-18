@@ -1,11 +1,14 @@
 
 ## Test environments
 
-* macOS 10.13.4, R 3.5
+* macOS 10.13.4, R 3.5, 3.5.1
 * Ubuntu 16.04, R 3.4.4
-* Windows 7, 3.4.2, R 3.5
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), 3.5.0 (2018-04-23)
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R Under development (unstable) (2018-06-10 r74877)
+* Ubuntu 17.10, R 3.4.2
+* Debian 9.4.0 R Under development (unstable) (2018-06-18 r74910)
+* Windows 7, R 3.4.2, R 3.5
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.4.4 (2018-03-15)
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.5.1 (2018-07-02)
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R Under development (unstable) (2018-07-12 r74955)
 
 ## Changes since last release
 

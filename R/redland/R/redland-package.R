@@ -35,7 +35,7 @@
 #' Statement / Triple\tab librdf_statement\tab \linkS4class{Statement}\tab RDF Model & Syntax arcs (statements, triples)\cr
 #' Model\tab librdf_model\tab \linkS4class{Model}\tab Set of Statements usually held in one Storage.\cr
 #' Node\tab librdf_node\tab \linkS4class{Node}\tab The subject, predicate or object of a Statement\cr
-#' Storage\tab librdf_storage\tab \linkS4class{Storage}\tab Storage for Models either persistant or in-memory.\cr
+#' Storage\tab librdf_storage\tab \linkS4class{Storage}\tab Storage for Models either persistent or in-memory.\cr
 #' Parser\tab librdf_parser\tab \linkS4class{Parser}\tab Syntax parsers delivering Stream of Statements or writing to a Model\cr
 #' Query\tab librdf_query\tab \linkS4class{Query}\tab Querying of an Model delivering a QueryResults\cr
 #' QueryResults\tab librdf_query_results\tab \linkS4class{QueryResults}\tab Results of applying an Query to a Model giving either variable bindings with Node values or Stream of Statements\cr

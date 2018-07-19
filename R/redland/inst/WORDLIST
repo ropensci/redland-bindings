@@ -33,7 +33,6 @@ NCEAS
 nodeID
 normalised
 parsers
-persistant
 postgresql
 QueryResult
 QueryResults

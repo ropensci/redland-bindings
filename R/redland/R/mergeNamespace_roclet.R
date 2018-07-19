@@ -22,7 +22,7 @@
 #' swig 3.0.2 this NAMESPACE file is incorrect and will also be overwritten by Roxygen when
 #' 'roxygenize()' or 'devtools:document()' is called, as the wrapper R code doesn't contain
 #' Roxygen export annotations used by Roxygen to build the namespace file.
-#' To allow for buidling a NAMESPACE file from all programs in the redland package, this roclet
+#' To allow for building a NAMESPACE file from all programs in the redland package, this roclet
 #' determines the set of wrapper R functions and adds these to the Roxygen generated NAMESPACE file
 #' that contains all names from the native R code in the redland package.
 #' @details The following line must be present in the DESCRIPTION file for this roclet to be

@@ -134,7 +134,7 @@ setMethod("serializeToCharacter", signature("Serializer", "World", "Model"), fun
 #' @param model a Model object
 #' @param filePath a file path that the serialized model will be written to
 #' @param ... Additional parameters
-#' @return an integer containing the return status where non zero indicates an error occured during serialization
+#' @return an integer containing the return status where non zero indicates an error occurred during serialization
 #' @export
 setGeneric("serializeToFile", function(.Object, world, model, filePath, ...) {
   standardGeneric("serializeToFile")

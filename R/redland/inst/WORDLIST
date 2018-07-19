@@ -1,6 +1,4 @@
 api
-buidling
-clasess
 Cómo
 conten
 csv
@@ -19,7 +17,6 @@ Hola
 http
 https
 initialise
-interated
 isa
 json
 knitr
@@ -35,7 +32,6 @@ NAMSPACE
 NCEAS
 nodeID
 normalised
-occured
 parsers
 persistant
 postgresql
@@ -57,10 +53,8 @@ roxygenized
 serializer
 Serializer
 SPARQL
-statments
 SWIGArray
 Synchronise
-Syntaxes
 uri
 URI
 URIs

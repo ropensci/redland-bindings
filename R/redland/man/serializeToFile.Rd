@@ -25,7 +25,7 @@ serializeToFile(.Object, world, model, filePath, ...)
 \item{baseUri}{a base URI to use for the serialization}
 }
 \value{
-an integer containing the return status where non zero indicates an error occured during serialization
+an integer containing the return status where non zero indicates an error occurred during serialization
 }
 \description{
 Serialize a model to a file.

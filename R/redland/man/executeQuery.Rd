@@ -13,7 +13,7 @@ executeQuery(.Object, model)
 \arguments{
 \item{.Object}{a Query object}
 
-\item{model}{a Model object containing the statments to query}
+\item{model}{a Model object containing the statements to query}
 }
 \value{
 a QueryResults object

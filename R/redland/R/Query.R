@@ -21,7 +21,7 @@
 #' language SPARQL. For more information, please refer to \url{http://librdf.org/rasqal/} for details on 
 #' supported query languages.
 #' @details A Query is executed using the executeQuery method, which returns a QueryResults object that
-#' can be interated over the query solution sequence.
+#' can be iterated over the query solution sequence.
 #' @slot librdf_query A redland query object
 #' @slot librdf_world A redland world object
 #' @rdname Query-class
@@ -93,7 +93,7 @@ setMethod("initialize",
 #' @description The initialize query is executed and the result is returned as a QueryResult object
 #' @rdname executeQuery
 #' @param .Object a Query object
-#' @param model a Model object containing the statments to query
+#' @param model a Model object containing the statements to query
 #' @return a QueryResults object
 #' @export
 setGeneric("executeQuery", function(.Object, model) {

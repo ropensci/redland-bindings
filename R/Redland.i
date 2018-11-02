@@ -420,6 +420,8 @@ int raptor_locator_byte(raptor_locator *locator);
 const char* raptor_locator_file(raptor_locator *locator);
 const char* raptor_locator_uri(raptor_locator *locator);
 
+/* rasqal.h */
+int rasqal_world_set_warning_level(rasqal_world* world, unsigned int warning_level);
 
 /* FOR TESTING ERRORS ONLY - NOT PART OF API */
 void librdf_internal_test_error(librdf_world *world);

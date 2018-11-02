@@ -45,6 +45,7 @@ setClass("World", slots = c(librdf_world = "_p_librdf_world_s"))
 setMethod("initialize", signature = "World", definition = function(.Object) {
     .Object@librdf_world <- librdf_new_world();
     librdf_world_open(.Object@librdf_world)
+    rasqal_world_set_warning_level(.Object@librdf_world, 10)
     return(.Object)
 })
 

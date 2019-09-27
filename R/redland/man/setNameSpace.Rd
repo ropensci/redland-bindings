@@ -8,8 +8,8 @@
 \usage{
 setNameSpace(.Object, world, namespace, prefix)
 
-\S4method{setNameSpace}{Serializer,World,character,character}(.Object, world,
-  namespace, prefix)
+\S4method{setNameSpace}{Serializer,World,character,character}(.Object,
+  world, namespace, prefix)
 }
 \arguments{
 \item{.Object}{a Serializer object}

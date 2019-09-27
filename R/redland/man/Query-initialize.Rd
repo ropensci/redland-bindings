@@ -6,8 +6,8 @@
 \alias{Query-initialize}
 \title{Initialize the Query object.}
 \usage{
-\S4method{initialize}{Query}(.Object, world, querystring, base_uri = NULL,
-  query_language = "sparql", query_uri = NULL)
+\S4method{initialize}{Query}(.Object, world, querystring,
+  base_uri = NULL, query_language = "sparql", query_uri = NULL)
 }
 \arguments{
 \item{.Object}{the Query object}

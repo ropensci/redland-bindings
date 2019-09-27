@@ -8,8 +8,8 @@
 \usage{
 serializeToCharacter(.Object, world, model, ...)
 
-\S4method{serializeToCharacter}{Serializer,World,Model}(.Object, world, model,
-  baseUri = as.character(NA))
+\S4method{serializeToCharacter}{Serializer,World,Model}(.Object, world,
+  model, baseUri = as.character(NA))
 }
 \arguments{
 \item{.Object}{a Serializer object}

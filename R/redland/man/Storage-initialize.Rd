@@ -6,8 +6,8 @@
 \alias{Storage-initialize}
 \title{Initialize a Storage object}
 \usage{
-\S4method{initialize}{Storage}(.Object, world, type = "hashes", name = "",
-  options = "hash-type='memory'")
+\S4method{initialize}{Storage}(.Object, world, type = "hashes",
+  name = "", options = "hash-type='memory'")
 }
 \arguments{
 \item{.Object}{the Storage object}

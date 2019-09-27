@@ -6,8 +6,8 @@
 \alias{Node-initialize}
 \title{Initialize a Node object.}
 \usage{
-\S4method{initialize}{Node}(.Object, world, literal, uri, blank, datatype_uri,
-  language)
+\S4method{initialize}{Node}(.Object, world, literal, uri, blank,
+  datatype_uri, language)
 }
 \arguments{
 \item{.Object}{the Node object to be initialized}

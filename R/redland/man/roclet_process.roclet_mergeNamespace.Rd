@@ -4,13 +4,15 @@
 \alias{roclet_process.roclet_mergeNamespace}
 \title{Roxygen process function for the 'mergeNamespace' roclet}
 \usage{
-\method{roclet_process}{roclet_mergeNamespace}(roclet, partita, base_path,
+\method{roclet_process}{roclet_mergeNamespace}(x, blocks, env, base_path,
   global_options = list())
 }
 \arguments{
-\item{roclet}{the currently running roclet}
+\item{x}{the currently running rocklet}
 
-\item{partita}{a list of all .R files in the package being roxygenized (not used by this roclet)}
+\item{blocks}{the documentation blocks}
+
+\item{env}{the current env}
 
 \item{base_path}{the top directory of the R package}
 

@@ -9,7 +9,8 @@
 writeResults(.Object, model, ...)
 
 \S4method{writeResults}{Query}(.Object, model, file,
-  mimeType = "application/x-turtle", format_uri = NULL, base_uri = NULL)
+  mimeType = "application/x-turtle", format_uri = NULL,
+  base_uri = NULL)
 }
 \arguments{
 \item{.Object}{a Query object}

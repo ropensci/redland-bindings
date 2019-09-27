@@ -8,8 +8,8 @@
 \usage{
 serializeToFile(.Object, world, model, filePath, ...)
 
-\S4method{serializeToFile}{Serializer,World,Model,character}(.Object, world,
-  model, filePath, baseUri = as.character(NA))
+\S4method{serializeToFile}{Serializer,World,Model,character}(.Object,
+  world, model, filePath, baseUri = as.character(NA))
 }
 \arguments{
 \item{.Object}{a Serializer object}

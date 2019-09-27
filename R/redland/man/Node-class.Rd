@@ -18,10 +18,10 @@ A Node represents a RDF Resource, Property, Literal or an RDF blank Node.
 \section{Methods}{
 
 \itemize{
-  \item{\code{\link{Node-initialize}}}{: Initialize a Node object.}
-  \item{\code{\link{getNodeType}}}{: Determine the node type and return as a string.}
-  \item{\code{\link{getNodeValue}}}{: Determine the node type and return as a string.}
-  \item{\code{\link{getBlankNodeId}}}{: Get the value of the node as a string.}
+\item{\code{\link{Node-initialize}}}{: Initialize a Node object.}
+\item{\code{\link{getNodeType}}}{: Determine the node type and return as a string.}
+\item{\code{\link{getNodeValue}}}{: Determine the node type and return as a string.}
+\item{\code{\link{getBlankNodeId}}}{: Get the value of the node as a string.}
 }
 }
 

@@ -6,9 +6,10 @@
 \alias{Statement-initialize}
 \title{Construct a Statement object.}
 \usage{
-\S4method{initialize}{Statement}(.Object, world, subject, predicate, object,
-  subjectType = as.character(NA), objectType = as.character(NA),
-  datatype_uri = as.character(NA), language = as.character(NA))
+\S4method{initialize}{Statement}(.Object, world, subject, predicate,
+  object, subjectType = as.character(NA),
+  objectType = as.character(NA), datatype_uri = as.character(NA),
+  language = as.character(NA))
 }
 \arguments{
 \item{.Object}{the Statement object}

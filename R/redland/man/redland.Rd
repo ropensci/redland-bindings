@@ -60,9 +60,11 @@ queryString <- paste("PREFIX dc: <http://purl.org/dc/elements/1.1/> ",
                      "SELECT ?a ?c WHERE { ?a dc:description ?c . }", sep="")
 query <- new("Query", world, queryString, base_uri=NULL, 
              query_language="sparql", query_uri=NULL)
-# Get first (and only, in this case) result
-queryResult <- executeQuery(query, model)
-result <- getNextResult(queryResult)
+results <- getResults(query, model, "rdfxml")
+
+# When the query object is no longer needed, the resources it had allocated can be freed.
+freeQuery(query)
+rm(query)
 }
 \author{
 Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)

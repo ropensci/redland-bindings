@@ -36,8 +36,8 @@ queryString <- paste("PREFIX orcid: <https://orcid.org/>",
                      "SELECT ?a ?c WHERE { ?a prov:Agent ?c . }", sep=" ")
 query <- new("Query", world, queryString, base_uri=NULL, 
   query_language="sparql", query_uri=NULL)
-queryResult <- executeQuery(query, model)
-result <- getNextResult(queryResult)
+# Return all results as a string
+results <- getResults(query, model, "rdfxml")
 
 # When the query object is no longer needed, the resources it had allocated can be freed.
 freeQuery(query)

@@ -25,13 +25,13 @@ can be iterated over the query solution sequence.
 \section{Methods}{
 
 \itemize{
-  \item{\code{\link{Query-initialize}}}{: Initialize a Query object.}
-  \item{\code{\link{executeQuery}}}{: Execute a query.}
-  \item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
-  \item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
-  \item{\code{\link{getResults}}}{: Return all query results.}
-  \item{\code{\link{writeResults}}}{: Write query results to a file.}
-  \item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
+\item{\code{\link{Query-initialize}}}{: Initialize a Query object.}
+\item{\code{\link{executeQuery}}}{: Execute a query.}
+\item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
+\item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
+\item{\code{\link{getResults}}}{: Return all query results.}
+\item{\code{\link{writeResults}}}{: Write query results to a file.}
+\item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
 }
 }
 
@@ -57,8 +57,9 @@ queryString <-
           "PREFIX prov: <http://www.w3.org/ns/prov#>",
           "SELECT ?a ?c WHERE { ?a prov:Agent ?c . }", sep=" ")
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
-queryResult <- executeQuery(query, model)
-result <- getNextResult(queryResult)
+# Return all results as a string
+results <- getResults(query, model, "rdfxml")
+
 }
 \references{
 www.example.com

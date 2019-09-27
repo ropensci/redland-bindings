@@ -29,7 +29,7 @@ test_that("librdf basic functions", {
     expect_match(class(results), "_p_librdf_query_results")
 
     # Convert the whole sparql result to a string and check its value
-    qstr <- librdf_query_results_to_string(results, NULL, NULL)
+    qstr <- librdf_query_results_to_string2(results, "rdfxml", "application/rdf+xml", NULL, NULL)
     expect_match(qstr, "http://www.dajobe.org/")
     expect_match(qstr, "Beckett")
 
@@ -84,7 +84,7 @@ test_that("librdf basic functions", {
     filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")
 
     librdf_serializer_serialize_model_to_file(serializer,filePath,base,model);
-    expect_that(file.exists(filePath), is_true())
+    expect_true(file.exists(filePath))
     unlink(filePath)
 
     # Free resources

@@ -3546,33 +3546,6 @@ R_swig_librdf_statement_match ( SEXP statement, SEXP partial_statement, SEXP s_s
 
 
 SWIGEXPORT SEXP
-R_swig_librdf_statement_to_string ( SEXP statement)
-{
-  char *result = 0 ;
-  librdf_statement *arg1 = (librdf_statement *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int r_nprotect = 0;
-  SEXP r_ans = R_NilValue ;
-  VMAXTYPE r_vmax = vmaxget() ;
-  
-  res1 = SWIG_R_ConvertPtr(statement, &argp1, SWIGTYPE_p_librdf_statement_s, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "librdf_statement_to_string" "', argument " "1"" of type '" "librdf_statement *""'"); 
-  }
-  arg1 = (librdf_statement *)(argp1);
-  result = (char *)librdf_statement_to_string(arg1);
-  r_ans = result ? Rf_mkString((char *)(result)) : R_NilValue;
-  
-  free((char*)result);
-  vmaxset(r_vmax);
-  if(r_nprotect)  Rf_unprotect(r_nprotect);
-  
-  return r_ans;
-}
-
-
-SWIGEXPORT SEXP
 R_swig_librdf_statement_is_complete ( SEXP statement, SEXP s_swig_copy)
 {
   int result;
@@ -5805,54 +5778,6 @@ R_swig_librdf_parser_set_feature ( SEXP parser, SEXP feature, SEXP value, SEXP s
   return r_ans;
 }
 
-
-SWIGEXPORT SEXP
-R_swig_librdf_parser_guess_name ( SEXP mime_type, SEXP buffer, SEXP identifier)
-{
-  char *result = 0 ;
-  char *arg1 = (char *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char *arg3 = (char *) 0 ;
-  int res1 ;
-  char *buf1 = 0 ;
-  int alloc1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int res3 ;
-  char *buf3 = 0 ;
-  int alloc3 = 0 ;
-  unsigned int r_nprotect = 0;
-  SEXP r_ans = R_NilValue ;
-  VMAXTYPE r_vmax = vmaxget() ;
-  
-  res1 = SWIG_AsCharPtrAndSize(mime_type, &buf1, NULL, &alloc1);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "librdf_parser_guess_name" "', argument " "1"" of type '" "char const *""'");
-  }
-  arg1 = (char *)(buf1);
-  res2 = SWIG_AsCharPtrAndSize(buffer, &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "librdf_parser_guess_name" "', argument " "2"" of type '" "char const *""'");
-  }
-  arg2 = (char *)(buf2);
-  res3 = SWIG_AsCharPtrAndSize(identifier, &buf3, NULL, &alloc3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "librdf_parser_guess_name" "', argument " "3"" of type '" "char const *""'");
-  }
-  arg3 = (char *)(buf3);
-  result = (char *)librdf_parser_guess_name((char const *)arg1,(char const *)arg2,(char const *)arg3);
-  r_ans = SWIG_FromCharPtr((const char *)result);
-  if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
-  vmaxset(r_vmax);
-  if(r_nprotect)  Rf_unprotect(r_nprotect);
-  
-  return r_ans;
-}
-
-
 SWIGEXPORT SEXP
 R_swig_librdf_parser_guess_name2 ( SEXP world, SEXP mime_type, SEXP buffer, SEXP identifier)
 {
@@ -6478,60 +6403,6 @@ R_swig_librdf_query_results_get_bindings_count ( SEXP query_results, SEXP s_swig
 
 
 SWIGEXPORT SEXP
-R_swig_librdf_query_results_to_file ( SEXP query_results, SEXP name, SEXP format_uri, SEXP base_uri, SEXP s_swig_copy)
-{
-  int result;
-  librdf_query_results *arg1 = (librdf_query_results *) 0 ;
-  char *arg2 = (char *) 0 ;
-  librdf_uri *arg3 = (librdf_uri *) 0 ;
-  librdf_uri *arg4 = (librdf_uri *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  void *argp4 = 0 ;
-  int res4 = 0 ;
-  unsigned int r_nprotect = 0;
-  SEXP r_ans = R_NilValue ;
-  VMAXTYPE r_vmax = vmaxget() ;
-  
-  res1 = SWIG_R_ConvertPtr(query_results, &argp1, SWIGTYPE_p_librdf_query_results, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "librdf_query_results_to_file" "', argument " "1"" of type '" "librdf_query_results *""'"); 
-  }
-  arg1 = (librdf_query_results *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(name, &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "librdf_query_results_to_file" "', argument " "2"" of type '" "char const *""'");
-  }
-  arg2 = (char *)(buf2);
-  res3 = SWIG_R_ConvertPtr(format_uri, &argp3, SWIGTYPE_p_librdf_uri_s, 0 |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "librdf_query_results_to_file" "', argument " "3"" of type '" "librdf_uri *""'"); 
-  }
-  arg3 = (librdf_uri *)(argp3);
-  res4 = SWIG_R_ConvertPtr(base_uri, &argp4, SWIGTYPE_p_librdf_uri_s, 0 |  0 );
-  if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "librdf_query_results_to_file" "', argument " "4"" of type '" "librdf_uri *""'"); 
-  }
-  arg4 = (librdf_uri *)(argp4);
-  result = (int)librdf_query_results_to_file(arg1,(char const *)arg2,arg3,arg4);
-  r_ans = Rf_ScalarInteger(result);
-  
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  
-  
-  vmaxset(r_vmax);
-  if(r_nprotect)  Rf_unprotect(r_nprotect);
-  
-  return r_ans;
-}
-
-
-SWIGEXPORT SEXP
 R_swig_librdf_query_results_to_file2 ( SEXP query_results, SEXP name, SEXP mime_type, SEXP format_uri, SEXP base_uri, SEXP s_swig_copy)
 {
   int result;
@@ -6588,51 +6459,6 @@ R_swig_librdf_query_results_to_file2 ( SEXP query_results, SEXP name, SEXP mime_
   if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
   
   
-  vmaxset(r_vmax);
-  if(r_nprotect)  Rf_unprotect(r_nprotect);
-  
-  return r_ans;
-}
-
-
-SWIGEXPORT SEXP
-R_swig_librdf_query_results_to_string ( SEXP query_results, SEXP format_uri, SEXP base_uri)
-{
-  char *result = 0 ;
-  librdf_query_results *arg1 = (librdf_query_results *) 0 ;
-  librdf_uri *arg2 = (librdf_uri *) 0 ;
-  librdf_uri *arg3 = (librdf_uri *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  unsigned int r_nprotect = 0;
-  SEXP r_ans = R_NilValue ;
-  VMAXTYPE r_vmax = vmaxget() ;
-  
-  res1 = SWIG_R_ConvertPtr(query_results, &argp1, SWIGTYPE_p_librdf_query_results, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "librdf_query_results_to_string" "', argument " "1"" of type '" "librdf_query_results *""'"); 
-  }
-  arg1 = (librdf_query_results *)(argp1);
-  res2 = SWIG_R_ConvertPtr(format_uri, &argp2, SWIGTYPE_p_librdf_uri_s, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "librdf_query_results_to_string" "', argument " "2"" of type '" "librdf_uri *""'"); 
-  }
-  arg2 = (librdf_uri *)(argp2);
-  res3 = SWIG_R_ConvertPtr(base_uri, &argp3, SWIGTYPE_p_librdf_uri_s, 0 |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "librdf_query_results_to_string" "', argument " "3"" of type '" "librdf_uri *""'"); 
-  }
-  arg3 = (librdf_uri *)(argp3);
-  result = (char *)librdf_query_results_to_string(arg1,arg2,arg3);
-  r_ans = result ? Rf_mkString((char *)(result)) : R_NilValue;
-  
-  
-  
-  free((char*)result);
   vmaxset(r_vmax);
   if(r_nprotect)  Rf_unprotect(r_nprotect);
   
@@ -7393,32 +7219,6 @@ R_swig_librdf_stream_get_object ( SEXP stream)
   arg1 = (librdf_stream *)(argp1);
   result = (librdf_statement *)librdf_stream_get_object(arg1);
   r_ans = SWIG_R_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_librdf_statement_s, R_SWIG_EXTERNAL |  0 );
-  
-  vmaxset(r_vmax);
-  if(r_nprotect)  Rf_unprotect(r_nprotect);
-  
-  return r_ans;
-}
-
-
-SWIGEXPORT SEXP
-R_swig_librdf_stream_get_context ( SEXP stream)
-{
-  librdf_node *result = 0 ;
-  librdf_stream *arg1 = (librdf_stream *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int r_nprotect = 0;
-  SEXP r_ans = R_NilValue ;
-  VMAXTYPE r_vmax = vmaxget() ;
-  
-  res1 = SWIG_R_ConvertPtr(stream, &argp1, SWIGTYPE_p_librdf_stream_s, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "librdf_stream_get_context" "', argument " "1"" of type '" "librdf_stream *""'"); 
-  }
-  arg1 = (librdf_stream *)(argp1);
-  result = (librdf_node *)librdf_stream_get_context(arg1);
-  r_ans = SWIG_R_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_librdf_node_s, R_SWIG_EXTERNAL |  0 );
   
   vmaxset(r_vmax);
   if(r_nprotect)  Rf_unprotect(r_nprotect);
@@ -8375,7 +8175,6 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {"R_swig_librdf_world_get_feature", (DL_FUNC) &R_swig_librdf_world_get_feature, 2},
    {"R_swig_librdf_serializer_get_feature", (DL_FUNC) &R_swig_librdf_serializer_get_feature, 2},
    {"R_swig_librdf_serializer_set_feature", (DL_FUNC) &R_swig_librdf_serializer_set_feature, 4},
-   {"R_swig_librdf_query_results_to_string", (DL_FUNC) &R_swig_librdf_query_results_to_string, 3},
    {"R_swig_librdf_model_to_string", (DL_FUNC) &R_swig_librdf_model_to_string, 5},
    {"R_swig_librdf_new_node_from_uri_string", (DL_FUNC) &R_swig_librdf_new_node_from_uri_string, 2},
    {"R_swig_librdf_uri_to_string", (DL_FUNC) &R_swig_librdf_uri_to_string, 1},
@@ -8385,7 +8184,6 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {"R_swig_librdf_hash_to_string", (DL_FUNC) &R_swig_librdf_hash_to_string, 2},
    {"R_swig_librdf_new_node_from_normalised_uri_string", (DL_FUNC) &R_swig_librdf_new_node_from_normalised_uri_string, 4},
    {"R_swig_librdf_node_to_string", (DL_FUNC) &R_swig_librdf_node_to_string, 1},
-   {"R_swig_librdf_statement_to_string", (DL_FUNC) &R_swig_librdf_statement_to_string, 1},
    {"R_swig_librdf_serializer_serialize_model_to_string", (DL_FUNC) &R_swig_librdf_serializer_serialize_model_to_string, 3},
    {"R_swig_librdf_stream_end", (DL_FUNC) &R_swig_librdf_stream_end, 2},
    {"R_swig_librdf_internal_test_error", (DL_FUNC) &R_swig_librdf_internal_test_error, 1},
@@ -8399,9 +8197,8 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {"R_swig_librdf_query_results_is_bindings", (DL_FUNC) &R_swig_librdf_query_results_is_bindings, 2},
    {"R_swig_librdf_query_results_finished", (DL_FUNC) &R_swig_librdf_query_results_finished, 2},
    {"R_swig_librdf_parser_get_accept_header", (DL_FUNC) &R_swig_librdf_parser_get_accept_header, 1},
-   {"R_swig_librdf_query_results_to_file", (DL_FUNC) &R_swig_librdf_query_results_to_file, 5},
-   {"R_swig_librdf_serializer_serialize_stream_to_file", (DL_FUNC) &R_swig_librdf_serializer_serialize_stream_to_file, 5},
    {"R_swig_librdf_serializer_serialize_model_to_file", (DL_FUNC) &R_swig_librdf_serializer_serialize_model_to_file, 5},
+   {"R_swig_librdf_serializer_serialize_stream_to_file", (DL_FUNC) &R_swig_librdf_serializer_serialize_stream_to_file, 5},
    {"R_swig_raptor_locator_uri", (DL_FUNC) &R_swig_raptor_locator_uri, 1},
    {"R_swig_librdf_model_get_arcs_out", (DL_FUNC) &R_swig_librdf_model_get_arcs_out, 2},
    {"R_swig_librdf_query_results_is_graph", (DL_FUNC) &R_swig_librdf_query_results_is_graph, 2},
@@ -8450,7 +8247,6 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {"R_swig_librdf_model_contains_context", (DL_FUNC) &R_swig_librdf_model_contains_context, 3},
    {"R_swig_librdf_model_find_statements_in_context", (DL_FUNC) &R_swig_librdf_model_find_statements_in_context, 3},
    {"R_swig_librdf_iterator_get_context", (DL_FUNC) &R_swig_librdf_iterator_get_context, 1},
-   {"R_swig_librdf_stream_get_context", (DL_FUNC) &R_swig_librdf_stream_get_context, 1},
    {"R_swig_librdf_version_release_get", (DL_FUNC) &R_swig_librdf_version_release_get, 1},
    {"R_swig_raptor_version_release_get", (DL_FUNC) &R_swig_raptor_version_release_get, 1},
    {"R_swig_rasqal_version_release_get", (DL_FUNC) &R_swig_rasqal_version_release_get, 1},
@@ -8544,7 +8340,6 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {"R_swig_librdf_model_context_add_statements", (DL_FUNC) &R_swig_librdf_model_context_add_statements, 4},
    {"R_swig_librdf_model_find_statements", (DL_FUNC) &R_swig_librdf_model_find_statements, 2},
    {"R_swig_librdf_model_add_statements", (DL_FUNC) &R_swig_librdf_model_add_statements, 3},
-   {"R_swig_librdf_parser_guess_name", (DL_FUNC) &R_swig_librdf_parser_guess_name, 3},
    {"R_swig_librdf_digest_final", (DL_FUNC) &R_swig_librdf_digest_final, 1},
    {"R_swig_librdf_new_uri_from_filename", (DL_FUNC) &R_swig_librdf_new_uri_from_filename, 2},
    {"R_swig_librdf_iterator_end", (DL_FUNC) &R_swig_librdf_iterator_end, 2},

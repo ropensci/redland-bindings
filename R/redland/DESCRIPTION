@@ -45,6 +45,7 @@ Collate:
     'mergeNamespace_roclet.R'
     'redland-package.R'
     'util.R'
+    'zzz.R'
 License: Apache License 2.0
 Copyright: See file (inst/)COPYRIGHTS.
 BugReports: https://github.com/ropensci/redland-bindings/issues

@@ -1,3 +1,11 @@
+Version 1.0.17-11
+
+BUG FIXES
+
+* Removed deprecated function warnings during package build. (#79)
+* Fix memory protection problems reported by 'rchk'. (#78)
+* Deprecate the function getNextResult(), which is superceded by getResults(). (#79)
+
 Version 1.0.17-10
 
 BUG FIXES

@@ -1,35 +1,35 @@
 
 ## Test environments
 
-* macOS 10.13.4, R 3.5, 3.5.1
-* Ubuntu 16.04, R 3.4.4
-* Ubuntu 17.10, R 3.4.2
-* Debian 9.4.0 R Under development (unstable) (2018-06-18 r74910)
-* Windows 7, R 3.4.2, R 3.5
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.4.4 (2018-03-15)
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.5.1 (2018-07-02)
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R Under development (unstable) (2018-07-12 r74955)
+* macOS 10.14.5, R 3.6.1
+* Ubuntu 19.04, R 3.6.1
+* Windows 7, R 3.6.1, R 3.6.1
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.5.3 (2019-03-11)
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.6.1 (2019-07-05)
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R Under development (unstable) 2019-09-27 r77229
 
 ## Changes since last release
 
-* Fixes for homebrew (#51)
-* An RDF language tag can now be specified for literal nodes (#64)
-* Added ability to retrieve all query results at once. (#58)
-* Added new function getNodeValue() (#65)
-* Added new function getResults() (#58)
-* Added new function writeResults() (#58)
+* Removed deprecated function warnings during package build. (#79)
+* Fix memory protection problems reported by 'rchk'. (#78)
+* Deprecate the 'getNextResult' function. (#79)
 
 ## R CMD check results
 
 * There were no ERRORs.
-* There were several WARNINGS, all of which originate in the upstream librdf code library
-  which is being wrapped in R, and so are not due to the code in this package.
+* There was the following 1 WARNING:
+  - "'librdf_node_to_string' is deprecated (declared at ../windows/redland-1.0.17/include/rdf_node.h:171)"
+    This librdf C library function is used by the redland R package's  `getNextResult` function. 
+    Since this function (`getNextResult`) has been superceded by the more efficient `getResults` 
+    function, we have decided to deprecate `getNextResult`. The WARNING message will therefor persist
+    until this function is marked DEFUNCT and removed from the redland R package, which will happen in the next release.
+    Note that the downstream dependant packages (datapack, rdflib) do not use `getNextResult`.
 * There was the following 1 NOTE: 
   - A NOTE regarding "sub-directories of 1Mb or more" for the libs directory.
     For the Windows builds only, the "libs" directory contains only the redland.dll 
     files build for each Windows sub-architecture (i385, x64) and is necessary for 
     the redland package to run.
- 
+
 ## Downstream dependencies
 
 * The downstream dependencies (datapack, rdflib) have been checked with devtools::revdep_check(), which passed

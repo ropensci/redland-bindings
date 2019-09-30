@@ -99,7 +99,7 @@ The *redland* R package should be available for use at this point.
 
 ## Installing on Ubuntu
 
-For ubuntu, install the required Redland C libraies:
+For ubuntu, install the required Redland C libraries:
 
 ```
 sudo apt-get update
@@ -165,7 +165,7 @@ status <- serializeToFile(serializer, world, model, filePath)
 readLines(file(filePath))
 ```
 
-## Acknowledgements
+## Acknowledgments
 Work on this package was supported by NSF-ABI grant #1262458 to C. Gries, M. Jones, and S. Collins. 
 
 [![nceas_footer](https://www.nceas.ucsb.edu/files/newLogo_0.png)](http://www.nceas.ucsb.edu)

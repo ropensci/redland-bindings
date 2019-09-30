@@ -49,47 +49,6 @@ setMethod("initialize", signature = "QueryResults", definition = function(.Objec
   return(.Object)
 })
 
-#' Get the next query result.
-#' @description The next query result is returned. .
-#' @rdname getNextResult
-#' @param .Object a QueryResults object
-#' @export
-setGeneric("getNextResult", function(.Object) {
-    .Deprecated("getResults", "redland")
-  standardGeneric("getNextResult")
-})
-
-#' @rdname getNextResult
-setMethod("getNextResult", signature("QueryResults"), function(.Object) {
-
-  nodeNames <- list()
-  nodeValues <- list()
-  
-  # Process the next result, storing the bound values in a list
-  if (!is.null(.Object@librdf_query_results) && librdf_query_results_finished(.Object@librdf_query_results) == 0) {
-    num_nodes <- librdf_query_results_get_bindings_count(.Object@librdf_query_results)
-    for (i in 1:num_nodes-1) {
-      binding_name <- librdf_query_results_get_binding_name(.Object@librdf_query_results, i)
-      val = librdf_query_results_get_binding_value(.Object@librdf_query_results, i)
-      # If no value returned for this binding, set to "NA"
-      if (!is.null.externalptr(val@ref)) {
-        nval <- librdf_node_to_string(val)
-      } else {
-        nval = as.character(NA)
-      }
-      nodeNames <- c(nodeNames, binding_name)
-      nodeValues <- c(nodeValues, nval)
-    }
-  } else {
-    return(NULL)
-  }
-  
-  names(nodeValues) <- nodeNames
-  nextResult <-librdf_query_results_next(.Object@librdf_query_results)
-  
-  return(nodeValues)
-})
-
 #' Free memory used by a librdf query results
 #' @description After this method is called, the QueryResults object is no longer usable and should
 #' be deleted with \code{"rm(query)"}.

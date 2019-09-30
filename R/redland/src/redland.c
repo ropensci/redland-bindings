@@ -3000,33 +3000,6 @@ R_swig_librdf_node_get_li_ordinal ( SEXP node, SEXP s_swig_copy)
 
 
 SWIGEXPORT SEXP
-R_swig_librdf_node_to_string ( SEXP node)
-{
-  char *result = 0 ;
-  librdf_node *arg1 = (librdf_node *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int r_nprotect = 0;
-  SEXP r_ans = R_NilValue ;
-  VMAXTYPE r_vmax = vmaxget() ;
-  
-  res1 = SWIG_R_ConvertPtr(node, &argp1, SWIGTYPE_p_librdf_node_s, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "librdf_node_to_string" "', argument " "1"" of type '" "librdf_node *""'"); 
-  }
-  arg1 = (librdf_node *)(argp1);
-  result = (char *)librdf_node_to_string(arg1);
-  r_ans = result ? Rf_mkString((char *)(result)) : R_NilValue;
-  
-  free((char*)result);
-  vmaxset(r_vmax);
-  if(r_nprotect)  Rf_unprotect(r_nprotect);
-  
-  return r_ans;
-}
-
-
-SWIGEXPORT SEXP
 R_swig_librdf_node_get_blank_identifier ( SEXP node)
 {
   char *result = 0 ;
@@ -8183,7 +8156,6 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {"R_swig_librdf_new_hash_from_string", (DL_FUNC) &R_swig_librdf_new_hash_from_string, 3},
    {"R_swig_librdf_hash_to_string", (DL_FUNC) &R_swig_librdf_hash_to_string, 2},
    {"R_swig_librdf_new_node_from_normalised_uri_string", (DL_FUNC) &R_swig_librdf_new_node_from_normalised_uri_string, 4},
-   {"R_swig_librdf_node_to_string", (DL_FUNC) &R_swig_librdf_node_to_string, 1},
    {"R_swig_librdf_serializer_serialize_model_to_string", (DL_FUNC) &R_swig_librdf_serializer_serialize_model_to_string, 3},
    {"R_swig_librdf_stream_end", (DL_FUNC) &R_swig_librdf_stream_end, 2},
    {"R_swig_librdf_internal_test_error", (DL_FUNC) &R_swig_librdf_internal_test_error, 1},

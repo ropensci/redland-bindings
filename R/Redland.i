@@ -202,10 +202,6 @@ librdf_uri* librdf_node_get_literal_value_datatype_uri(librdf_node* node);
 int librdf_node_get_literal_value_is_wf_xml(librdf_node* node);
 int librdf_node_get_li_ordinal(librdf_node* node);
 
-%newobject librdf_node_to_string;
-char *librdf_node_to_string(librdf_node* node);
-char *librdf_node_get_blank_identifier(librdf_node* node);
-
 int librdf_node_is_resource(librdf_node* node);
 int librdf_node_is_literal(librdf_node* node);
 int librdf_node_is_blank(librdf_node* node);

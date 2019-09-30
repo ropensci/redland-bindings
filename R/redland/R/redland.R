@@ -939,19 +939,6 @@ attr(`librdf_node_get_li_ordinal`, 'returnType') = 'integer'
 attr(`librdf_node_get_li_ordinal`, "inputTypes") = c('_p_librdf_node_s')
 class(`librdf_node_get_li_ordinal`) = c("SWIGFunction", class('librdf_node_get_li_ordinal'))
 
-# Start of librdf_node_to_string
-
-`librdf_node_to_string` = function(node)
-{
-  if (inherits(node, "ExternalReference")) node = slot(node,"ref") 
-  ;.Call('R_swig_librdf_node_to_string', node, PACKAGE='redland');
-  
-}
-
-attr(`librdf_node_to_string`, 'returnType') = 'character'
-attr(`librdf_node_to_string`, "inputTypes") = c('_p_librdf_node_s')
-class(`librdf_node_to_string`) = c("SWIGFunction", class('librdf_node_to_string'))
-
 # Start of librdf_node_get_blank_identifier
 
 `librdf_node_get_blank_identifier` = function(node)

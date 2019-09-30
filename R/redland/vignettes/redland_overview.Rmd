@@ -34,12 +34,10 @@ Next the RDF graph is queried for statements of interest, using the [SPARQL quer
 queryString <- 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c WHERE { ?a dc:creator ?c . }'
 query <- new("Query", world, queryString, base_uri=NULL, query_language="sparql", query_uri=NULL)
 queryResult <- executeQuery(query, model)
-result <- getNextResult(queryResult)
-cat(sprintf("Result from query: %s\n", result))
-```
+results <- getResults(query, model, "rdfxml")
 
-Additional results can be obtained by calling getNextResult() until a null value is returned, which indicates that all results have
-been returned.
+cat(sprintf("Results from query: %s\n", results))
+```
 
 Next, additional statements can be added to the RDF graph:
 ```{r}

@@ -909,7 +909,6 @@ SWIGRUNTIME void
 R_SWIG_ReferenceFinalizer(SEXP el)
 {
   void *ptr = R_SWIG_resolveExternalRef(el, "", "<finalizer>",  (Rboolean) 1);
-  fprintf(stderr, "In R_SWIG_ReferenceFinalizer for %p\n", ptr);
   Rf_PrintValue(el);
 
   if(ptr) {

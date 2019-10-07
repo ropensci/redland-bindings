@@ -8,7 +8,7 @@
   global_options = list())
 }
 \arguments{
-\item{x}{the currently running rocklet}
+\item{x}{the currently running roclet}
 
 \item{blocks}{the documentation blocks}
 

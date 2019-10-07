@@ -48,7 +48,7 @@ mergeNamespace_roclet <- function(x, ...) {
 #' @description This function is called by the Roxygen2 roxygenize function.
 #' @details This function loads the Redland interface file and tests each loaded function to
 #' see if it should be exported via the NAMESPACE file.
-#' @param x the currently running rocklet
+#' @param x the currently running roclet
 #' @param blocks the documentation blocks
 #' @param env the current env
 #' @param base_path the top directory of the R package
@@ -62,7 +62,7 @@ roclet_process.roclet_mergeNamespace <- function(x, blocks, env, base_path, glob
   # each redland library function that will be made available to the package.
   filePath <- sprintf("%s/R/redland.R", base_path)
   #source(filePath, as.environment(".redland-temp"))
-  source(file=filePath, local=tmpEnv)
+  source(file=filePath, local=as.environment(tmpEnv))
   # Check each Redland function to see if it has the SWIGfunction attribute set, and if so
   # include this function name in the list of functions to be exported
   #funcList <- ls(as.environment(".redland-temp"))
@@ -77,7 +77,7 @@ roclet_process.roclet_mergeNamespace <- function(x, blocks, env, base_path, glob
     }
   }
   
-  #rm(ls(tmpEnv), envir=tmpEnv)
+  rm(list=ls(tmpEnv), envir=tmpEnv)
   rm(tmpEnv)
   
   return(exportFuncList)

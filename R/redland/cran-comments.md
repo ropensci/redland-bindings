@@ -10,20 +10,15 @@
 
 ## Changes since last release
 
-* Removed deprecated function warnings during package build. (#79)
+* Resolve deprecated function warnings during package build. (#79)
+  Note the the first CRAN submission for this package version 1.10.17-11 contained build warnings regarding the deprecated 
+  C library rdflib_node_to_string(). In order to remove this warning, the dependant R function getNextResult() has
+  been removed. The function getNextResult() has been superceded by the more efficient getResults().
 * Fix memory protection problems reported by 'rchk'. (#78)
-* Deprecate the 'getNextResult' function. (#79)
 
 ## R CMD check results
 
 * There were no ERRORs.
-* There was the following 1 WARNING:
-  - "'librdf_node_to_string' is deprecated (declared at ../windows/redland-1.0.17/include/rdf_node.h:171)"
-    This librdf C library function is used by the redland R package's  `getNextResult` function. 
-    Since this function (`getNextResult`) has been superceded by the more efficient `getResults` 
-    function, we have decided to deprecate `getNextResult`. The WARNING message will therefor persist
-    until this function is marked DEFUNCT and removed from the redland R package, which will happen in the next release.
-    Note that the downstream dependant packages (datapack, rdflib) do not use `getNextResult`.
 * There was the following 1 NOTE: 
   - A NOTE regarding "sub-directories of 1Mb or more" for the libs directory.
     For the Windows builds only, the "libs" directory contains only the redland.dll 

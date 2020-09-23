@@ -1,4 +1,3 @@
-context("librdf base API tests")
 test_that("redland library loads", {
     library(redland)
     # Add a line to this test to prevent 'Empty test' (skipped) msg.
@@ -19,7 +18,7 @@ test_that("librdf basic functions", {
     uri <- librdf_new_uri(world,paste0('file:',system.file('extdata/dc.rdf', package='redland')))
     expect_match(class(uri), "_p_librdf_uri_s")
     rv <- librdf_parser_parse_into_model(parser,uri,uri,model)
-    expect_that(rv, equals(0))
+    expect_equal(rv, 0)
     librdf_free_uri(uri);
     librdf_free_parser(parser);
 
@@ -49,7 +48,7 @@ test_that("librdf basic functions", {
     expect_match(class(statement), "_p_librdf_statement_s")
 
     rc <- librdf_model_add_statement(model, statement)
-    expect_that(rc, equals(0))
+    expect_equal(rc, 0)
 
     # Don't need to call librdf_free_node, just librdf_free_statement.
     librdf_free_statement(statement)
@@ -70,5 +69,4 @@ test_that("librdf basic functions", {
     librdf_free_uri(base);
     librdf_free_model(model);
     librdf_free_storage(storage);
-    expect_that("Reached end.", equals("Reached end."))
 })

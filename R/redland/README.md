@@ -1,20 +1,20 @@
 ## redland
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/redland)](https://cran.r-project.org/package=redland)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/redland)](https://cran.r-project.org/package=redland)
 
-- **Authors**: Matthew B. Jones, Peter Slaughter, Jeroen Ooms, Carl Boettiger, and Scott Chamberlain ([NCEAS](http://www.nceas.ucsb.edu))
-- [doi:10.5063/F1VM496B](http://doi.org/10.5063/F1VM496B)
-- **License**: [Apache 2](http://opensource.org/licenses/Apache-2.0)
+- **Authors**: Matthew B. Jones, Peter Slaughter, Jeroen Ooms, Carl Boettiger, and Scott Chamberlain ([NCEAS](https://www.nceas.ucsb.edu))
+- [doi:10.5063/F1VM496B](https://doi.org/10.5063/F1VM496B)
+- **License**: [Apache 2](https://opensource.org/licenses/Apache-2.0)
 - [Package source code on Github](https://github.com/ropensci/redland-bindings)
 - [**Submit Bugs and feature requests**](https://github.com/ropensci/redland-bindings/issues)
 
 The R package `redland` provides methods to create, query and write information 
 stored in the Resource Description Framework (RDF). An introduction to RDF can be 
-found at http://www.w3.org/TR/rdf-primer.  In brief, RDF provides a structured
+found at https://www.w3.org/TR/rdf-primer.  In brief, RDF provides a structured
 graph consisting of Statements composed of Subject, Predicate, and Object Nodes.
 
 This package is implemented as R scripts that provide an R interface (aka 
 "wrapper") to the Redland RDF C libraries that are described at 
-http://librdf.org/docs/api/index.html. Additional information about the software that
+https://librdf.org/docs/api/index.html. Additional information about the software that
 provides the connection or 'bindings' between R and the Redland RDF C libraries 
 is available at https://github.com/ropensci/redland-bindings/tree/master/R. 
 
@@ -47,7 +47,7 @@ The *redland* R package should be available for use at this point.
 Alternatively, to install *redland* from source, please continue reading this section.
 
 The required Redland C libraries can be installed with either [Mac Ports](https://www.macports.org) package manager
-or the [HomeBrew](http://brew.sh) package manager. The HomeBrew package manager can be significantly faster to install
+or the [HomeBrew](https://brew.sh) package manager. The HomeBrew package manager can be significantly faster to install
 but either one will work provided the directions shown below are followed.
 
 You can check if you have MacPorts installed by entering the following command in a terminal window:
@@ -76,7 +76,7 @@ source is only necessary if Macports is being used, and is not a requirement if 
 The *redland* R package should be available for use at this point
 
 #### Installing on Mac OS X with HomeBrew
-On Mac OS X you can use the package management system [HomeBrew](http://brew.sh) to install the 
+On Mac OS X you can use the package management system [HomeBrew](https://brew.sh) to install the 
 necessary libraries. The HomeBrew software can be installed with the following command entered at a terminal window:
 
 ```
@@ -145,21 +145,21 @@ storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'"
 model <- new("Model", world=world, storage, options="")
 
 # Add some Dublin Core properties to the model
-dc <- "http://purl.org/dc/elements/1.1/"
+dc <- "https://purl.org/dc/elements/1.1/"
 stmt <- new("Statement", world=world, 
-        subject="http://ropensci.org/", predicate=paste0(dc, "title"), object="ROpenSci")
+        subject="https://ropensci.org/", predicate=paste0(dc, "title"), object="ROpenSci")
 addStatement(model, stmt)
 stmt <- new("Statement", world=world, 
-        subject="http://ropensci.org/", predicate=paste0(dc, "language"), object="en")
+        subject="https://ropensci.org/", predicate=paste0(dc, "language"), object="en")
 addStatement(model, stmt)
 stmt <- new("Statement", world=world, 
-        subject="http://ropensci.org/", predicate=paste0(dc, "license"), 
+        subject="https://ropensci.org/", predicate=paste0(dc, "license"), 
         object="https://creativecommons.org/licenses/by/2.0/")
 addStatement(model, stmt)
 
 # Serialize the model to a TTL file
 serializer <- new("Serializer", world, name="turtle", mimeType="text/turtle")
-status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")  
+status <- setNameSpace(serializer, world, namespace="https://purl.org/dc/elements/1.1/", prefix="dc")  
 filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".ttl")
 status <- serializeToFile(serializer, world, model, filePath)
 readLines(file(filePath))
@@ -168,6 +168,6 @@ readLines(file(filePath))
 ## Acknowledgments
 Work on this package was supported by NSF-ABI grant #1262458 to C. Gries, M. Jones, and S. Collins. 
 
-[![nceas_footer](https://www.nceas.ucsb.edu/files/newLogo_0.png)](http://www.nceas.ucsb.edu)
+[![nceas_footer](https://www.nceas.ucsb.edu/files/newLogo_0.png)](https://www.nceas.ucsb.edu)
 
-[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

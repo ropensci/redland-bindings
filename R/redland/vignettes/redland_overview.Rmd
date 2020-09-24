@@ -13,7 +13,7 @@ vignette: >
 
 The `redland` R package provides methods to create, query and write to disk data stored in the Resource Description Framework (RDF). RDF provides a standardized way to make statements about resources and the relationships between them. Typical resources include datasets that are available via URLs. Resources don't have to be available online, for example a resource could also be the name of the person that created a dataset. A collection of RDF statements comprise an RDF graph, which can be read and interpreted by an RDF capable software application that uses the resources described in the graph. 
 
-An introduction to RDF can be found at http://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624.
+An introduction to RDF can be found at http://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/.
 
 ## Examples
 
@@ -28,7 +28,7 @@ parser <- new("Parser", world)
 parseFileIntoModel(parser, world, system.file("extdata", "dc.rdf", package="redland"), model)
   
 ```
-Next the RDF graph is queried for statements of interest, using the [SPARQL query syntax](http://www.w3.org/TR/rdf-sparql-query)
+Next the RDF graph is queried for statements of interest, using the [SPARQL query syntax](http://www.w3.org/TR/rdf-sparql-query/)
 
 ```{r}
 queryString <- 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?a ?c WHERE { ?a dc:creator ?c . }'

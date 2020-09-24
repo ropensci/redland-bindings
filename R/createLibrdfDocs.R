@@ -31,7 +31,7 @@ library(brew)
 # in the R/redland R package for distribution to end users.
 # This function is called by the R/Makefile 'librdfDocs' target. In order to build
 # the docs, you must:
-#    1) download the redland C library source, i.e. https://github.com/dajobe/librdf
+#    1) download the redland C library source, i.e. https://github.com/dajobe/librdf/
 #    2) Build the documentation, which creates the ./docs/xml/* files
 #    3) edit the Makefile to change redlandDocDir to your redland source directory
 #    4) make librdfDocs
@@ -39,10 +39,10 @@ library(brew)
 # Author: Peter Slaughter <slaughter@nceas.ucsb.edu>
 # Date: March, 2015
 #
-mkDocs <- function (redlandDocDir, verbose=FALSE, librdfDocsURL="http://librdf.org/docs/") {
+mkDocs <- function (redlandDocDir, verbose=FALSE, librdfDocsURL="https://librdf.org/docs/") {
 
   # Does the Redland source tree exist, with the generated xml/* files?
-  if (! file.exists(redlandDocDir)) {
+  if (! dir.exists(redlandDocDir)) {
       stop(sprintf("The specified location of the redland api docs \"%s\" does not exist\n", redlandDocDir))
   }
   outDir <- "redland/man"

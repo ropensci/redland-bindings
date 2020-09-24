@@ -23,7 +23,7 @@ _p_librdf_iterator_s
 Return the sources (subjects) of arc in an RDF graph given arc (predicate) and target (object).
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

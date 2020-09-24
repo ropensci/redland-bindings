@@ -16,7 +16,7 @@ void
 This funciton is for internal testing of the Redland software and is not part of the public API.
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

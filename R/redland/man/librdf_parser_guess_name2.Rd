@@ -26,7 +26,7 @@ character
 Get a parser name for content with type or identifier
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

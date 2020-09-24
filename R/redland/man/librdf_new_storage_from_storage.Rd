@@ -17,7 +17,7 @@ _p_librdf_storage_s
 Copy constructor - create a new librdf_storage object from an existing one
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

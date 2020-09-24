@@ -12,7 +12,7 @@ _p_librdf_world_s
 Create a new Redland execution environment.
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

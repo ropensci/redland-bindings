@@ -26,7 +26,7 @@ _p_librdf_node_s
 Constructor - create a new librdf_node object from a UTF-8 encoded URI string normalised to a new base URI.
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

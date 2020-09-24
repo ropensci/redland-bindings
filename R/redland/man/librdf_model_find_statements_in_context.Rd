@@ -23,7 +23,7 @@ _p_librdf_stream_s
 Search the model for matching statements in a given context.
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

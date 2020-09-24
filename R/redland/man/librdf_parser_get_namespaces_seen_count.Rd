@@ -20,7 +20,7 @@ integer
 Get the number of namespaces seen during parsing
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

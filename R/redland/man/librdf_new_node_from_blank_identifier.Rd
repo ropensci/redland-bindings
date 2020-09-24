@@ -20,7 +20,7 @@ _p_librdf_node_s
 Constructor - create a new blank node librdf_node object from a blank node identifier.
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

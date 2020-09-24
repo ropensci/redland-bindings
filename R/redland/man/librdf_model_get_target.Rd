@@ -23,7 +23,7 @@ _p_librdf_node_s
 Return one target (object) of an arc in an RDF graph given source (subject) and arc (predicate).
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

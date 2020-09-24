@@ -19,7 +19,7 @@ Copy constructor - create a new librdf_statement from an existing librdf_stateme
 Creates a deep copy - changes to original statement nodes are not reflected in the copy.
 }
 \references{
-\url{http://librdf.org/docs}
+\url{http://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

@@ -4,8 +4,7 @@
 \alias{roclet_process.roclet_mergeNamespace}
 \title{Roxygen process function for the 'mergeNamespace' roclet}
 \usage{
-\method{roclet_process}{roclet_mergeNamespace}(x, blocks, env, base_path,
-  global_options = list())
+\method{roclet_process}{roclet_mergeNamespace}(x, blocks, env, base_path, global_options = list())
 }
 \arguments{
 \item{x}{the currently running roclet}

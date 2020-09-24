@@ -3,7 +3,6 @@
 \docType{package}
 \name{redland}
 \alias{redland}
-\alias{redland-package}
 \title{Create, query and write RDF graphs.}
 \description{
 The R package \emph{redland} provides methods to create, query and write information stored in the

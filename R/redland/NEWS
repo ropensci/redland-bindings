@@ -1,3 +1,14 @@
+Version 1.0.17-12
+
+BUG FIXES
+
+* Update tests for compatibility with testthat 3e (#87)
+* Update 'configure' for OS portability (#82)
+
+NEW FEATURES
+
+* No new features
+
 Version 1.0.17-11
 
 BUG FIXES

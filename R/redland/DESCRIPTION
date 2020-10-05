@@ -1,34 +1,16 @@
 Package: redland
 Version: 1.0.17-12
 Title: RDF Library Bindings in R
-Authors@R: 
-    c(person(given = "Matthew B.",
-             family = "Jones",
-             role = c("aut", "cre"),
-             email = "slaughter@nceas.ucsb.edu"),
-      person(given = "Peter",
-             family = "Slaughter",
-             role = "aut",
-             email = "slaughter@nceas.ucsb.edu"),
-      person(given = "Jeroen",
-             family = "Ooms",
-             role = "aut",
-             email = "jeroen@berkeley.edu"),
-      person(given = "Carl",
-             family = "Boettiger",
-             role = "aut",
-             email = "cboettig@gmail.com"),
-      person(given = "Scott",
-             family = "Chamberlain",
-             role = "aut",
-             email = "myrmecocystus@gmail.com"),
-      person(given = "David",
-             family = "Beckett",
-             role = "cph"),
-      person(given = "University of Bristol",
-             role = "cph"),
-      person(given = "Regents of the University of California",
-             role = "cph"))
+Authors@R: c(
+  person("Matthew B.", "Jones", role = c("aut", "cre"), email="jones@nceas.ucsb.edu"),
+  person("Peter", "Slaughter", role = c("aut"), email = "slaughter@nceas.ucsb.edu"),
+  person("Jeroen", "Ooms", role = c("aut"), email="jeroen@berkeley.edu"),
+  person("Carl", "Boettiger", role = c("aut"), email = "cboettig@gmail.com"),
+  person("Scott", "Chamberlain", role = c("aut"), email = "myrmecocystus@gmail.com"),
+  person("David", "Beckett", role = c("cph")),
+  person("University of Bristol", role = c("cph")),
+  person("Regents of the University of California", role = c("cph"))
+  )
 Date: 2020-10-05
 VignetteBuilder: knitr
 Description: Provides methods to parse, query and serialize information

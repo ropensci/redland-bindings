@@ -11,21 +11,23 @@
  * Fedora Linux (via rhub), R-devel, GCC
  * Ubuntu Linux 16.04 LTS (via rhub), R-release, GCC
  * macOS 10.13.6 High Sierra (via rhub), R-release
+ * Windows Server 2008 R2 SP1, R-devel (via rhub), 32/64 bit
+ * Windows Server 2008 R2 SP1, R-oldrel (via rhub), 32/64 bit
+ * Windows Server 2008 R2 SP1, R-release (via rhub), 32/64 bit
 
 ## Changes since last release
 
-* Update tests for compatibility with testthat 3e (#87)
-* Update 'configure' for OS portability (#82)
+* All CRAN check errors for the 1.0.17-12 release have been resolved (#89)
 
 ## R CMD check results
 
-* The initial 1.0.17-12 submission had a CRAN check ERROR on 'r-patched-solaris-x86' and a WARNING 
-  on 'r-devel-linux-x86_64-fedora-clang, r-devel-linux-x86_64-fedora-gcc'.
-  These problems have been resolved, and the package configuration fully complies with CRAN guidelines,
-  as explained in issue #89.
 * There were no ERRORs.
 * There were several WARNINGS, all of which originate in the upstream librdf code library which is 
   being wrapped in R, and so are not due to the code in this package.
+* There was a WARNING regarding Possibly mis-spelled words in DESCRIPTION:
+      RDF (3:8, 17:51, 17:57, 18:27, 18:77, 19:69)
+      Redland (18:69)
+  * These terms are briefly explained in the DESCRIPTION, with URLs that provide a complete description.
 * There were the following NOTES: 
   - A NOTE regarding "sub-directories of 1Mb or more" for the libs directory.
     For the Windows builds only, the "libs" directory contains only the redland.dll 

@@ -1,9 +1,14 @@
+Version 1.0.17-13
+
+BUG FIXES
+
+* Resolve CRAN check errors for 1.0.17-12 submission (#89)
+
 Version 1.0.17-12
 
 BUG FIXES
 
 * Update 'configure' for OS portability (#82)
-* Update 'configure' to be fully Boarne shell compliant (#89)
 
 NEW FEATURES
 

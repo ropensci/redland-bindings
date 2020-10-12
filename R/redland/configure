@@ -34,10 +34,12 @@ elif [ "$PKGCONFIG_CFLAGS" ] || [ "$PKGCONFIG_LIBS" ]; then
   PKG_CFLAGS=${PKGCONFIG_CFLAGS}
   PKG_LIBS=${PKGCONFIG_LIBS}
 elif [ "$platform" = "Darwin" ]; then
-  brew --version 2>/dev/null
+  brew --version >/dev/null 2>&1
   if [ $? -eq 0 ]; then
+    echo "Configuring with brew."
     BREWDIR=`brew --prefix`
   else
+    echo "Configuring with autobrew."
     curl -sfL "https://autobrew.github.io/scripts/${PKG_BREW_NAME}" > autobrew
     . autobrew
   fi

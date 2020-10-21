@@ -20,6 +20,7 @@ pkg-config --exists ${PKG_CONFIG_NAME} >/dev/null 2>&1 && R_HAS_PKG_CONFIG=1;
 platform=`uname`
 # Use pkg-config if available
 if [ $R_HAS_PKG_CONFIG ]; then
+  echo "Found pkg-config ${PKG_CONFIG_NAME}"
   PKGCONFIG_CFLAGS=`pkg-config --cflags --silence-errors ${PKG_CONFIG_NAME}`
   PKGCONFIG_LIBS=`pkg-config --libs ${PKG_CONFIG_NAME}`
 fi
@@ -34,7 +35,7 @@ elif [ "$PKGCONFIG_CFLAGS" ] || [ "$PKGCONFIG_LIBS" ]; then
   PKG_CFLAGS=${PKGCONFIG_CFLAGS}
   PKG_LIBS=${PKGCONFIG_LIBS}
 elif [ "$platform" = "Darwin" ]; then
-  brew --version >/dev/null 2>&1
+  brew list ${PKG_BREW_NAME} >/dev/null 2>&1
   if [ $? -eq 0 ]; then
     echo "Configuring with brew."
     BREWDIR=`brew --prefix`

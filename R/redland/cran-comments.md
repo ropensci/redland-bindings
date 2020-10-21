@@ -1,21 +1,13 @@
 ## Test environments
 
  * macOS 10.14.6: R 4.0.2
- * Ubuntu 18.04.5 LTS R version 3.4.4 (2018-03-15)
- * Windows (via win-builder): x86_64-w64-mingw32 (64-bit) R version 4.0.2 (2020-06-22)
- * Windows (via win-builder): x86_64-w64-mingw32 (64-bit) R Under development (unstable) (2020-09-17 r79226)
- * Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.6.3 (2020-02-29)
- * Fedora Linux (via rhub), R-devel, clang, gfortran
- * Debian Linux (via rhub), R-devel, GCC
- * Fedora Linux (via rhub), R-devel, GCC
- * Ubuntu Linux 16.04 LTS (via rhub), R-release, GCC
  * macOS 10.13.6 High Sierra (via rhub), R-release
- * Windows Server 2008 R2 SP1, R-devel (via rhub), 32/64 bit
- * Windows Server 2008 R2 SP1, R-release (via rhub), 32/64 bit
+ * macOS 10.13.6 High Sierra, CRAN setup (via rhub), R-release
 
 ## Changes since last release
 
-* All CRAN check errors for the 1.0.17-12 release have been resolved (#89)
+* Resolved errors during installation that occurred only on macOS. (#91)
+  - Note: all other platforms passed the CRAN checks.
 
 ## R CMD check results
 

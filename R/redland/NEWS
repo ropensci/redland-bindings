@@ -1,8 +1,14 @@
+Version 1.0.17-14
+
+BUG FIXES
+
+* Resolved CRAN check errors during config on macOS for 1.0.17-13 (#91)
+
 Version 1.0.17-13
 
 BUG FIXES
 
-* Resolve CRAN check errors for 1.0.17-12 submission (#89)
+* Resolved CRAN check errors for 1.0.17-12 submission (#89)
 
 Version 1.0.17-12
 

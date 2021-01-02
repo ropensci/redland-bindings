@@ -39,14 +39,13 @@ elif [ "$platform" = "Darwin" ]; then
   if [ $? -eq 0 ]; then
     echo "Configuring with brew."
     BREWDIR=`brew --prefix`
+    PKG_CFLAGS=`$BREWDIR/opt/pkg-config/bin/pkg-config --cflags ${PKG_CONFIG_NAME}`
+    PKG_LIBS=`$BREWDIR/opt/pkg-config/bin/pkg-config --libs --static ${PKG_CONFIG_NAME}`    
   else
     echo "Configuring with autobrew."
     curl -sfL "https://autobrew.github.io/scripts/${PKG_BREW_NAME}" > autobrew
     . autobrew
   fi
-
-  PKG_CFLAGS=`$BREWDIR/opt/pkg-config/bin/pkg-config --cflags ${PKG_CONFIG_NAME}`
-  PKG_LIBS=`$BREWDIR/opt/pkg-config/bin/pkg-config --libs --static ${PKG_CONFIG_NAME}`
 fi
 
 # For debugging

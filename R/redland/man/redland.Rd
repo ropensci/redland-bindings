@@ -12,7 +12,7 @@ and functions are available from the standard R help facility, for example,  \co
 
 An overview of the redland R package is available with the R command: \code{'vignette("redland_overview")'}.
 
-The Redland C library functions are described at \url{http://librdf.org/docs/api/index.html}.
+The Redland C library functions are described at \url{https://librdf.org/docs/api/index.html}.
 
 An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer/}.
 }
@@ -46,8 +46,8 @@ are usually the same name as the underlying C library function. Documentation
 for the R SWIG interface functions can be found via R help i.e. \code{'?librdf_iterator'}.
 }
 \examples{
-# This example creates the necessary R objects to hold an RDF model and reads 
-# in a file that contains RDF/XML statements. This model is then queried for 
+# This example creates the necessary R objects to hold an RDF model and reads
+# in a file that contains RDF/XML statements. This model is then queried for
 # and the query results inspected.
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -57,7 +57,7 @@ parser <- new("Parser", world)
 parseFileIntoModel(parser, world, filePath, model)
 queryString <- paste("PREFIX dc: <http://purl.org/dc/elements/1.1/> ",
                      "SELECT ?a ?c WHERE { ?a dc:description ?c . }", sep="")
-query <- new("Query", world, queryString, base_uri=NULL, 
+query <- new("Query", world, queryString, base_uri=NULL,
              query_language="sparql", query_uri=NULL)
 results <- getResults(query, model, "rdfxml")
 

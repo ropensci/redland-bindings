@@ -23,7 +23,7 @@ _p_librdf_node_s
 Constructor - create a new resource librdf_node object with a given URI and local name.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

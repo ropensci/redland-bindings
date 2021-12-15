@@ -16,7 +16,7 @@ integer
 Get the Rasqal version as a string.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries.

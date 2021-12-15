@@ -20,7 +20,7 @@ integer
 Test if librdf_query_results is boolean format.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

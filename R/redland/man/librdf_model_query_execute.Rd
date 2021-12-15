@@ -20,7 +20,7 @@ _p_librdf_query_results
 Execute a query against the model.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

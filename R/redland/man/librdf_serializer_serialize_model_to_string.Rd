@@ -25,7 +25,7 @@ Write a serialized librdf_model to a string.
 The returned string must be freed by the caller using librdf_free_memory().
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

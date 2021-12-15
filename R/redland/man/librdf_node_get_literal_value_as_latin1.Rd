@@ -17,7 +17,7 @@ character
 Get the string literal value of the node as ISO Latin-1.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

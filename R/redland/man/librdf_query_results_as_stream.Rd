@@ -17,7 +17,7 @@ _p_librdf_stream_s
 Get a query result as an RDF graph in librdf_stream form
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

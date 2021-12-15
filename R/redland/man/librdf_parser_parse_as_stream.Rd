@@ -23,7 +23,7 @@ _p_librdf_stream_s
 Parse a URI to a librdf_stream of statements.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

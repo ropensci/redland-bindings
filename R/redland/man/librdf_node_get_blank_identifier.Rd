@@ -17,7 +17,7 @@ character
 Get the blank node identifier as a UTF-8 encoded string.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

@@ -20,7 +20,7 @@ _p_librdf_iterator_s
 Return the properties pointing from the given resource.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

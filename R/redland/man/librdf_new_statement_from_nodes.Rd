@@ -26,7 +26,7 @@ _p_librdf_statement_s
 Constructor - create a new librdf_statement from existing librdf_node objects.
 }
 \references{
-\url{http://librdf.org/docs/}
+\url{https://librdf.org/docs/}
 }
 \seealso{
 This R function is a wrapper function that directly calls the the Redland RDF C libraries. 

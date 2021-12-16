@@ -1,30 +1,21 @@
 ## Test environments
 
- * macOS 10.14.6: R 4.0.2
- * macOS 10.13.6 High Sierra (via rhub), R-release
- * macOS 10.13.6 High Sierra, CRAN setup (via rhub), R-release
+* macOS 11.6: R 4.1.1
+* Winbuilder: x86_64-w64-mingw32 (64-bit) using R Under development (unstable) (2021-12-14 r81376 ucrt)
+* Winbuilder: x86_64-w64-mingw32 (64-bit) using R version 4.1.2 (2021-11-01)
 
 ## Changes since last release
 
-* Resolved errors during installation that occurred only on macOS. (#91)
-  - Note: all other platforms passed the CRAN checks.
+* Resolved UCRT build issues for Windows builds under Rtools42 (#93)
 
 ## R CMD check results
 
-* There were no ERRORs.
-* There were several WARNINGS, all of which originate in the upstream librdf code library which is 
-  being wrapped in R, and so are not due to the code in this package.
-* There was a WARNING regarding possibly misspelled words in DESCRIPTION:
-      RDF (3:8, 17:51, 17:57, 18:27, 18:77, 19:69)
-      Redland (18:69)
-  * These terms are briefly explained in the DESCRIPTION, with URLs that provide a complete description.
-* There were the following NOTES: 
-  - A NOTE regarding "sub-directories of 1Mb or more" for the libs directory.
-    For the Windows builds only, the "libs" directory contains only the redland.dll 
-    files build for each Windows sub-architecture (i385, x64) and is necessary for 
-    the redland package to run.
+* There were no ERRORs, WARNINGs, or NOTEs on the rhub builds on all platforms, nor on Winbuilder release.
+* ON winbuilder R-devel, there was 1 warning regarding the UCRT patch, which failed to apply 
+  because we already applied that patch to the package. Once the UCRT autopatch is removed from CRANs
+  build process this warning should disappear.
 
 ## Downstream dependencies
 
 * The downstream dependencies (datapack, rdflib) have been checked with revdepcheck::revdep_check(), which passed
-  with 0 errors, 0 warnings, 0 notes.
+  with 0 errors, 0 warnings, 0 notes. Developers from those packages have been notified.

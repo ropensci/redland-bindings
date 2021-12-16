@@ -1,5 +1,6 @@
 ## redland
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/redland)](https://cran.r-project.org/package=redland)
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/redland)
 
 - **Authors**: Matthew B. Jones, Peter Slaughter, Jeroen Ooms, Carl Boettiger, and Scott Chamberlain ([NCEAS](https://www.nceas.ucsb.edu))
 - [doi:10.5063/F1VM496B](https://doi.org/10.5063/F1VM496B)

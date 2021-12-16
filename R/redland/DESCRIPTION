@@ -11,7 +11,7 @@ Authors@R: c(
   person("University of Bristol", role = c("cph")),
   person("Regents of the University of California", role = c("cph"))
   )
-Date: 2020-12-14
+Date: 2021-12-14
 VignetteBuilder: knitr
 Description: Provides methods to parse, query and serialize information
     stored in the Resource Description Framework (RDF). RDF is described at <https://www.w3.org/TR/rdf-primer/>.

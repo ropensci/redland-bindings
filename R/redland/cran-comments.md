@@ -13,8 +13,10 @@
 
 * There were no ERRORs, WARNINGs, or NOTEs on the rhub builds on all platforms, nor on Winbuilder release.
 * ON winbuilder R-devel, there was 1 warning regarding the UCRT patch, which failed to apply 
-  because we already applied that patch to the package. Once the UCRT autopatch is removed from CRANs
+  because we already applied that patch to the package as instructed. Once the UCRT autopatch is removed from the CRAN
   build process this warning should disappear.
+* The CRAN package check page shows one NOTE abouut the `libs` folder being too large, but this is due to the 
+  included redland librdf library binaries that this package wraps.
 
 ## Downstream dependencies
 

@@ -2876,6 +2876,25 @@ attr(`raptor_locator_uri`, 'returnType') = 'character'
 attr(`raptor_locator_uri`, "inputTypes") = c('_p_raptor_locator')
 class(`raptor_locator_uri`) = c("SWIGFunction", class('raptor_locator_uri'))
 
+# Start of rasqal_world_set_warning_level
+
+`rasqal_world_set_warning_level` = function(world, warning_level, .copy = FALSE)
+{
+  if (inherits(world, "ExternalReference")) world = slot(world,"ref") 
+  warning_level = as.integer(warning_level);
+  
+  if(length(warning_level) > 1) {
+    warning("using only the first element of warning_level");
+  };
+  
+  ;.Call('R_swig_rasqal_world_set_warning_level', world, warning_level, as.logical(.copy), PACKAGE='redland');
+  
+}
+
+attr(`rasqal_world_set_warning_level`, 'returnType') = 'integer'
+attr(`rasqal_world_set_warning_level`, "inputTypes") = c('_p_rasqal_world', 'integer')
+class(`rasqal_world_set_warning_level`) = c("SWIGFunction", class('rasqal_world_set_warning_level'))
+
 # Start of librdf_internal_test_error
 
 `librdf_internal_test_error` = function(world)

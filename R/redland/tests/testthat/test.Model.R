@@ -1,4 +1,3 @@
-context("Model tests")
 test_that("redland library loads", {
   library(redland)
   # Add a line to this test to prevent 'Empty test' (skipped) msg.

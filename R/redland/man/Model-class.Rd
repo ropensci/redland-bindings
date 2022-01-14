@@ -23,9 +23,9 @@ it can be queried using \code{\link{Query}}.
 \section{Methods}{
 
 \itemize{
-  \item{\code{\link{Model-initialize}}}{: Initialize a Model object}
-  \item{\code{\link{addStatement}}}{: Add a Statement object to the Model}
-  \item{\code{\link{freeModel}}}{: Free memory used by a librdf model object}
+\item{\code{\link{Model-initialize}}}{: Initialize a Model object}
+\item{\code{\link{addStatement}}}{: Add a Statement object to the Model}
+\item{\code{\link{freeModel}}}{: Free memory used by a librdf model object}
 }
 }
 

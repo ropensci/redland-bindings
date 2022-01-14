@@ -1,3 +1,39 @@
+Version 1.0.17-15
+
+BUG FIXES
+
+* Resolved UCRT build issues for Windows builds under Rtools42 (#93)
+
+Version 1.0.17-14
+
+BUG FIXES
+
+* Resolved CRAN check errors during config on macOS for 1.0.17-13 (#91)
+
+Version 1.0.17-13
+
+BUG FIXES
+
+* Resolved CRAN check errors for 1.0.17-12 submission (#89)
+
+Version 1.0.17-12
+
+BUG FIXES
+
+* Update 'configure' for OS portability (#82)
+
+NEW FEATURES
+
+* Update tests for compatibility with testthat 3e (#125)
+
+Version 1.0.17-11
+
+BUG FIXES
+
+* Removed deprecated function warnings during package build. (#79)
+* Fix memory protection problems reported by 'rchk'. (#78)
+* Deprecate the function getNextResult(), which is superceded by getResults(). (#79)
+
 Version 1.0.17-10
 
 BUG FIXES
@@ -14,7 +50,7 @@ NEW FEATURES
 Version 1.0.17-9
 
 BUG FIXES
-  
+
 * Vignettes now build with R 3.4.0 and are now updated to the ./doc directory by package installation.
 
 * Added an installation cleanup script
@@ -25,10 +61,10 @@ NEW FEATURES
 
 * For Mac OS X, binary installations no longer require Redland system libraries to be installed,
   as these libraries are now statically linked into the redland package shared library 'redland.so'.
-  
+
 BUG FIXES
-  
-* Fixed an unresolved symbol problem with Windows 32 bit builds under R 3.3.0 (and gcc 4.9.3 tool chain) 
+
+* Fixed an unresolved symbol problem with Windows 32 bit builds under R 3.3.0 (and gcc 4.9.3 tool chain)
 
 Version 1.0.17-7
 

@@ -1,4 +1,3 @@
-context("Serializer tests")
 test_that("redland library loads", {
   library(redland)
   # Add a line to this test to prevent 'Empty test' (skipped) msg.
@@ -45,7 +44,7 @@ test_that("Serializer constructor", {
   
   # Test adding a namespace to a serializer
   status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements/1.1/", prefix="dc")
-  expect_that(status, equals(0))
+  expect_equal(status, 0)
   
   # Test serialization of an RDF model to a string
   rdf <- serializeToCharacter(serializer, world, model, "")
@@ -55,7 +54,7 @@ test_that("Serializer constructor", {
   filePath <- tempfile(pattern = "file", tmpdir = tempdir(), fileext = ".rdf")
   status <- serializeToFile(serializer, world, model, filePath)
   found <- grep("John Smith", readLines(filePath))
-  expect_that(found, is_more_than(0))
+  expect_gt(found, 0)
   unlink(filePath)
   
   err <- try(freeStatement(statement), silent=TRUE)

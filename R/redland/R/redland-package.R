@@ -25,7 +25,7 @@
 #'
 #' The Redland C library functions are described at \url{http://librdf.org/docs/api/index.html}.
 #'
-#' An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer}.
+#' An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer/}.
 #'
 #' @details
 #' The redland R package classes and the corresponding Redland C library types are shown in the following table:
@@ -70,9 +70,11 @@
 #'                      "SELECT ?a ?c WHERE { ?a dc:description ?c . }", sep="")
 #' query <- new("Query", world, queryString, base_uri=NULL, 
 #'              query_language="sparql", query_uri=NULL)
-#' # Get first (and only, in this case) result
-#' queryResult <- executeQuery(query, model)
-#' result <- getNextResult(queryResult)
+#' results <- getResults(query, model, "rdfxml")
+#' 
+#' # When the query object is no longer needed, the resources it had allocated can be freed.
+#' freeQuery(query)
+#' rm(query)
 #' @docType package
 #' @name redland
 #' @author Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)

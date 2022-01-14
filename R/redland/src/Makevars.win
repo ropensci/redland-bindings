@@ -2,8 +2,8 @@ PKG_CPPFLAGS= -I../windows/redland-1.0.17/include \
 	-I../windows/redland-1.0.17/include/rasqal \
 	-I../windows/redland-1.0.17/include/raptor2
 	
-PKG_LIBS=-L../windows/redland-1.0.17/lib${R_ARCH} -lrdf \
-  -pipe -lrasqal -lpcre -lraptor2 -lxml2 -lpcre -lws2_32
+PKG_LIBS=-L../windows/redland-1.0.17/lib${R_ARCH}${CRT} -lrdf \
+  -pipe -lrasqal -lpcre -lraptor2 -lxml2 -lpcre -lz -liconv -lws2_32
 
 ## Workaround for missing _mkgmtime on Win32, See also
 ## https://sourceforge.net/p/mingw-w64/bugs/473/

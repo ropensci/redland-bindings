@@ -19,8 +19,8 @@ A Redland Storage object
 \section{Methods}{
 
 \itemize{
-  \item{\code{\link{Storage-initialize}}}{: Initialize a Storage object}
-  \item{\code{\link{freeStorage}}}{: Free memory used by a librdf storage object}
+\item{\code{\link{Storage-initialize}}}{: Initialize a Storage object}
+\item{\code{\link{freeStorage}}}{: Free memory used by a librdf storage object}
 }
 }
 

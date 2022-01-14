@@ -1,36 +1,24 @@
-
 ## Test environments
 
-* macOS 10.13.4, R 3.5, 3.5.1
-* Ubuntu 16.04, R 3.4.4
-* Ubuntu 17.10, R 3.4.2
-* Debian 9.4.0 R Under development (unstable) (2018-06-18 r74910)
-* Windows 7, R 3.4.2, R 3.5
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.4.4 (2018-03-15)
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R version 3.5.1 (2018-07-02)
-* Windows (via win-builder): x86_64-w64-mingw32 (64-bit), R Under development (unstable) (2018-07-12 r74955)
+* macOS 11.6: R 4.1.1
+* Winbuilder: x86_64-w64-mingw32 (64-bit) using R Under development (unstable) (2021-12-14 r81376 ucrt)
+* Winbuilder: x86_64-w64-mingw32 (64-bit) using R version 4.1.2 (2021-11-01)
+* R-hub windows-x86_64-devel (r-devel)
 
 ## Changes since last release
 
-* Fixes for homebrew (#51)
-* An RDF language tag can now be specified for literal nodes (#64)
-* Added ability to retrieve all query results at once. (#58)
-* Added new function getNodeValue() (#65)
-* Added new function getResults() (#58)
-* Added new function writeResults() (#58)
+* Resolved UCRT build issues for Windows builds under Rtools42 (#93)
 
 ## R CMD check results
 
-* There were no ERRORs.
-* There were several WARNINGS, all of which originate in the upstream librdf code library
-  which is being wrapped in R, and so are not due to the code in this package.
-* There was the following 1 NOTE: 
-  - A NOTE regarding "sub-directories of 1Mb or more" for the libs directory.
-    For the Windows builds only, the "libs" directory contains only the redland.dll 
-    files build for each Windows sub-architecture (i385, x64) and is necessary for 
-    the redland package to run.
- 
+* There were no ERRORs, WARNINGs, or NOTEs on the rhub builds on all platforms, nor on Winbuilder release.
+* ON winbuilder R-devel, there was 1 warning regarding the UCRT patch, which failed to apply 
+  because we already applied that patch to the package as instructed. Once the UCRT autopatch is removed from the CRAN
+  build process this warning should disappear.
+* The CRAN package check page shows one NOTE abouut the `libs` folder being too large, but this is due to the 
+  included redland librdf library binaries that this package wraps.
+
 ## Downstream dependencies
 
-* The downstream dependencies (datapack, rdflib) have been checked with devtools::revdep_check(), which passed
-  with 0 errors, 0 warnings, 0 notes.
+* The downstream dependencies (datapack, rdflib) have been checked with revdepcheck::revdep_check(), which passed
+  with 0 errors, 0 warnings, 0 notes. Maintainers from those packages have been notified.

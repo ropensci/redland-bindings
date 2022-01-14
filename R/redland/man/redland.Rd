@@ -3,7 +3,6 @@
 \docType{package}
 \name{redland}
 \alias{redland}
-\alias{redland-package}
 \title{Create, query and write RDF graphs.}
 \description{
 The R package \emph{redland} provides methods to create, query and write information stored in the
@@ -13,9 +12,9 @@ and functions are available from the standard R help facility, for example,  \co
 
 An overview of the redland R package is available with the R command: \code{'vignette("redland_overview")'}.
 
-The Redland C library functions are described at \url{http://librdf.org/docs/api/index.html}.
+The Redland C library functions are described at \url{https://librdf.org/docs/api/index.html}.
 
-An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer}.
+An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer/}.
 }
 \details{
 The redland R package classes and the corresponding Redland C library types are shown in the following table:
@@ -47,8 +46,8 @@ are usually the same name as the underlying C library function. Documentation
 for the R SWIG interface functions can be found via R help i.e. \code{'?librdf_iterator'}.
 }
 \examples{
-# This example creates the necessary R objects to hold an RDF model and reads 
-# in a file that contains RDF/XML statements. This model is then queried for 
+# This example creates the necessary R objects to hold an RDF model and reads
+# in a file that contains RDF/XML statements. This model is then queried for
 # and the query results inspected.
 world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -58,11 +57,13 @@ parser <- new("Parser", world)
 parseFileIntoModel(parser, world, filePath, model)
 queryString <- paste("PREFIX dc: <http://purl.org/dc/elements/1.1/> ",
                      "SELECT ?a ?c WHERE { ?a dc:description ?c . }", sep="")
-query <- new("Query", world, queryString, base_uri=NULL, 
+query <- new("Query", world, queryString, base_uri=NULL,
              query_language="sparql", query_uri=NULL)
-# Get first (and only, in this case) result
-queryResult <- executeQuery(query, model)
-result <- getNextResult(queryResult)
+results <- getResults(query, model, "rdfxml")
+
+# When the query object is no longer needed, the resources it had allocated can be freed.
+freeQuery(query)
+rm(query)
 }
 \author{
 Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)

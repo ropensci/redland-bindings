@@ -1,0 +1,12 @@
+r-devel-linux-x86_64-debian-clang, rhub debian-clang-devel, r-devel, Debian GNU/Linux testing, clang version 10.0.1-5; GNU Fortran (GCC) 10.2.0 (Debian 10.2.0-9)
+r-devel-linux-x86_64-debian-gcc, rhub debian-gcc-devel, r-devel, Debian GNU/Linux testing, GCC 10.2.0 (Debian 10.2.0-9)
+r-devel-linux-x86_64-fedora-clang, rhub fedora-clang-devel, r-devel, Fedora 32, clang version 10.0.0; GNU Fortran 10.2
+r-devel-linux-x86_64-fedora-gcc, rhub fedora-gcc-devel, r-devel, Fedora 32, GCC 10.2
+r-devel-windows-ix86+x86_64, rhub windows-x86_64-devel, r-devel, Windows Server 2008 (64-bit), GCC 8.3.0 (built by MSYS2, MinGW-W64 project)
+r-patched-linux-x86_64, rhub debian-gcc-patched, r-patched, Debian GNU/Linux, GCC 10.2.0 (Debian 10.2.0-9)
+r-patched-solaris-x86, rhub solaris-x86-patched-ods, r-patched, Solaris 10, Oracle Developer Studio 12.6
+r-release-linux-x86_64, rhub debian-gcc-release, r-release, Debian GNU/Linux, GCC 10.2.0 (Debian 10.2.0-9)
+r-release-macos-x86_64, rhub macos-highsierra-release, r-release, macOS 10.13.6, (clang-1000.10.44.4); GNU Fortran (GCC) 8.2.0
+r-release-windows-ix86+x86_64, rhub windows-x86_64-release, r-release,  Windows Server 2008 (64-bit), GCC 8.3.0 (built by MSYS2, MinGW-W64 project)
+r-oldrel-macos-x86_64, "no rhub platform, r-oldrel, OS X 10.11.6    Xcode 8.2.1, clang 4.0.0, GNU Fortran 6.1
+r-oldrel-windows-ix86+x86_64, rhub windows-x86_64-oldrel,  r-oldrel Windows Server 2008 (64-bit),  GCC 4.9.3 (i686-posix-dwarf / x86_64-posix-seh, MinGW-W64 project)

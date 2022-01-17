@@ -8378,14 +8378,5 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
 
 SWIGEXPORT void R_init_redland(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-
-
-SWIG_init();
-SWIG_InitializeModule(0);
-
-
     R_useDynamicSymbols(dll, FALSE);
-
-
 }
-

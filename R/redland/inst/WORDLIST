@@ -64,6 +64,7 @@ normalised
 parsers
 postgresql
 querystring
+rasqal
 rdf
 rdfxml
 rmarkdown

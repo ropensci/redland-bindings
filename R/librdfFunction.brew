@@ -5,7 +5,7 @@
 \usage{
 <%= functionUsage %>
 }
-<% if (length(functionParamNames) > 0) { argLine <- "\arguments{" } else { argLine <= "" } %>
+<% if (length(functionParamNames) > 0) { argLine <- "\\arguments{" } else { argLine <= "" } %>
 <%= argLine %>
 
 <% i <- 0 ; for (param in functionParamNames) { i <- i + 1 ; -%>

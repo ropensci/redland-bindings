@@ -12,7 +12,7 @@ and functions are available from the standard R help facility, for example,  \co
 
 An overview of the redland R package is available with the R command: \code{'vignette("redland_overview")'}.
 
-The Redland C library functions are described at \url{https://librdf.org/docs/api/index.html}.
+The Redland C library functions are described at \url{http://librdf.org/docs/api/index.html}.
 
 An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer/}.
 }

@@ -1,3 +1,10 @@
+Version 1.0.17-16
+
+BUG FIXES
+
+* Resolved package compile warnins (e.g. "-Wpointer-sign") (#96)
+* Disable excessive rdflib warning messages (#56)
+
 Version 1.0.17-15
 
 BUG FIXES

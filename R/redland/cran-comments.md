@@ -1,21 +1,23 @@
 ## Test environments
 
-* macOS 11.6: R 4.1.1
-* Winbuilder: x86_64-w64-mingw32 (64-bit) using R Under development (unstable) (2021-12-14 r81376 ucrt)
-* Winbuilder: x86_64-w64-mingw32 (64-bit) using R version 4.1.2 (2021-11-01)
+* macOS 11.6.2: R 4.1.2
+* Winbuilder: x86_64-w64-mingw32 (64-bit) using R Under development (unstable) (2022-01-17 r81511 ucrt)
+* Winbuilder: x86_64-w64-mingw32 (64-bit) R version 4.1.2 (2021-11-01)
 * R-hub windows-x86_64-devel (r-devel)
+* R-hub Windows Server 2008 R2 SP1, R-release, 32/64 bit
+* R-hub Ubuntu Linux 20.04.1 LTS, R-release, GCC
+* Fedora Linux, R-devel, clang, gfortran
+* Debian Linux, R-devel, GCC ASAN/UBSAN
 
 ## Changes since last release
 
-* Resolved UCRT build issues for Windows builds under Rtools42 (#93)
+* Resolved package compile warnins (e.g. "-Wpointer-sign") (#96)
+* Disable excessive rdflib warning messages (#56)
 
 ## R CMD check results
 
 * There were no ERRORs, WARNINGs, or NOTEs on the rhub builds on all platforms, nor on Winbuilder release.
-* ON winbuilder R-devel, there was 1 warning regarding the UCRT patch, which failed to apply 
-  because we already applied that patch to the package as instructed. Once the UCRT autopatch is removed from the CRAN
-  build process this warning should disappear.
-* The CRAN package check page shows one NOTE abouut the `libs` folder being too large, but this is due to the 
+* The CRAN package check page shows one NOTE about the `libs` folder being too large, but this is due to the 
   included redland librdf library binaries that this package wraps.
 
 ## Downstream dependencies

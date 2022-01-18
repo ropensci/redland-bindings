@@ -7,7 +7,7 @@
 # Copyright (C) 2010 David Beckett - http://www.dajobe.org/
 # And used under the terms of the Apache V2.0 license.
 # 
-# This package is Free Software and part of Redland http://librdf.org/
+# This package is Free Software and part of Redland https://librdf.org/
 # 
 # It is licensed under the following three licenses as alternatives:
 #   1. GNU Lesser General Public License (LGPL) V2.1 or any newer version
@@ -75,7 +75,7 @@ test-R:
 	cd $(R_PACKAGE) && $(R) --no-save -e 'library(devtools); library(testthat); library(roxygen2); load_all(); test()'
 
 librdfDocs:
-	$(R) --no-save -e 'source("createLibrdfDocs.R") ; mkDocs(redlandDocDir="$(REDLAND_SRC)/docs", verbose=FALSE, librdfDocsURL="http://librdf.org/docs")'
+	$(R) --no-save -e 'source("createLibrdfDocs.R") ; mkDocs(redlandDocDir="$(REDLAND_SRC)/docs", verbose=FALSE, librdfDocsURL="https://librdf.org/docs")'
 
 check-local: test-R
 

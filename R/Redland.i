@@ -5,7 +5,7 @@
  * Copyright (C) 2000-2010 David Beckett http://www.dajobe.org/
  * Copyright (C) 2000-2005 University of Bristol, UK http://www.bristol.ac.uk/
  * 
- * This package is Free Software and part of Redland http://librdf.org/
+ * This package is Free Software and part of Redland https://librdf.org/
  * 
  * It is licensed under the following three licenses as alternatives:
  *   1. GNU Lesser General Public License (LGPL) V2.1 or any newer version

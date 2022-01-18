@@ -1,7 +1,7 @@
 R bindings for Redland
 ======================
 
-Bind the [Redland librdf library](http://librdf.org) into the R environment, and 
+Bind the [Redland librdf library](https://librdf.org) into the R environment, and 
 expose the librdf API for R. This is accomplished through the use of SWIG to generate
 wrapper code in R that links to the underlying C code from librdf and provides
 R functions to call that code.  This creates surrogate functions in R for all

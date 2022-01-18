@@ -154,4 +154,4 @@ mkDocs <- function (redlandDocDir, verbose=FALSE, librdfDocsURL="https://librdf.
   if (verbose) cat(sprintf("Done!\n"))
 }
 
-#mkDocs(redlandDocDir="/Users/slaughter/Software/Redland/redland-1.0.17/docs", verbose=FALSE, librdfDocsURL="http://librdf.org/docs")
+#mkDocs(redlandDocDir="/Users/slaughter/Software/Redland/redland-1.0.17/docs", verbose=FALSE, librdfDocsURL="https://librdf.org/docs")

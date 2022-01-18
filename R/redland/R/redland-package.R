@@ -23,9 +23,9 @@
 #'
 #' An overview of the redland R package is available with the R command: \code{'vignette("redland_overview")'}.
 #'
-#' The Redland C library functions are described at \url{http://librdf.org/docs/api/index.html}.
+#' The Redland C library functions are described at \url{https://librdf.org/docs/api/index.html}.
 #'
-#' An introduction to RDF can be found at \url{http://www.w3.org/TR/rdf-primer/}.
+#' An introduction to RDF can be found at \url{https://www.w3.org/TR/rdf-primer/}.
 #'
 #' @details
 #' The redland R package classes and the corresponding Redland C library types are shown in the following table:

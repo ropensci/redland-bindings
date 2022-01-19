@@ -3,7 +3,6 @@ FROM debian:testing
 RUN apt-get update && apt-get install -y \
     autoconf \
     libtool \
-    libssl-dev \
     python-dev \
     librdf0-dev \
     librdf0 \

@@ -6,8 +6,8 @@
 * R-hub windows-x86_64-devel (r-devel)
 * R-hub Windows Server 2008 R2 SP1, R-release, 32/64 bit
 * R-hub Ubuntu Linux 20.04.1 LTS, R-release, GCC
-* Fedora Linux, R-devel, clang, gfortran
-* Debian Linux, R-devel, GCC ASAN/UBSAN
+* R-hub Fedora Linux, R-devel, clang, gfortran
+* R-hub Debian Linux, R-devel, GCC ASAN/UBSAN
 
 ## Changes since last release
 

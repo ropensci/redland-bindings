@@ -11,8 +11,7 @@
 
 ## Changes since last release
 
-* Resolved package compile warnins (e.g. "-Wpointer-sign") (#96)
-* Disable excessive rdflib warning messages (#56)
+* Resolved package compile warnings (e.g. "-Wpointer-sign") (#96)
 
 ## R CMD check results
 

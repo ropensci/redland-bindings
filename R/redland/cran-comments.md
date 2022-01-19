@@ -3,12 +3,11 @@
 * macOS 11.6.2: R 4.1.2
 * Winbuilder: x86_64-w64-mingw32 (64-bit) using R Under development (unstable) (2022-01-17 r81511 ucrt)
 * Winbuilder: x86_64-w64-mingw32 (64-bit) R version 4.1.2 (2021-11-01)
-* R-hub windows-x86_64-devel (r-devel)
+* R-hub Windows Server 2022, R-devel, 64 bit
 * R-hub Windows Server 2008 R2 SP1, R-release, 32/64 bit
 * R-hub Ubuntu Linux 20.04.1 LTS, R-release, GCC
 * R-hub Fedora Linux, R-devel, clang, gfortran
 * R-hub Debian Linux, R-devel, GCC ASAN/UBSAN
-
 ## Changes since last release
 
 * Resolved package compile warnings (e.g. "-Wpointer-sign") (#96)

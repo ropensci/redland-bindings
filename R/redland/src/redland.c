@@ -1116,9 +1116,8 @@ SWIG_R_ConvertPacked(SEXP obj, void *ptr, size_t sz, swig_type_info *ty) {
 #define SWIGTYPE_p_librdf_world_s swig_types[16]
 #define SWIGTYPE_p_p_char swig_types[17]
 #define SWIGTYPE_p_raptor_locator swig_types[18]
-#define SWIGTYPE_p_rasqal_world swig_types[19]
-static swig_type_info *swig_types[21];
-static swig_module_info swig_module = {swig_types, 20, 0, 0, 0, 0};
+static swig_type_info *swig_types[20];
+static swig_module_info swig_module = {swig_types, 19, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -7461,41 +7460,6 @@ R_swig_raptor_locator_uri ( SEXP locator)
 
 
 SWIGEXPORT SEXP
-R_swig_rasqal_world_set_warning_level ( SEXP world, SEXP warning_level, SEXP s_swig_copy)
-{
-  int result;
-  rasqal_world *arg1 = (rasqal_world *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  unsigned int r_nprotect = 0;
-  SEXP r_ans = R_NilValue ;
-  VMAXTYPE r_vmax = vmaxget() ;
-  
-  res1 = SWIG_R_ConvertPtr(world, &argp1, SWIGTYPE_p_rasqal_world, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "rasqal_world_set_warning_level" "', argument " "1"" of type '" "rasqal_world *""'"); 
-  }
-  arg1 = (rasqal_world *)(argp1);
-  ecode2 = SWIG_AsVal_int(warning_level, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "rasqal_world_set_warning_level" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = (unsigned int)(val2);
-  result = (int)rasqal_world_set_warning_level(arg1,arg2);
-  r_ans = Rf_ScalarInteger(result);
-  
-  
-  vmaxset(r_vmax);
-  if(r_nprotect)  Rf_unprotect(r_nprotect);
-  
-  return r_ans;
-}
-
-
-SWIGEXPORT SEXP
 R_swig_librdf_internal_test_error ( SEXP world)
 {
   librdf_world *arg1 = (librdf_world *) 0 ;
@@ -7859,7 +7823,6 @@ static swig_type_info _swigt__p_librdf_uri_s = {"_p_librdf_uri_s", "librdf_uri *
 static swig_type_info _swigt__p_librdf_world_s = {"_p_librdf_world_s", "struct librdf_world_s *|librdf_world *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_raptor_locator = {"_p_raptor_locator", "raptor_locator *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_rasqal_world = {"_p_rasqal_world", "rasqal_world *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_char,
@@ -7881,7 +7844,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_librdf_world_s,
   &_swigt__p_p_char,
   &_swigt__p_raptor_locator,
-  &_swigt__p_rasqal_world,
 };
 
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
@@ -7903,7 +7865,6 @@ static swig_cast_info _swigc__p_librdf_uri_s[] = {  {&_swigt__p_librdf_uri_s, 0,
 static swig_cast_info _swigc__p_librdf_world_s[] = {  {&_swigt__p_librdf_world_s, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_raptor_locator[] = {  {&_swigt__p_raptor_locator, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_rasqal_world[] = {  {&_swigt__p_rasqal_world, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_char,
@@ -7925,7 +7886,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_librdf_world_s,
   _swigc__p_p_char,
   _swigc__p_raptor_locator,
-  _swigc__p_rasqal_world,
 };
 
 
@@ -8266,7 +8226,6 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {"R_swig_librdf_statement_is_complete", (DL_FUNC) &R_swig_librdf_statement_is_complete, 2},
    {"R_swig_librdf_serializer_serialize_stream_to_string", (DL_FUNC) &R_swig_librdf_serializer_serialize_stream_to_string, 3},
    {"R_swig_librdf_log_message_level", (DL_FUNC) &R_swig_librdf_log_message_level, 2},
-   {"R_swig_rasqal_world_set_warning_level", (DL_FUNC) &R_swig_rasqal_world_set_warning_level, 3},
    {"R_swig_librdf_query_results_get_bindings_count", (DL_FUNC) &R_swig_librdf_query_results_get_bindings_count, 2},
    {"R_swig_librdf_model_has_arc_out", (DL_FUNC) &R_swig_librdf_model_has_arc_out, 4},
    {"R_swig_librdf_statement_get_predicate", (DL_FUNC) &R_swig_librdf_statement_get_predicate, 1},

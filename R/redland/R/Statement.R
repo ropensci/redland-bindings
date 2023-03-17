@@ -87,9 +87,11 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
   # The subject, predicate and object have all been passed in as characters, so we need to
   # evaluate them and create appropriate Node objects from them that will be used to 
   # create the statement object.
-  if ( (is.null(subject) || class(subject) == "character") &&
-         class(predicate) == "character" && 
-         (is.null(object) || class(object) == "character") ) {
+  if ( 
+        (is.null(subject) ||  inherits(subject, "character")) &&
+        inherits(predicate, "character") && 
+        (is.null(object) || inherits(object, "character"))
+      ) {
     # If subjectType was not specified, determine the subjectType by inspecting the
     # subject value
     if (is.na(subjectType)) {
@@ -168,7 +170,7 @@ setMethod("initialize", signature = "Statement", definition = function(.Object, 
   } else {
     # The subject, predicate and object have all been passed in as Node objects, so create
     # the statement from these objects directly.
-    if (class(subject) == "Node" && class(predicate) == "Node" && class(object) == "Node") {
+    if (inherits(subject, "Node") && inherits(predicate, "Node") && inherits(object, "Node")) {
       # Create the underlying redland statement object
       .Object@librdf_statement <- librdf_new_statement_from_nodes(world@librdf_world, 
                                                                   subject@librdf_node, 

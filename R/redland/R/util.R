@@ -22,7 +22,7 @@
 #' @return logical TRUE if the pointer is NULL, otherwise FALSE
 #' @export
 is.null.externalptr <- function(pointer) {
-    if (class(pointer)!="externalptr") stop("pointer is not an externalptr.")
+    if (!inherits(pointer, "externalptr")) stop("pointer is not an externalptr.")
     rv <- .Call("isnull", pointer)
     return(rv)
 }

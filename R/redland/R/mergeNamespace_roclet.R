@@ -52,9 +52,8 @@ mergeNamespace_roclet <- function(x, ...) {
 #' @param blocks the documentation blocks
 #' @param env the current env
 #' @param base_path the top directory of the R package
-#' @param global_options unused by this roclet
 #' @export
-roclet_process.roclet_mergeNamespace <- function(x, blocks, env, base_path, global_options = list()) {
+roclet_process.roclet_mergeNamespace <- function(x, blocks, env, base_path) {
   #on.exit(detach(".redland-temp"))
   #attach(NULL, name=".redland-temp")
   tmpEnv <- new.env()

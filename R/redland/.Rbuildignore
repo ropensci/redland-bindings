@@ -12,3 +12,4 @@
 ^windows$
 ^docker$
 autobrew
+.deps

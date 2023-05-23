@@ -32,8 +32,20 @@ R-devel:
 
 ## R CMD check results
 
-* There were no ERRORs, WARNINGs, or NOTEs on the rhub builds on all platforms, nor on Winbuilder releases, nor on MacOS with R-release.
+* There were no ERRORs or WARNINGs on all builds.
 * All problems on the CRAN package check are now fixed and passing in these builds.
+* All NOTES from the package check page are now fixed. There also no other NOTES, except for spurious errors being able to access 3 URLS from WinBuilder. When I access these URLs, I get HTTP 200 status and a full document, as do other platforms in R-Hub. But Winbuilder gets an error 522 (connection reset) returned from the Cloudflare CDN, which I interpret as it is blocking Winbuilder for some reason. On other hosts access is fine:
+
+  - URL: https://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/
+    - From: inst/doc/redland_overview.html
+    - Status: 522
+  - URL: https://www.w3.org/TR/rdf-primer/
+    - From: DESCRIPTION
+    -       man/redland.Rd
+    - Status: 522
+  - URL: https://www.w3.org/TR/rdf-sparql-query/
+    - From: inst/doc/redland_overview.html
+    - Status: 522
 
 ## Downstream dependencies
 

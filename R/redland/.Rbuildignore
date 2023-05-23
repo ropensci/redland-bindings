@@ -5,6 +5,7 @@
 ^README-*\.png$
 ^packrat/
 ^\.Rprofile$
+^revdep
 ^src/Makevars$
 ^src/*.o
 ^src/*.so

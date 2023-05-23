@@ -25,6 +25,7 @@ not-used
 old
 redland-bindings.spec
 releases
+**/revdep
 stamp*
 **/.Rproj.user
 **/.Rhistory

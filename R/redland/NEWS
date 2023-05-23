@@ -1,3 +1,13 @@
+Version 1.0.17-17
+
+BUG FIXES
+
+* fix compiler warnings that CRAN is no longer tolerating from SWIG (#100)
+* fix NOTE "Found if() conditions comparing class() to string" (#100)
+* fix Roxygen2 roclet build issues (#100)
+* Fix various spelling words that were flagged (#100)
+* Fix URLs that were reported as moved (#100)
+
 Version 1.0.17-16
 
 BUG FIXES

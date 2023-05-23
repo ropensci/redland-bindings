@@ -13,4 +13,3 @@
 ^docker$
 autobrew
 .deps
-*lastMiKTeXException*

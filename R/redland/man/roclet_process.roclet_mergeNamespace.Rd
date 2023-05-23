@@ -4,7 +4,7 @@
 \alias{roclet_process.roclet_mergeNamespace}
 \title{Roxygen process function for the 'mergeNamespace' roclet}
 \usage{
-\method{roclet_process}{roclet_mergeNamespace}(x, blocks, env, base_path, global_options = list())
+\method{roclet_process}{roclet_mergeNamespace}(x, blocks, env, base_path)
 }
 \arguments{
 \item{x}{the currently running roclet}
@@ -14,8 +14,6 @@
 \item{env}{the current env}
 
 \item{base_path}{the top directory of the R package}
-
-\item{global_options}{unused by this roclet}
 }
 \description{
 This function is called by the Roxygen2 roxygenize function.

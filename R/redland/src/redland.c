@@ -768,7 +768,7 @@ static RCallbackFunctionData  *callbackFunctionDataStack;
 
 
 SWIGRUNTIME SEXP
-R_SWIG_debug_getCallbackFunctionData()
+R_SWIG_debug_getCallbackFunctionData(void)
 {
   int n, i;
   SEXP ans;
@@ -814,7 +814,7 @@ R_SWIG_R_pushCallbackFunctionData(SEXP fun, SEXP userData)
 }
 
 SWIGRUNTIME RCallbackFunctionData *
-R_SWIG_getCallbackFunctionData()
+R_SWIG_getCallbackFunctionData(void)
 {
   if(!callbackFunctionDataStack) {
     Rf_error("Supposedly impossible error occurred in the SWIG callback mechanism."
@@ -1843,7 +1843,7 @@ R_swig_librdf_free_hash ( SEXP hash)
 
 
 SWIGEXPORT SEXP
-R_swig_librdf_new_world ( )
+R_swig_librdf_new_world ( void)
 {
   librdf_world *result = 0 ;
   unsigned int r_nprotect = 0;

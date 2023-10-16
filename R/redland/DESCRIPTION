@@ -2,11 +2,11 @@ Package: redland
 Version: 1.0.17-17
 Title: RDF Library Bindings in R
 Authors@R: c(
-  person("Matthew B.", "Jones", role = c("aut", "cre"), email="jones@nceas.ucsb.edu"),
-  person("Peter", "Slaughter", role = c("aut"), email = "slaughter@nceas.ucsb.edu"),
-  person("Jeroen", "Ooms", role = c("aut"), email="jeroen@berkeley.edu"),
-  person("Carl", "Boettiger", role = c("aut"), email = "cboettig@gmail.com"),
-  person("Scott", "Chamberlain", role = c("aut"), email = "myrmecocystus@gmail.com"),
+  person("Matthew B.", "Jones", role = c("aut","cre"), email = "jones@nceas.ucsb.edu", comment=c(ORCID = "0000-0003-0077-4738")),
+  person("Peter", "Slaughter", role = "aut", email = "slaughter@nceas.ucsb.edu", comment=c(ORCID = "0000-0002-2192-403X")),
+  person("Jeroen", "Ooms", role = c("aut"), email="jeroen@berkeley.edu", comment=c(ORCID = "0000-0002-4035-0289")),
+  person("Carl", "Boettiger", role = "aut", email = "cboettig@gmail.com", comment=c(ORCID = "0000-0002-1642-628X")),
+  person("Scott", "Chamberlain", role = "ctb", email = "myrmecocystus@gmail.com", comment=c(ORCID = "0000-0003-1444-9135")),
   person("David", "Beckett", role = c("cph")),
   person("University of Bristol", role = c("cph")),
   person("Regents of the University of California", role = c("cph"))
@@ -48,9 +48,8 @@ Collate:
 License: Apache License 2.0
 Copyright: See file (inst/)COPYRIGHTS.
 BugReports: https://github.com/ropensci/redland-bindings/issues
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 URL: https://github.com/ropensci/redland-bindings/tree/master/R/redland https://github.com/ropensci/redland-bindings/tree/master/R
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(roclets = c("collate", "rd", "namespace", "mergeNamespace_roclet"), markdown=TRUE)
-

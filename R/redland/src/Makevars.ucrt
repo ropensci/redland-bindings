@@ -1,2 +1,7 @@
-CRT=-ucrt
-include Makevars.win
+ifeq (,$(shell pkg-config --libs redland))
+  CRT=-ucrt
+  include Makevars.win
+else
+  PKG_CPPFLAGS=-DRASQAL_STATIC -DRAPTOR_STATIC -DREDLAND_STATIC $(shell pkg-config --cflags redland)
+  PKG_LIBS=$(shell pkg-config --libs-only-l redland)
+endif

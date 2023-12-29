@@ -44,7 +44,7 @@ elif [ "$platform" = "Darwin" ]; then
   else
     echo "Configuring with autobrew."
     curl -sfL "https://autobrew.github.io/scripts/${PKG_BREW_NAME}" > autobrew
-    . autobrew
+    . ./autobrew
   fi
 fi
 

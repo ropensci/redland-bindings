@@ -1,2 +1,19 @@
-CRT=-ucrt
-include Makevars.win
+
+ifeq (,$(shell pkg-config --version 2>/dev/null))
+  PKG_CPPFLAGS = \
+	-I${R_TOOLS_SOFT}/include/rasqal \
+	-I${R_TOOLS_SOFT}/include/raptor2
+  PKG_LIBS = \
+        -lrdf -lltdl -ldl -lsox -lrasqal -lraptor2 -lxslt -lxml2 -lgmp -lpcre -lcurl -lssl -lcrypto -llzma -lcfitsio -lzstd -lwldap32 -lssh2 -lncrypt -lksecdd -lidn2 -lcrypt32 -lbcrypt -lz -lgcrypt -lunistring -lgpg-error -liconv -lwsock32 -lws2_32
+ 
+else
+  PKG_CPPFLAGS = $(shell pkg-config --cflags redland)
+  PKG_LIBS = $(shell pkg-config --libs redland)
+endif
+
+PKG_CFLAGS=-DRASQAL_STATIC -DRAPTOR_STATIC -DREDLAND_STATIC
+
+all: clean
+
+clean:
+	rm -f $(OBJECTS) redland.dll

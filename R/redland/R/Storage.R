@@ -26,10 +26,10 @@
 #' @keywords classes
 #' @section Methods:
 #' \itemize{
-#'   \item{\code{\link{Storage-initialize}}}{: Initialize a Storage object}
-#'   \item{\code{\link{freeStorage}}}{: Free memory used by a librdf storage object}
+#'   \code{\link{Storage-initialize}}: Initialize a Storage object
+#'   \code{\link{freeStorage}}: Free memory used by a librdf storage object
 #' }
-#' @seealso \code{\link{redland}}{: redland package}
+#' @seealso \code{\link{redland}}: redland package
 #' @export
 #' @examples
 #' world <- new("World")

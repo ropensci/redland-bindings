@@ -31,11 +31,11 @@
 #' @keywords classes
 #' @section Methods:
 #' \itemize{
-#'   \item{\code{\link{Model-initialize}}}{: Initialize a Model object}
-#'   \item{\code{\link{addStatement}}}{: Add a Statement object to the Model}
-#'   \item{\code{\link{freeModel}}}{: Free memory used by a librdf model object}
+#'   \code{\link{Model-initialize}}: Initialize a Model object
+#'   \code{\link{addStatement}}: Add a Statement object to the Model
+#'   \code{\link{freeModel}}: Free memory used by a librdf model object
 #' }
-#' @seealso \code{\link{redland}}{: redland package}
+#' @seealso \code{\link{redland}}: redland package
 #' @export
 #' @examples
 #' world <- new("World")

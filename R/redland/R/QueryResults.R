@@ -27,10 +27,10 @@
 #' @export
 #' @section Methods:
 #' \itemize{
-#'   \item{\code{\link{QueryResults-initialize}}}{: Initialize a QueryResults object.}
-#'   \item{\code{\link{freeQueryResults}}}{: Free memory used by a librdf query result.}
+#'   \code{\link{QueryResults-initialize}}: Initialize a QueryResults object.
+#'   \code{\link{freeQueryResults}}: Free memory used by a librdf query result.
 #' }
-#' @seealso \code{\link{redland}}{: redland package}
+#' @seealso \code{\link{redland}}: redland package
 setClass("QueryResults", slots = c(librdf_query_results = "_p_librdf_query_results"))
 
 #' Initialize the QueryResults object.

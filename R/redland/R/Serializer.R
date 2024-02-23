@@ -28,13 +28,13 @@
 #' @export
 #' @section Methods:
 #' \itemize{
-#'   \item{\code{\link{Serializer-initialize}}}{: Initialize a Serializer object.}
-#'   \item{\code{\link{setNameSpace}}}{: Set a namespace for the serializer.}
-#'   \item{\code{\link{serializeToCharacter}}}{: Serialize a model to a character vector.}
-#'   \item{\code{\link{serializeToFile}}}{: Serialize a model to a file.}
-#'   \item{\code{\link{freeSerializer}}}{: Free memory used by a librdf serializer.}
+#'   \code{\link{Serializer-initialize}}: Initialize a Serializer object.
+#'   \code{\link{setNameSpace}}: Set a namespace for the serializer.
+#'   \code{\link{serializeToCharacter}}: Serialize a model to a character vector.
+#'   \code{\link{serializeToFile}}: Serialize a model to a file.
+#'   \code{\link{freeSerializer}}: Free memory used by a librdf serializer.
 #' }
-#' @seealso \code{\link{redland}}{: redland package}
+#' @seealso \code{\link{redland}}: redland package
 #' @examples
 #' world <- new("World")
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")

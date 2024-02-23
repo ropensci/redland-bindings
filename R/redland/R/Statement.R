@@ -35,11 +35,11 @@
 #' \code{objectType} parameters can be specified to explicitly set the RDF types.
 #' @section Methods:
 #' \itemize{
-#'   \item{\code{\link{Statement-initialize}}}{: Initialize a Statement object.}
-#'   \item{\code{\link{getTermType}}}{: Return the redland node type for the specified RDF term in a statement.}
-#'   \item{\code{\link{freeStatement}}}{: Free memory used by a librdf statement.}
+#'   \code{\link{Statement-initialize}}: Initialize a Statement object.
+#'   \code{\link{getTermType}}: Return the redland node type for the specified RDF term in a statement.
+#'   \code{\link{freeStatement}}: Free memory used by a librdf statement.
 #' }
-#' @seealso \code{\link{redland}}{: redland package}
+#' @seealso \code{\link{redland}}: redland package
 #' @examples
 #' world <- new("World")
 #' # Create nodes manually and add to the statment

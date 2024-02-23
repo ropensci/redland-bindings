@@ -29,11 +29,11 @@
 #' @export
 #' @section Methods:
 #' \itemize{
-#'   \item{\code{\link{Parser-initialize}}}{: Initialize a Parser object.}
-#'   \item{\code{\link{parseFileIntoModel}}}{: Parse the contents of a file into a model.}
-#'   \item{\code{\link{freeParser}}}{: Free memory used by a librdf parser.}
+#'   \code{\link{Parser-initialize}}: Initialize a Parser object.
+#'   \code{\link{parseFileIntoModel}}: Parse the contents of a file into a model.
+#'   \code{\link{freeParser}}: Free memory used by a librdf parser.
 #' }
-#' @seealso \code{\link{redland}}{: redland package}
+#' @seealso \code{\link{redland}}: redland package
 #' @examples
 #' world <- new("World")
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")

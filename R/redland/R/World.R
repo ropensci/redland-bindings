@@ -26,10 +26,10 @@
 #' @useDynLib redland, .registration = TRUE
 #' @section Methods:
 #' \itemize{
-#'   \item{\code{\link{World-initialize}}}{: Initialize a World object}
-#'   \item{\code{\link{freeWorld}}}{: Free memory used by a librdf world object}
+#'   \code{\link{World-initialize}}: Initialize a World object
+#'   \code{\link{freeWorld}}: Free memory used by a librdf world object
 #' }
-#' @seealso \code{\link{redland}}{: redland package}
+#' @seealso \code{\link{redland}}: redland package
 #' @examples
 #' world <- new("World")
 #' @import methods

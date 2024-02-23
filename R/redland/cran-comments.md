@@ -3,17 +3,13 @@
 R-release:
 
 * Ubuntu Linux 22.04 LTS, R 4.3.1, GCC
-
+* Winbuilder: x86_64-w64-mingw32 (64-bit) R version 4.3.2 (2023-10-31 ucrt)
 
 * macOS Big Sur 11.6.6: R version 4.3.0 (2023-04-21)
     * using platform: x86_64-apple-darwin20 (64-bit)
     * Apple clang version 14.0.3 (clang-1403.0.22.14.1), GNU Fortran (GCC) 12.2.0
 * R-hub Ubuntu Linux 20.04.1 LTS, R-release, GCC
 * R-hub Windows Server 2022, R-release, 32/64 bit
-* Winbuilder: x86_64-w64-mingw32 (64-bit) 4.3.0 (2023-04-21 ucrt)
-    * gcc.exe (GCC) 12.2.0
-    * GNU Fortran (GCC) 12.2.0
-    * Windows Server 2022 x64 (build 20348)
 
 R-devel:
 

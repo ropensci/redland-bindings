@@ -18,10 +18,10 @@ A Node represents a RDF Resource, Property, Literal or an RDF blank Node.
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{Node-initialize}}}{: Initialize a Node object.}
-\item{\code{\link{getNodeType}}}{: Determine the node type and return as a string.}
-\item{\code{\link{getNodeValue}}}{: Determine the node type and return as a string.}
-\item{\code{\link{getBlankNodeId}}}{: Get the value of the node as a string.}
+\code{\link{Node-initialize}}: Initialize a Node object.
+\code{\link{getNodeType}}: Determine the node type and return as a string.
+\code{\link{getNodeValue}}: Determine the node type and return as a string.
+\code{\link{getBlankNodeId}}: Get the value of the node as a string.
 }
 }
 
@@ -41,6 +41,6 @@ node <- new("Node", world, uri="http://www.example.com")
 node <- new("Node", world, literal="Gérard de La Martinière", language="fr")
 }
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

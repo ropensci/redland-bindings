@@ -26,9 +26,9 @@ be 'uri' (aka 'resource'). If the automatic determination of RDF types is not de
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{Statement-initialize}}}{: Initialize a Statement object.}
-\item{\code{\link{getTermType}}}{: Return the redland node type for the specified RDF term in a statement.}
-\item{\code{\link{freeStatement}}}{: Free memory used by a librdf statement.}
+\code{\link{Statement-initialize}}: Initialize a Statement object.
+\code{\link{getTermType}}: Return the redland node type for the specified RDF term in a statement.
+\code{\link{freeStatement}}: Free memory used by a librdf statement.
 }
 }
 
@@ -54,6 +54,6 @@ stmt <- new("Statement", world, subject="http://www.example.com/BobSmith",
                                 language="es")
 }
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

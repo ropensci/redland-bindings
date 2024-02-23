@@ -25,13 +25,13 @@ can be iterated over the query solution sequence.
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{Query-initialize}}}{: Initialize a Query object.}
-\item{\code{\link{executeQuery}}}{: Execute a query.}
-\item{\code{\link{setQueryResultLimit}}}{: Set limit on returned query results.}
-\item{\code{\link{getQueryResultLimit}}}{: Get the query result limit.}
-\item{\code{\link{getResults}}}{: Return all query results.}
-\item{\code{\link{writeResults}}}{: Write query results to a file.}
-\item{\code{\link{freeParser}}}{: Free memory used by a librdf query.}
+\code{\link{Query-initialize}}: Initialize a Query object.
+\code{\link{executeQuery}}: Execute a query.
+\code{\link{setQueryResultLimit}}: Set limit on returned query results.
+\code{\link{getQueryResultLimit}}: Get the query result limit.
+\code{\link{getResults}}: Return all query results.
+\code{\link{writeResults}}: Write query results to a file.
+\code{\link{freeParser}}: Free memory used by a librdf query.
 }
 }
 
@@ -65,6 +65,6 @@ results <- getResults(query, model, "rdfxml")
 www.example.com
 }
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

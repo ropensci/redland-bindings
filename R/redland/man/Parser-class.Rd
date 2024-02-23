@@ -18,9 +18,9 @@ RDF model.
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{Parser-initialize}}}{: Initialize a Parser object.}
-\item{\code{\link{parseFileIntoModel}}}{: Parse the contents of a file into a model.}
-\item{\code{\link{freeParser}}}{: Free memory used by a librdf parser.}
+\code{\link{Parser-initialize}}: Initialize a Parser object.
+\code{\link{parseFileIntoModel}}: Parse the contents of a file into a model.
+\code{\link{freeParser}}: Free memory used by a librdf parser.
 }
 }
 
@@ -34,6 +34,6 @@ filePath <- system.file("extdata/example.rdf", package="redland")
 parseFileIntoModel(parser, world, filePath, model)
 }
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

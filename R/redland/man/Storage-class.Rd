@@ -19,8 +19,8 @@ A Redland Storage object
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{Storage-initialize}}}{: Initialize a Storage object}
-\item{\code{\link{freeStorage}}}{: Free memory used by a librdf storage object}
+\code{\link{Storage-initialize}}: Initialize a Storage object
+\code{\link{freeStorage}}: Free memory used by a librdf storage object
 }
 }
 
@@ -29,6 +29,6 @@ world <- new("World")
 storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
 }
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

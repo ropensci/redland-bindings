@@ -18,12 +18,12 @@ a query on an RDF model.
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{QueryResults-initialize}}}{: Initialize a QueryResults object.}
-\item{\code{\link{freeQueryResults}}}{: Free memory used by a librdf query result.}
+\code{\link{QueryResults-initialize}}: Initialize a QueryResults object.
+\code{\link{freeQueryResults}}: Free memory used by a librdf query result.
 }
 }
 
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

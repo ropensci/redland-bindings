@@ -18,11 +18,11 @@ to other forms, for example, write out a Model to a file.
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{Serializer-initialize}}}{: Initialize a Serializer object.}
-\item{\code{\link{setNameSpace}}}{: Set a namespace for the serializer.}
-\item{\code{\link{serializeToCharacter}}}{: Serialize a model to a character vector.}
-\item{\code{\link{serializeToFile}}}{: Serialize a model to a file.}
-\item{\code{\link{freeSerializer}}}{: Free memory used by a librdf serializer.}
+\code{\link{Serializer-initialize}}: Initialize a Serializer object.
+\code{\link{setNameSpace}}: Set a namespace for the serializer.
+\code{\link{serializeToCharacter}}: Serialize a model to a character vector.
+\code{\link{serializeToFile}}: Serialize a model to a file.
+\code{\link{freeSerializer}}: Free memory used by a librdf serializer.
 }
 }
 
@@ -40,6 +40,6 @@ status <- setNameSpace(serializer, world, namespace="http://purl.org/dc/elements
 rdf <- serializeToCharacter(serializer, world, model, baseUri="")
 }
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

@@ -19,8 +19,8 @@ Models.
 \section{Methods}{
 
 \itemize{
-\item{\code{\link{World-initialize}}}{: Initialize a World object}
-\item{\code{\link{freeWorld}}}{: Free memory used by a librdf world object}
+\code{\link{World-initialize}}: Initialize a World object
+\code{\link{freeWorld}}: Free memory used by a librdf world object
 }
 }
 
@@ -28,6 +28,6 @@ Models.
 world <- new("World")
 }
 \seealso{
-\code{\link{redland}}{: redland package}
+\code{\link{redland}}: redland package
 }
 \keyword{classes}

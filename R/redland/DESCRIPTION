@@ -1,5 +1,5 @@
 Package: redland
-Version: 1.0.17-17
+Version: 1.0.17-18
 Title: RDF Library Bindings in R
 Authors@R: c(
   person("Matthew B.", "Jones", role = c("aut","cre"), email = "jones@nceas.ucsb.edu", comment=c(ORCID = "0000-0003-0077-4738")),
@@ -11,7 +11,7 @@ Authors@R: c(
   person("University of Bristol", role = c("cph")),
   person("Regents of the University of California", role = c("cph"))
   )
-Date: 2023-05-22
+Date: 2024-02-23
 VignetteBuilder: knitr
 Description: Provides methods to parse, query and serialize information
     stored in the Resource Description Framework (RDF). RDF is described at <https://www.w3.org/TR/rdf-primer/>.

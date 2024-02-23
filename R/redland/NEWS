@@ -1,3 +1,11 @@
+Version 1.0.17-18
+
+BUG FIXES
+
+* Fix for ucrt on arm64 (#102)
+* Fix Rd documentation syntax issues
+* Remove trailing slash from README link for CRAN
+
 Version 1.0.17-17
 
 BUG FIXES

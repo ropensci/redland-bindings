@@ -4,7 +4,7 @@
 
 - **Authors**: Matthew B. Jones, Peter Slaughter, Jeroen Ooms, Carl Boettiger, and Scott Chamberlain ([NCEAS](https://www.nceas.ucsb.edu))
 - [doi:10.5063/F1VM496B](https://doi.org/10.5063/F1VM496B)
-- **License**: [Apache 2](https://opensource.org/license/apache-2-0/)
+- **License**: [Apache 2](https://opensource.org/license/apache-2-0)
 - [Package source code on Github](https://github.com/ropensci/redland-bindings)
 - [**Submit Bugs and feature requests**](https://github.com/ropensci/redland-bindings/issues)
 

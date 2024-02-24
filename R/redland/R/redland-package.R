@@ -15,7 +15,13 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 #
+
+#' @keywords internal
+"_PACKAGE"
+
 #' @title Create, query and write RDF graphs.
+#' @name redland
+#' @author Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)
 #' @description The R package \emph{redland} provides methods to create, query and write information stored in the
 #' Resource Description Framework (RDF). This package is implemented as R scripts that provide an
 #' R interface (aka "wrapper") to the Redland RDF C libraries. Documentation for the redland R package classes
@@ -57,8 +63,8 @@
 #' for the R SWIG interface functions can be found via R help i.e. \code{'?librdf_iterator'}.
 #'
 #' @examples
-#' # This example creates the necessary R objects to hold an RDF model and reads 
-#' # in a file that contains RDF/XML statements. This model is then queried for 
+#' # This example creates the necessary R objects to hold an RDF model and reads
+#' # in a file that contains RDF/XML statements. This model is then queried for
 #' # and the query results inspected.
 #' world <- new("World")
 #' storage <- new("Storage", world, "hashes", name="", options="hash-type='memory'")
@@ -68,14 +74,14 @@
 #' parseFileIntoModel(parser, world, filePath, model)
 #' queryString <- paste("PREFIX dc: <http://purl.org/dc/elements/1.1/> ",
 #'                      "SELECT ?a ?c WHERE { ?a dc:description ?c . }", sep="")
-#' query <- new("Query", world, queryString, base_uri=NULL, 
+#' query <- new("Query", world, queryString, base_uri=NULL,
 #'              query_language="sparql", query_uri=NULL)
 #' results <- getResults(query, model, "rdfxml")
-#' 
+#'
 #' # When the query object is no longer needed, the resources it had allocated can be freed.
 #' freeQuery(query)
 #' rm(query)
-#' @docType package
-#' @name redland
-#' @author Matthew B. Jones (NCEAS) and Peter Slaughter (NCEAS)
+
+## usethis namespace: start
+## usethis namespace: end
 NULL

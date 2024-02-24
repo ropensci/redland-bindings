@@ -2,23 +2,19 @@
 
 R-release:
 
-* Ubuntu Linux 22.04 LTS, R 4.3.1, GCC
 * Winbuilder: x86_64-w64-mingw32 (64-bit) R version 4.3.2 (2023-10-31 ucrt)
-
-* macOS Big Sur 11.6.6: R version 4.3.0 (2023-04-21)
-    * using platform: x86_64-apple-darwin20 (64-bit)
-    * Apple clang version 14.0.3 (clang-1403.0.22.14.1), GNU Fortran (GCC) 12.2.0
+* Ubuntu Linux 22.04 LTS, R 4.3.1, GCC
+* macOS Ventura 13.5.2: R version 4.3.1 (2023-06-16)
+    * using platform: aarch64-apple-darwin20 (64-bit)
+    * R was compiled by
+       * Apple clang version 14.0.0 (clang-1400.0.29.202)
+       * GNU Fortran (GCC) 12.2.0
 * R-hub Ubuntu Linux 20.04.1 LTS, R-release, GCC
-* R-hub Windows Server 2022, R-release, 32/64 bit
 
 R-devel:
 
 * Winbuilder: x86_64-w64-mingw32 R Under development (unstable) (2024-02-22 r85974 ucrt)
-
-* R-hub Fedora Linux, R-devel, clang, gfortran
-* R-hub Debian Linux, R-devel, GCC ASAN/UBSAN
-* R-hub Windows Server 2022, R-devel, 64 bit
-
+* R-hub Ubuntu Linux 20.04.1 LTS, R-devel, GCC
 
 ## Changes since last release
 
@@ -38,7 +34,7 @@ R-devel:
 
 ```txt
 > revdep_summary()
-✔ datapack 1.4.1                         ── E: 0     | W: 0     | N: 0    
-✔ rdflib 0.2.6                           ── E: 0     | W: 0     | N: 0    
+✔ datapack 1.4.2                         [ FAIL 0 | WARN 0 | SKIP 0 | PASS 344 ]
+✔ rdflib 0.2.8                           [ FAIL 0 | WARN 0 | SKIP 6 | PASS 55 ]   
 ```
 

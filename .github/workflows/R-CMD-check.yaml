@@ -11,9 +11,6 @@ name: R-CMD-check
 jobs:
   R-CMD-check:
     runs-on: ${{ matrix.config.os }}
-    defaults:
-      run:
-        working-directory: R/redland # Sets 'R/redland' as the default working directory for all steps in this job
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
 
@@ -33,6 +30,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+          with:
+            sparse-checkout: |
+              R/redland
+            sparse-checkout-cone-mode: false
+            path: .
+
+      #- name: Move redland package files to root
+        #run: |
+          #ls -lah
+          #shopt -s dotglob
+          #mv R/redland/* .
+          #rm -rf R
+          #ls -lah
 
       - uses: r-lib/actions/setup-pandoc@v2
 

@@ -40,7 +40,8 @@ jobs:
         run: |
           ls -lah
           shopt -s dotglob
-          mv R/redland/* .
-          rm -rf R
+          mv R tmp
+          mv tmp/redland/* .
+          rm -rf tmp
           ls -lah
 

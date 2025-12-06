@@ -39,8 +39,8 @@ jobs:
       - name: Move redland package files to root
         run: |
           ls -lah
-          #shopt -s dotglob
-          #mv R/redland/* .
-          #rm -rf R
-          #ls -lah
+          shopt -s dotglob
+          mv R/redland/* .
+          rm -rf R
+          ls -lah
 

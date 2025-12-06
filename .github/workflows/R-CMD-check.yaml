@@ -30,11 +30,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-          with:
-            sparse-checkout: |
-              R/redland
-            sparse-checkout-cone-mode: false
-            path: .
+        with:
+          sparse-checkout: |
+            R/redland
+          sparse-checkout-cone-mode: false
+          path: .
 
       #- name: Move redland package files to root
         #run: |

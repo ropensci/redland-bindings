@@ -1,25 +1,19 @@
+Dear CRAN maintainers,
+
+Please find below the CRAN submission comments for the redland R package version 1.0.17-19. This release fixes documentation issues and I replaced the non-API call to ‘SET_S4_OBJECT’ that had been causing problems with the CRAN check results. All checks are now succeeding for me on the platforms below.
+
+Best,
+Matt
+
 ## Test environments
 
-R-release:
-
-* Winbuilder: x86_64-w64-mingw32 (64-bit) R version 4.3.2 (2023-10-31 ucrt)
-* Ubuntu Linux 22.04 LTS, R 4.3.1, GCC
-* macOS Ventura 13.5.2: R version 4.3.1 (2023-06-16)
-    * using platform: aarch64-apple-darwin20 (64-bit)
-    * R was compiled by
-       * Apple clang version 14.0.0 (clang-1400.0.29.202)
-       * GNU Fortran (GCC) 12.2.0
-* R-hub Ubuntu Linux 20.04.1 LTS, R-release, GCC
-
-R-devel:
-
-* Winbuilder: x86_64-w64-mingw32 R Under development (unstable) (2024-02-22 r85974 ucrt)
-* R-hub Ubuntu Linux 20.04.1 LTS, R-devel, GCC
-
-## Changes since last release
-
-* Fix for ucrt on arm64 (#102)
-* Documentation and link fixes
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit) R version 4.5.2 (2025-10-31 ucrt)
+* Windows (via win-builder): x86_64-w64-mingw32 (64-bit) R Under development (unstable) (2025-12-08 r89124 ucrt)
+* macOS Sequoia 15.7.2: aarch64-apple-darwin20 R version 4.5.2 (2025-10-31)
+* macOS Ventura 13.7.6: aarch64-apple-darwin20 R version 4.5.2 (2025-10-31)
+* Ubuntu 24.04.3 LTS: x86_64-pc-linux-gnu R version 4.5.2 (2025-10-31)
+* Ubuntu 24.04.3 LTS: x86_64-pc-linux-gnu R version 4.4.3 (2025-02-28)
+* Ubuntu 24.04.3 LTS: x86_64-pc-linux-gnu R Under development (unstable) (2025-12-08 r89124)
 
 ## R CMD check results
 

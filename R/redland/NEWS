@@ -1,3 +1,10 @@
+Version 1.0.17-19
+
+BUG FIXES
+
+* fix package-level docs to generate alias without @docType (#107)
+* replace SET_S4_OBJECT error in redland.c (#110)
+
 Version 1.0.17-18
 
 BUG FIXES
